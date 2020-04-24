@@ -1,0 +1,9 @@
+sudo find / -name the_name_of_the_file.so
+
+echo $LD_LIBRARY_PATH
+
+LD_LIBRARY_PATH=/usr/local/lib
+
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/my_library/
+export LD_LIBRARY_PATH
+./my_app
