@@ -1,5 +1,12 @@
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/libargon2-1_0%7E20171227-0.2_amd64.deb
+dpkg -i ./libargon2-1_0~20171227-0.2_amd64.deb
+apt-get install -y libargon2-0-dev
+cd /etc/apt/
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/sources.list
+apt-get update
+
 cd /etc/apt/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/sources.list
