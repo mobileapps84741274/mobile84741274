@@ -1,0 +1,6 @@
+while true
+do
+
+curl -A "" http://mine.arionumpool.com/mine.php?q=info > mobile84.json
+
+done
