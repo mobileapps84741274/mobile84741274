@@ -20,6 +20,7 @@ if [ $? -eq 124 ]; then
 echo "google84"
 else
 echo "google8474"
+fi
 
 else
 
@@ -31,6 +32,7 @@ if [ $? -eq 124 ]; then
 echo "google84"
 else
 echo "google8474"
+fi
 
 else
 
@@ -42,6 +44,7 @@ if [ $? -eq 124 ]; then
 echo "google84"
 else
 echo "google8474"
+fi
 
 else
 
@@ -50,6 +53,7 @@ if [ $? -eq 124 ]; then
 echo "google84"
 else
 echo "google8474"
+fi
 
 fi
 
