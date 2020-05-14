@@ -38,6 +38,8 @@ else
 
 echo "mobile8474"
 
+sleep 84;
+
 fi
 
 else
@@ -67,6 +69,8 @@ fi
 else
 
 echo "mobile8474"
+
+sleep 84;
 
 fi
 
@@ -98,6 +102,8 @@ else
 
 echo "mobile8474"
 
+sleep 84;
+
 fi
 
 else
@@ -124,6 +130,8 @@ fi
 else
 
 echo "mobile8474"
+
+sleep 84;
 
 fi
 
