@@ -1,7 +1,3 @@
-cd /etc/apt/
-
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/sources.list
-
 apt-get update
 
 apt-get install -y libcpprest-dev libgmp-dev
