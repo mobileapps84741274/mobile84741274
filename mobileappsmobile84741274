@@ -166,7 +166,7 @@ google8412=$(curl $google841212121274 | sed "s/\s+//g")
 if [[ $google8412 = "" ]]
 then
 
-timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 4 -b 4
+timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 2 -b 2
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -195,7 +195,7 @@ google8412=$(curl $google841212121274 | sed "s/\s+//g")
 if [[ $google8412 = "" ]]
 then
 
-timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 4 -b 4
+timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 2 -b 2
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -224,7 +224,7 @@ google8412=$(curl $google841212121274 | sed "s/\s+//g")
 if [[ $google8412 = "" ]]
 then
 
-timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 4 -b 4
+timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 2 -b 2
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -250,7 +250,7 @@ google8412=$(curl $google841212121274 | sed "s/\s+//g")
 if [[ $google8412 = "" ]]
 then
 
-timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 4 -b 4
+timeout 84 ./google84121274 -p $google841212121274 -a sLpa9w7haM3neVwQjYhUBqUnzn8j77ceSpgCSE8fuDRHuQ9fqdfWRvUZT5SxXPPM51Gy11RToibejsoyDYYyBo8 -t 2 -b 2
 if [ $? -eq 124 ]; then
 echo "google84"
 else
