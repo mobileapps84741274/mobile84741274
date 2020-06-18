@@ -5,7 +5,7 @@ do
 
 cd /notebooks/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps8474127412742.tar.gz
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps8474127412742.tar.gz
 tar -xvf ./googleapps8474127412742.tar.gz
 
 cd googleapps8474
@@ -45,7 +45,7 @@ mkdir ./google84
 
 cd /google84/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84741274.tar.gz
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84741274.tar.gz
 tar -xvf ./linux84741274.tar.gz
 
 cd googleapps8474
