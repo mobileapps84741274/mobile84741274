@@ -37,8 +37,6 @@ sleep 84;
 
 fi
 
-fi
-
 else
 
 cd /notebooks/
