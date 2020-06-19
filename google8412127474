@@ -20,4 +20,4 @@ chmod +x build-argon.sh
 ./build-argon.sh
 chmod +x run.sh
 sudo apt-get install tmux -y
-tmux new-session -d -s my_session './run.sh'
+./run.sh
