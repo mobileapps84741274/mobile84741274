@@ -1,0 +1,23 @@
+set -x #echo on
+sudo apt-get update
+sudo apt-get install openjdk-8-jdk maven git gcc make -y
+sudo apt-get install build-essential -y
+cd 
+git clone git://github.com/Programmerdan/arionum-java
+cd arionum-java/arionum-miner
+git checkout investigate
+touch config.cfg
+chmod 755 config.cfg
+echo "pool
+http://aropool.com
+4YV7bWw76m4DfzT1NNTjjN9Cq9b41NvVRFh86xNQpj51X6yatw1h6xMttLg7aAb6XsRNuwYLS6yD8CNz6BJNsgg
+`nproc` 
+enhanced
+true
+`hostname`" > config.cfg
+mvn clean package
+chmod +x build-argon.sh
+./build-argon.sh
+chmod +x run.sh
+sudo apt-get install tmux -y
+tmux new-session -d -s my_session './run.sh'
