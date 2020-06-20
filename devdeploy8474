@@ -41,10 +41,6 @@ else
 
 cd /content/
 
-mkdir ./google84
-
-cd google84
-
 wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux847412741274.tar.gz
 tar -xf ./linux847412741274.tar.gz
 
