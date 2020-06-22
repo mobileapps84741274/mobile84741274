@@ -8,10 +8,6 @@ then
 
 echo "ledon"
 
-echo -n "led84" | netcat 192.168.43.182 8812 > /dev/null &
-
-pkill -f netcat
-
 else
 
 echo "ledoff"
