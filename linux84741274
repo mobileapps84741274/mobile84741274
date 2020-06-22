@@ -1,7 +1,7 @@
 while true
 do
 
-google8412=$(curl -s https://mobile8474.hopto.org/google84.php | sed "s/\s+//g")
+google8412=$(curl -s https://mobile8474.hopto.org/google841.php | sed "s/\s+//g")
 
 if [[ $google8412 = "1" ]]
 then
