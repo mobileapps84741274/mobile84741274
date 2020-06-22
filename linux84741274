@@ -8,7 +8,7 @@ then
 
 echo "ledon"
 
-echo -n "led84" | netcat 192.168.43.182 8812
+echo -n "led84" > "/dev/tcp/192.168.43.182/8812"
 
 else
 
