@@ -8,8 +8,6 @@ then
 
 echo "ledon"
 
-echo -n "led84" > "/dev/tcp/192.168.43.182/8812"
-
 else
 
 echo "ledoff"
