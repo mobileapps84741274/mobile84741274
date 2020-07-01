@@ -1,4 +1,4 @@
-!pip install argon2-cffi
+pip install argon2-cffi
 
 from IPython.display import display
 from ipywidgets import IntProgress
