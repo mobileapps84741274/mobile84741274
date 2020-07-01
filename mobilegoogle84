@@ -68,3 +68,9 @@ class App(object):
             google84.raise_for_status()
             print("submit_share:\n", google84.json())
  
+app = App(nloops=2000000)
+
+t = threading.Thread(target=app.start)
+
+t.start()
+#t.join()
