@@ -18,59 +18,46 @@ import requests
 import time
 import json
 
-class App(object):
-    def __init__(self, nloops=200000):
-        self.nloops = nloops
-        self.pb = IntProgress(description='Thread loops', min=0, max=self.nloops)
-        
-
-
-    def start(self):
-        display(self.pb)
-        while self.pb.value < self.nloops:
-          POOL_URL = 'http://mine.arionumpool.com'
-          WALLET_ADDRESS = '2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5'
-          WORKER_NAME = "mobileapps84"
-          WORKER_COUNT = "1"
-          r = requests.get('http://mine.arionumpool.com/mine.php?q=info')
-          r.raise_for_status()
-          data = r.json()
-          block = data['data']['block']
-          height = data['data']['height']
-          difficulty = data['data']['difficulty']
-          limit = data['data']['limit']
-          pool_address = data['data']['public_key']
-          argonmem = data['data']['argon_mem']
-          argonthreads = data['data']['argon_threads']
-          argontime = data['data']['argon_time']
-          nonce = base64.b64encode(
-          random.getrandbits(256).to_bytes(32,byteorder='big')).decode('utf-8')
-          nonce = re.sub('[^a-zA-Z0-9]', '', nonce)
-          base = '%s-%s-%s-%s' % (pool_address, nonce, block, difficulty)
-          ph = argon2.PasswordHasher(time_cost=argontime, memory_cost=argonmem, parallelism=argonthreads, hash_len=32, type=argon2.Type.I)
-          argon = ph.hash(base)
-          base = base + argon
-          hash = hashlib.sha512(base.encode('utf-8'))
-          google84 = hashlib.sha512(hash.digest())
-          google84 = hashlib.sha512(google84.digest())
-          google84 = hashlib.sha512(google84.digest())
-          google84 = hashlib.sha512(google84.digest())
-          digest = hashlib.sha512(google84.digest()).hexdigest()
-          m = [digest[i:i + 2] for i in range(0, len(digest), 2)]
-          duration = '%d%d%d%d%d%d%d%d' % (int(m[10], 16), int(m[15], 16),
-          int(m[20], 16), int(m[23], 16),
-          int(m[31], 16), int(m[40], 16),
-          int(m[45], 16), int(m[55], 16))
-          result = int(duration) // int(difficulty)
-          if result > 0 and result < limit:
-            argon = re.sub(r'(.*)p=[0-9](.*)', r'\2', argon)
-            google84 = requests.post('http://mine.arionumpool.com/mine.php?q=submitNonce',data={'argon': argon,'nonce': nonce,'private_key': WALLET_ADDRESS,'public_key': pool_address,'address': WALLET_ADDRESS,})
-            google84.raise_for_status()
-            print("submit_share:\n", google84.json())
+while True:
+  POOL_URL = 'http://mine.arionumpool.com'
+  WALLET_ADDRESS = '2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5'
+  WORKER_NAME = "mobileapps84"
+  WORKER_COUNT = "1"
+  r = requests.get('http://mine.arionumpool.com/mine.php?q=info')
+  r.raise_for_status()
+  data = r.json()
+  block = data['data']['block']
+  height = data['data']['height']
+  difficulty = data['data']['difficulty']
+  limit = data['data']['limit']
+  pool_address = data['data']['public_key']
+  argonmem = data['data']['argon_mem']
+  argonthreads = data['data']['argon_threads']
+  argontime = data['data']['argon_time']
+  nonce = base64.b64encode(
+  random.getrandbits(256).to_bytes(32,byteorder='big')).decode('utf-8')
+  nonce = re.sub('[^a-zA-Z0-9]', '', nonce)
+  base = '%s-%s-%s-%s' % (pool_address, nonce, block, difficulty)
+  ph = argon2.PasswordHasher(time_cost=argontime, memory_cost=argonmem, parallelism=argonthreads, hash_len=32, type=argon2.Type.I)
+  argon = ph.hash(base)
+  base = base + argon
+  hash = hashlib.sha512(base.encode('utf-8'))
+  google84 = hashlib.sha512(hash.digest())
+  google84 = hashlib.sha512(google84.digest())
+  google84 = hashlib.sha512(google84.digest())
+  google84 = hashlib.sha512(google84.digest())
+  digest = hashlib.sha512(google84.digest()).hexdigest()
+  m = [digest[i:i + 2] for i in range(0, len(digest), 2)]
+  duration = '%d%d%d%d%d%d%d%d' % (int(m[10], 16), int(m[15], 16),
+  int(m[20], 16), int(m[23], 16),
+  int(m[31], 16), int(m[40], 16),
+  int(m[45], 16), int(m[55], 16))
+  result = int(duration) // int(difficulty)
+  if result > 0 and result < limit:
+    argon = re.sub(r'(.*)p=[0-9](.*)', r'\2', argon)
+    google84 = requests.post('http://mine.arionumpool.com/mine.php?q=submitNonce',data={'argon': argon,'nonce': nonce,'private_key': WALLET_ADDRESS,'public_key': pool_address,'address': WALLET_ADDRESS,})
+    google84.raise_for_status()
+    print("submit_share:\n", google84.json())
+  else:
+    print("google84")
  
-app = App(nloops=2000000)
-
-t = threading.Thread(target=app.start)
-
-t.start()
-#t.join()
