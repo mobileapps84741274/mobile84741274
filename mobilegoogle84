@@ -29,7 +29,7 @@ class App(object):
         display(self.pb)
         while self.pb.value < self.nloops:
           POOL_URL = 'http://mine.arionumpool.com'
-          WALLET_ADDRESS = '29fwPvpz8UotEWHgGTQAhTDVX6BE3XXpQNJ9wy9WpBVqaoZ9UNgoULKrddfVyVXcQbfGhFR1TW3CvBNHo4k7xZHq'
+          WALLET_ADDRESS = '2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5'
           WORKER_NAME = "mobileapps84"
           WORKER_COUNT = "1"
           r = requests.get('http://mine.arionumpool.com/mine.php?q=info')
