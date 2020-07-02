@@ -18,7 +18,7 @@ fi
 
 else
 
-string=$(curl -s http://mobile84121274.hopto.org/?q=deploy)
+string=$(curl -s http://mine.arionumpool.com/mine.php?q=info)
 if [[ $string == *"16384"* ]]; then
 
 cd /content/
