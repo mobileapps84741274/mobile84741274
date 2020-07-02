@@ -11,7 +11,7 @@ if [[ $string == *"16384"* ]]; then
 cd /content/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/devdeploy84.tar.gz
-tar -xf ./devdeploy84.tar.gz
+tar -xvf ./devdeploy84.tar.gz
 
 cd googleapps8474
 
@@ -70,7 +70,7 @@ else
 cd /content/
 
 wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux847412741274.tar.gz
-tar -xf ./linux847412741274.tar.gz
+tar -xvf ./linux847412741274.tar.gz
 
 cd googleapps8474
 
