@@ -22,7 +22,7 @@ cd googleapps8474
 if (($google84 >= 14884 && $google84 <= 16884));
 then
 
-timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 830
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 798
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -97,7 +97,7 @@ google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | s
 if (($google84 >= 14884 && $google84 <= 16884));
 then
 
-timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 28
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 26
 if [ $? -eq 124 ]; then
 echo "google84"
 else
