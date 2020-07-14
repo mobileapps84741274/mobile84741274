@@ -24,7 +24,7 @@ sudo apt-get install tmux -y
 while true
 do
 
-timeout 14 ./run.sh
+timeout 34 ./run.sh
 if [ $? -eq 124 ]; then
 echo "google84"
 else
