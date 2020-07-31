@@ -1,0 +1,27 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(0, 1);
+
+void setup() {
+
+Serial.begin(57600);
+
+mySerial.begin(57600);
+
+}
+
+void loop() {
+
+if(mySerial.available())
+
+{
+
+mySerial.println("serialworking84");
+
+}
+
+mySerial.println("myserialworking84");
+
+Serial.println("serialworking84");
+
+}
