@@ -1,0 +1,44 @@
+/*
+   ReadAnalogVoltage
+   Reads an analog input on pin 0, converts it to voltage, 
+   and prints the result to the serial monitor.
+   Graphical representation is available using serial plotter (Tools > Serial Plotter menu)
+   Attach the center pin of a potentiometer to pin A0, and the outside pins to +5V and ground.
+*/
+
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(1, 0);
+
+void setup() {
+   // initialize serial communication at 9600 bits per second:
+Serial.begin(115200);
+
+mySerial.begin(115200);
+
+mySerial.println("AT+RST\r\n");
+delay(884);
+mySerial.println("AT+CWMODE=1\r\n");
+delay(884);
+mySerial.println("AT+CWJAP=\"google84\",\"google84\"\r\n");
+delay(884);
+
+Serial.println("AT+RST\r\n");
+delay(884);
+Serial.println("AT+CWMODE=1\r\n");
+delay(884);
+Serial.println("AT+CWJAP=\"google84\",\"google84\"\r\n");
+delay(884);
+
+}
+
+// the loop routine runs over and over again forever:
+
+void loop() {
+
+if (mySerial.available())
+Serial.write(mySerial.read());
+if (Serial.available())
+mySerial.write(Serial.read());
+
+}
