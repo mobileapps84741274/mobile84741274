@@ -1,0 +1,25 @@
+
+void setup() 
+{
+
+Serial.begin(57600);
+
+}
+void loop() 
+{
+
+String s1 = Serial.readStringUntil('\n');
+
+Serial.println(s1);
+
+delay(1884);
+
+if(s1 == "led84")
+
+{
+
+Serial.println("google84");
+
+}
+
+}
