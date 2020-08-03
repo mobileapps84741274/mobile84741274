@@ -1,0 +1,16 @@
+setInterval(function() {
+
+var selector = document.getElementsByTagName("colab-run-button")[0];
+if (document.getElementsByTagName("colab-run-button")[0].getAttribute('title').match(/started|queued/)){
+
+}
+
+else
+
+{
+
+document.getElementsByTagName("colab-run-button")[0].click();
+
+}
+
+}, 8444);
