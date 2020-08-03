@@ -1,0 +1,39 @@
+
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(0, 1);
+
+void setup() {
+Serial.begin(115200);
+
+mySerial.begin(115200);
+
+delay(884);
+mySerial.print("AT+CIPMUX=1\r\n");
+delay(884);
+mySerial.print("AT+CIPSERVER=1,8474\r\n");
+delay(884);
+mySerial.print("AT+CWMODE=3\r\n");
+delay(884);
+mySerial.print("AT+CWJAP=\"mg\",\"mmmmmmm8\"\r\n");
+delay(884);
+
+Serial.print("AT+CIPMUX=1\r\n");
+delay(884);
+Serial.print("AT+CIPSERVER=1,8474\r\n");
+delay(884);
+Serial.print("AT+CWMODE=3\r\n");
+delay(884);
+Serial.print("AT+CWJAP=\"mg\",\"mmmmmmm8\"\r\n");
+delay(884);
+
+}
+
+void loop() {
+
+if (mySerial.available())
+Serial.write(mySerial.read());
+if (Serial.available())
+mySerial.write(Serial.read());
+
+}
