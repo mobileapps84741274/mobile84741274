@@ -1,0 +1,29 @@
+setInterval(function() {
+
+document.getElementsByClassName("sso-button__text-container")[0].click();
+
+}, 8444);
+
+setInterval(function() {
+
+location = "https://console.paperspace.com/notebooks";
+
+}, 12884);
+
+setInterval(function() {
+
+document.getElementsByClassName("subt")[1].click();
+
+}, 8884);
+
+setInterval(function() {
+
+document.getElementsByClassName("subt")[5].click();
+
+}, 4448);
+
+setInterval(function() {
+
+document.getElementsByClassName("table__tableActions")[0].click();
+
+}, 14884);
