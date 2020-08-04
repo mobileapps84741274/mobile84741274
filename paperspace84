@@ -6,7 +6,18 @@ document.getElementsByClassName("sso-button__text-container")[0].click();
 
 setInterval(function() {
 
+if(location.href.match(/notebook/))
+
+{
+}
+
+else
+
+{
+
 location = "https://console.paperspace.com/notebooks";
+
+}
 
 }, 34884);
 
