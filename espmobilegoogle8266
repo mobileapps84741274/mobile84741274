@@ -10,20 +10,20 @@ mySerial.begin(115200);
 
 mySerial.print("AT+CIPMUX=1\r\n");
 delay(884);
-mySerial.print("AT+CIPSERVER=1,8\r\n");
+mySerial.print("AT+CIPSERVER=1,8412\r\n");
 delay(884);
 mySerial.print("AT+CWMODE=1\r\n");
 delay(884);
-mySerial.print("AT+CWJAP=\"mg\",\"mmmmmmm8\"\r\n");
+mySerial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
 delay(884);
 
 Serial.print("AT+CIPMUX=1\r\n");
 delay(884);
-Serial.print("AT+CIPSERVER=1,8\r\n");
+Serial.print("AT+CIPSERVER=1,8412\r\n");
 delay(884);
 Serial.print("AT+CWMODE=1\r\n");
 delay(884);
-Serial.print("AT+CWJAP=\"mg\",\"mmmmmmm8\"\r\n");
+Serial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
 delay(884);
 
 }
@@ -35,14 +35,25 @@ Serial.write(mySerial.read());
 if (Serial.available())
 mySerial.write(Serial.read());
 
-int s1 = Serial.read();
+Serial.print("\r\n");
 
-if(s1 == "led84")
+if(Serial.find("g"))
 
 {
 
-digitalWrite(4,1);
-digitalWrite(3,0);
+pinMode(4, OUTPUT);
+
+pinMode(3, OUTPUT);
+
+digitalWrite(4, HIGH);
+
+digitalWrite(3, LOW);
+
+delay(884);
+
+pinMode(4, INPUT);
+
+pinMode(3, INPUT);
 
 }
 
