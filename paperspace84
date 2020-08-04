@@ -9,6 +9,13 @@ setInterval(function() {
 if(location.href.match(/notebook/))
 
 {
+
+if(document.getElementsByClassName("notebook-page-container__notebook-offline-banner")[0].innerText.match(/You are viewing the static version/))
+
+{
+
+location = "https://console.paperspace.com/notebooks";
+
 }
 
 else
