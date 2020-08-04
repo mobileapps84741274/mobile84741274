@@ -26,6 +26,8 @@ location = "https://console.paperspace.com/notebooks";
 
 }
 
+}
+
 }, 34884);
 
 setInterval(function() {
