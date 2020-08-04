@@ -8,11 +8,11 @@ setInterval(function() {
 
 location = "https://console.paperspace.com/notebooks";
 
-}, 12884);
+}, 34884);
 
 setInterval(function() {
 
-document.getElementsByClassName("subt")[1].click();
+document.getElementsByClassName("fa fa-play-circle")[0].click();
 
 }, 8884);
 
