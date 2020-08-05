@@ -1,12 +1,14 @@
 while true
 do
 
-google8412=$(curl -s https://mobile84121274.hopto.org/google841.php | sed "s/\s+//g")
+google8412=$(curl -s https://mobile84121274.hopto.org/google84.php | sed "s/\s+//g")
 
 if [[ $google8412 = "1" ]]
 then
 
 echo "ledon"
+
+echo -n "google84747474" > "/dev/tcp/192.168.43.130/8412"
 
 else
 
