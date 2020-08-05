@@ -64,7 +64,11 @@ if ($data['status'] == "ok")
 
 {
 
-file_put_contents("./google8474",rand(8884,88887474));
+file_put_contents("./google84","1");
+
+sleep(2);
+
+file_put_contents("./google84","0");
 
 }
 
