@@ -1,0 +1,17 @@
+while true
+do
+
+google8412=$(curl -s https://mobile84121274.hopto.org/google84.php | sed "s/\s+//g")
+
+if [[ $google8412 = "1" ]]
+then
+
+echo "Accepted 1/1 (100.0%) (yay!!!)"
+
+else
+
+echo "mining"
+
+fi
+
+done
