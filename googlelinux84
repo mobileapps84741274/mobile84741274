@@ -8,7 +8,7 @@ then
 
 echo "share found"
 
-echo -n "google84747474" > "/dev/tcp/192.168.1.61/8412"
+echo -n "google84747474" > "/dev/tcp/192.168.1.58/8412"
 
 else
 
