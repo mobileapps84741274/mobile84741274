@@ -1,169 +1,74 @@
 #include <avr/sleep.h>
-
 #include <avr/wdt.h>
 
-#ifndef cbi
+#define LED 4
 
-#define cbi(sfr, bit) (_SFR_BYTE(sfr) &= ~_BV(bit))
+#include <SoftwareSerial.h>
 
-#endif
+SoftwareSerial mySerial(0, 1);
 
-#ifndef sbi
+ISR(WDT_vect)
+  {
+  wdt_disable(); 
+  }
 
-#define sbi(sfr, bit) (_SFR_BYTE(sfr) |= _BV(bit))
+void myWatchdogEnable(const byte interval)
+  {
 
-#endif
+  noInterrupts();
 
-int pinLed = 4;
-int trig = 2;
-int heart = 1;
-volatile boolean f_wdt = 1;
-int counter = 0;
+  wdt_reset();
+   
+  MCUSR = 0;                          // reset various flags
+  WDTCR |= 0b00011000;               // see docs, set WDCE, WDE
+  WDTCR =  0b01000000 | interval;    // set WDIE, and appropriate delay
+ 
+  ADCSRA &= ~_BV(ADEN);
 
-int google84741274 = random(1);
+  set_sleep_mode (SLEEP_MODE_PWR_DOWN);
+  sleep_bod_disable();
+  interrupts();
+  sleep_mode();     
+ 
+  }
 
-void setup(){
+void setup()
+{
+pinMode (LED, OUTPUT);
+pinMode (3, OUTPUT);
 
-  pinMode(pinLed,OUTPUT);
-  pinMode(3,OUTPUT);
-  pinMode(heart,OUTPUT);
+mySerial.print("AT+CWMODE=1\r\n");
+delay(884);
+mySerial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
+delay(884);
 
-  pinMode(trig,INPUT);
+Serial.print("AT+CWMODE=1\r\n");
+delay(884);
+Serial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
+delay(884);
 
-  setup_watchdog(8); // approximately 4 seconds sleep
-
-}
+} 
 
 void loop(){
 
-int google84 = random(12);
+if (mySerial.available())
+Serial.write(mySerial.read());
+if (Serial.available())
+mySerial.write(Serial.read());
 
-if(google84 == 4)
+  digitalWrite (LED, HIGH);
+  digitalWrite (3, HIGH);
+  delay (884);   
+  digitalWrite (LED, LOW); 
 
-{
-
-pinMode(4, OUTPUT);
-pinMode(3, OUTPUT);
-
-digitalWrite(4,HIGH);
-
-digitalWrite(3,HIGH);
-
-delay(184);
-
-}
-
-else
-
-{
-
-pinMode(4, INPUT);
-pinMode(3, INPUT);
-
-digitalWrite(4,HIGH);
-
-digitalWrite(3,HIGH);
-
-delay(184);
-
-}
-
-  if (f_wdt==1) {  // wait for timed out watchdog / flag is set when a watchdog timeout occurs
-
-    f_wdt=0;       // reset flag
-
-  if (counter > 192){ //timer to reset approx 15 min
-
-    digitalWrite(pinLed,HIGH);
-    
-    delay(500); // Wait for trigger high until set back to sleep
-
-    while(!digitalRead(trig)){delay(500);}
-
-    digitalWrite(pinLed,LOW);
-
-    counter = 0;
-
+  for (int i = 0; i < 4; i++){
+  myWatchdogEnable (0b000110);  // 1 second
   }
 
-    // Show heartbeat uncomment to show blink
+} 
 
-    //digitalWrite(heart,HIGH);
-
-    //delay(200);
-
-    //digitalWrite(heart,LOW );
-
-    pinMode(pinLed,OUTPUT); // set all used port to intput to save power
-
-    system_sleep();
-
-    pinMode(pinLed,OUTPUT); // set all ports into state before sleep
-
-  }
-
-}
-
-// set system into the sleep state 
-
-// system wakes up when wtchdog is timed out
-
-void system_sleep() {
-
-  cbi(ADCSRA,ADEN);                    // switch Analog to Digitalconverter OFF
-
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN); // sleep mode is set here
-
-  sleep_enable();
-
-  sleep_mode();                        // System sleeps here
-
-  sleep_disable();                     // System continues execution here when watchdog timed out 
-
-  sbi(ADCSRA,ADEN);                    // switch Analog to Digitalconverter ON
-
-}
-
-// 0=16ms, 1=32ms,2=64ms,3=128ms,4=250ms,5=500ms
-
-// 6=1 sec,7=2 sec, 8=4 sec, 9= 8sec
-
-void setup_watchdog(int ii) {
-
-  byte bb;
-
-  int ww;
-
-  if (ii > 9 ) ii=9;
-
-  bb=ii & 7;
-
-  if (ii > 7) bb|= (1<<5);
-
-  bb|= (1<<WDCE);
-
-  ww=bb;
-
-  MCUSR &= ~(1<<WDRF);
-
-  // start timed sequence
-
-  WDTCR |= (1<<WDCE) | (1<<WDE);
-
-  // set new watchdog timeout value
-
-  WDTCR = bb;
-
-  WDTCR |= _BV(WDIE);
-
-}
-
-// Watchdog Interrupt Service / is executed when watchdog timed out
-
-ISR(WDT_vect) {
-
-  counter++;
-
-  f_wdt=1;  // set global flag
-
-}
+// sleep bit patterns:
+//  1 second:  0b000110
+//  2 seconds: 0b000111
+//  4 seconds: 0b100000
+//  8 seconds: 0b100001
