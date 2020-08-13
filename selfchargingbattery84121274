@@ -1,0 +1,42 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(0, 1);
+
+void setup() {
+
+Serial.begin(115200);
+
+mySerial.begin(115200);
+
+mySerial.print("AT+CWMODE=1\r\n");
+delay(884);
+mySerial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
+delay(884);
+
+Serial.print("AT+CWMODE=1\r\n");
+delay(884);
+Serial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
+delay(884);
+
+}
+
+void loop() {
+
+Serial.print("AT+GSLP=184\r\n");
+
+mySerial.print("AT+GSLP=184\r\n");
+
+delay(8884);
+
+pinMode(4, OUTPUT);
+
+digitalWrite(4, LOW);
+
+delay(8884);
+
+if (mySerial.available())
+Serial.print(mySerial.read());
+if (Serial.available())
+mySerial.print(Serial.read());
+
+}
