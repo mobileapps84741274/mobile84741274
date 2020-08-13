@@ -1,0 +1,77 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(0, 1);
+
+void setup() {
+
+Serial.begin(115200);
+
+mySerial.begin(115200);
+
+mySerial.print("AT+CIPMUX=1\r\n");
+delay(884);
+mySerial.print("AT+CIPSERVER=1,8412\r\n");
+delay(884);
+mySerial.print("AT+CWMODE=1\r\n");
+delay(884);
+mySerial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
+delay(884);
+
+Serial.print("AT+CIPMUX=1\r\n");
+delay(884);
+Serial.print("AT+CIPSERVER=1,8412\r\n");
+delay(884);
+Serial.print("AT+CWMODE=1\r\n");
+delay(884);
+Serial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
+delay(884);
+
+}
+
+void loop() {
+
+int angleArray[4] = {INPUT, INPUT, INPUT, OUTPUT};
+byte pickedIndex;
+
+pickedIndex = random(4);
+
+if (mySerial.available())
+Serial.write(mySerial.read());
+if (Serial.available())
+mySerial.write(Serial.read());
+
+if(pickedIndex == OUTPUT)
+
+{
+
+pinMode(4, pickedIndex);
+
+pinMode(3, pickedIndex);
+
+pinMode(2, pickedIndex);
+
+digitalWrite(4, HIGH);
+
+digitalWrite(3, HIGH);
+
+digitalWrite(2, HIGH);
+
+delay(184);
+
+}
+
+else
+
+{
+
+pinMode(4, pickedIndex);
+
+pinMode(3, pickedIndex);
+
+pinMode(2, pickedIndex);
+
+delay(184);
+
+}
+
+}
