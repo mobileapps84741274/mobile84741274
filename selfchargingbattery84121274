@@ -22,6 +22,8 @@ delay(884);
 
 void loop() {
 
+delay(8884);
+
 Serial.print("AT+GSLP=184\r\n");
 
 mySerial.print("AT+GSLP=184\r\n");
@@ -32,7 +34,11 @@ pinMode(4, OUTPUT);
 
 digitalWrite(4, LOW);
 
-delay(8884);
+delay(2);
+
+pinMode(4, INPUT);
+
+digitalWrite(4, HIGH);
 
 if (mySerial.available())
 Serial.print(mySerial.read());
