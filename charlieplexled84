@@ -1,0 +1,401 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(0, 34);
+
+//ATtiny code
+//Reads analog (or digital) input from pin 4 and every time the input goes bellow a set threshold 
+//it counts one and displays the increase in count either by activating up one of four LEDs (or transistors)
+//or one of twelve charlieplexed LEDs
+
+// SET THESE VALUES:
+int threshold = 500;
+int maxCount = 7;
+////////////////////
+boolean sensorTriggered = false;
+int count = 0;
+int sensorValue = 0;
+long lastDebounceTime = 0;  // the last time the output pin was toggled
+long debounceDelay = 50;    // the debounce time; increase if the output flickers
+////////////////////////////////////////////////////////////////////////////////
+void setup(){
+  
+Serial.begin(115200);
+
+mySerial.begin(115200);
+
+mySerial.print("AT+CIPMUX=1\r\n");
+delay(884);
+mySerial.print("AT+CIPSERVER=1,8412\r\n");
+delay(884);
+mySerial.print("AT+CWMODE=1\r\n");
+delay(884);
+mySerial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
+delay(884);
+
+Serial.print("AT+CIPMUX=1\r\n");
+delay(884);
+Serial.print("AT+CIPSERVER=1,8412\r\n");
+delay(884);
+Serial.print("AT+CWMODE=1\r\n");
+delay(884);
+Serial.print("AT+CWJAP=\"mg\",\"mmmmmmm4\"\r\n");
+delay(884);
+  
+  for (int pin=0;pin<4;pin++){
+    pinMode(pin,OUTPUT);
+    digitalWrite(pin, LOW);
+  }
+  pinMode(4,INPUT);
+  digitalWrite(4, HIGH);  //internal pull-up
+}
+////////////////////////////////////////////////////////////////////////////////
+void loop(){
+  
+if (mySerial.available())
+Serial.write(mySerial.read());
+if (Serial.available())
+mySerial.write(Serial.read());
+
+Serial.print("\r\n");
+
+if(Serial.find("1"))
+
+{
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+}
+
+}
+  
+  testDigits();
+}
+void testDigits(){
+  charlieLoop();
+}
+////////////////////////////////////////////////////////////////////////////////
+void readSensor(){
+  sensorValue = analogRead(2);  //pin4!
+  delay(100);
+  if(sensorValue < threshold && sensorTriggered == false) {
+    sensorTriggered = true;
+    count++;
+    if(count > maxCount) count = 0;
+    charlieLoop();
+  }
+  if(sensorValue > threshold) sensorTriggered = false;
+}
+////////////////////////////////////////////////////////////////////////////////
+void charlieLoop(){
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+charliePlexPin(4);
+
+delay(2);
+
+}
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+}
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(5);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+}
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(5);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+}
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(5);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+charliePlexPin(4);
+
+delay(2);
+
+}
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+}
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+charliePlexPin(4);
+
+delay(2);
+
+charliePlexPin(5);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+}
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+charliePlexPin(5);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+}
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(4);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+charliePlexPin(5);
+
+delay(2);
+
+}
+
+}
+////////////////////////////////////////////////////////////////////////////////
+void charliePlexPin(int myLed){
+  switch(myLed){
+
+  case 0:
+    pinMode(4, OUTPUT);
+    pinMode(2, OUTPUT);
+    pinMode(1, INPUT);
+    pinMode(3, INPUT);
+    digitalWrite(2, LOW);
+    digitalWrite(0, HIGH);
+    break;
+
+  case 1:
+    pinMode(3, OUTPUT);
+    pinMode(2, OUTPUT);
+    pinMode(1, INPUT);
+    pinMode(4, INPUT);
+    digitalWrite(2, LOW);
+    digitalWrite(3, HIGH);
+    break;
+
+  case 2:
+    pinMode(3, OUTPUT);
+    pinMode(1, OUTPUT);
+    pinMode(2, INPUT);
+    pinMode(4, INPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(3, HIGH);
+    break;
+
+  case 3:
+    pinMode(1, OUTPUT);
+    pinMode(4, OUTPUT);
+    pinMode(2, INPUT);
+    pinMode(3, INPUT);
+    digitalWrite(0, LOW);
+    digitalWrite(1, HIGH);
+    break;
+
+  case 4:
+    pinMode(4, OUTPUT);
+    pinMode(1, OUTPUT);
+    pinMode(2, INPUT);
+    pinMode(3, INPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(0, HIGH);
+    break;
+
+  case 5:
+    pinMode(2, OUTPUT);
+    pinMode(4, OUTPUT);
+    pinMode(1, INPUT);
+    pinMode(3, INPUT);
+    digitalWrite(0, LOW);
+    digitalWrite(2, HIGH);
+    break;
+
+  case 6:
+    pinMode(2, OUTPUT);
+    pinMode(1, OUTPUT);
+    pinMode(4, INPUT);
+    pinMode(3, INPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(2, HIGH);
+    break;
+  }
+}
+////////////////////////////////////////////////////////////////////////////////
+void spwm(int freq,int pin,int sp){
+  // call charlieplexing to set correct pin outs:
+  //on:
+  digitalWrite(pin,HIGH);
+  delayMicroseconds(sp*freq);
+  // off:
+  digitalWrite(pin,LOW);
+  delayMicroseconds(sp*(255-freq));
+}
