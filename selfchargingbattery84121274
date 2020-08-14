@@ -22,23 +22,21 @@ delay(884);
 
 void loop() {
 
-delay(8884);
+Serial.print("AT+GSLP=3444448\r\n");
 
-Serial.print("AT+GSLP=184\r\n");
+mySerial.print("AT+GSLP=3444448\r\n");
 
-mySerial.print("AT+GSLP=184\r\n");
-
-delay(8884);
+delay(3444456);
 
 pinMode(4, OUTPUT);
 
 digitalWrite(4, LOW);
 
-delay(2);
+delay(1);
 
 pinMode(4, INPUT);
 
-digitalWrite(4, HIGH);
+delay(8884);
 
 if (mySerial.available())
 Serial.print(mySerial.read());
