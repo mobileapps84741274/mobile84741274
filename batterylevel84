@@ -7,18 +7,18 @@
 
 void setup() {
 
-pinMode(2, INPUT);
+pinMode(A3, INPUT);
 
 }
 
 void loop() {
 
-int sensorValue84 = analogRead(2);
+int sensorValue84 = analogRead(A3);
 // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
 float voltage84 = sensorValue84 * (3 / 1023.0);
 // print out the value you read:
 
-if(voltage84 > 0 && voltage84 < 1)
+if(voltage84 > 1 && voltage84 < 2)
 
 {
 
@@ -38,7 +38,7 @@ delay(2);
 
 }
 
-if(voltage84 > 1 && voltage84 < 2)
+if(voltage84 > 2 && voltage84 < 3)
 
 {
 
@@ -70,7 +70,7 @@ delay(2);
 
 }
 
-if(voltage84 > 2 && voltage84 < 3)
+if(voltage84 > 3 && voltage84 < 4)
 
 {
 
@@ -102,7 +102,7 @@ delay(2);
 
 }
 
-if(voltage84 > 3 && voltage84 < 4)
+if(voltage84 > 4 && voltage84 < 5)
 
 {
 
@@ -130,7 +130,7 @@ delay(2);
 
 }
 
-if(voltage84 > 4 && voltage84 < 5)
+if(voltage84 > 5 && voltage84 < 6)
 
 {
 
@@ -171,34 +171,34 @@ void charliePlexPin(int myLed){
     pinMode(0, OUTPUT);
     pinMode(4, OUTPUT);
     pinMode(1, INPUT);
-    pinMode(3, INPUT);
+    pinMode(2, INPUT);
     digitalWrite(4, LOW);
     digitalWrite(0, HIGH);
     break;
 
   case 1:
-    pinMode(3, OUTPUT);
+    pinMode(2, OUTPUT);
     pinMode(4, OUTPUT);
     pinMode(1, INPUT);
     pinMode(0, INPUT);
     digitalWrite(4, LOW);
-    digitalWrite(3, HIGH);
+    digitalWrite(2, HIGH);
     break;
 
   case 2:
-    pinMode(3, OUTPUT);
+    pinMode(2, OUTPUT);
     pinMode(1, OUTPUT);
     pinMode(4, INPUT);
     pinMode(0, INPUT);
     digitalWrite(1, LOW);
-    digitalWrite(3, HIGH);
+    digitalWrite(2, HIGH);
     break;
 
   case 3:
     pinMode(1, OUTPUT);
     pinMode(0, OUTPUT);
     pinMode(4, INPUT);
-    pinMode(3, INPUT);
+    pinMode(2, INPUT);
     digitalWrite(0, LOW);
     digitalWrite(1, HIGH);
     break;
@@ -207,7 +207,7 @@ void charliePlexPin(int myLed){
     pinMode(0, OUTPUT);
     pinMode(1, OUTPUT);
     pinMode(4, INPUT);
-    pinMode(3, INPUT);
+    pinMode(2, INPUT);
     digitalWrite(1, LOW);
     digitalWrite(0, HIGH);
     break;
@@ -216,7 +216,7 @@ void charliePlexPin(int myLed){
     pinMode(4, OUTPUT);
     pinMode(0, OUTPUT);
     pinMode(1, INPUT);
-    pinMode(3, INPUT);
+    pinMode(2, INPUT);
     digitalWrite(0, LOW);
     digitalWrite(4, HIGH);
     break;
@@ -225,7 +225,7 @@ void charliePlexPin(int myLed){
     pinMode(4, OUTPUT);
     pinMode(1, OUTPUT);
     pinMode(0, INPUT);
-    pinMode(3, INPUT);
+    pinMode(2, INPUT);
     digitalWrite(1, LOW);
     digitalWrite(4, HIGH);
     break;
