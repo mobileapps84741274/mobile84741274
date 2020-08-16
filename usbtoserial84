@@ -7,6 +7,8 @@ void setup() {
 
 mySerial.begin(115200);
 
+pinMode(A2, INPUT);
+
 }
 
 void loop() {
@@ -21,7 +23,7 @@ mySerial.println("google84");
 
 int sensorValue84 = analogRead(A2);
 // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
-float voltage84 = sensorValue84 * (5 / 1023.0);
+float voltage84 = sensorValue84 * (3 / 1023.0);
 // print out the value you read:
 
 mySerial.println(voltage84);
