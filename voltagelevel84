@@ -1,0 +1,231 @@
+//google8474
+
+//ATtiny code
+//Reads analog (or digital) input from pin 4 and every time the input goes bellow a set threshold 
+//it counts one and displays the increase in count either by activating up one of four LEDs (or transistors)
+//or one of twelve charlieplexed LEDs
+
+void setup() {
+
+pinMode(A3, INPUT);
+
+}
+
+void loop() {
+
+int sensorValue84 = analogRead(A3);
+float voltage84 = sensorValue84 * (3.02 / 1023.0);
+
+if(voltage84 > 1 && voltage84 < 2)
+
+{
+
+//1
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+}
+
+}
+
+if(voltage84 > 2 && voltage84 < 3)
+
+{
+
+//2
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+charliePlexPin(4);
+
+delay(2);
+
+}
+
+}
+
+if(voltage84 > 3 && voltage84 < 4)
+
+{
+
+//3
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+}
+
+}
+
+if(voltage84 > 4 && voltage84 < 5)
+
+{
+
+//4
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(1);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(5);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+}
+
+}
+
+if(voltage84 > 5 && voltage84 < 6)
+
+{
+
+//5
+
+for (int i=0;i<34;i++) {
+
+charliePlexPin(0);
+
+delay(2);
+
+charliePlexPin(2);
+
+delay(2);
+
+charliePlexPin(5);
+
+delay(2);
+
+charliePlexPin(6);
+
+delay(2);
+
+charliePlexPin(3);
+
+delay(2);
+
+}
+
+}
+
+}
+
+void charliePlexPin(int myLed){
+  switch(myLed){
+
+  case 0:
+    pinMode(0, OUTPUT);
+    pinMode(4, OUTPUT);
+    pinMode(1, INPUT);
+    pinMode(2, INPUT);
+    digitalWrite(4, LOW);
+    digitalWrite(0, HIGH);
+    break;
+
+  case 1:
+    pinMode(2, OUTPUT);
+    pinMode(4, OUTPUT);
+    pinMode(1, INPUT);
+    pinMode(0, INPUT);
+    digitalWrite(4, LOW);
+    digitalWrite(2, HIGH);
+    break;
+
+  case 2:
+    pinMode(2, OUTPUT);
+    pinMode(1, OUTPUT);
+    pinMode(4, INPUT);
+    pinMode(0, INPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(2, HIGH);
+    break;
+
+  case 3:
+    pinMode(1, OUTPUT);
+    pinMode(0, OUTPUT);
+    pinMode(4, INPUT);
+    pinMode(2, INPUT);
+    digitalWrite(0, LOW);
+    digitalWrite(1, HIGH);
+    break;
+
+  case 4:
+    pinMode(0, OUTPUT);
+    pinMode(1, OUTPUT);
+    pinMode(4, INPUT);
+    pinMode(2, INPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(0, HIGH);
+    break;
+
+  case 5:
+    pinMode(4, OUTPUT);
+    pinMode(0, OUTPUT);
+    pinMode(1, INPUT);
+    pinMode(2, INPUT);
+    digitalWrite(0, LOW);
+    digitalWrite(4, HIGH);
+    break;
+
+  case 6:
+    pinMode(4, OUTPUT);
+    pinMode(1, OUTPUT);
+    pinMode(0, INPUT);
+    pinMode(2, INPUT);
+    digitalWrite(1, LOW);
+    digitalWrite(4, HIGH);
+    break;
+  }
+}
