@@ -1,0 +1,31 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(34, 3);
+
+void setup() {
+  // put your setup code here, to run once:
+
+mySerial.begin(115200);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  if (mySerial.available())
+    Serial.write(mySerial.read());
+  if (Serial.available())
+    mySerial.write(Serial.read());
+
+mySerial.println("google84");
+
+int sensorValue84 = analogRead(A2);
+// Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+float voltage84 = sensorValue84 * (5 / 1023.0);
+// print out the value you read:
+
+mySerial.println(voltage84);
+
+delay(884);
+
+}
