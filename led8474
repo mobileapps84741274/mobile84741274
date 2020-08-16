@@ -1,0 +1,46 @@
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(0, 1);
+
+void setup() {
+
+Serial.begin(115200);
+
+mySerial.begin(115200);
+
+mySerial.print("AT+CIFSR\r\n");
+delay(884);
+mySerial.print("AT+CIPMUX=1\r\n");
+delay(884);
+mySerial.print("AT+CIPSERVER=1,80\r\n");
+delay(884);
+mySerial.print("AT+CWMODE=2\r\n");
+delay(884);
+mySerial.print("AT+CIPSEND=0,1\r\n");
+delay(884);
+mySerial.print("g\r\n");
+delay(884);
+
+Serial.print("AT+CIFSR\r\n");
+delay(884);
+Serial.print("AT+CIPMUX=1\r\n");
+delay(884);
+Serial.print("AT+CIPSERVER=1,80\r\n");
+delay(884);
+Serial.print("AT+CWMODE=2\r\n");
+delay(884);
+Serial.print("AT+CIPSEND=0,1\r\n");
+delay(884);
+Serial.print("g\r\n");
+delay(884);
+
+}
+
+void loop() {
+
+if (mySerial.available())
+Serial.write(mySerial.read());
+if (Serial.available())
+mySerial.write(Serial.read());
+
+}
