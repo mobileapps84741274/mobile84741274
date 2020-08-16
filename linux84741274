@@ -8,13 +8,13 @@ then
 
 echo "ledon"
 
-curl http://192.168.43.220/socket1On
+curl -s http://192.168.43.220/socket1On
 
 else
 
 echo "ledoff"
 
-curl http://192.168.43.220/socket1Off
+curl -s http://192.168.43.220/socket1Off
 
 fi
 
