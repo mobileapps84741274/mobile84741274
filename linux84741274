@@ -8,11 +8,13 @@ then
 
 echo "ledon"
 
-echo -n "google84747474" > "/dev/tcp/192.168.43.130/8412"
+curl http://192.168.43.220/socket1On
 
 else
 
 echo "ledoff"
+
+curl http://192.168.43.220/socket1Off
 
 fi
 
