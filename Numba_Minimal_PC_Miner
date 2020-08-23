@@ -26,7 +26,7 @@ def hashrateCalculator(): # Hashes/sec calculation
   
   hash_count = 0 # Reset counter
   
-  threading.Timer(1.0, hashrateCalculator).start() # Run this def every 1s
+  threading.Timer(0, hashrateCalculator).start() # Run this def every 1s
 
 
 # This sections grabs pool adress and port from Duino-Coin GitHub file
