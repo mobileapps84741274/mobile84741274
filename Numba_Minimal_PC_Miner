@@ -26,7 +26,7 @@ def hashrateCalculator(): # Hashes/sec calculation
   
   hash_count = 0 # Reset counter
   
-  threading.Timer(0, hashrateCalculator).start() # Run this def every 1s
+  threading.Timer(1.0, hashrateCalculator).start() # Run this def every 1s
 
 
 # This sections grabs pool adress and port from Duino-Coin GitHub file
@@ -58,7 +58,7 @@ def doHash(hash, prevHash, diff):
             return result
 
 hashrateCalculator() # Start hashrate calculator
-for google84 in range(884):
+for result in range(8888888884):
     soc.send(bytes("JOB", encoding="utf8")) # Send job request
     job = soc.recv(1024).decode() # Get work from pool
     job = job.split(",") # Split received data to job (job and difficulty)
