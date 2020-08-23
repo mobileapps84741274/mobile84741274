@@ -58,7 +58,7 @@ def doHash(hash, prevHash, diff):
             return result
 
 hashrateCalculator() # Start hashrate calculator
-for result in range(8888888884):
+while True:
     soc.send(bytes("JOB", encoding="utf8")) # Send job request
     job = soc.recv(1024).decode() # Get work from pool
     job = job.split(",") # Split received data to job (job and difficulty)
