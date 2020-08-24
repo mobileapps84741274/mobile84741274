@@ -1,1 +1,1 @@
-./ccminer --algo=scrypt --url=stratum+tcp://litecoinpool.org:3333 --user=mobileapps84.4 --pass=4
+./ccminer --algo=scrypt -i=22 --url=stratum+tcp://litecoinpool.org:3333 --user=mobileapps84.4 --pass=4
