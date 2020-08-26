@@ -3,6 +3,7 @@
 import socket, hashlib, os, urllib.request, random, statistics, threading # Only python3 included libraries
 soc = socket.socket()
 from numba import jit
+from numba import cuda
 
 username = "christoh85"
 password = "mobile8474"
