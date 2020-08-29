@@ -93,10 +93,6 @@ else
 
 cd /notebooks/
 
-mkdir ./google84/
-
-cd /notebooks/google84/
-
 wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8474.tar.gz
 tar -xvf ./google8474.tar.gz
 
