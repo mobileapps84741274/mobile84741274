@@ -91,6 +91,8 @@ fi
 
 else
 
+cd /notebooks/
+
 mkdir ./google84/
 
 cd /notebooks/google84/
