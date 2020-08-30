@@ -27,7 +27,7 @@ cd /notebooks/
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googlemobile8474.tar.gz
 tar -xvf ./googlemobile8474.tar.gz
 
-cd googleapps8474
+cd google2
 
 if (($google84 >= 16888 && $google84 <= 34884))
 then
