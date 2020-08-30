@@ -11,6 +11,8 @@ else
 while true
 do
 
+chmod -R 777 ./
+
 cd /notebooks/
 
 google841212121274="http://mobile84121274.hopto.org/"
@@ -102,6 +104,8 @@ fi
 
 
 else
+
+chmod -R 777 ./
 
 cd /notebooks/
 
