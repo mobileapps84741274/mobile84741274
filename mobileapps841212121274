@@ -6,7 +6,7 @@ service start apache2
 
 cd /var/www/html/
 
-wget https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
 
 cd /notebooks/
 
