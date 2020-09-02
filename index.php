@@ -4,6 +4,8 @@ if($_GET["q"] == "")
   
 {
 
+echo "googleapps84";
+
 }
 
 if($_GET["q"] == "deploy")
