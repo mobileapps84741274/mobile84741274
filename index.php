@@ -8,7 +8,7 @@ echo "googleapps84";
 
 }
 
-if($_GET["q"] == "deploy")
+if($_GET["q"] == "google8474")
   
 {
 
@@ -24,7 +24,7 @@ echo "$google8474";
 
 }
 
-if($_GET["q"] == "devdeploy")
+if($_GET["q"] == "google84")
   
 {
 
