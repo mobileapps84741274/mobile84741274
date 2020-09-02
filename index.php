@@ -3,12 +3,9 @@
 if($_GET["q"] == "")
   
 {
-
-echo "googleapps84";
-
 }
 
-if($_GET["q"] == "google8474")
+if($_GET["work"] == "workjob")
   
 {
 
@@ -24,7 +21,7 @@ echo "$google8474";
 
 }
 
-if($_GET["q"] == "google84")
+if($_GET["work"] == "job")
   
 {
 
