@@ -146,7 +146,7 @@ fi
 if (( $google84 >= 14884 && $google84 <= 16884 ))
 then
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 24
+timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 22
 if [ $? -eq 124 ]; then
 echo "google84"
 else
