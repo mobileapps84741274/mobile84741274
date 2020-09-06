@@ -5,6 +5,9 @@ soc = socket.socket()
 from numba import jit
 from numba import cuda
 
+import numpy as np
+import numba
+
 username = "christoh85"
 password = "mobile8474"
 
@@ -51,7 +54,7 @@ else:
     soc.close()
     os._exit(1)
 
-@jit(nopython=True, parallel=True)
+@numba.njit
 def doHash(hash, prevHash, diff):
     for result in range(100 * int(diff) + 1): # Calculate hash with difficulty
         ducos1 = hashlib.sha1(str((hash) + str(result)).encode("utf-8")).hexdigest() # Generate hash
