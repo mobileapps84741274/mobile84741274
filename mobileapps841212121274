@@ -45,7 +45,7 @@ cd google84121274
 if (($google84 >= 16888 && $google84 <= 34884))
 then
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 548
+timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 734
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -57,7 +57,7 @@ fi
 if (($google84 >= 14884 && $google84 <= 16884))
 then
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 484
+timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 548
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -69,7 +69,7 @@ fi
 if (($google84 >= 10884 && $google84 <= 14882))
 then
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 348
+timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 484
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -81,7 +81,7 @@ fi
 if (($google84 >= 5288 && $google84 <= 9184))
 then
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 284
+timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 348
 if [ $? -eq 124 ]; then
 echo "google84"
 else
@@ -93,7 +93,7 @@ fi
 if (($google84 >= 2874 && $google84 <= 5184))
 then
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 148
+timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 284
 if [ $? -eq 124 ]; then
 echo "google84"
 else
