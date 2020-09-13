@@ -1,0 +1,1 @@
+grep -rl '"exit_type":"SessionEnded"' ./ | xargs sed -i 's/"exit_type":"SessionEnded"/"exit_type":"Normal"/g'
