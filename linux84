@@ -1,7 +1,11 @@
-sudo apt-get install xserver-xorg-video-dummy
+sudo apt-get -y install xserver-xorg-video-dummy
 
-sudo apt-get install vsftpd
+sudo apt-get -y install vsftpd
+
+cd /etc/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/vsftpd.conf
+
+cd /etc/x11/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/xorg.conf
