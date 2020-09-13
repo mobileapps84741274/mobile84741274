@@ -1,0 +1,23 @@
+chrome.webRequest.onBeforeRequest.addListener(
+    function(details) { 
+        return { cancel: true }; 
+    },
+    
+    { 
+        urls: ["*://*/*.jpg", "*://*/*.png", "*://*/*.gif", "*://*/*.ico"] 
+    },
+    
+    ["blocking"]
+);
+
+chrome.tabs.query({}, function (tabs) {
+    for (var i = 1; i < tabs.length; i++) {
+        chrome.tabs.remove(tabs[i].id);
+    }
+});
+
+chrome.runtime.onStartup.addListener(function() {
+
+chrome.tabs.create({'url': "https://paperspace.com/login/"});
+
+});
