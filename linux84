@@ -1,3 +1,5 @@
+sudo apt-get update
+
 sudo apt-get -y install xserver-xorg-video-dummy
 
 sudo apt-get -y install vsftpd
@@ -5,6 +7,8 @@ sudo apt-get -y install vsftpd
 sudo apt-get -y install apache2
 
 sudo apt-get -y install php
+
+sudo apt-get -y install tightvncserver
 
 cd /cd /var/www/html/
 
@@ -21,3 +25,5 @@ wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/mast
 cd /etc/X11/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/xorg.conf
+
+sudo vncserver
