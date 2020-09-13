@@ -1,3 +1,5 @@
+sudo apt-get install xserver-xorg-video-dummy
+
 Section "Device"    Identifier  "Configured Video Device"
     Driver      "dummy"
     VideoRam 256000
