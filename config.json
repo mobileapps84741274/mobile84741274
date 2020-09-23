@@ -1,0 +1,8 @@
+{
+    "pool": "154.127.52.52",
+    "wallet_address": "4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj",
+    "worker_name" : "python",
+    "worker_quantity" : 4,
+    "hash_rate_interval": 20,
+    "rest": 0
+}
