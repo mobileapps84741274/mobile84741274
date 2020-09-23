@@ -17,7 +17,7 @@ else
 while true
 do
 
-arr[5]="28xqj4rxaoBfMeHnCb9gS9t3ezWMvPZ34qYhD4Tu5iSZhEpc3Q6cZYWowgyLuSqsAnbsy2Dw3cNjWR3A6WMnGoa2"
+arr[0]="28xqj4rxaoBfMeHnCb9gS9t3ezWMvPZ34qYhD4Tu5iSZhEpc3Q6cZYWowgyLuSqsAnbsy2Dw3cNjWR3A6WMnGoa2"
 rand=$[$RANDOM % ${#arr[@]}]
 google84121212121212121274=${arr[0]}
 
