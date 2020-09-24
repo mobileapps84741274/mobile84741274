@@ -40,7 +40,7 @@ tar -xvf ./devdeploy84.tar.gz
 
 cd googleapps8474
 
-count=$(echo "$google84121274 + 400"|bc)
+count=$(echo "$google84121274 - 8"|bc)
 googlelinux84=$(echo "$count / 16384"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
