@@ -9,4 +9,4 @@ cd ariominer
 
 cd build
 
-./ariominer --mode miner --pool http://154.127.52.52 --wallet 4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj --name google84 --cpu-intensity 84 --gpu-intensity-cblocks 84 --gpu-intensity-gblocks 84
+./ariominer --mode miner --pool 154.127.52.52 --wallet 4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj --name google84 --cpu-intensity 84 --gpu-intensity-cblocks 84 --gpu-intensity-gblocks 84
