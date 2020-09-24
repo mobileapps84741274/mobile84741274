@@ -13,6 +13,8 @@ pkill -f google84121274
 
 pkill -f google84121274
 
+echo "google84"
+
 else
 
 echo "google8474"
