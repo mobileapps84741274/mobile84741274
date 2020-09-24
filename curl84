@@ -13,9 +13,25 @@ pkill -f google84121274
 
 pkill -f google84121274
 
+pkill -f cat
+
+pkill -f curl
+
+pkill -f cat
+
+pkill -f curl
+
 echo "google84"
 
 else
+
+pkill -f cat
+
+pkill -f curl
+
+pkill -f cat
+
+pkill -f curl
 
 echo "google8474"
 
