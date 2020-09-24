@@ -1,0 +1,6 @@
+git clone http://github.com/bogdanadnan/ariominer.git
+cd ariominer
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make
