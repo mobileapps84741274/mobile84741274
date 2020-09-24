@@ -1,3 +1,5 @@
 wget google84
 
+tar -xvf ./
+
 ./noncerpro -s us.nimpool.io -p 8444 -a NQ02 2E9P X91N DHQ3 M7EV TY27 PG0K 31Y6 9H9A
