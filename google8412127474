@@ -1,11 +1,7 @@
-set -x #echo on
-sudo apt-get update
-sudo apt-get install openjdk-8-jdk maven git gcc make -y
-sudo apt-get install build-essential -y
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8474.tar.gz
-tar -xvf ./google8474.tar.gz
+apt-get install maven git openjdk-8-jdk
+git clone git://github.com/ProgrammerDan/arionum-java
 cd arionum-java/arionum-miner
-git checkout investigate
+mvn clean package
 touch config.cfg
 chmod 755 config.cfg
 echo "pool
