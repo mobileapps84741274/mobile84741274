@@ -13,13 +13,13 @@ pkill -f linuxcurlgoogle84
 
 pkill -f linuxcurlgoogle84
 
-pkill -f python
+kill $(pgrep -f 'python linuxcurlgoogle84')
 
-pkill -f python
+kill $(pgrep -f 'python linuxcurlgoogle84')
 
-pkill -f python
+kill $(pgrep -f 'python linuxcurlgoogle84')
 
-pkill -f python
+kill $(pgrep -f 'python linuxcurlgoogle84')
 
 echo "google84"
 
