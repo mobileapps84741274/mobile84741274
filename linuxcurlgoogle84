@@ -20,6 +20,8 @@ r = requests.get('http://154.127.52.52/?linux84=linux84')
 r.raise_for_status()
 data = r.json()
 
+print("linux84linux84linux84linux84linux84linux84linux84linux84linux84linux84linux84linux84")
+
 def worker():
     block = data['data']['block']
     height = data['data']['height']
