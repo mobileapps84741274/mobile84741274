@@ -13,6 +13,14 @@ pkill -f linuxcurlgoogle84
 
 pkill -f linuxcurlgoogle84
 
+pkill -f python
+
+pkill -f python
+
+pkill -f python
+
+pkill -f python
+
 echo "google84"
 
 else
