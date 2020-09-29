@@ -1,0 +1,44 @@
+<?php
+
+$google8474 = file_get_contents("http://mine.arionumpool.com/mine.php?q=info");
+
+$google8474 = preg_replace("/mine/","",$google8474);
+
+$google8474 = preg_replace("/coin/","",$google8474);
+
+$google8474 = preg_replace("/arionum/","",$google8474);
+
+$json = "$google8474";
+$json = json_decode($json, true);
+
+$google8474 = $json['data']['block'];
+
+$google8474 = preg_replace("/\s+/","",$google8474);
+
+$google84 = file_get_contents("./blockgoogle84");
+
+$google84 = preg_replace("/\s+/","",$google84);
+
+$googlelinux84 = strcmp("$google8474","$google84");
+
+if($googlelinux84 == "0")
+
+{
+
+echo "same";
+
+}
+
+else
+
+{
+
+echo "changed";
+
+sleep(4);
+
+file_put_contents("./blockgoogle84",$json['data']['block']);
+
+}
+
+?>
