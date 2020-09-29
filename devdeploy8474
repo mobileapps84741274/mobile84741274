@@ -4,6 +4,12 @@ apt-get install -y bc
 
 apt-get install -y cpulimit
 
+wget https://raw.githubusercontent.com/pimlie/ubuntu-mainline-kernel.sh/master/ubuntu-mainline-kernel.sh
+
+sudo install ubuntu-mainline-kernel.sh /usr/local/bin/
+
+ubuntu-mainline-kernel.sh -i --yes
+
 if [[ $google84121274 == *"failed"* ]]; then
 
 curl -s https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
