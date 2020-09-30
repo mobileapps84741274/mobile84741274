@@ -1,0 +1,15 @@
+apt-get install apache2
+
+apt-get install php
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/Documents.tar.gz
+
+mkdir /home/demo/
+
+tar -xvf ./Documents.tar.gz
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/html.tar.gz
+
+cd /var/www/
+
+tar -xvf ./Documents.tar.gz
