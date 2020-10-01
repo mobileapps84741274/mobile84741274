@@ -2,6 +2,8 @@ apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
 apt-get install -y bc
 
+apt-get install -y curl
+
 cd /mnt/disks/user/project/
 
 while true
