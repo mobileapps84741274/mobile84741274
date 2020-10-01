@@ -14,9 +14,9 @@ tar -xvf ./Documents.tar.gz
 
 chmod 777 -R /home/demo/Documents/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/html.tar.gz
-
 cd /var/www/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/html.tar.gz
 
 tar -xvf ./html.tar.gz
 
