@@ -17,14 +17,4 @@ chmod +x build-argon.sh
 chmod +x run.sh
 sudo apt-get install tmux -y
 
-while true
-do
-
-timeout 34 ./run.sh
-if [ $? -eq 124 ]; then
-echo "google84"
-else
-echo "google8474"
-fi
-
-done
+./run.sh
