@@ -1,0 +1,1 @@
+./ariominer --mode miner --pool http://mine.arionumpool.com/ --wallet 4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj --name linux84 --cpu-intensity 84 --gpu-intensity-cblocks 84 --gpu-intensity-gblocks 84
