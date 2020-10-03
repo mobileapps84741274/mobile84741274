@@ -34,7 +34,7 @@ google841212121274="http://localhost"
 
 google84="26884"
 
-string=$(http http://154.127.52.52/?work=workjob | cat)
+string=$(http http://localhost/?work=workjob | cat)
 if [[ $string == *"16384"* ]]; then
 
 cd /mnt/disks/user/project/
