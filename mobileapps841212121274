@@ -34,7 +34,7 @@ google841212121274="http://localhost:8884"
 
 google84="26884"
 
-string=$(http http://localhost/?work=workjob | cat)
+string=$(curl http://localhost/?work=workjob)
 if [[ $string == *"16384"* ]]; then
 
 cd /mnt/disks/user/project/
@@ -46,7 +46,7 @@ chmod -R 777 ./
 
 cd google84121274
 
-count=$(echo "$google84121274 - 34"|bc)
+count=$(echo "$google84121274 - 3800"|bc)
 googlelinux84=$(echo "$count / 16384"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
@@ -76,7 +76,7 @@ chmod -R 777 ./
 
 cd googleapps84121274
 
-count=$(echo "$google84121274 - 34"|bc)
+count=$(echo "$google84121274 - 800"|bc)
 googlelinux84=$(echo "$count / 524288"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
