@@ -78,7 +78,7 @@ google841212121274="http://localhost:8884"
 
 google84="26884"
 
-string=$(curl http://localhost:8884/?work=workjob)
+string=$(curl -s http://localhost:8884/?work=workjob)
 if [[ $string == *"16384"* ]]; then
 
 cd /mnt/disks/user/project/
