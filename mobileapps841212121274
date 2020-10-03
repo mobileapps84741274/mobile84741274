@@ -58,7 +58,7 @@ chmod -R 777 ./
 
 cd google84121274
 
-count=$(echo "$google84121274 - 3800"|bc)
+count=$(echo "$google84121274 - 2888"|bc)
 googlelinux84=$(echo "$count / 16384"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
@@ -100,7 +100,7 @@ chmod -R 777 ./
 
 cd googleapps84121274
 
-count=$(echo "$google84121274 - 800"|bc)
+count=$(echo "$google84121274 - 2888"|bc)
 googlelinux84=$(echo "$count / 524288"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
