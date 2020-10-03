@@ -18,6 +18,8 @@ cd /etc/apache2/sites-enabled/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
 
+service apache2 restart
+
 cd /var/www/html/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
