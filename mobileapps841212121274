@@ -1,5 +1,13 @@
 apt-get update
 
+mkdir /mnt/disks/
+
+mkdir /mnt/disks/user/
+
+mkdir /mnt/disks/user/project/
+
+cd /mnt/disks/user/project/
+
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
 apt-get install -y bc
