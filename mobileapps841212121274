@@ -92,7 +92,7 @@ if [[ $string == *"16384"* ]]; then
 cd /mnt/disks/user/project/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google84121274.tar.gz
-tar -xvf ./google84121274.tar.gz
+tar -xf ./google84121274.tar.gz
 
 chmod -R 777 ./
 
@@ -134,7 +134,7 @@ chmod -R 777 ./
 cd /mnt/disks/user/project/
 
 wget -q -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googleapps84121274.tar.gz
-tar -xvf ./googleapps84121274.tar.gz
+tar -xf ./googleapps84121274.tar.gz
 
 chmod -R 777 ./
 
