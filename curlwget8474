@@ -7,6 +7,12 @@ if [[ $string8474 == *"changed"* ]]; then
 
 pkill -f linux84
 
+pkill -f linux84
+
+pkill -f linux84
+
+pkill -f linux84
+
 echo "google84"
 
 else
