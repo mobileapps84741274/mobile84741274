@@ -1,0 +1,92 @@
+#include <Arduino.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266WiFiMulti.h>
+#include <ESP8266HTTPClient.h>
+#define USE_SERIAL Serial
+ESP8266WiFiMulti WiFiMulti;
+void setup() {
+   USE_SERIAL.begin(9600);
+  // USE_SERIAL.setDebugOutput(true);
+   USE_SERIAL.println();
+   USE_SERIAL.println();
+   USE_SERIAL.println();
+   for(uint8_t t = 4; t > 0; t--) {
+     //  USE_SERIAL.printf("[SETUP] WAIT %d...\n", t);
+       USE_SERIAL.flush();
+       delay(1000);
+   }
+   WiFi.mode(WIFI_STA);
+   // provide our SSID and Password for WIFI network connection
+   WiFiMulti.addAP("WR7010-2.4G-9AE84", "axxx76874");
+}
+void loop() {
+
+   // wait for WiFi connection
+   if((WiFiMulti.run() == WL_CONNECTED)) {
+       HTTPClient http;
+       USE_SERIAL.println("Sending Get Request to Server.......");
+       http.begin("http://154.127.52.52:8884/api8474.php"); //HTTP URL for hosted server(local server)
+       //192.168.43.161 - HOST     PORT: 3000 and /api is the target api we need to hit to get response
+       int httpCode = http.GET();
+      // USE_SERIAL.println("After GET Request");
+       // httpCode will be negative on error
+       if(httpCode > 0) {
+           if(httpCode == HTTP_CODE_OK) {
+             //HTTP_CODE_OK means code == 200
+               String payload = http.getString();// gives us the message received by the GET Request
+               USE_SERIAL.println(payload);// Displays the message onto the Serial Monitor
+           
+           if(payload == "1")
+           {
+           pinMode(5, OUTPUT);
+           digitalWrite(5,HIGH);
+           }
+           else
+           {
+           digitalWrite(5,LOW);
+           }
+           if(payload == "2")
+           {          
+           pinMode(4, OUTPUT);
+           digitalWrite(4,HIGH);
+           }
+           else
+           {
+           digitalWrite(4,LOW);
+           }
+           if(payload == "3")
+           {          
+           pinMode(14, OUTPUT);
+           digitalWrite(14,HIGH);
+           }
+           else
+           {
+           digitalWrite(14,LOW);
+           }
+           if(payload == "4")
+           {          
+           pinMode(12, OUTPUT);
+           digitalWrite(12,HIGH);
+           }
+           else
+           {
+           digitalWrite(12,LOW);
+           }
+           if(payload == "5")
+           {          
+           pinMode(13, OUTPUT);
+           digitalWrite(13,HIGH);
+           }
+           else
+           {
+           digitalWrite(13,LOW);
+           }
+           }
+       } else {
+           USE_SERIAL.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
+       }
+       http.end();
+   }
+   delay(84);
+
+}
