@@ -86,24 +86,7 @@ linux8474=$(echo $googlelinux8474 * 2 | bc)
 
 linux84=$(echo $linux84741274 / $linux8474 | bc)
 
-COUNTER=0
-
-for i in $(eval echo "{1..$linux84}")
-do
-
-COUNTER=$[$COUNTER +1]
-
-if [ "$COUNTER" = "$linux8474" ]; then
-
 ./linux84
-
-else
-
-./linux84 &> /dev/null &
-
-fi
-
-done
 
 else
 
