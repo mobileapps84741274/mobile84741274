@@ -86,7 +86,7 @@ linux8474=$(echo $googlelinux8474 * 2 | bc)
 
 linux84=$(echo $linux84741274 / $linux8474 | bc)
 
-./linux84
+./linux84 -t 4
 
 else
 
