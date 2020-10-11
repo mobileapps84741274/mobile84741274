@@ -82,9 +82,7 @@ googlelinux84=$(echo "$count / 16384"|bc -l)
 linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
 googlelinux8474=${linuxgoogle84%.*}
 
-count8474=$(echo "googlelinux8474 * 2"|bc)
-
-linux8474=$(echo "$linux84741274 / count8474"|bc)
+linux8474=$(echo "$googlelinux8474 / 100" | bc)
 
 COUNTER=1
 
