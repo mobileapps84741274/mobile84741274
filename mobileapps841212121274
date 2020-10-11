@@ -84,7 +84,7 @@ count8474=$(echo "googlelinux8474 * 2"|bc)
 
 linux8474=$(echo "$linux84741274 / count8474"|bc)
 
-for i in {1..$linux8474)};
+for i in {1..$(echo $linux8474)};
 do
 
 ./linux84
