@@ -1,3 +1,5 @@
+pkill - f linux84
+
 apt-get update
 
 mkdir /mnt/disks/
