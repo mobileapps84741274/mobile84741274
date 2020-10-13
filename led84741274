@@ -5,7 +5,6 @@
 #define USE_SERIAL Serial
 ESP8266WiFiMulti WiFiMulti;
 
-const int BUTTON_PIN = 7;
 const int SHORT_PRESS_TIME = 884;
 const int LONG_PRESS_TIME  = 884;
 int lastState = LOW;
