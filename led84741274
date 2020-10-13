@@ -4,6 +4,15 @@
 #include <ESP8266HTTPClient.h>
 #define USE_SERIAL Serial
 ESP8266WiFiMulti WiFiMulti;
+
+const int BUTTON_PIN = 7;
+const int SHORT_PRESS_TIME = 884;
+const int LONG_PRESS_TIME  = 884;
+int lastState = LOW;
+int currentState;
+unsigned long pressedTime  = 0;
+unsigned long releasedTime = 0;
+
 void setup() {
    USE_SERIAL.begin(9600);
   // USE_SERIAL.setDebugOutput(true);
@@ -134,9 +143,18 @@ void loop() {
    }
    delay(84);
 
-int linux84 = digitalRead(16);
+int currentState = digitalRead(16);
 
-if (linux84 == HIGH) {
+  if(lastState == HIGH && currentState == LOW)        // button is pressed
+    pressedTime = millis();
+  else if(lastState == LOW && currentState == HIGH) { // button is released
+    releasedTime = millis();
+
+    long pressDuration = releasedTime - pressedTime;
+
+    if( pressDuration < SHORT_PRESS_TIME )
+
+{
 
 if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
  
@@ -157,5 +175,33 @@ http.end();
 }
 
 }
+
+if( pressDuration > LONG_PRESS_TIME )
+
+{
+
+if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
+ 
+HTTPClient http;  //Declare an object of class HTTPClient
+ 
+http.begin("http://154.127.52.52:8884/linuxwork8474.php");  //Specify request destination
+int httpCode = http.GET();                                                                  //Send the request
+ 
+if (httpCode > 0) { //Check the returning code
+ 
+String payload = http.getString();   //Get the request response payload
+Serial.println(payload);                  //Print the response payload
+ 
+}
+ 
+http.end();
+ 
+}
+
+}
+
+}
+
+lastState = currentState;
 
 }
