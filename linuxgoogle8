@@ -6,11 +6,15 @@ apt-get install -y php7.4-gmp
 
 apt-get install -y xdotool
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/Documents.tar.gz
-
 mkdir /home/demo/
 
-tar -xvf ./Documents.tar.gz
+mkdir /home/demo/Documents/
+
+cd /home/demo/Documents/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/paperspace84.tar.gz
+
+tar -xvf ./paperspace84.tar.gz
 
 chmod 777 -R /home/demo/Documents/
 
