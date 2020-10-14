@@ -5,15 +5,15 @@
 #define USE_SERIAL Serial
 ESP8266WiFiMulti WiFiMulti;
 
-const int SHORT_PRESS_TIME = 884;
-const int LONG_PRESS_TIME  = 884;
+const int SHORT_PRESS_TIME = 1884;
+const int LONG_PRESS_TIME  = 1884;
 int lastState = LOW;
 int currentState;
 unsigned long pressedTime  = 0;
 unsigned long releasedTime = 0;
 
 void setup() {
-   USE_SERIAL.begin(9600);
+   USE_SERIAL.begin(115200);
   // USE_SERIAL.setDebugOutput(true);
    USE_SERIAL.println();
    USE_SERIAL.println();
@@ -21,8 +21,10 @@ void setup() {
    for(uint8_t t = 4; t > 0; t--) {
      //  USE_SERIAL.printf("[SETUP] WAIT %d...\n", t);
        USE_SERIAL.flush();
-       delay(1000);
+       delay(884);
    }
+
+pinMode(16, INPUT);
 
 Serial.println("The network you are looking for is available");
 WiFi.mode(WIFI_STA);
