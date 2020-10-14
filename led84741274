@@ -23,12 +23,10 @@ const char* password8474 = "axxx76874";
 const char* ssid844     = "LIAM RULES";
 const char* password844 = "axxx76874";
 
-const int SHORT_PRESS_TIME = 4888;
-const int LONG_PRESS_TIME  = 4888;
-int lastState = LOW;
-int currentState;
-unsigned long pressedTime  = 0;
-unsigned long releasedTime = 0;
+unsigned long buttonPressedAt = 0;
+const int BUTTON = 16;
+bool buttonReleased = false;
+byte buttonPrevState = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -57,6 +55,8 @@ WiFi.begin(ssid, password);
   Serial.println(WiFi.localIP());
 
 pinMode(16, INPUT);
+
+pinMode(A0, INPUT);
 
 }
 
@@ -136,18 +136,12 @@ void loop() {
            pinMode(13, OUTPUT);
            digitalWrite(13,HIGH);
            }
+
 }
 
-int currentState = digitalRead(16);
+int linux8474 = analogRead(16);
 
-  if(lastState == HIGH && currentState == LOW)        // button is pressed
-    pressedTime = millis();
-  else if(lastState == LOW && currentState == HIGH) { // button is released
-    releasedTime = millis();
-
-    long pressDuration = releasedTime - pressedTime;
-
-if( pressDuration < SHORT_PRESS_TIME )
+if(linux8474 > 884)
 
 {
 
@@ -161,13 +155,15 @@ http.GET();
 delay(884);
 
 String payload = http.getString();   //Get the request response payload
-Serial.println(payload);                  //Print the response payload
+Serial.println(payload);
 
 }
 
 }
 
-if( pressDuration > LONG_PRESS_TIME )
+int linux84 = analogRead(A0);
+
+if(linux84 > 884)
 
 {
 
@@ -181,16 +177,10 @@ http.GET();
 delay(884);
                                                                  //Send the request
 String payload = http.getString();   //Get the request response payload
-Serial.println(payload);                  //Print the response payload
+Serial.println(payload);
 
 }
 
 }
-
-}
-
-lastState = currentState;
-
-delay(84);
 
 }
