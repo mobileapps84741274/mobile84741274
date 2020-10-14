@@ -7,12 +7,21 @@
 #include <ESP8266HTTPClient.h>
 
 #ifndef STASSID
-#define STASSID "WR7010-2.4G-9AE84"
-#define STAPSK  "axxx76874"
+#define STASSID "AndroidAP"
+#define STAPSK  "linux8474"
 #endif
 
-const char* ssid     = STASSID;
-const char* password = STAPSK;
+const char* ssid     = "WR7010-2.4G-9AE84";
+const char* password = "axxx76874";
+
+const char* ssid84     = "AndroidAP";
+const char* password84 = "linux8474";
+
+const char* ssid8474     = "WR7010-2.4G-9AE";
+const char* password8474 = "axxx76874";
+
+const char* ssid844     = "LIAM RULES";
+const char* password844 = "axxx76874";
 
 const int SHORT_PRESS_TIME = 4888;
 const int LONG_PRESS_TIME  = 4888;
@@ -35,11 +44,11 @@ void setup() {
      would try to act as both a client and an access-point and could cause
      network-issues with your other WiFi-devices on your WiFi-network. */
   WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
+
+WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.print(".");
   }
 
   Serial.println("");
@@ -57,14 +66,10 @@ void loop() {
    if (WiFi.status() == WL_CONNECTED) {
        HTTPClient http;
        http.begin("http://154.127.52.52:8884/api8474.php"); //HTTP URL for hosted server(local server)
+       http.GET();
+       delay(884);
        //192.168.43.161 - HOST     PORT: 3000 and /api is the target api we need to hit to get response
-       int httpCode = http.GET();
-      // USE_SERIAL.println("After GET Request");
-       // httpCode will be negative on error
-       if(httpCode > 0) {
-           if(httpCode == HTTP_CODE_OK) {
-             //HTTP_CODE_OK means code == 200
-               String payload = http.getString();// gives us the message received by the GET Request
+       String payload = http.getString();// gives us the message received by the GET Request
 
            if(payload == "1")
            {
@@ -131,10 +136,7 @@ void loop() {
            pinMode(13, OUTPUT);
            digitalWrite(13,HIGH);
            }
-           }
-       } else {
-       }
-   }
+}
 
 int currentState = digitalRead(16);
 
@@ -145,7 +147,7 @@ int currentState = digitalRead(16);
 
     long pressDuration = releasedTime - pressedTime;
 
-    if( pressDuration < SHORT_PRESS_TIME )
+if( pressDuration < SHORT_PRESS_TIME )
 
 {
 
@@ -154,14 +156,12 @@ if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
 HTTPClient http;  //Declare an object of class HTTPClient
  
 http.begin("http://154.127.52.52:8884/linuxwork84.php");  //Specify request destination
-int httpCode = http.GET();                                                                  //Send the request
- 
-if (httpCode > 0) { //Check the returning code
- 
+
+http.GET();
+delay(884);
+
 String payload = http.getString();   //Get the request response payload
 Serial.println(payload);                  //Print the response payload
- 
-}
 
 }
 
@@ -176,14 +176,12 @@ if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
 HTTPClient http;  //Declare an object of class HTTPClient
  
 http.begin("http://154.127.52.52:8884/linuxwork8474.php");  //Specify request destination
-int httpCode = http.GET();                                                                  //Send the request
- 
-if (httpCode > 0) { //Check the returning code
- 
+
+http.GET();
+delay(884);
+                                                                 //Send the request
 String payload = http.getString();   //Get the request response payload
 Serial.println(payload);                  //Print the response payload
- 
-}
 
 }
 
@@ -192,5 +190,7 @@ Serial.println(payload);                  //Print the response payload
 }
 
 lastState = currentState;
+
+delay(84);
 
 }
