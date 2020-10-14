@@ -5,8 +5,8 @@
 #define USE_SERIAL Serial
 ESP8266WiFiMulti WiFiMulti;
 
-const int SHORT_PRESS_TIME = 1884;
-const int LONG_PRESS_TIME  = 1884;
+const int SHORT_PRESS_TIME = 4888;
+const int LONG_PRESS_TIME  = 4888;
 int lastState = LOW;
 int currentState;
 unsigned long pressedTime  = 0;
@@ -29,32 +29,10 @@ pinMode(16, INPUT);
 Serial.println("The network you are looking for is available");
 WiFi.mode(WIFI_STA);
 
+WiFiMulti.addAP("WR7010-2.4G-9AE84", "axxx76874");
+
 }
 void loop() {
-      if (WiFi.status() == WL_CONNECTED)
-      {
-      }
-      else
-      {
-      // provide our SSID and Password for WIFI network connection
-      WiFiMulti.addAP("WR7010-2.4G-9AE84", "axxx76874");
-      if (WiFi.status() == WL_CONNECTED)
-      {
-      }
-      else
-      {
-      // provide our SSID and Password for WIFI network connection
-      WiFiMulti.addAP("WR7010-2.4G-9AE", "axxx76874");
-      if (WiFi.status() == WL_CONNECTED)
-      {
-      }
-      else
-      {
-      // provide our SSID and Password for WIFI network connection
-      WiFiMulti.addAP("WR7010-2.4G-9AE", "axxx76874");
-      }
-      }
-      }
 
    // wait for WiFi connection
    if (WiFi.status() == WL_CONNECTED) {
@@ -142,7 +120,6 @@ void loop() {
        }
        http.end();
    }
-   delay(84);
 
 int currentState = digitalRead(16);
 
