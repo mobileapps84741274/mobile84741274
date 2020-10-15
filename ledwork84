@@ -90,7 +90,7 @@ pinMode(16, OUTPUT);
 digitalWrite(16,HIGH);
 
 if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
- 
+
 HTTPClient http8474;  //Declare an object of class HTTPClient
  
 http8474.begin("http://154.127.52.52:8884/linuxwork8474.php");  //Specify request destination
@@ -122,7 +122,68 @@ pinMode(5, OUTPUT);
 digitalWrite(5,HIGH);
 
 if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
+
+HTTPClient http;  //Declare an object of class HTTPClient
  
+http.begin("http://154.127.52.52:8884/api8474.php");  //Specify request destination
+
+http.GET();
+delay(884);
+                                                                 //Send the request
+String payload84 = http.getString();   //Get the request response payload
+Serial.println(payload84);
+
+if((payload84.toInt() >=0) && (payload84.toInt() <= 8))
+
+{
+
+pinMode(13,OUTPUT);
+digitalWrite(13,HIGH);
+
+pinMode(12,OUTPUT);
+digitalWrite(12,LOW);
+
+pinMode(4,OUTPUT);
+digitalWrite(4,LOW);
+
+delay(884);
+
+}
+
+if((payload84.toInt() >=9) && (payload84.toInt() <= 17))
+
+{
+
+pinMode(13,OUTPUT);
+digitalWrite(13,HIGH);
+
+pinMode(12,OUTPUT);
+digitalWrite(12,HIGH);
+
+pinMode(4,OUTPUT);
+digitalWrite(4,LOW);
+
+delay(884);
+
+}
+
+if((payload84.toInt() >=18) && (payload84.toInt() <= 24))
+
+{
+
+pinMode(13,OUTPUT);
+digitalWrite(13,HIGH);
+
+pinMode(12,OUTPUT);
+digitalWrite(12,HIGH);
+
+pinMode(4,OUTPUT);
+digitalWrite(4,HIGH);
+
+delay(884);
+
+}
+
 HTTPClient http84;  //Declare an object of class HTTPClient
  
 http84.begin("http://154.127.52.52:8884/linuxwork84.php");  //Specify request destination
@@ -135,6 +196,15 @@ Serial.println(payload);
 
 pinMode(5, OUTPUT);
 digitalWrite(5,LOW);
+
+pinMode(13,OUTPUT);
+digitalWrite(13,LOW);
+
+pinMode(12,OUTPUT);
+digitalWrite(12,LOW);
+
+pinMode(4,OUTPUT);
+digitalWrite(4,LOW);
 
 delay(84);
 pinMode(A0, OUTPUT);
