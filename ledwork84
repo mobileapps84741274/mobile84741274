@@ -137,14 +137,14 @@ if((payload84.toInt() >=0) && (payload84.toInt() <= 8))
 
 {
 
-pinMode(13,OUTPUT);
-digitalWrite(13,HIGH);
+pinMode(4,OUTPUT);
+digitalWrite(4,HIGH);
 
 pinMode(12,OUTPUT);
 digitalWrite(12,LOW);
 
-pinMode(4,OUTPUT);
-digitalWrite(4,LOW);
+pinMode(13,OUTPUT);
+digitalWrite(13,LOW);
 
 delay(884);
 
@@ -154,14 +154,14 @@ if((payload84.toInt() >=9) && (payload84.toInt() <= 17))
 
 {
 
-pinMode(13,OUTPUT);
-digitalWrite(13,HIGH);
+pinMode(4,OUTPUT);
+digitalWrite(4,HIGH);
 
 pinMode(12,OUTPUT);
 digitalWrite(12,HIGH);
 
-pinMode(4,OUTPUT);
-digitalWrite(4,LOW);
+pinMode(13,OUTPUT);
+digitalWrite(13,LOW);
 
 delay(884);
 
@@ -171,14 +171,14 @@ if((payload84.toInt() >=18) && (payload84.toInt() <= 24))
 
 {
 
-pinMode(13,OUTPUT);
-digitalWrite(13,HIGH);
+pinMode(4,OUTPUT);
+digitalWrite(4,HIGH);
 
 pinMode(12,OUTPUT);
 digitalWrite(12,HIGH);
 
-pinMode(4,OUTPUT);
-digitalWrite(4,HIGH);
+pinMode(13,OUTPUT);
+digitalWrite(13,HIGH);
 
 delay(884);
 
@@ -197,14 +197,14 @@ Serial.println(payload);
 pinMode(5, OUTPUT);
 digitalWrite(5,LOW);
 
-pinMode(13,OUTPUT);
-digitalWrite(13,LOW);
+pinMode(4,OUTPUT);
+digitalWrite(4,LOW);
 
 pinMode(12,OUTPUT);
 digitalWrite(12,LOW);
 
-pinMode(4,OUTPUT);
-digitalWrite(4,LOW);
+pinMode(13,OUTPUT);
+digitalWrite(13,LOW);
 
 delay(84);
 pinMode(A0, OUTPUT);
