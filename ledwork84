@@ -1,0 +1,147 @@
+/*
+    This sketch establishes a TCP connection to a "quote of the day" service.
+    It sends a "hello" message, and then prints received data.
+*/
+
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+
+#ifndef STASSID
+#define STASSID "AndroidAP"
+#define STAPSK  "linux8474"
+#endif
+
+const char* ssid     = "WR7010-2.4G-9AE84";
+const char* password = "axxx76874";
+
+const char* ssid84     = "linux8474";
+const char* password84 = "linux8474";
+
+const char* ssid8474     = "WR7010-2.4G-9AE";
+const char* password8474 = "axxx76874";
+
+const char* ssid844     = "LIAM RULES";
+const char* password844 = "axxx76874";
+
+const int buttonPin = 14;    // the number of the pushbutton pin
+
+// Variables will change:
+         // the current state of the output pin
+int buttonState;             // the current reading from the input pin
+int lastButtonState = LOW;   // the previous reading from the input pin
+
+// the following variables are long's because the time, measured in miliseconds,
+// will quickly become a bigger number than can be stored in an int.
+long lastDebounceTime = 0;  // the last time the output pin was toggled
+long debounceDelay = 50;
+
+void setup() {
+  
+  Serial.begin(115200);
+
+  // We start by connecting to a WiFi network
+
+  Serial.println();
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+
+pinMode(14, OUTPUT);
+digitalWrite(14, LOW);
+pinMode(14, INPUT);
+
+pinMode(A0, OUTPUT);
+digitalWrite(A0, LOW);
+pinMode(A0, INPUT);
+
+  /* Explicitly set the ESP8266 to be a WiFi-client, otherwise, it by default,
+     would try to act as both a client and an access-point and could cause
+     network-issues with your other WiFi-devices on your WiFi-network. */
+
+}
+
+void loop() {
+
+WiFi.mode(WIFI_STA);
+
+while (WiFi.status() != WL_CONNECTED) {
+delay(884);
+}
+
+if (WiFi.status() == WL_CONNECTED) {
+
+}
+
+else
+
+{
+
+WiFi.begin(ssid84, password84);
+
+}
+
+  // read the state of the pushbutton value:
+buttonState = digitalRead(14);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+if (buttonState == HIGH) {
+
+pinMode(16, OUTPUT);
+digitalWrite(16,HIGH);
+
+if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
+ 
+HTTPClient http8474;  //Declare an object of class HTTPClient
+ 
+http8474.begin("http://154.127.52.52:8884/linuxwork8474.php");  //Specify request destination
+
+http8474.GET();
+delay(884);
+                                                                 //Send the request
+String payload = http8474.getString();   //Get the request response payload
+Serial.println(payload);
+
+pinMode(16, OUTPUT);
+digitalWrite(16,LOW);
+
+delay(84);
+pinMode(14, OUTPUT);
+digitalWrite(14, LOW);
+
+}
+
+}
+
+  // read the state of the pushbutton value:
+buttonState = analogRead(A0);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+if (buttonState > 884) {
+
+pinMode(5, OUTPUT);
+digitalWrite(5,HIGH);
+
+if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
+ 
+HTTPClient http84;  //Declare an object of class HTTPClient
+ 
+http84.begin("http://154.127.52.52:8884/linuxwork84.php");  //Specify request destination
+
+http84.GET();
+delay(884);
+                                                                 //Send the request
+String payload = http84.getString();   //Get the request response payload
+Serial.println(payload);
+
+pinMode(5, OUTPUT);
+digitalWrite(5,LOW);
+
+delay(84);
+pinMode(A0, OUTPUT);
+digitalWrite(A0, LOW);
+
+}
+
+}
+
+}
