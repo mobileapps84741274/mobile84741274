@@ -14,7 +14,7 @@
 const char* ssid     = "WR7010-2.4G-9AE84";
 const char* password = "axxx76874";
 
-const char* ssid84     = "AndroidAP";
+const char* ssid84     = "linux8474";
 const char* password84 = "linux8474";
 
 const char* ssid8474     = "WR7010-2.4G-9AE";
@@ -57,31 +57,70 @@ pinMode(A0, INPUT);
   /* Explicitly set the ESP8266 to be a WiFi-client, otherwise, it by default,
      would try to act as both a client and an access-point and could cause
      network-issues with your other WiFi-devices on your WiFi-network. */
-  WiFi.mode(WIFI_STA);
-
-WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-  }
-
-  Serial.println("");
-  Serial.println("WiFi connected");
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP());
 
 }
 
 void loop() {
 
-   // wait for WiFi connection
-   if (WiFi.status() == WL_CONNECTED) {
-       HTTPClient http;
-       http.begin("http://154.127.52.52:8884/api8474.php"); //HTTP URL for hosted server(local server)
-       http.GET();
-       delay(884);
-       //192.168.43.161 - HOST     PORT: 3000 and /api is the target api we need to hit to get response
-       String payload = http.getString();// gives us the message received by the GET Request
+WiFi.mode(WIFI_STA);
+
+while (WiFi.status() != WL_CONNECTED) {
+delay(884);
+}
+
+if (WiFi.status() == WL_CONNECTED) {
+
+}
+
+else
+
+{
+
+WiFi.begin(ssid84, password84);
+
+}
+
+if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
+
+HTTPClient http;  //Declare an object of class HTTPClient
+ 
+http.begin("http://154.127.52.52:8884/api8474.php");  //Specify request destination
+
+http.GET();
+delay(884);
+                                                                 //Send the request
+String payload84 = http.getString();   //Get the request response payload
+Serial.println(payload84);
+
+if((payload84 == "ledon84"))
+
+{
+
+pinMode(13,OUTPUT);
+digitalWrite(13,HIGH);
+
+delay(884);
+
+pinMode(4,OUTPUT);
+digitalWrite(4,LOW);
+
+delay(884);
+
+}
+
+else
+
+{
+
+pinMode(4,OUTPUT);
+digitalWrite(4,HIGH);
+
+delay(884);
+
+pinMode(13,OUTPUT);
+digitalWrite(13,LOW);
+
+delay(884);
 
 }
 
@@ -91,11 +130,11 @@ buttonState = digitalRead(14);
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
 if (buttonState == HIGH) {
 
-pinMode(12, OUTPUT);
-digitalWrite(12,HIGH);
+pinMode(16, OUTPUT);
+digitalWrite(16,HIGH);
 
 if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
- 
+
 HTTPClient http8474;  //Declare an object of class HTTPClient
  
 http8474.begin("http://154.127.52.52:8884/linuxwork8474.php");  //Specify request destination
@@ -106,8 +145,8 @@ delay(884);
 String payload = http8474.getString();   //Get the request response payload
 Serial.println(payload);
 
-pinMode(12, OUTPUT);
-digitalWrite(12,LOW);
+pinMode(16, OUTPUT);
+digitalWrite(16,LOW);
 
 delay(84);
 pinMode(14, OUTPUT);
@@ -126,8 +165,6 @@ if (buttonState > 884) {
 pinMode(5, OUTPUT);
 digitalWrite(5,HIGH);
 
-if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
- 
 HTTPClient http84;  //Declare an object of class HTTPClient
  
 http84.begin("http://154.127.52.52:8884/linuxwork84.php");  //Specify request destination
