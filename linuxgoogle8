@@ -4,7 +4,23 @@ apt-get install -y php7.4
 
 apt-get install -y php7.4-gmp
 
-apt-get install -y xdotool
+apt-get -y install make
+
+apt-get -y install cmake
+
+apt-get -y install libx11-dev
+
+apt-get -y install libxtst-dev
+
+apt-get -y install libxinerama1 libxinerama-dev
+
+apt-get install git
+
+git clone https://github.com/jordansissel/xdotool
+
+cd ./xdotool/
+
+git checkout edbbb7a8f664ceacbb2cffbe8ee4f5a26b5addc8
 
 mkdir /home/demo/
 
