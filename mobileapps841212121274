@@ -1,8 +1,6 @@
 pkill -f linux84
 
-cd /etc/apt/
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/sources.list
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
 apt-get update
 
