@@ -28,6 +28,8 @@ apt-get install -y software-properties-common
 
 add-apt-repository ppa:ondrej/php -y
 
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
 apt-get install -y php5.6
 
 cd /etc/apache2/
