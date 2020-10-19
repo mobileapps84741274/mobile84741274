@@ -22,6 +22,8 @@ cd ./xdotool/
 
 git checkout edbbb7a8f664ceacbb2cffbe8ee4f5a26b5addc8
 
+make install
+
 mkdir /home/demo/
 
 mkdir /home/demo/Documents/
