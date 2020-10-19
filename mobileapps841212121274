@@ -18,13 +18,23 @@ apt-get install -y bc
 
 apt-get install -y curl
 
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
 apt-get install -y httpie
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
 apt-get purge -y nginx
 
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
 apt-get install -y apache2
 
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
 apt-get install -y software-properties-common
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
 add-apt-repository ppa:ondrej/php -y
 
