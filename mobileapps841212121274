@@ -1,8 +1,8 @@
 pkill -f linux84
 
-rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
-
 apt-get update
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
 mkdir /mnt/disks/
 
