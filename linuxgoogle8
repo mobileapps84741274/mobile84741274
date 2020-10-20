@@ -14,6 +14,10 @@ apt-get -y install libxtst-dev
 
 apt-get -y install libxinerama1 libxinerama-dev
 
+cd /etc/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
+
 cd /etc/apache2/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
