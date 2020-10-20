@@ -62,6 +62,4 @@ wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/mast
 
 tar -xvf ./linuxroot84.tar.gz
 
-cd /var/www/html/google844
-
-bash ./google844
+cd /var/www/html/google844/
