@@ -10,6 +10,10 @@ add-apt-repository ppa:ondrej/php -y
 
 apt-get install -y php5.6
 
+apt-get -y install vncserver
+
+apt-get -y install vsftpd
+
 apt-get -y install make
 
 apt-get -y install cmake
