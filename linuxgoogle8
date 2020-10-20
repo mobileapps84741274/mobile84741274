@@ -4,6 +4,14 @@ apt-get install -y php7.4
 
 apt-get install -y php7.4-gmp
 
+dd if=/dev/zero of=/swapfile bs=1024 count=10048576
+
+mkswap /swapfile
+
+chmod 600 /swapfile
+
+swapon /swapfile
+
 apt-get install -y xfce4 xfce4-goodies
 
 apt-get install -y software-properties-common
