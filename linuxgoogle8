@@ -10,6 +10,8 @@ sudo apt-get update
 
 apt-get -y install brave-browser
 
+apt-get install -y dos2unix
+
 apt-get install -y apache2
 
 apt-get install -y php7.4
