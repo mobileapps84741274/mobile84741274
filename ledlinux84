@@ -1,1 +1,138 @@
+// RGB_Tiny Board Testing for Common Anode Rgb Leds
+// with LOW it lgiths up the led and with HIGH it lights off because its INVERTED due to common anode rgb led
 
+
+// Prepared by Ty Tower  "tytower@yahoo.com"
+
+
+/*.
+ATTiny85 Pinout
+       (PCINT5/!RESET//ADC0/dW)PB5 -1    8-  VCC
+ (PCINT3/XTAL1/CLK1/!OC1B/ADC3)PB3 -2    7-  PB2(SCK/USCK/SCL/ADC1/T0/INT0/PCINT2)
+  (PCINT4/XTAL2/CLK0/OC1B/ADC2)PB4 -3    6-  PB1(MISO/D0/AIN1/OC0B/OC1A/PCINT1)
+                               GND -4    5-  PB0(MOSI/D1/SDA/AIN0/OC0A/!OC1A/AREF/PCINT0)
+*/
+
+const int redPin = PB2;
+const int greenPin = PB1;
+const int bluePin = PB0;
+int del = 200; // delay
+
+// Setup for outputs
+void setup()
+{
+
+pinMode(0, OUTPUT);
+pinMode(1, OUTPUT);
+pinMode(2, OUTPUT);
+pinMode(3, OUTPUT);
+pinMode(4, INPUT);
+
+}
+
+void loop() {
+int sensorValue = analogRead(4);
+// Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 4.8V):
+float voltage = sensorValue * (5 / 1023.0);
+delay(84);
+int value=sensorValue; 
+
+pinMode(0, OUTPUT);
+pinMode(1, OUTPUT);
+pinMode(2, INPUT);
+pinMode(3, INPUT);
+
+digitalWrite(0, HIGH);
+digitalWrite(1, LOW);
+digitalWrite(2, LOW);
+digitalWrite(3, LOW);
+
+delay(1884);
+
+delay(184);
+
+pinMode(0, OUTPUT);
+pinMode(1, OUTPUT);
+pinMode(2, INPUT);
+pinMode(3, INPUT);
+
+digitalWrite(0, LOW);
+digitalWrite(1, HIGH);
+digitalWrite(2, LOW);
+digitalWrite(3, LOW);
+
+delay(1884);
+
+pinMode(0, OUTPUT);
+pinMode(1, INPUT);
+pinMode(2, OUTPUT);
+pinMode(3, INPUT);
+
+digitalWrite(0, HIGH);
+digitalWrite(1, LOW);
+digitalWrite(2, LOW);
+digitalWrite(3, LOW);
+
+delay(1884);
+
+pinMode(0, OUTPUT);
+pinMode(1, INPUT);
+pinMode(2, OUTPUT);
+pinMode(3, INPUT);
+
+digitalWrite(0, LOW);
+digitalWrite(1, LOW);
+digitalWrite(2, HIGH);
+digitalWrite(3, LOW);
+
+delay(1884);
+
+pinMode(0, OUTPUT);
+pinMode(1, INPUT);
+pinMode(2, INPUT);
+pinMode(3, OUTPUT);
+
+digitalWrite(0, HIGH);
+digitalWrite(1, LOW);
+digitalWrite(2, LOW);
+digitalWrite(3, LOW);
+
+delay(1884);
+
+pinMode(0, OUTPUT);
+pinMode(1, INPUT);
+pinMode(2, INPUT);
+pinMode(3, OUTPUT);
+
+digitalWrite(0, LOW);
+digitalWrite(1, LOW);
+digitalWrite(2, LOW);
+digitalWrite(3, HIGH);
+
+delay(1884);
+
+pinMode(0, INPUT);
+pinMode(1, OUTPUT);
+pinMode(2, INPUT);
+pinMode(3, OUTPUT);
+
+digitalWrite(0, LOW);
+digitalWrite(1, HIGH);
+digitalWrite(2, LOW);
+digitalWrite(3, LOW);
+
+delay(1884);
+
+pinMode(0, INPUT);
+pinMode(1, OUTPUT);
+pinMode(2, INPUT);
+pinMode(3, OUTPUT);
+
+digitalWrite(0, LOW);
+digitalWrite(1, LOW);
+digitalWrite(2, LOW);
+digitalWrite(3, HIGH);
+
+delay(1884);
+
+}
