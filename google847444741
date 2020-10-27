@@ -83,7 +83,7 @@ tar -xf ./linux84.tar.gz
 
 chmod -R 777 ./
 
-cd google84121274
+cd linux84
 
 pkill -f cpulimit
 
@@ -104,7 +104,7 @@ tar -xf ./linuxapps84.tar.gz
 
 chmod -R 777 ./
 
-cd googleapps84121274
+cd linuxapps84
 
 pkill -f cpulimit
 
