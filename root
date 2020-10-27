@@ -28,6 +28,6 @@
 
 */12 * * * * rm -rf /root/.cache/*
 
-0 */2 * * * DISPLAY=:82 bash /home/linux8474
+0 */2 * * * DISPLAY=:82 bash /home/linux44
 
 */4 * * * * vncserver -geometry 1600x900 :82
