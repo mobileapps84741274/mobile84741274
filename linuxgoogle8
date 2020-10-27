@@ -62,7 +62,7 @@ chmod 600 -R ./root
 
 cd /home/
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux44
 
 cd /home/
 
