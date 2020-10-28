@@ -56,9 +56,7 @@ service apache2 restart
 
 cd /var/www/html/
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index84741274.php
-
-mv ./index84741274.php ./index.php
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googlelinux84.php
 
