@@ -71,7 +71,7 @@ tar -xf ./linux84741274.tar.gz
 
 chmod -R 777 ./
 
-cd linux84741274.tar.gz
+cd linux84741274
 
 pkill -f cpulimit
 
