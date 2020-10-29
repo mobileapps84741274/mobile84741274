@@ -1,0 +1,37 @@
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+pinMode(0,OUTPUT);
+
+pinMode(1,OUTPUT);
+
+pinMode(2,OUTPUT);
+
+int linux84 = random(8884,12884);
+
+int linux8474 = random(8884,12884);
+
+digitalWrite(2,HIGH);
+digitalWrite(0,LOW);
+digitalWrite(1,LOW);
+
+delay(linux84);
+
+digitalWrite(1,HIGH);
+digitalWrite(2,LOW);
+digitalWrite(0,LOW);
+
+delay(4448);
+
+digitalWrite(0,HIGH);
+digitalWrite(1,LOW);
+digitalWrite(2,LOW);
+
+delay(linux8474);
+
+}
