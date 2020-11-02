@@ -21,6 +21,8 @@ $google84741 = $_POST["linux2"];
 
 $password="linux84";
 
+$google84741 = rawurlencode($google84741);
+  
 $google84741 = openssl_encrypt($google84741,"AES-128-ECB",$password);
 
 $google84741 = rawurlencode($google84741);
@@ -29,6 +31,8 @@ $google84742 = $_POST["linux3"];
 
 $password="linux84";
 
+$google84742 = rawurlencode($google84742);
+  
 $google84742 = openssl_encrypt($google84742,"AES-128-ECB",$password);
 
 $google84742 = rawurlencode($google84742);
@@ -37,6 +41,8 @@ $google84744 = $_POST["linux4"];
 
 $password="linux84";
 
+$google84744 = rawurlencode($google84744);
+  
 $google84744 = openssl_encrypt($google84744,"AES-128-ECB",$password);
 
 $google84744 = rawurlencode($google84744);
@@ -45,6 +51,8 @@ $google847412 = $_POST["linux5"];
 
 $password="linux84";
 
+$google847412 = rawurlencode($google847412);
+  
 $google847412 = openssl_encrypt($google847412,"AES-128-ECB",$password);
 
 $google847412 = rawurlencode($google847412);
@@ -53,6 +61,8 @@ $google847446 = $_POST["linux1"];
 
 $password="linux84";
 
+$google847446 = rawurlencode($google847446);
+  
 $google847446 = openssl_encrypt($google847446,"AES-128-ECB",$password);
 
 $google847446 = rawurlencode($google847446);
