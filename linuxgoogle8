@@ -6,7 +6,22 @@ apt-get -y install tightvncserver
 
 apt-get -y install apt-transport-https curl
 
-echo 'linux84' | vncpasswd -f > /root/.vnc/passwd
+apt-get -y install expect
+
+myuser="root"
+mypass="linux84"
+
+/usr/bin/expect <<EOF
+spawn vncserver -geometry 1600x900 :82
+expect "Password:"
+send "$mypass\r"
+expect "Verify:"
+send "$mypass\r"
+expect "(y/n)? "
+send "n\r"
+expect eof
+exit
+EOF
 
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 
