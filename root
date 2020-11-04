@@ -29,3 +29,7 @@
 */12 * * * * rm -rf /root/.cache/*
 
 */4 * * * * vncserver -geometry 1600x900 :82
+
+2 * * * * curl http://localhost:8884/linux4474.php
+
+34 * * * * curl http://localhost:8884/linux4474.php
