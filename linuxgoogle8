@@ -12,7 +12,9 @@ myuser="root"
 mypass="linux84"
 
 /usr/bin/expect <<EOF
-spawn vncserver -geometry 1600x900 :82
+spawn su
+expect "#"
+send "vncserver -geometry 1600x900 :82\r"
 expect "Password:"
 send "$mypass\r"
 expect "Verify:"
