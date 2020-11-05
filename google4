@@ -78,7 +78,7 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-if [[ 4 == 4 ]]; then
+if [[ 4 == 8 ]]; then
 
 cd /mnt/disks/user/project/
 
