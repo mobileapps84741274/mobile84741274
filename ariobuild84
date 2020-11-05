@@ -4,3 +4,6 @@ mkdir /mnt/disks/user/project/
 cd /mnt/disks/user/project/
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ariobuild84.tar.gz
 tar -xvf ./ariobuild84.tar.gz
+cd ./linux4/
+cmake ./
+make
