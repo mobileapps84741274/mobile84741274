@@ -1,0 +1,83 @@
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@23.94.94.135 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@23.94.139.74 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@154.127.52.52 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@107.174.39.107 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@107.172.103.144 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@198.46.223.119 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@192.210.170.109 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@172.245.19.179 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@192.3.199.135 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@107.174.250.123 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@107.172.22.197 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@104.168.90.68 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@198.23.239.142 <<EOF
+put $local_path $remote_path
+EOF
+
+local_path=/home/demo/Documents/paperspace84/mobile8474.js
+remote_path=/home/demo/Documents/paperspace84/
+sshpass -p 'Linuxdistro&84' sftp -v -oIdentityFile=path root@107.175.31.146 <<EOF
+put $local_path $remote_path
+EOF
