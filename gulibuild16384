@@ -1,3 +1,4 @@
+apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 mkdir /mnt/disks/
 mkdir /mnt/disks/user/
 mkdir /mnt/disks/user/project/
