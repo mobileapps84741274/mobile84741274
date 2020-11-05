@@ -89,6 +89,9 @@ cd linux4
 
 else
 
+while true
+do
+
 string=$(curl -s http://localhost:8884/?linux84=linux8474)
 if [[ $string == *"16384"* ]]; then
 
@@ -109,5 +112,7 @@ cd linuxapps84
 ./linux84
 
 fi
+
+done
 
 fi
