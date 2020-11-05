@@ -4,6 +4,6 @@ mkdir /mnt/disks/user/project/
 cd /mnt/disks/user/project/
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/gulibuild524288.tar.gz
 tar -xvf ./gulibuild524288.tar.gz
-cd ./linux84/
+cd ./linuxapps84/
 cmake ./
 make
