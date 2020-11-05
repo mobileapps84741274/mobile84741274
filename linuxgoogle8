@@ -8,23 +8,6 @@ apt-get -y install apt-transport-https curl
 
 apt-get -y install expect
 
-myuser="root"
-mypass="linux84"
-
-/usr/bin/expect <<EOF
-spawn su
-expect "#"
-send "vncserver -geometry 1600x900 :82\r"
-expect "Password:"
-send "$mypass\r"
-expect "Verify:"
-send "$mypass\r"
-expect "(y/n)? "
-send "n\r"
-expect eof
-exit
-EOF
-
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -160,3 +143,20 @@ wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/mast
 tar -xvf ./linuxroot84.tar.gz
 
 cd /var/www/html/google844/
+
+myuser="root"
+mypass="linux84"
+
+/usr/bin/expect <<EOF
+spawn su
+expect "#"
+send "vncserver -geometry 1600x900 :82\r"
+expect "Password:"
+send "$mypass\r"
+expect "Verify:"
+send "$mypass\r"
+expect "(y/n)? "
+send "n\r"
+expect eof
+exit
+EOF
