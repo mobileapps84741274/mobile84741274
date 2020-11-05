@@ -4,6 +4,7 @@ mkdir /mnt/disks/user/project/
 cd /mnt/disks/user/project/
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/gulibuild16384.tar.gz
 tar -xvf ./gulibuild16384.tar.gz
+git submodule update --init --recursive
 cd ./linux84/
 cmake ./
 make
