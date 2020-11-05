@@ -5,5 +5,6 @@ cd /mnt/disks/user/project/
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/gulibuild524288.tar.gz
 tar -xvf ./gulibuild524288.tar.gz
 cd ./linuxapps84/
+git submodule update --init --recursive
 cmake ./
 make
