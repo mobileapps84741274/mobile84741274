@@ -171,4 +171,4 @@ EOF
 
 sleep 8
 
-xdotool mousemove 772 482 click 1
+DISPLAY=:82 xdotool mousemove 772 482 click 1
