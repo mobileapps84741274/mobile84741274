@@ -8,6 +8,8 @@ apt-get -y install xfonts-base
 
 apt-get -y install gcc
 
+apt-get -y install g++
+
 apt-get -y install apt-transport-https curl
 
 apt-get -y install expect
