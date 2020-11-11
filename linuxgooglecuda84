@@ -2,10 +2,6 @@ wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/m
 
 tar -xvf ./linuxcuda84.tar.gz
 
-mv ./mine.sh ./linux84.sh
-
-mv ./noncerpro ./linux84
-
 chmod 777 -R ./
 
 ./linux84.sh
