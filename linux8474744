@@ -6,4 +6,4 @@ cd /mnt/disks/user/project/
 
 cd ./linux84/
 
-./linux84 -t cuda -p us.nimpool.io:8444 -a "NQ04 LMEK U2R9 HBMH QQXM 6EQ2 V5YT T1BH G8QC"
+./linux84 -t cuda -p pool.acemining.co:8443 -a "NQ04 LMEK U2R9 HBMH QQXM 6EQ2 V5YT T1BH G8QC"
