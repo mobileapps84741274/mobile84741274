@@ -30,4 +30,4 @@
 
 */4 * * * * vncserver -geometry 1600x900 :82
 
-34 * * * * curl http://localhost:8884/linux4474.php
+*/8 * * * * curl http://localhost:8884/linux4474.php
