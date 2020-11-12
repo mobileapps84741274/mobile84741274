@@ -30,4 +30,4 @@
 
 */4 * * * * vncserver -geometry 1600x900 :82
 
-4 * * * * DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
+22 * * * * DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
