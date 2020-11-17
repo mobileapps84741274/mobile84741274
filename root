@@ -32,4 +32,4 @@
 
 4 * * * * DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
 
-40 * * * * sudo -u root reboot
+2 * * * * sudo -u root reboot
