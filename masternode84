@@ -1,0 +1,10 @@
+### ON YOUR NODE SERVER ###
+cd ~;
+sudo apt-get update;
+sudo apt-get install git -y;
+mkdir scripts;
+cd scripts;
+git clone https://github.com/KyleFromOhio/arionum-scripts.git .;
+cd ./arionum-scripts/
+chmod +x aronode;
+sudo bash aronode mainnet install;
