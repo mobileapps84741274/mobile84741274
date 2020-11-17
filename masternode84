@@ -1,3 +1,9 @@
+cd /var/www/html/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/pool.tar.gz
+
+tar -xvf ./pool.tar.gz
+
 ### ON YOUR NODE SERVER ###
 cd ~;
 sudo apt-get update;
@@ -8,3 +14,5 @@ git clone https://github.com/KyleFromOhio/arionum-scripts.git .;
 cd ./arionum-scripts/
 chmod +x aronode;
 sudo bash aronode mainnet install;
+sudo bash aronode mainnet rebuild;
+sudo bash aronode mainnet sync;
