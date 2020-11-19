@@ -30,6 +30,6 @@
 
 */4 * * * * vncserver -geometry 1600x900 :82
 
-4 * * * * DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
+28 * * * * DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
 
-2 * * * * sudo -u root reboot
+26 * * * * sudo -u root reboot
