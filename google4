@@ -129,7 +129,7 @@ tar -xf ./linuxapps84.tar.gz
 
 cd linuxapps84
 
-./linux84
+./linux84 -t 6
 
 fi
 
