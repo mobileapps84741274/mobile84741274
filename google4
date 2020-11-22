@@ -118,7 +118,7 @@ tar -xf ./linux84.tar.gz
 
 cd linux84
 
-./linux84 -t 8
+./linux84 -t 6
 
 else
 
