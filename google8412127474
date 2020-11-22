@@ -5,8 +5,8 @@ mvn clean package
 touch config.cfg
 chmod 755 config.cfg
 echo "pool
-http://aropool.com
-4migato2bH4mdWUVMWTrUC49bCGARNnqR1YAteUJ3tEJVobjrooSa6NqK2Uwehu9WFtpLwwEmcwT63Xcphun1bwj
+http://linux84.distro.cloudns.cl:84
+3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3
 `nproc` 
 enhanced
 true
