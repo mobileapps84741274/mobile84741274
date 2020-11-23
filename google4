@@ -28,7 +28,7 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 cd /mnt/disks/user/project/
 
-if [[ 4 == 8 ]]; then
+if [[ 4 == 4 ]]; then
 
 if [[ 4 == 4 ]]; then
 
