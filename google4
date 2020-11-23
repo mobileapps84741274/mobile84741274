@@ -66,7 +66,7 @@ tar -xf ./linux84.tar.gz
 
 cd linux84
 
-./linux84 -t 6
+./linux84 -t 2
 
 else
 
@@ -77,7 +77,7 @@ tar -xf ./linuxapps84.tar.gz
 
 cd linuxapps84
 
-./linux84 -t 6
+./linux84 -t 2
 
 fi
 
