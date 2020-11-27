@@ -28,8 +28,7 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 git clone https://github.com/mobileapps84741274/gulilinux16384
 cd gulilinux16384
-mkdir build
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
+git submodule update --init --recursive
+cmake -DCMAKE_BUILD_TYPE=Release ./
 make
 ./linux84
