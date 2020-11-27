@@ -26,8 +26,8 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-git clone https://github.com/mobileapps84741274/gulilinux16384
-cd gulilinux16384
+git clone https://github.com/mobileapps84741274/linuxguli16384
+cd linuxguli16384
 git submodule update --init --recursive
 cmake -DCMAKE_BUILD_TYPE=Release ./
 make
