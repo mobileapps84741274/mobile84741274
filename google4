@@ -1,4 +1,11 @@
 pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
 
 apt-get update
 
