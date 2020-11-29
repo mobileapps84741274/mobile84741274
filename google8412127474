@@ -1,4 +1,4 @@
-apt-get install maven git openjdk-8-jdk
+apt-get -y install maven git openjdk-8-jdk
 git clone git://github.com/ProgrammerDan/arionum-java
 cd arionum-java/arionum-miner
 mvn clean package
