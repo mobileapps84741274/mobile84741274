@@ -2,6 +2,8 @@ pkill -f linux84
 
 apt-get update
 
+apt-get install -y cmake
+
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
 mkdir /mnt/disks/
