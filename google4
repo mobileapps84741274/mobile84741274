@@ -7,6 +7,8 @@ pkill -f linux84
 pkill -f linux84
 pkill -f linux84
 
+rm -rf /mnt/disks/user/project/linux8474/
+
 apt-get update
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
