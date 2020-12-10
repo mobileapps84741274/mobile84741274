@@ -58,8 +58,6 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA:BOOL="0"
 make
 
-sleep 34
-
 while true
 do
 
@@ -75,8 +73,6 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make
-
-sleep 34
 
 while true
 do
