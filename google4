@@ -15,6 +15,8 @@ service bind9 stop
 
 apt-get -y purge bind9
 
+apt-get autoremove --purge bind9
+
 cd /etc/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
