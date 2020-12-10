@@ -67,6 +67,12 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make
+
+while true
+do
+
 ./linux84 8
+
+done
 
 fi
