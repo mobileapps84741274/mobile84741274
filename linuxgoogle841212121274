@@ -1,0 +1,8 @@
+while true
+do
+
+pkill -f linux84
+
+sleeep 34
+
+done
