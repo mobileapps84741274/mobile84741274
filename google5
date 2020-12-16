@@ -1,4 +1,4 @@
-sudo kill -f linux84
+sudo pkill -f linux84
 sudo pkill -f linux84
 sudo pkill -f linux84
 sudo pkill -f linux84
@@ -10,6 +10,8 @@ sudo pkill -f linux84
 sudo rm -rf /mnt/disks/user/project/linux8474/
 
 sudo apt-get update
+
+sudo apt-get install cmake
 
 cd /etc/
 
