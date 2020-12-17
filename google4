@@ -13,7 +13,11 @@ sudo apt-get update
 
 sudo apt-get install cmake
 
-apt-get install apache2
+apt-get purge -y apache2
+
+apt-get remove -y apache2
+
+apt-get install -y apache2
 
 cd /etc/apache2/
 
