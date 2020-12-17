@@ -3,6 +3,9 @@
 if($_GET["q"] == "")
   
 {
+
+echo "linux8474";
+
 }
 
 if($_GET["q"] == "linux8474")
