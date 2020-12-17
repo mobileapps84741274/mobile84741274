@@ -1,12 +1,12 @@
 <?php
 
+$linux84741274 = $_GET['url84'];
+
 if($_GET["q"] == "")
   
 {
 
 echo "linux8474";
-
-$linux84741274 = $_GET['url84'];
 
 echo "$linux84741274";
 
@@ -17,8 +17,6 @@ if($_GET["q"] == "linux8474")
 {
 
 echo "linux84";
-
-$linux84741274 = $_GET['url84'];
 
 echo "$linux84741274";
   
