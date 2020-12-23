@@ -100,7 +100,7 @@ done
 else
 
 sudo git clone https://github.com/mobileapps84741274/linux8474742
-cd linux8474
+cd linux84742
 sudo mkdir build
 cd build
 sudo cmake .. -DCMAKE_BUILD_TYPE=Release
