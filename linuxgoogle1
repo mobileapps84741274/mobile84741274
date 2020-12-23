@@ -17,12 +17,6 @@ sudo apt-get install -y g++
 
 sudo apt-get install -y gcc
 
-apt-get purge -y apache2
-
-apt-get remove -y apache2
-
-apt-get install -y apache2
-
 cd /etc/apache2/
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
