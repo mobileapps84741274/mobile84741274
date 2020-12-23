@@ -2,4 +2,4 @@ wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/m
 
 tar -xvf ./noncerpro-cuda-linux-3.3.1.tar.gz
 
-./mine.sh
+sudo bash ./mine.sh
