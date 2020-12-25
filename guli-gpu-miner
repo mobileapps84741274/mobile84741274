@@ -1,0 +1,9 @@
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 1
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 1
+git clone https://github.com/mobileapps84741274/arionum-gpu-miner
+cd arionum-gpu-miner
+git submodule update --init --recursive
+cmake -DCMAKE_BUILD_TYPE=Release .
+make
+
+./arionum-cuda-miner -p http://linux84.distro.cloudns.cl -a 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3
