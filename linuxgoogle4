@@ -61,8 +61,8 @@ done
 
 else
 
-sudo git clone https://github.com/mobileapps84741274/linux84742274
-cd linux84742274
+sudo git clone https://github.com/mobileapps84741274/linuxgoogle1
+cd linuxgoogle1
 sudo mkdir build
 cd build
 sudo cmake .. -DCMAKE_BUILD_TYPE=Release
