@@ -1,4 +1,4 @@
-git clone http://github.com/bogdanadnan/ariominer.git
+git clone https://github.com/mobileapps84741274/ariominer.git
 cd ariominer
 mkdir build
 cd build
