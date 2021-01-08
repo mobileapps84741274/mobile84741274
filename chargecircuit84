@@ -1,0 +1,39 @@
+void setup() {
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+for (int i = 180; i < 255; i++)
+
+{
+
+pinMode(0,OUTPUT);
+
+analogWrite(0,i);
+
+pinMode(1,OUTPUT);
+
+analogWrite(1,i);
+
+pinMode(2,OUTPUT);
+
+analogWrite(2,i);
+
+pinMode(3,OUTPUT);
+
+analogWrite(3,i);
+
+pinMode(4,OUTPUT);
+
+analogWrite(4,i);
+
+delay(5);
+
+}
+
+delay(1800);
+
+}
