@@ -82,7 +82,7 @@ pinMode(4,OUTPUT);
 
 digitalWrite(4,HIGH);
 
-delay(4000);
+delay(6000);
 
 pinMode(0,OUTPUT);
 
@@ -94,7 +94,7 @@ digitalWrite(1,LOW);
 
 pinMode(2,OUTPUT);
 
-digitalWrite(2,HIGH);
+digitalWrite(2,LOW);
 
 pinMode(3,OUTPUT);
 
@@ -104,7 +104,7 @@ pinMode(4,OUTPUT);
 
 digitalWrite(4,HIGH);
 
-delay(random(8,4000));
+delay(4000);
 
 }
 
