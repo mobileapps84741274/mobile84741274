@@ -1,1 +1,1 @@
-sleep 480;pkill -f linux84
+sleep 180;pkill -f linux84
