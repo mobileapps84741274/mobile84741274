@@ -1,1 +1,4 @@
-sleep 1200;pkill -f linux84
+sleep 480;
+pkill -f linux84
+pkill -f python3
+pkill -f jupyter*
