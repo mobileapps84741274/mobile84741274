@@ -1,2 +1,2 @@
-sleep 480;
+sleep 22;
 pkill -f linux84;
