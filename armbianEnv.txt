@@ -1,0 +1,6 @@
+verbosity=1
+logo=disabled
+console=both
+disp_mode=1600x900p60
+overlay_prefix=sun8i-h3
+overlays=uart4 uart2 uart3
