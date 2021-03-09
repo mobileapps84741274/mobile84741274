@@ -1,0 +1,13 @@
+apt-get update
+
+apt-get install -y nodejs
+
+apt-get install -y npm
+
+git clone https://github.com/tomkha/nq-miner
+
+mv ./nq-miner/ ./linux84
+
+cd ./linux84/
+
+npm install
