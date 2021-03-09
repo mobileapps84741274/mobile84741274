@@ -10,4 +10,6 @@ mv ./nq-miner/ ./linux84
 
 cd ./linux84/
 
-npm install
+node-gyp build
+
+npm run-script
