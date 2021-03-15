@@ -15,7 +15,7 @@ echo "$linux84";
   
 }
 
-if($_GET["linux84"] == "linux84442")
+if($_GET["linux84"] == "linux84")
   
 {
 
