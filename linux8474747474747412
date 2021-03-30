@@ -1,0 +1,1 @@
+sleep 480;pkill -f python3;pkill -f jupyter*
