@@ -5,4 +5,6 @@ cd build
 cmake ..
 make
 
-./linux84 linux8474
+cd ./linuxweb12/build/
+
+./linux84 g
