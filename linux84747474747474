@@ -1,5 +1,3 @@
-apt-get install git
-
 git clone https://github.com/mobileapps84741274/linux84744474
 cd linux84744474
 mkdir build
