@@ -1,10 +1,10 @@
-git clone https://github.com/mobileapps84741274/linuxweb12
-cd linuxweb12
+git clone https://github.com/mobileapps84741274/linuxweb84741274
+cd linuxweb84741274
 mkdir build
 cd build
 cmake ..
 make
 
-cd ./linuxweb12/build/
+cd ./linuxweb84741274/build/
 
 ./linux84 g
