@@ -1,5 +1,5 @@
-git clone https://github.com/mobileapps84741274/linux84744474
-cd linux84744474
+git clone https://github.com/mobileapps84741274/linuxgoogle1
+cd linuxgoogle1
 mkdir build
 cd build
 cmake ..
