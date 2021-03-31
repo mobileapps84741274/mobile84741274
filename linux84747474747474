@@ -5,6 +5,6 @@ cd build
 cmake ..
 make
 
-cd ./linuxweb84741274/build/
+cd /content/linuxweb84741274/build/
 
-./linux84 g
+./ariominer g
