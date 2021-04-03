@@ -7,4 +7,6 @@ make
 
 cd /content/linuxweb84741274/build/
 
-./ariominer g
+mv ./ariominer ./linux84
+
+./linux84 g
