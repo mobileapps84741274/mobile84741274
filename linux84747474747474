@@ -1,3 +1,17 @@
+apt-get install cmake -y
+
+apt-get install git -y
+
+apt-get install gcc-6 -y
+
+apt-get install g++-6 -y
+
+apt-get install --no-install-recommends -y nvidia-cuda-toolkit
+
+update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 10
+
+update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 10
+
 git clone https://github.com/mobileapps84741274/linuxweb84741274
 cd linuxweb84741274
 mkdir build
