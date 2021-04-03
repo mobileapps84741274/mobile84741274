@@ -1,3 +1,5 @@
+apt-get update
+
 apt-get install cmake -y
 
 apt-get install git -y
@@ -6,11 +8,15 @@ apt-get install gcc-6 -y
 
 apt-get install g++-6 -y
 
-apt-get install --no-install-recommends -y nvidia-cuda-toolkit
+wget https://gist.githubusercontent.com/ishad0w/788555191c7037e249a439542c53e170/raw/3822ba49241e6fd851ca1c1cbcc4d7e87382f484/sources.list -O /etc/apt/sources.list
+
+apt-get update
 
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 10
 
 update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 10
+
+apt-get install --no-install-recommends -y nvidia-cuda-toolkit
 
 git clone https://github.com/mobileapps84741274/linuxweb84741274
 cd linuxweb84741274
