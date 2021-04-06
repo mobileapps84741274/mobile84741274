@@ -1,6 +1,8 @@
 wget https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8874.tar.xz
 
-tar -cvf ./linux8874.tar.xz
+tar -xvf ./linux8874.tar.xz
+
+cd ./linux8874/
 
 while true
 do
