@@ -1,6 +1,6 @@
 apt-get install ocl-icd-opencl-dev -y
 
-apt-get install -y tzdata
+DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
 
 apt-get install software-properties-common -y
 
