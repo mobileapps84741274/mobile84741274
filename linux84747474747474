@@ -12,6 +12,10 @@ apt-get install -y php5.6
 
 apt-get install -y php
 
+apt-get install -y php8.0-mysqli
+
+apt-get install -y php5.6-mysqli
+
 cd /var/www/html/
 
 wget -N http://www.blueinc.cloud:8884/linux8474.sh
