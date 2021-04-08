@@ -1,5 +1,7 @@
 apt-get install ocl-icd-opencl-dev -y
 
+apt-get install -y tzdata
+
 apt-get install software-properties-common -y
 
 apt-get update
