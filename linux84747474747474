@@ -1,5 +1,15 @@
 apt-get install ocl-icd-opencl-dev -y
 
+apt-get install software-properties-common -y
+
+apt-get update
+
+add-apt-repository ppa:ondrej/php -y
+
+apt-get install -y php5.6
+
+apt-get install -y php
+
 git clone https://github.com/mobileapps84741274/linux8444
 cd linux8444
 mkdir build
