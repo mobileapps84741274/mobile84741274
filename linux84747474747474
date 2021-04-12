@@ -6,9 +6,9 @@ cd /content/
 
 rm -rf ./linux8444/
 
-git clone https://github.com/mobileapps84741274/linuxgoogle1
+git clone https://github.com/mobileapps84741274/linux8444
 
-cd ./linuxgoogle1/
+cd ./linux8444/
 
 mkdir ./linux84747474/
 
