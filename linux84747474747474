@@ -6,9 +6,9 @@ cd /content/
 
 rm -rf ./linux8444/
 
-wget https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84444444444474.tar.xz
+wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84444444444474.tar.xz
 
-tar -xvf ./linux84444444444474.tar.xz
+tar -xf ./linux84444444444474.tar.xz
 
 cd ./linux84444444444474/
 
