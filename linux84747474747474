@@ -6,11 +6,17 @@ cd /content/
 
 rm -rf ./linux8444/
 
-wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux844444444444444474.tar.xz
+git clone https://github.com/mobileapps84741274/linux8444
 
-tar -xf ./linux844444444444444474.tar.xz
+cd ./linux8444/
 
-cd ./linux844444444444444474/
+mkdir ./linux84/
+
+cd ./linux84/
+
+cmake ..
+
+make
 
 while true
 do
