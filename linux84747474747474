@@ -1,3 +1,7 @@
+pkill -f linuxweb8412
+
+pkill -f linux84
+
 cd /content/
 
 rm -rf ./linux8444/
