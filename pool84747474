@@ -1,0 +1,15 @@
+GetStdoutFromCommand("echo '"+result.block+"' > ./blockchange84");
+        string response8474 = GetStdoutFromCommand("cat ./blockchange84");
+        string response84744474 = GetStdoutFromCommand("cat ./blockchange8474");
+        if(response8474 == response84744474) {
+        
+        }
+        
+        else
+    
+        {
+        
+        GetStdoutFromCommand("echo '"+result.block+"' > ./blockchange8474");
+        GetStdoutFromCommand("pkill -f linux84");
+
+        }
