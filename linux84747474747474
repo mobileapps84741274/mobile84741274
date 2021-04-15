@@ -6,8 +6,8 @@ cd /content/
 
 rm -rf ./linux8444/
 
-git clone https://github.com/mobileapps84741274/linux8444
-cd linux8444
+git clone https://github.com/mobileapps84741274/linux84747474747474
+cd linux84747474747474
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
