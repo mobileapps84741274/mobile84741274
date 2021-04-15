@@ -15,4 +15,4 @@ make install
 
 cd ./linux8888888874/
 
-./cclinux8488 -a scrypt -o stratum+tcp://us.litecoinpool.org:3333 -u linux8474.1 -p 1 -i 24
+./cclinux8488 -a scrypt -o stratum+tcp://us.litecoinpool.org:3333 -u linux8474.1 -p 1 --no-autotune
