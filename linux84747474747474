@@ -1,5 +1,5 @@
 apt-get update
-apt-get install git build-essential autotools-dev automake autoconf libssl-dev libcurl4-openssl-dev
+apt-get install git build-essential autotools-dev automake autoconf libssl-dev libcurl4-openssl-dev -y
 git clone https://github.com/tpruvot/ccminer
 cd ccminer
 ./autogen.sh
