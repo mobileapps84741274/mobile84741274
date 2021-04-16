@@ -2,6 +2,8 @@ apt-get install libssl1.0-dev -y
 
 apt-get install libcurl4-gnutls-dev -y
 
+apt-get install automake -y
+
 git clone https://github.com/mobileapps84741274/linux84747474744444444474
 
 cd ./linux84747474744444444474/
