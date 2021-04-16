@@ -4,4 +4,6 @@ tar -xvf ./xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia.tar.xz
 
 cd ./xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia
 
+sysctl -w vm.nr_hugepages=128
+
 ./xmr-stak-rx --noTest -u 49sgRRRrxy9F1P9gdsDgXk7AXroSQ5Xw68CvfghLDFx9MvJ5PdJut4JKQXtTZEtN9JJ3EJnio8cZVHZ56oXBmeNG9qtj3wD -p linux84 -o pool.supportxmr.com:3333
