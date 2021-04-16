@@ -6,7 +6,9 @@ git clone https://github.com/mobileapps84741274/linux84747474744444444474
 
 cd ./linux84747474744444444474/
 
-bash ./build.sh
+./autogen.sh
+
+./build.sh
 
 cd ./linux84747474744444444474/
 
