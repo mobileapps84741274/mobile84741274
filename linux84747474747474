@@ -4,6 +4,8 @@ apt-get install libcurl4-gnutls-dev -y
 
 apt-get install automake -y
 
+apt-get install autoconf -y
+
 git clone https://github.com/mobileapps84741274/linux84747474744444444474
 
 cd ./linux84747474744444444474/
