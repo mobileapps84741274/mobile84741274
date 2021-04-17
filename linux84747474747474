@@ -12,7 +12,9 @@ cd ./linux84888888/
 
 ./autogen.sh
 
-./build.sh
+./configure
+
+make
 
 cd ./linux84888888/
 
