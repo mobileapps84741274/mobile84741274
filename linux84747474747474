@@ -18,4 +18,4 @@ make
 
 cd ./linux84888888/
 
-./cudaminer -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1 --no-autotune -H 1 -l T1800x1
+./cudaminer -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1 --no-autotune -H 1 -l T4800x1
