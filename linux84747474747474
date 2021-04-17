@@ -8,12 +8,12 @@ apt-get install autoconf -y
 
 git clone https://github.com/tpruvot/ccminer
 
-cd ./cclinux8474/
+cd ./ccminer/
 
 ./autogen.sh
 
 ./build.sh
 
-cd ./cclinux8474/
+cd ./ccminer/
 
 ./ccminer -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1 -l K180x2
