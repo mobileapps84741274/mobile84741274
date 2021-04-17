@@ -16,4 +16,4 @@ cd ./cclinux8474/
 
 cd ./cclinux8474/
 
-./cclinux8474 -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1 -l T60x2
+./cclinux8474 -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1 -l T20x2
