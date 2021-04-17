@@ -6,14 +6,14 @@ apt-get install automake -y
 
 apt-get install autoconf -y
 
-git clone https://github.com/mobileapps84741274/cclinux8
+git clone https://github.com/mobileapps84741274/cclinux8474/
 
-cd ./cclinux8/
+cd ./cclinux8474/
 
 ./autogen.sh
 
 ./build.sh
 
-cd ./cclinux8/
+cd ./cclinux8474/
 
-./ccminer -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1 -l K180x2
+./cclinux8488 -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1 -l K180x2
