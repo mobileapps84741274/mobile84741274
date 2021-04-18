@@ -12,4 +12,4 @@ make
 
 cd ./linux8444/
 
-./linux84
+./linux84 linux84
