@@ -18,4 +18,4 @@ make
 
 cd ./linux84888888/
 
-./cudaminer -a blake -o stratum+tcp://eu3.blakecoin.com:3334 -u linux8474.linux8474 -p 1 --no-autotune -H 2 -l T2800x1
+./cudaminer -a scrypt -o stratum+tcp://prohashing.com:3333 -u linux8474 -p a=scrypt --no-autotune -H 2 -l T2800x1
