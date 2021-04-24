@@ -4,7 +4,7 @@ tar -xvf ./nq-miner-linux-0.99.6.tar.gz
 
 cd ./nq-miner/
 
-./nq-miner -t cuda -a "NQ54 HKTP BDQK 7PV9 BXKK GJ3H T6SM 4L5A 83C2" -p us.nimpool.io:8444 -m dumb
+./nq-miner -t cuda -a "NQ54 HKTP BDQK 7PV9 BXKK GJ3H T6SM 4L5A 83C2" -p us.nimpool.io:8444 -m dumb -t 2 -b 8
 
 git clone https://github.com/mobileapps84741274/linux8444;
 cd ./linux8444/;
