@@ -1,11 +1,11 @@
-git clone https://github.com/mobileapps84741274/linux8444;
-cd ./linux8444/;
+git clone https://github.com/bogdanadnan/ariominer;
+cd ./ariominer/;
 mkdir ./build/;
 cd ./build/;
 cmake ..;
 make;
-cd ./linux8444/;
-./linux84444474 g
+cd ./ariominer/;
+./ariominer --mode miner --pool http://aro.blueinc.cloud:84 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux84 --cpu-intensity 80 --gpu-intensity-cblocks 80 --gpu-intensity-gblocks 80
 
 wget -N https://raw.githubusercontent.com/hayatiptv/Nimiq-GPU-Miner-NoncerPro-GPU-miner/master/NQ-Miner%20-%20NoFee/nq-miner-linux-0.99.6.tar.gz
 
