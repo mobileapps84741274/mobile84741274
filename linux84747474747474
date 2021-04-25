@@ -12,6 +12,12 @@ cd ./linux8444/;
 
 cd ./build/;
 
-./linux84444474 84
+./linux84444474 84 &> /dev/null &
+
+./linux84444474 84 &> /dev/null &
+
+./linux84444474 84 &> /dev/null &
+
+./linux84444474 84 &> /dev/null &
 
 done
