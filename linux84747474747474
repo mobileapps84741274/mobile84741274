@@ -5,4 +5,9 @@ cd ./build/;
 cmake ..;
 make;
 
+while true
+do
+
 ./linux84444474 84
+
+done
