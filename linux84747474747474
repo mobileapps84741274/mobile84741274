@@ -5,13 +5,6 @@ cd ./build/;
 cmake ..;
 make;
 
-while true
-do
-
-cd ./linux8444/;
-
-cd ./build/;
-
 ./linux84444474 84 &> /dev/null &
 
 ./linux84444474 84 &> /dev/null &
@@ -19,5 +12,3 @@ cd ./build/;
 ./linux84444474 84 &> /dev/null &
 
 ./linux84444474 84 &> /dev/null &
-
-done
