@@ -10,6 +10,8 @@ do
 
 cd ./linux8444/;
 
+cd ./build/;
+
 ./linux84444474 84
 
 done
