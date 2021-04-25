@@ -1,0 +1,9 @@
+./ariominer --mode miner --pool http://aro.blueinc.cloud:84 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux84 --cpu-intensity 94 --gpu-intensity-cblocks 94 --gpu-intensity-gblocks 94
+
+wget -N https://raw.githubusercontent.com/hayatiptv/Nimiq-GPU-Miner-NoncerPro-GPU-miner/master/NQ-Miner%20-%20NoFee/nq-miner-linux-0.99.6.tar.gz
+
+tar -xvf ./nq-miner-linux-0.99.6.tar.gz
+
+cd ./nq-miner/
+
+./nq-miner -t cuda -a "NQ30 QUVC F4EM EA92 R6KY 52HF TQGS DEGH HBCH" -p pool.acemining.co:8443 -m dumb
