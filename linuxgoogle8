@@ -30,14 +30,6 @@ apt-get install -y php7.4
 
 apt-get install -y php7.4-gmp
 
-dd if=/dev/zero of=/swapfile bs=1024 count=14048576
-
-mkswap /swapfile
-
-chmod 600 /swapfile
-
-swapon /swapfile
-
 apt-get install -y xfce4 xfce4-goodies
 
 XFCE_PANEL_MIGRATE_DEFAULT=1
