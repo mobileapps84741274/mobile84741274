@@ -24,7 +24,7 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
-sudo apt-get update
+apt-get update
 
 apt-get -y install brave-browser
 
@@ -44,7 +44,7 @@ apt-get install -y software-properties-common
 
 add-apt-repository ppa:ondrej/php -y
 
-sudo apt-get update
+apt-get update
 
 apt-get install -y php5.6
 
