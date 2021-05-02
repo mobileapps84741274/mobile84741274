@@ -177,4 +177,4 @@ sudo -u root DISPLAY=:82 xdotool mousemove 772 482 click 1
 
 sleep 12
 
-DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
+DISPLAY=:82 bash /var/www/html/google844/google844
