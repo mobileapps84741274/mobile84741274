@@ -24,16 +24,6 @@
 # 
 # m h  dom mon dow   command
 
-*/34 * * * * bash /home/linux84
+@reboot DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
 
-*/12 * * * * rm -rf /root/.cache/*
-
-*/4 * * * * vncserver -geometry 1600x900 :82
-
-44 * * * * DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
-
-42 * * * * sudo -u root reboot
-
-14 * * * * DISPLAY=:82 bash /var/www/html/google844/google844 &> /dev/null &
-
-12 * * * * sudo -u root reboot
+*/10 * * * * sudo -u root reboot
