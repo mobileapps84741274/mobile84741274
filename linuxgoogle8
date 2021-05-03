@@ -6,6 +6,10 @@ ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 apt-get install -y tzdata
 dpkg-reconfigure --frontend noninteractive tzdata
 
+apt-get install sudo -y
+
+usermod -aG sudo root
+
 apt-get -y install bc
 
 apt-get -y install tightvncserver
