@@ -1,0 +1,197 @@
+<?php
+
+$linux84747474744474 = file_get_contents("https://www.arionum.com/peers.txt");
+
+$linux84747474744474 = explode("\n","$linux84747474744474");
+
+$linux84744474 = array(
+    'http://peer1.arionum.com',
+    'http://peer2.arionum.com',
+    'http://peer3.arionum.com',
+    'http://peer4.arionum.com',
+    'http://peer5.arionum.com',
+    'http://peer6.arionum.com',
+    'http://peer7.arionum.com',
+    'http://peer8.arionum.com',
+    'http://peer9.arionum.com',
+    'http://peer10.arionum.com',
+    'http://peer11.arionum.com',
+    'http://peer12.arionum.com',
+    'http://peer13.arionum.com',
+    'http://peer14.arionum.com',
+    'http://peer15.arionum.com',
+    'http://peer16.arionum.com',
+    'http://peer17.arionum.com',
+    'http://peer18.arionum.com',
+    'http://peer19.arionum.com',
+    'http://peer20.arionum.com',
+    'http://peer21.arionum.com',
+    'http://peer22.arionum.com',
+    'http://peer23.arionum.com',
+    'http://peer24.arionum.com',
+    'http://peer25.arionum.com',
+    'http://peer26.arionum.com',
+    'http://peer27.arionum.com',
+
+);
+
+$linux84747474744474 = array_merge($linux84747474744474,$linux84744474);
+
+shuffle($linux84747474744474);
+
+$count8474 = "0";
+
+$linux8474444474 = array();
+
+$linux84744444744474 = array();
+
+$linux84744444744474447444744474 = array();
+
+$linux847444447444744474447444744474 = array();
+
+foreach($linux84747474744474 as $linux8474)
+
+{
+
+$opts = [
+            'http' =>
+                [
+                    'timeout' => 120,
+                ],
+        ];
+
+$context = stream_context_create($opts);
+
+$count8474++;
+
+$res = file_get_contents("$linux8474/mine.php?q=info", false, $context);
+$data = json_decode($res, true);
+
+$linux8474444474[] = $data['data']['height'];
+
+$linux847444447444744474447444744474[] = $data['data']['block'];
+
+$linux84744444744474[] = "$linux8474/mine.php?q=info" . " " . $data['data']['height'] . " " . $data['data']['block'];
+
+if($count8474 == "26")
+
+{
+
+break;
+
+}
+
+}
+
+$occurences = array_count_values($linux8474444474);
+
+asort($occurences);
+
+$occurences8474 = array_count_values($linux847444447444744474447444744474);
+
+asort($occurences8474);
+
+$linux8474444444447444444474 = array();
+
+foreach(array_keys($occurences8474) as $linux847488744474)
+
+{
+
+$linux8474444444447444444474[] = "$linux847488744474";
+
+}
+
+$linux8474887474747444442274 = end($linux8474444444447444444474);
+
+$linux84744444444474 = array();
+
+foreach(array_keys($occurences) as $linux84748874)
+
+{
+
+$linux84744444444474[] = "$linux84748874";
+
+}
+
+$linux84748874747474 = end($linux84744444444474);
+
+$linux8474222274 = array();
+
+foreach($linux84744444744474 as $linux844444444474)
+
+{
+
+if(preg_match("/$linux84748874747474/", $linux844444444474))
+
+{
+
+if(preg_match("/$linux8474887474747444442274/", $linux844444444474))
+
+{
+
+$linux8474222274[] = preg_replace("/(.*) (.*) (.*)/","$1",$linux844444444474);
+
+echo "$linux844444444474" . "\n";
+
+}
+
+}
+
+}
+
+$linux844444444444444474 = array();
+
+foreach($linux8474222274 as $linux8444224474747474)
+
+{
+
+$linux844444444444444474[] = "$linux8444224474747474";
+
+}
+
+$linux8444444444444444744474 = implode("\n",$linux844444444444444474);
+
+file_put_contents("./peers.txt","$linux8444444444444444744474");
+
+for ($i = 0; $i < 8; $i++)
+
+{
+
+$linux88888888747474 = $linux8474222274[array_rand($linux8474222274)];
+
+    $max_dl = 248;
+    $cache_file = "./linux84.sh";
+
+    $f = file_get_contents("$linux88888888747474");
+    $g = json_decode($f, true);
+
+if($g['data']['difficulty'] == null)
+
+{
+}
+
+else
+
+{
+
+    $res = [
+        "difficulty"    => $g['data']['difficulty'],
+        "block"         => $g['data']['block'],
+        "height"        => $g['data']['height'],
+        "public_key"    => "PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza",
+        "limit"         => $max_dl,
+        "recommendation"=> $g['data']['recommendation'], 
+        "argon_mem"     => $g['data']['argon_mem'],  
+        "argon_threads" => $g['data']['argon_threads'], 
+        "argon_time"    => $g['data']['argon_time'],
+    ];
+    $fin = json_encode(["status" => "ok", "data" => $res, "coin" => "arionum"]);
+    file_put_contents($cache_file, $fin);
+
+break;
+
+}
+
+}
+
+?>
