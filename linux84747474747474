@@ -1,9 +1,3 @@
-apt-get update
-
-apt-get install cmake -y
-
-apt-get install wget -y
-
 git clone https://github.com/mobileapps84741274/linux8444
 cd linux8444
 mkdir linux84748874
