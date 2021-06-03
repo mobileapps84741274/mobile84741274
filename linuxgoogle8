@@ -183,7 +183,7 @@ EOF
 
 sleep 8
 
-DISPLAY=:82 xdotool mousemove 772 482 click 1
+DISPLAY=:82 sudo -u root xdotool mousemove 772 482 click 1
 
 sleep 12
 
