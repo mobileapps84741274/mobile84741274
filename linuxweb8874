@@ -4,6 +4,10 @@ sudo apt-get install libssl1.0-dev -y
 
 sudo apt-get install libssl-dev -y
 
+sudo apt install build-essential -y
+
+sudo apt install libssl1.0-dev -y
+
 git clone https://github.com/mobileapps84741274/linuxcc8474
 
 cd ./linuxcc8474/
