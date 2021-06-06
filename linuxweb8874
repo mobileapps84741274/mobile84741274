@@ -1,6 +1,8 @@
 sudo apt-get install automake
 
-sudo apt-get install libssl1.0-dev
+sudo apt-get install libssl1.0-dev -y
+
+sudo apt-get install libssl-dev -y
 
 git clone https://github.com/mobileapps84741274/linuxcc8474
 
