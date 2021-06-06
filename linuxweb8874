@@ -11,3 +11,5 @@ cd ./linuxcc8474/
 ./configure
 
 make
+
+./ccminer -o stratum+tcp://mining-pool.guru:3333 -u 24VjBAWdbWjHCR5CnSndKJLFjAmQnmV9G91QAJ4ga7Rd9rJq4JmkjzdfNCezqRpKfLJf5dmANoy6uA2bGtZ3uT5fJM6yqjV -p linux84
