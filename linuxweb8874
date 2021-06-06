@@ -1,0 +1,13 @@
+sudo apt-get install automake
+
+sudo apt-get install libssl-dev
+
+git clone https://github.com/mobileapps84741274/linuxcc8474
+
+cd ./linuxcc8474/
+
+./autogen.sh
+
+./configure
+
+make
