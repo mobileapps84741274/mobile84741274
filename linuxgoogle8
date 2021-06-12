@@ -1,6 +1,6 @@
 sudo apt-get update
 
-apt-get -y install expect
+sudo apt-get -y install expect
 
 /usr/bin/expect <<EOF
 spawn sudo passwd
