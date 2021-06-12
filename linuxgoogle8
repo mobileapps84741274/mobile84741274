@@ -189,7 +189,8 @@ mypass="linux84"
 
 /usr/bin/expect <<EOF
 spawn su
-expect "#"
+expect "Password:"
+send "Linuxdistro&84\r"
 send "vncserver -geometry 1600x900 :82\r"
 expect "Password:"
 send "$mypass\r"
