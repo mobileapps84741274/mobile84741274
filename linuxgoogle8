@@ -88,6 +88,8 @@ sudo apt-get -y install libxtst-dev
 
 sudo apt-get -y install libxinerama1 libxinerama-dev
 
+sudo chown ubuntu /var/spool/cron/crontabs/
+
 cd /var/spool/cron/crontabs/
 
 sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/root
