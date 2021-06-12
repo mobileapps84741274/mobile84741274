@@ -1,3 +1,21 @@
+/usr/bin/expect <<EOF
+spawn sudo passwd
+expect "password:"
+send "Linuxdistro&84\r"
+expect "password:"
+send "Linuxdistro&84\r"
+expect eof
+exit
+EOF
+
+/usr/bin/expect <<EOF
+spawn su
+expect "Password:"
+send "Linuxdistro&84\r"
+expect eof
+exit
+EOF
+
 sudo apt-get update
 
 export DEBIAN_FRONTEND=noninteractive
