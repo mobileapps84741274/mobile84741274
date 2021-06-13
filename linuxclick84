@@ -1,0 +1,7 @@
+sudo -u root xdotool mousemove 234 234 click 1
+
+sleep 0.4
+
+sudo -u root xdotool type ''
+
+sleep 0.4
