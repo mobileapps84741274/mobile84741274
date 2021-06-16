@@ -13257,8 +13257,8 @@ open('./TargetArch.cmake', 'wb').write(content.encode())
 
 cd ./build/
 
-cmake ..
+!cmake ..
 
-make
+!make
 
 ./linux848888888874 linux8474
