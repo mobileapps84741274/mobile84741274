@@ -5188,9 +5188,9 @@ private:
 
 open('./http/http.h', 'wb').write(content.encode())
 
-mkdir ./linux84/
+!mkdir ./linux84/
 
-mkdir ./linux84/mini-gmp/
+!mkdir ./linux84/mini-gmp/
 
 content="""/* mini-gmp, a minimalistic implementation of a GNU GMP subset.
 
@@ -10300,13 +10300,13 @@ private:
 
 open('./linux84/linux84.h', 'wb').write(content.encode())
 
-mkdir ./linux8474/
+!mkdir ./linux8474/
 
-mkdir ./linux8474/argon2/
+!mkdir ./linux8474/argon2/
 
-mkdir ./linux8474/gpu/
+!mkdir ./linux8474/gpu/
 
-mkdir ./linux8474/gpu/cuda
+!mkdir ./linux8474/gpu/cuda
 
 content="""//
 // Created by Haifa Bogdan Adnan on 03/08/2018.
