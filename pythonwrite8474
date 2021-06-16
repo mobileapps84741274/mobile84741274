@@ -2,9 +2,19 @@
 
 !mkdir ./linux8474/argon2/
 
+%cd ./linux8474/argon2/
+
 !wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/argon2/argon2profile_1_1_524288.c
 
 !wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/argon2/argon2profile_4_4_16384.c
+
+!mkdir ./common/
+
+%cd ./common/
+
+!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/common/cfgpath.h
+
+%cd ..
 
 !mkdir ./app/
 
