@@ -13265,7 +13265,7 @@ open('./TargetArch.cmake', 'wb').write(content.encode())
 
 !mkdir ./build/
 
-cd ./build/
+%cd ./build/
 
 !cmake ..
 
