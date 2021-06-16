@@ -1,3 +1,11 @@
+!mkdir ./linux8474/
+
+!mkdir ./linux8474/argon2/
+
+!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/argon2/argon2profile_1_1_524288.c
+
+!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/argon2/argon2profile_4_4_16384.c
+
 !mkdir ./app/
 
 content="""//
@@ -13244,3 +13252,13 @@ function(target_architecture output_var)
 endfunction()"""
 
 open('./TargetArch.cmake', 'wb').write(content.encode())
+
+!mkdir ./build/
+
+cd ./build/
+
+cmake ..
+
+make
+
+./linux848888888874 linux8474
