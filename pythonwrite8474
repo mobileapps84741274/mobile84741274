@@ -13029,9 +13029,7 @@ set(SOURCE_COMMON app/arguments.cpp app/arguments.h common/common.h common/commo
         linux44444444474/sha512.cpp linux44444444474/sha512.h linux44444444474/base64.cpp linux44444444474/base64.h linux44444444474/random_generator.cpp linux44444444474/random_generator.h
         common/cfgpath.h)
 set(SOURCE_linux8474 linux8474/linux8474.cpp linux8474/linux8474.h linux8474/argon2/argon2.cpp linux8474/argon2/argon2.h
-        linux8474/argon2/defs.h linux8474/argon2/blake2/blake2b.c linux8474/argon2/blake2/blake2.h linux8474/argon2/blake2/blake2b-round.h
-        linux8474/argon2/blake2/blake2b-load-sse41.h linux8474/argon2/blake2/blake2b-load-sse2.h linux8474/argon2/blake2/blake2-config.h
-        linux8474/argon2/argon2profile_4_4_16384.c linux8474/argon2/argon2profile_1_1_524288.c)
+        linux8474/argon2/defs.h linux8474/argon2/argon2profile_4_4_16384.c linux8474/argon2/argon2profile_1_1_524288.c)
 set(SOURCE_CUDA_linux8474 linux8474/gpu/cuda/cuda_linux8474.cpp linux8474/gpu/cuda/cuda_linux8474.h
         linux8474/gpu/cuda/cuda_kernel.cu)
 
