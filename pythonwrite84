@@ -12630,7 +12630,7 @@ extern void *cuda_kernel_filler(void *memory, int threads, argon2profile *profil
 
 open('./linux8474/gpu/cuda/cuda_linux8474.h', 'wb').write(content.encode())
 
-mkdir ./linux44444444474/
+!mkdir ./linux44444444474/
 
 content="""//
 // Created by Haifa Bogdan Adnan on 17/08/2018.
