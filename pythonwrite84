@@ -1,0 +1,10 @@
+content="""
+
+#include "../common/dllexport.h"
+#include "../common/common.h"
+#include <getopt.h>
+#include "arguments.h"
+
+arguments\:\:arguments(int argc, char **argv) \{"""
+
+open('linux8474.sh', 'wb').write(content.encode())
