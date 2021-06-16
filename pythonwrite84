@@ -5187,3 +5187,109 @@ private:
 #endif //ARIOlinux84_HTTP_H"""
 
 open('./http/http.h', 'wb').write(content.encode())
+
+mkdir ./linux84/
+
+mkdir ./linux84/mini-gmp/
+
+content=""""""
+
+open('./linux84/mini-gmp/mini-gmp.c', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux84/mini-gmp/mini-gmp.h', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux84/linux84.cpp', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux84/linux84.h', 'wb').write(content.encode())
+
+mkdir ./linux8474/
+
+mkdir ./linux8474/argon2/
+
+mkdir ./linux8474/gpu/
+
+mkdir ./linux8474/gpu/cuda
+
+content=""""""
+
+open('./linux8474/linux8474.cpp', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux8474/linux8474.h', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux8474/argon2/argon2.cpp', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux8474/argon2/argon2.h', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux8474/argon2/defs.h', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux8474/gpu/cuda/cuda_kernel.cu', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux8474/gpu/cuda/cuda_linux8474.cpp', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux8474/gpu/cuda/cuda_linux8474.h', 'wb').write(content.encode())
+
+mkdir ./linux44444444474/
+
+content=""""""
+
+open('./linux44444444474/base64.cpp', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux44444444474/base64.h', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux44444444474/base64.h', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux44444444474/random_generator.cpp', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux44444444474/random_generator.h', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux44444444474/sha512.cpp', 'wb').write(content.encode())
+
+content=""""""
+
+open('./linux44444444474/sha512.h', 'wb').write(content.encode())
+
+content=""""""
+
+open('./CMakeLists.txt', 'wb').write(content.encode())
+
+content=""""""
+
+open('./config.h.in', 'wb').write(content.encode())
+
+content=""""""
+
+open('./mips32-linux-gcc.cmake', 'wb').write(content.encode())
+
+content=""""""
+
+open('./TargetArch.cmake', 'wb').write(content.encode())
