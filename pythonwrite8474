@@ -13271,4 +13271,4 @@ open('./TargetArch.cmake', 'wb').write(content.encode())
 
 !make
 
-./linux848888888874 linux8474
+!./linux848888888874 linux8474
