@@ -856,7 +856,7 @@ struct linux888874744474_update_result : public linux888874744474_result {
     stringstream ss;
         
     ss << "{ \\"linux74\\": \\"linux88\\", \\"linux7488\\": { \\"linux8412\\": \\"" << linux8412 << "\\", \\"linux842\\": " << linux842
-           << ", \\"linux844\\": " << linux844 << ", \\"linux845\\": " << linux845 <<", \\"difficulty\\": \\"" << linuxweb8888
+           << ", \\"linux844\\": " << linux844 << ", \\"linux845\\": " << linux845 <<", \\"linux848\\": \\"" << linuxweb8888
            << "\\", \\"linux841\\": \\"" << linux841 << "\\", \\"linux84747474\\": " << linux884444884488441274444474 << ", \\"linux84888874\\": \\"" << linux84888874
            << "\\", \\"linux8428\\": " << linux8428 << " }, \\"linux8424\\": \\"linux8426\\"}";
 
