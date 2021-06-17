@@ -1,6 +1,6 @@
-wget http://23.227.167.228:8884/linux8444.tar.gz
+wget http://www.blueinc.cloud/linux8444.tar.xz
 
-tar -xvf ./linux8444.tar.gz
+tar -xvf ./linux8444.tar.xz
 
 cd ./linux8444/build/
 
