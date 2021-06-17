@@ -40,7 +40,7 @@
 
 %cd ./http/simplejson/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/http/simplejson/json.h
+!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/http/simplejson/json.h
 
 %cd /content/
 
