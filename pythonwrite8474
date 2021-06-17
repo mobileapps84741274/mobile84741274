@@ -338,7 +338,7 @@ static inline void get_user_cache_folder(char *out, unsigned int maxlen, const c
 #endif /* CFGPATH_H_ */
 """
 
-open('./common/cfgpath.h', 'w').write(content.encode())
+open('./common/cfgpath.h', 'w').write(content)
 
 content="""//
 // Created by Haifa Bogdan Adnan on 03/08/2018.
