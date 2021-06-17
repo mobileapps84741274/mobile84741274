@@ -1,0 +1,252 @@
+<?php
+
+file_put_contents("./crontab8474","linux84" . "\n",FILE_APPEND);
+
+$linux84747474744474 = file_get_contents("https://www.arionum.com/peers.txt");
+
+$linux84747474744474 = explode("\n","$linux84747474744474");
+
+shuffle($linux84747474744474);
+
+$count8474 = "1";
+
+$linux8474444474 = array();
+
+$linux84744444744474 = array();
+
+$linux84744444744474447444744474 = array();
+
+$linux847444447444744474447444744474 = array();
+
+$res = array();
+
+foreach($linux84747474744474 as $linux8474)
+
+{
+
+$count8474++;
+
+$res[] = "$linux8474/mine.php?q=info";
+
+if($count8474 == "820")
+
+{
+
+break;
+
+}
+
+}
+
+$multiCurl = array();
+// data to be returned
+$result = array();
+
+$ids = $res;
+
+// multi handle
+$mh = curl_multi_init();
+foreach ($ids as $i => $id) {
+  // URL from which data will be fetched
+  $fetchURL = "$id";
+  $multiCurl[$i] = curl_init();
+  curl_setopt($multiCurl[$i], CURLOPT_URL,$fetchURL);
+  curl_setopt($multiCurl[$i], CURLOPT_HEADER,0);
+  curl_setopt($multiCurl[$i], CURLOPT_RETURNTRANSFER,1);
+  curl_setopt($multiCurl[$i], CURLOPT_CONNECTTIMEOUT, 4); 
+  curl_setopt($multiCurl[$i], CURLOPT_TIMEOUT, 4);
+  curl_multi_add_handle($mh, $multiCurl[$i]);
+}
+$index=null;
+do {
+  curl_multi_exec($mh,$index);
+} while($index > 0);
+// get content and remove handles
+foreach($multiCurl as $k => $ch) {
+  $result[$k] = curl_multi_getcontent($ch);
+  curl_multi_remove_handle($mh, $ch);
+}
+// close
+curl_multi_close($mh);
+
+$linux84444444884488448844884474 = "-1";
+
+$linuxweb8474444474 = array();
+
+foreach($result as $linux8444448888888874)
+
+{
+
+$linux84444444884488448844884474++;
+
+$data = json_decode($linux8444448888888874, true);
+
+$linux8474444474[] = $data['data']['height'];
+
+$linuxweb8474444474[] = $data['data']['argon_mem'];
+
+$linux847444447444744474447444744474[] = $data['data']['block'];
+
+$linux84744444744474[] = $res[$linux84444444884488448844884474] . " " . $data['data']['height'] . " " . $data['data']['block'] . " " . $data['data']['argon_mem'];
+
+}
+
+$occurences = array_count_values($linux8474444474);
+
+asort($occurences);
+
+$occurences8474 = array_count_values($linux847444447444744474447444744474);
+
+asort($occurences8474);
+
+$occurences84744474 = array_count_values($linuxweb8474444474);
+
+asort($occurences84744474);
+
+$linuxweb8474444444447444444474 = array();
+
+foreach(array_keys($occurences84744474) as $linuxweb847488744474)
+
+{
+
+$linuxweb8474444444447444444474[] = "$linuxweb847488744474";
+
+}
+
+$linuxweb8474887474747444442274 = end($linuxweb8474444444447444444474);
+
+$linux8474444444447444444474 = array();
+
+foreach(array_keys($occurences8474) as $linux847488744474)
+
+{
+
+$linux8474444444447444444474[] = "$linux847488744474";
+
+}
+
+$linux8474887474747444442274 = end($linux8474444444447444444474);
+
+$linux84744444444474 = array();
+
+foreach(array_keys($occurences) as $linux84748874)
+
+{
+
+$linux84744444444474[] = "$linux84748874";
+
+}
+
+$linux84748874747474 = end($linux84744444444474);
+
+$linux8474222274 = array();
+
+foreach($linux84744444744474 as $linux844444444474)
+
+{
+
+$linux8474222274[] = preg_replace("/(.*) (.*) (.*) (.*)/","$2",$linux844444444474);
+
+}
+
+$linux8474222274 = preg_replace("/u/","",$linux8474222274);
+
+print_r($linux8474222274);
+
+echo $value84 = max($linux8474222274);
+
+$linux8474222274448888888888888874 = array();
+
+foreach($linux84744444744474 as $linux844444444474447474747474744474)
+
+{
+
+if(preg_match("/^(.*) $value84 $linux8474887474747444442274 $linuxweb8474887474747444442274$/", $linux844444444474447474747474744474))
+
+{
+
+echo $linux8474222274448888888888888874[] = preg_replace("/(.*) (.*) (.*) (.*)/","$1",$linux844444444474447474747474744474);
+
+}
+
+}
+
+$linux8444444444444444744474 = implode("\n",$linux8474222274448888888888888874);
+
+if($linux8444444444444444744474 == "")
+
+{
+}
+
+else
+
+{
+
+file_put_contents("/var/www/html/peers.txt",$linux8444444444444444744474);
+
+}
+
+$linux88888888747474 = $linux8474222274448888888888888874[array_rand($linux8474222274448888888888888874)];
+
+    $cache_file = "./linux84.sh";
+
+    $f = file_get_contents("$linux88888888747474");
+    $g = json_decode($f, true);
+
+if($g['data']['difficulty'] == "u")
+
+{
+}
+
+else
+
+{
+
+if($g['data']['difficulty'] == null)
+
+{
+}
+
+else
+
+{
+
+if($g['data']['argon_threads'] == "4")
+
+{
+
+$linux84 = rand(120);
+
+$max_dl = 242;
+
+}
+
+if($g['data']['argon_threads'] == "1")
+
+{
+
+$linux84 = rand(48,82000);
+
+$max_dl = 242;
+
+}
+
+    $res = [
+        "difficulty"    => $g['data']['difficulty'],
+        "block"         => $linux8474887474747444442274,
+        "height"        => $linux84748874747474,
+        "public_key"    => "PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza",
+        "limit"         => $max_dl,
+        "recommendation"=> $g['data']['recommendation'], 
+        "argon_mem"     => $g['data']['argon_mem'],  
+        "argon_threads" => $g['data']['argon_threads'], 
+        "argon_time"    => $g['data']['argon_time'],
+    ];
+    $fin = json_encode(["status" => "ok", "data" => $res, "coin" => "arionum"]);
+    file_put_contents($cache_file, $fin);
+
+}
+
+}
+
+?>
