@@ -62,10 +62,6 @@
 
 %cd ./linux8474/argon2/
 
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/argon2/argon2.h
-
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/argon2/defs.h
-
 %cd /content/
 
 !mkdir ./linux84/
@@ -83,6 +79,103 @@
 %cd /content/
 
 !mkdir ./app/
+
+content="""//
+// Created by Haifa Bogdan Adnan on 05/08/2018.
+//
+
+#ifndef ARIOMINER_ARGON2_H
+#define ARIOMINER_ARGON2_H
+
+#include "defs.h"
+
+typedef void *(*argon2_blocks_filler_ptr)(void *, int, argon2profile *, void *);
+
+class DLLEXPORT argon2 {
+public:
+    argon2(argon2_blocks_filler_ptr filler, void *seed_memory, void *user_data);
+
+    void initialize_seeds(const argon2profile &profile, const string &base, string salt_);
+    void fill_blocks(const argon2profile &profile);
+    vector<string> encode_hashes(const argon2profile &profile);
+    
+    vector<string> generate_hashes(const argon2profile &profile, const string &base, string salt_);
+
+    void set_seed_memory(uint8_t *memory);
+    uint8_t *get_output_memory();
+    void set_seed_memory_offset(size_t offset);
+    void set_lane_length(int length); // in blocks
+    void set_threads(int threads);
+private:
+    string __make_salt();
+    void __initial_hash(const argon2profile &profile, uint8_t *blockhash, const string &base, const string &salt);
+    void __fill_first_blocks(const argon2profile &profile, uint8_t *blockhash, int thread);
+    string __encode_string(const argon2profile &profile, const string &salt, uint8_t *hash);
+
+    argon2_blocks_filler_ptr __filler;
+    int __threads;
+    uint8_t *__seed_memory;
+	uint8_t *__output_memory;
+    size_t __seed_memory_offset;
+    int __lane_length;
+    void *__user_data;
+    vector<string> __salts;
+};
+
+
+#endif //ARIOMINER_ARGON2_H
+"""
+
+open('./linux8474/argon2/argon2.h', 'w').write(content)
+
+content="""//
+// Created by Haifa Bogdan Adnan on 06/08/2018.
+//
+
+#ifndef ARIOMINER_DEFS_H
+#define ARIOMINER_DEFS_H
+
+#define ARGON2_RAW_LENGTH               32
+#define ARGON2_TYPE_VALUE               1
+#define ARGON2_VERSION                  0x13
+
+#define ARGON2_BLOCK_SIZE               1024
+#define ARGON2_QWORDS_IN_BLOCK          ARGON2_BLOCK_SIZE / 8
+#define ARGON2_OWORDS_IN_BLOCK          ARGON2_BLOCK_SIZE / 16
+#define ARGON2_HWORDS_IN_BLOCK          ARGON2_BLOCK_SIZE / 32
+#define ARGON2_512BIT_WORDS_IN_BLOCK    ARGON2_BLOCK_SIZE / 64
+#define ARGON2_PREHASH_DIGEST_LENGTH    64
+#define ARGON2_PREHASH_SEED_LENGTH      72
+
+#ifdef __cplusplus 
+extern "C" {
+#endif
+
+typedef struct block_ { uint64_t v[ARGON2_QWORDS_IN_BLOCK]; } block;
+
+typedef struct Argon2Profile {
+    uint32_t mem_cost;
+    uint32_t thr_cost;
+    uint32_t tm_cost;
+    size_t memsize;
+    int32_t *block_refs;
+    size_t block_refs_size;
+    char profile_name[15];
+    int32_t *segments; // { start, stop (excluding), with_xor }
+} argon2profile;
+
+extern DLLEXPORT argon2profile argon2profile_4_4_16384;
+extern DLLEXPORT argon2profile argon2profile_1_1_524288;
+extern DLLEXPORT argon2profile *argon2profile_default;
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif //ARIOMINER_DEFS_H
+"""
+
+open('./linux8474/argon2/defs.h', 'w').write(content)
 
 content="""//
 // Created by Haifa Bogdan Adnan on 03/08/2018.
