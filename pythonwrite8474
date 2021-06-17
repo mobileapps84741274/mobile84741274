@@ -66,7 +66,37 @@
 
 !mkdir ./app/
 
-content="""static inline void get_user_config_file(char *out, unsigned int maxlen, const char *appname)
+content="""#ifndef CFGPATH_H_
+#define CFGPATH_H_
+
+#ifdef _MSC_VER
+#define inline __inline
+#include <direct.h>
+#define mkdir _mkdir
+#endif
+
+#ifdef __linux__
+#include <string.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#define MAX_PATH 512
+#define PATH_SEPARATOR_CHAR '//'
+#define PATH_SEPARATOR_STRING "//"
+#elif defined(WIN32)
+#include <shlobj.h>
+#define PATH_SEPARATOR_CHAR '\\'
+#define PATH_SEPARATOR_STRING "\\"
+#elif defined(__APPLE__)
+#include <CoreServices/CoreServices.h>
+#include <sys/stat.h>
+#define MAX_PATH PATH_MAX
+#define PATH_SEPARATOR_CHAR '//'
+#define PATH_SEPARATOR_STRING "//"
+#else
+#error cfgpath.h functions have not been implemented for your platform!  Please send patches.
+#endif
+
+static inline void get_user_config_file(char *out, unsigned int maxlen, const char *appname)
 {
 #ifdef __linux__
 	const char *out_orig = out;
