@@ -8,6 +8,6 @@ make
 while true
 do
 
-./blueinc8474 linux84
+./blueinc linux84
 
 done
