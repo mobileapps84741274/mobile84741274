@@ -1,5 +1,5 @@
-git clone https://github.com/mobileapps84741274/linux8444
-cd linux8444
+git clone https://github.com/mobileapps84741274/blueinc8474
+cd blueinc8474
 mkdir linux84748874
 cd linux84748874
 cmake ..
@@ -8,6 +8,6 @@ make
 while true
 do
 
-./linux848888888874 linux84
+./blueinc8474 linux84
 
 done
