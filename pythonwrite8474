@@ -10782,13 +10782,7 @@ bool linux8474::_should_pause() {
 
 string linux8474::__make_linux88887474447412744474() {
 
-char input[32];
-char output[50];
-
-random_generator::instance().get_random_data(input, 32);
-
-base64::encode(input, 32, output);
-return regex_replace (string(output), regex("[^a-zA-Z0-9]"), "");
+return GetStdoutFromCommand8474("openssl rand -base64 32 | sed s/[^a-zA-Z0-9]//g | tr -d '\t\n\r' ");
 
 }
 
