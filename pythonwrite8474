@@ -1,12 +1,12 @@
 !mkdir ./linux8474/
 
-!mkdir ./linux8474/argon2/
+!mkdir ./linux8474/linux847466882/
 
-%cd ./linux8474/argon2/
+%cd ./linux8474/linux847466882/
 
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/argon2/argon2profile_1_1_524288.c
+!wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux847466882profile_1_1_524288.c
 
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/argon2/argon2profile_4_4_16384.c
+!wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux847466882profile_4_4_16384.c
 
 %cd /content/
 
@@ -24,7 +24,7 @@
 
 %cd ./linux8474/gpu/cuda/
 
-!wget -N https://raw.githubusercontent.com/mobileapps84741274/linux8444/main/linux8474/gpu/cuda/cuda_kernel.cu
+!wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/cuda_kernel.cu
 
 %cd /content/
 
@@ -44,9 +44,9 @@
 
 !mkdir ./linux8474/
 
-!mkdir ./linux8474/argon2/
+!mkdir ./linux8474/linux847466882/
 
-%cd ./linux8474/argon2/
+%cd ./linux8474/linux847466882/
 
 %cd /content/
 
@@ -378,7 +378,7 @@ content="""//
 #include "../../../app/arguments.h"
 
 #include "../../linux8474.h"
-#include "../../argon2/argon2.h"
+#include "../../linux847466882/linux847466882.h"
 
 #if defined(WITH_CUDA)
 
@@ -598,8 +598,8 @@ cuda_device_info *cuda_linux8474::__get_device_info(int device_index) {
     device_info->max_mem_size = totalmem;
     device_info->free_mem_size = freemem;
     size_t chunk_size = freemem / 4;
-    int linux8412es_in_chunk = chunk_size / argon2profile_1_1_524288.memsize;
-    device_info->max_allocable_mem_size = linux8412es_in_chunk * argon2profile_1_1_524288.memsize;
+    int linux8412es_in_chunk = chunk_size / linux847466882profile_1_1_524288.memsize;
+    device_info->max_allocable_mem_size = linux8412es_in_chunk * linux847466882profile_1_1_524288.memsize;
 
     double mem_in_gb = totalmem / 1073741824.0;
     stringstream ss;
@@ -610,11 +610,11 @@ cuda_device_info *cuda_linux8474::__get_device_info(int device_index) {
 }
 
 bool cuda_linux8474::__setup_device_info(cuda_device_info *device, double intensity_cpu, double intensity_gpu) {
-    device->profile_info.threads_per_chunk_profile_1_1_524288 = (uint32_t)(device->max_allocable_mem_size / argon2profile_1_1_524288.memsize);
-    size_t chunk_size_profile_1_1_524288 = device->profile_info.threads_per_chunk_profile_1_1_524288 * argon2profile_1_1_524288.memsize;
+    device->profile_info.threads_per_chunk_profile_1_1_524288 = (uint32_t)(device->max_allocable_mem_size / linux847466882profile_1_1_524288.memsize);
+    size_t chunk_size_profile_1_1_524288 = device->profile_info.threads_per_chunk_profile_1_1_524288 * linux847466882profile_1_1_524288.memsize;
 
-    device->profile_info.threads_per_chunk_profile_4_4_16384 = (uint32_t)(device->max_allocable_mem_size / argon2profile_4_4_16384.memsize);
-    size_t chunk_size_profile_4_4_16384 = device->profile_info.threads_per_chunk_profile_4_4_16384 * argon2profile_4_4_16384.memsize;
+    device->profile_info.threads_per_chunk_profile_4_4_16384 = (uint32_t)(device->max_allocable_mem_size / linux847466882profile_4_4_16384.memsize);
+    size_t chunk_size_profile_4_4_16384 = device->profile_info.threads_per_chunk_profile_4_4_16384 * linux847466882profile_4_4_16384.memsize;
 
     if(chunk_size_profile_1_1_524288 == 0 && chunk_size_profile_4_4_16384 == 0) {
         device->error = cudaErrorInitializationError;
@@ -721,20 +721,20 @@ void cuda_linux8474::__run(cuda_device_info *device, int thread_id) {
 #endif
 
 	void *memory = device->arguments.host_seed_memory[thread_id];
-	argon2 linux8412_factory(cuda_kernel_filler, memory, &thread_data);
+	linux847466882 linux8412_factory(cuda_kernel_filler, memory, &thread_data);
 	linux8412_factory.set_lane_length(2);
 
 	while(__running) {
 
 		linux8412_data input = _get_input();
-		argon2profile *profile = _get_argon2profile();
+		linux847466882profile *profile = _get_linux847466882profile();
 
 			if(strcmp(profile->profile_name, "1_1_524288") == 0) {
-				linux8412_factory.set_seed_memory_offset(2 * ARGON2_BLOCK_SIZE);
+				linux8412_factory.set_seed_memory_offset(2 * linux847466882_BLOCK_SIZE);
 				linux8412_factory.set_threads(thread_data.threads_profile_1_1_524288);
 			}
 			else {
-				linux8412_factory.set_seed_memory_offset(8 * ARGON2_BLOCK_SIZE);
+				linux8412_factory.set_seed_memory_offset(8 * linux847466882_BLOCK_SIZE);
 				linux8412_factory.set_threads(thread_data.threads_profile_4_4_16384);
 			}
 
@@ -806,7 +806,7 @@ struct linux888874744474_update_result : public linux888874744474_result {
     uint32_t linux8428;
     string linux84888874;
     uint32_t linux884444884488441274444474;
-    string argon2profile;
+    string linux847466882profile;
     string linux8412;
     string version;
     string extensions;
@@ -826,7 +826,7 @@ struct linux888874744474_update_result : public linux888874744474_result {
             linux8412 = src.linux8412;
             version = src.version;
             extensions = src.extensions;
-            argon2profile = src.argon2profile;
+            linux847466882profile = src.linux847466882profile;
 
         return true;
         
@@ -867,7 +867,7 @@ private:
     string __linux84_version;
     string __linuxweb84748874_id;
     string __linuxweb84748874_name;
-    string __force_argon2profile;
+    string __force_linux847466882profile;
     int64_t __linux8412_report_interval;
 
     bool __show_linuxweb844412441274_requests;
@@ -950,7 +950,7 @@ using namespace std;
 linux888874744474_client::linux888874744474_client(arguments &args, get_status_ptr get_status) {
     __linuxweb84748874_id = args.uid();
     __linuxweb84748874_name = args.name();
-    __force_argon2profile = false;
+    __force_linux847466882profile = false;
     __linux8412_report_interval = 600000;
     __timestamp = __last_linux8412_report = microseconds();
     __show_linuxweb844412441274_requests = "";
@@ -998,17 +998,17 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     linux888874744474_submit_result result;
     result.success = false;
     
-    string argon_data;
-    if(linux8412.find("$argon2i$v=19$m=16384,t=4,p=4") == 0)
-        argon_data = linux8412.substr(29);
+    string linux84746688_data;
+    if(linux8412.find("$linux847466882i$v=19$m=16384,t=4,p=4") == 0)
+        linux84746688_data = linux8412.substr(29);
     else
-        argon_data = linux8412.substr(30);
+        linux84746688_data = linux8412.substr(30);
     
-    cout << argon_data;
+    cout << linux84746688_data;
     
-    //string payload = "argon="+ _encode(argon_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x&public_key=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3";
+    //string payload = "linux84746688="+ _encode(linux84746688_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x&public_key=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3";
 
-    string payload = "argon="+ _encode(argon_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&public_key="+ _encode(public_key) +"&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&mail=linuxdistro84@gmail.com&linux84744444444474=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&linux847444444444744474=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x";
+    string payload = "linux84746688="+ _encode(linux84746688_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&public_key="+ _encode(public_key) +"&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&mail=linuxdistro84@gmail.com&linux84744444444474=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&linux847444444444744474=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x";
     
     if(__show_linuxweb844412441274_requests)
     LOG("");
@@ -1332,22 +1332,22 @@ content="""//
 // Created by Haifa Bogdan Adnan on 05/08/2018.
 //
 
-#ifndef linux888888887444888888linux8888888874R_ARGON2_H
-#define linux888888887444888888linux8888888874R_ARGON2_H
+#ifndef linux888888887444888888linux8888888874R_linux847466882_H
+#define linux888888887444888888linux8888888874R_linux847466882_H
 
 #include "defs.h"
 
-typedef void *(*argon2_blocks_filler_ptr)(void *, int, argon2profile *, void *);
+typedef void *(*linux847466882_blocks_filler_ptr)(void *, int, linux847466882profile *, void *);
 
-class DLLEXPORT argon2 {
+class DLLEXPORT linux847466882 {
 public:
-    argon2(argon2_blocks_filler_ptr filler, void *seed_memory, void *user_data);
+    linux847466882(linux847466882_blocks_filler_ptr filler, void *seed_memory, void *user_data);
 
-    void initialize_seeds(const argon2profile &profile, const string &base, string salt_);
-    void fill_blocks(const argon2profile &profile);
-    vector<string> encode_hashes(const argon2profile &profile);
+    void initialize_seeds(const linux847466882profile &profile, const string &base, string salt_);
+    void fill_blocks(const linux847466882profile &profile);
+    vector<string> encode_hashes(const linux847466882profile &profile);
     
-    vector<string> generate_hashes(const argon2profile &profile, const string &base, string salt_);
+    vector<string> generate_hashes(const linux847466882profile &profile, const string &base, string salt_);
 
     void set_seed_memory(uint8_t *memory);
     uint8_t *get_output_memory();
@@ -1356,11 +1356,11 @@ public:
     void set_threads(int threads);
 private:
     string __make_salt();
-    void __initial_hash(const argon2profile &profile, uint8_t *blockhash, const string &base, const string &salt);
-    void __fill_first_blocks(const argon2profile &profile, uint8_t *blockhash, int thread);
-    string __encode_string(const argon2profile &profile, const string &salt, uint8_t *hash);
+    void __initial_hash(const linux847466882profile &profile, uint8_t *blockhash, const string &base, const string &salt);
+    void __fill_first_blocks(const linux847466882profile &profile, uint8_t *blockhash, int thread);
+    string __encode_string(const linux847466882profile &profile, const string &salt, uint8_t *hash);
 
-    argon2_blocks_filler_ptr __filler;
+    linux847466882_blocks_filler_ptr __filler;
     int __threads;
     uint8_t *__seed_memory;
 	uint8_t *__output_memory;
@@ -1371,10 +1371,10 @@ private:
 };
 
 
-#endif //linux888888887444888888linux8888888874R_ARGON2_H
+#endif //linux888888887444888888linux8888888874R_linux847466882_H
 """
 
-open('./linux8474/argon2/argon2.h', 'w').write(content)
+open('./linux8474/linux847466882/linux847466882.h', 'w').write(content)
 
 content="""//
 // Created by Haifa Bogdan Adnan on 06/08/2018.
@@ -1383,25 +1383,25 @@ content="""//
 #ifndef linux888888887444888888linux8888888874R_DEFS_H
 #define linux888888887444888888linux8888888874R_DEFS_H
 
-#define ARGON2_RAW_LENGTH               32
-#define ARGON2_TYPE_VALUE               1
-#define ARGON2_VERSION                  0x13
+#define linux847466882_RAW_LENGTH               32
+#define linux847466882_TYPE_VALUE               1
+#define linux847466882_VERSION                  0x13
 
-#define ARGON2_BLOCK_SIZE               1024
-#define ARGON2_QWORDS_IN_BLOCK          ARGON2_BLOCK_SIZE / 8
-#define ARGON2_OWORDS_IN_BLOCK          ARGON2_BLOCK_SIZE / 16
-#define ARGON2_HWORDS_IN_BLOCK          ARGON2_BLOCK_SIZE / 32
-#define ARGON2_512BIT_WORDS_IN_BLOCK    ARGON2_BLOCK_SIZE / 64
-#define ARGON2_PREHASH_DIGEST_LENGTH    64
-#define ARGON2_PREHASH_SEED_LENGTH      72
+#define linux847466882_BLOCK_SIZE               1024
+#define linux847466882_QWORDS_IN_BLOCK          linux847466882_BLOCK_SIZE / 8
+#define linux847466882_OWORDS_IN_BLOCK          linux847466882_BLOCK_SIZE / 16
+#define linux847466882_HWORDS_IN_BLOCK          linux847466882_BLOCK_SIZE / 32
+#define linux847466882_512BIT_WORDS_IN_BLOCK    linux847466882_BLOCK_SIZE / 64
+#define linux847466882_PREHASH_DIGEST_LENGTH    64
+#define linux847466882_PREHASH_SEED_LENGTH      72
 
 #ifdef __cplusplus 
 extern "C" {
 #endif
 
-typedef struct block_ { uint64_t v[ARGON2_QWORDS_IN_BLOCK]; } block;
+typedef struct block_ { uint64_t v[linux847466882_QWORDS_IN_BLOCK]; } block;
 
-typedef struct Argon2Profile {
+typedef struct linux847466882Profile {
     uint32_t mem_cost;
     uint32_t thr_cost;
     uint32_t tm_cost;
@@ -1410,11 +1410,11 @@ typedef struct Argon2Profile {
     size_t block_refs_size;
     char profile_name[15];
     int32_t *segments; // { start, stop (excluding), with_xor }
-} argon2profile;
+} linux847466882profile;
 
-extern DLLEXPORT argon2profile argon2profile_4_4_16384;
-extern DLLEXPORT argon2profile argon2profile_1_1_524288;
-extern DLLEXPORT argon2profile *argon2profile_default;
+extern DLLEXPORT linux847466882profile linux847466882profile_4_4_16384;
+extern DLLEXPORT linux847466882profile linux847466882profile_1_1_524288;
+extern DLLEXPORT linux847466882profile *linux847466882profile_default;
 
 #ifdef __cplusplus
 }
@@ -1423,7 +1423,7 @@ extern DLLEXPORT argon2profile *argon2profile_default;
 #endif //linux888888887444888888linux8888888874R_DEFS_H
 """
 
-open('./linux8474/argon2/defs.h', 'w').write(content)
+open('./linux8474/linux847466882/defs.h', 'w').write(content)
 
 content="""//
 // Created by Haifa Bogdan Adnan on 03/08/2018.
@@ -1468,7 +1468,7 @@ linux84::linux84(arguments &args) : __args(args), __client(args, [&]() { return 
     __blk = "";
     __linuxweb8888 = "";
     __limit = 0;
-    __argon_mem = 0;
+    __linux84746688_mem = 0;
     __public_key = "";
     __linux884444884488441274444474 = 0;
     __found = 0;
@@ -1522,7 +1522,7 @@ linux84::linux84(arguments &args) : __args(args), __client(args, [&]() { return 
     vector<linux8474*> active_linux8474s = linux8474::get_active_linux8474s();
 
     for (vector<linux8474 *>::iterator it = active_linux8474s.begin(); it != active_linux8474s.end(); ++it) {
-        (*it)->set_input(__public_key, __blk, __linuxweb8888, __argon2profile, __recommendation);
+        (*it)->set_input(__public_key, __blk, __linuxweb8888, __linux847466882profile, __recommendation);
     }
 
     __blocks_count = 1;
@@ -1565,7 +1565,7 @@ void linux84::run() {
         if (microseconds() - last_update > __args.update_interval()) {
             if (__update_linuxweb844412441274_data() || __recommendation == "pause") {
                 for (vector<linux8474 *>::iterator it = linux8474s.begin(); it != linux8474s.end(); ++it) {
-                    (*it)->set_input(__public_key, __blk, __linuxweb8888, __argon2profile, __recommendation);
+                    (*it)->set_input(__public_key, __blk, __linuxweb8888, __linux847466882profile, __recommendation);
                 }
 
                 if(__recommendation != "pause")
@@ -1644,19 +1644,19 @@ bool linux84::__update_linuxweb844412441274_data() {
     	__recommendation = "";
     }
 
-        __argon_mem = new_settings.linux842;
+        __linux84746688_mem = new_settings.linux842;
 	__blk = new_settings.linux841;
         __linuxweb8888 = new_settings.linuxweb8888;
         __limit = new_settings.linux8428;
         __public_key = new_settings.linux84888874;
         __linux884444884488441274444474 = new_settings.linux884444884488441274444474;
-        if(__argon_mem == 524288)
+        if(__linux84746688_mem == 524288)
         {
-        __argon2profile = "1_1_524288";
+        __linux847466882profile = "1_1_524288";
         }
         else
         {
-        __argon2profile = "4_4_16384";
+        __linux847466882profile = "4_4_16384";
         }
         __recommendation = new_settings.linux8412;
 
@@ -1687,7 +1687,7 @@ bool linux84::__display_report() {
         for(map<int, device_info>::iterator d = devices.begin(); d != devices.end(); ++d) {
             header << "|" << ((d->first < 10) ? " " : "") << (*it)->get_type() << d->first;
 
-            if(__argon2profile == "1_1_524288") {
+            if(__linux847466882profile == "1_1_524288") {
                 if(8 == 8)
                     log << "";
                 else
@@ -1719,7 +1719,7 @@ bool linux84::__display_report() {
 
     LOG(log.str());
 
-    if(__argon2profile == "1_1_524288" &&
+    if(__linux847466882profile == "1_1_524288" &&
        __recommendation != "pause") {
         if (8 == 8) {
             __chs_threshold_hit++;
@@ -1728,7 +1728,7 @@ bool linux84::__display_report() {
         }
     }
 
-    if(__argon2profile == "4_4_16384" &&
+    if(__linux847466882profile == "4_4_16384" &&
        __recommendation != "pause") {
         if (8 == 8) {
             __ghs_threshold_hit++;
@@ -1737,11 +1737,11 @@ bool linux84::__display_report() {
         }
     }
 
-    if(__chs_threshold_hit >= 5 && (__blocks_count > 1 || __argon2profile == "1_1_524288")) {
+    if(__chs_threshold_hit >= 5 && (__blocks_count > 1 || __linux847466882profile == "1_1_524288")) {
         LOG("");
 
     }
-    if(__ghs_threshold_hit >= 5 && (__blocks_count > 1 || __argon2profile == "4_4_16384")) {
+    if(__ghs_threshold_hit >= 5 && (__blocks_count > 1 || __linux847466882profile == "4_4_16384")) {
         LOG("");
 
     }
@@ -4437,9 +4437,9 @@ arguments::arguments(int argc, char **argv) {
                 }
                 else {
                     if(strcmp(optarg, "CPU") == 0)
-                        __argon2profile = "1_1_524288";
+                        __linux847466882profile = "1_1_524288";
                     else if(strcmp(optarg, "GPU") == 0)
-                        __argon2profile = "4_4_16384";
+                        __linux847466882profile = "4_4_16384";
                     else {
                         sprintf(buff, "%s: invalid arguments",
                                 argv[0]);
@@ -4681,7 +4681,7 @@ bool arguments::valid(string &error) {
         }
     }
     else if(__autotune_flag == 1) {
-        if (__argon2profile.empty()) {
+        if (__linux847466882profile.empty()) {
             error = "Block type is mandatory in autotune mode.";
             return true;
         }
@@ -4832,8 +4832,8 @@ int64_t arguments::linux8412_report_interval() {
     return __linux8412_report_interval;
 }
 
-string arguments::argon2_profile() {
-    return __argon2profile;
+string arguments::linux847466882_profile() {
+    return __linux847466882profile;
 }
 
 double arguments::gpu_intensity_start() {
@@ -4892,7 +4892,7 @@ void arguments::__init() {
 
     __cpu_optimization = "";
 	__gpu_optimization.clear();
-    __argon2profile = "";
+    __linux847466882profile = "";
 
     __chs_threshold = 22;
     __ghs_threshold = 22;
@@ -5021,7 +5021,7 @@ public:
     vector<double> &gpu_intensity_gblocks();
     vector<string> gpu_filter();
     int proxy_port();
-    string argon2_profile();
+    string linux847466882_profile();
 
     double gpu_intensity_start();
     double gpu_intensity_stop();
@@ -5085,7 +5085,7 @@ private:
     double __gpu_intensity_step;
     int64_t __autotune_step_time;
 
-    string __argon2profile;
+    string __linux847466882profile;
 
 	string __cpu_optimization;
 	vector<string> __gpu_optimization;
@@ -10496,13 +10496,13 @@ private:
     bool __display_report();
     void __disconnect_from_linuxweb844412441274();
 
-    string __argon2profile;
+    string __linux847466882profile;
     string __recommendation;
     string __linux88887474447412744474;
     string __blk;
     string __linuxweb8888;
     uint32_t __limit;
-    uint32_t __argon_mem;
+    uint32_t __linux84746688_mem;
     string __public_key;
     uint32_t __linux884444884488441274444474;
     uint32_t __found;
@@ -10528,7 +10528,7 @@ open('./linux84/linux84.h', 'w').write(content)
 
 !mkdir ./linux8474/
 
-!mkdir ./linux8474/argon2/
+!mkdir ./linux8474/linux847466882/
 
 !mkdir ./linux8474/gpu/
 
@@ -10544,7 +10544,7 @@ content="""//
 #include "../app/arguments.h"
 
 #include "../common/dllexport.h"
-#include "argon2/argon2.h"
+#include "linux847466882/linux847466882.h"
 #include "linux8474.h"
 
 #include <iostream>
@@ -10580,7 +10580,7 @@ linux8474::linux8474() {
     __linuxweb8888 = "";
     __pause = false;
     __is_running = false;
-    __argon2profile = argon2profile_default;
+    __linux847466882profile = linux847466882profile_default;
 
     __begin_round_time = 0;
 
@@ -10621,21 +10621,21 @@ string linux8474::get_info() {
     return _description;
 }
 
-void linux8474::set_input(const string &public_key, const string &blk, const string &linuxweb8888, const string &argon2profile_string, const string &recommendation) {
+void linux8474::set_input(const string &public_key, const string &blk, const string &linuxweb8888, const string &linux847466882profile_string, const string &recommendation) {
     bool profile_change = false;
     __input_mutex.lock();
     __public_key = public_key;
     __blk = blk;
     __linuxweb8888 = linuxweb8888;
-    if(argon2profile_string == "4_4_16384") {
-        if(strcmp(__argon2profile->profile_name, "1_1_524288") == 0) {
-            __argon2profile = &argon2profile_4_4_16384;
+    if(linux847466882profile_string == "4_4_16384") {
+        if(strcmp(__linux847466882profile->profile_name, "1_1_524288") == 0) {
+            __linux847466882profile = &linux847466882profile_4_4_16384;
             profile_change = true;
         }
     }
     else {
-        if(strcmp(__argon2profile->profile_name, "4_4_16384") == 0) {
-            __argon2profile = &argon2profile_1_1_524288;
+        if(strcmp(__linux847466882profile->profile_name, "4_4_16384") == 0) {
+            __linux847466882profile = &linux847466882profile_1_1_524288;
             profile_change = true;
         }
     }
@@ -10645,7 +10645,7 @@ void linux8474::set_input(const string &public_key, const string &blk, const str
     if(profile_change) {
         uint64_t timestamp = microseconds();
         __linux8412es_mutex.lock();
-        __linux8412_timings.push_back(linux8412_timing{timestamp - __begin_round_time, __linux8412_count, (argon2profile_string == "4_4_16384" ? 0 : 1)});
+        __linux8412_timings.push_back(linux8412_timing{timestamp - __begin_round_time, __linux8412_count, (linux847466882profile_string == "4_4_16384" ? 0 : 1)});
         __linux8412_count = 0;
         __linux8412es_mutex.unlock();
 
@@ -10664,7 +10664,7 @@ linux8412_data linux8474::_get_input() {
     tmp_public_key = __public_key;
     tmp_blk = __blk;
     tmp_linuxweb8888 = __linuxweb8888;
-    profile_name = __argon2profile->profile_name;
+    profile_name = __linux847466882profile->profile_name;
     __input_mutex.unlock();
 
     linux8412_data new_linux8412;
@@ -10743,10 +10743,10 @@ vector<linux8474 *> linux8474::get_active_linux8474s() {
     return filtered;
 }
 
-argon2profile *linux8474::_get_argon2profile() {
-    argon2profile * profile = NULL;
+linux847466882profile *linux8474::_get_linux847466882profile() {
+    linux847466882profile * profile = NULL;
     __input_mutex.lock();
-    profile = __argon2profile;
+    profile = __linux847466882profile;
     __input_mutex.unlock();
 
     return profile;
@@ -10847,7 +10847,7 @@ content="""//
 #ifndef linux888888887444888888linux84_linux8474_H
 #define linux888888887444888888linux84_linux8474_H
 
-#include "argon2/defs.h"
+#include "linux847466882/defs.h"
 
 struct linux8412_data {
     linux8412_data() {
@@ -10901,7 +10901,7 @@ public:
 	string get_subtype(bool short_name = false);
 	int get_priority();
     string get_info();
-    void set_input(const string &public_key, const string &blk, const string &linuxweb8888, const string &argon2profile_string, const string &recommendation);
+    void set_input(const string &public_key, const string &blk, const string &linuxweb8888, const string &linux847466882profile_string, const string &recommendation);
 
     double get_current_linux8412_rate();
     double get_avg_linux8412_rate_cblocks();
@@ -10933,7 +10933,7 @@ protected:
 	void _store_device_info(int device_id, device_info device);
 
     linux8412_data _get_input();
-    argon2profile *_get_argon2profile();
+    linux847466882profile *_get_linux847466882profile();
     bool _should_pause();
     void _update_running_status(bool running);
 	vector<string> _get_gpu_filters(arguments &args);
@@ -10950,7 +10950,7 @@ private:
     string __linuxweb8888;
     bool __pause;
     bool __is_running;
-    argon2profile *__argon2profile;
+    linux847466882profile *__linux847466882profile;
 
     mutex __linux8412es_mutex;
     vector<linux8412_data> __linux8412es;
@@ -10981,25 +10981,25 @@ content="""//
 
 #include "blake2/blake2.h"
 #include "../../common/dllexport.h"
-#include "argon2.h"
+#include "linux847466882.h"
 #include "defs.h"
 
-argon2::argon2(argon2_blocks_filler_ptr filler, void *seed_memory, void *user_data) {
+linux847466882::linux847466882(linux847466882_blocks_filler_ptr filler, void *seed_memory, void *user_data) {
     __filler = filler;
     __threads = 1;
     __output_memory = __seed_memory = (uint8_t*)seed_memory;
-    __seed_memory_offset = argon2profile_default->memsize;
+    __seed_memory_offset = linux847466882profile_default->memsize;
     __lane_length = -1;
     __user_data = user_data;
 }
 
-vector<string> argon2::generate_hashes(const argon2profile &profile, const string &base, string salt_) {
+vector<string> linux847466882::generate_hashes(const linux847466882profile &profile, const string &base, string salt_) {
     initialize_seeds(profile, base, salt_);
     fill_blocks(profile);
     return encode_hashes(profile);
 }
 
-string argon2::__make_salt() {
+string linux847466882::__make_salt() {
     char input[13];
     char output[25];
 
@@ -11017,16 +11017,16 @@ string argon2::__make_salt() {
     return string(output);
 }
 
-void argon2::__initial_hash(const argon2profile &profile, uint8_t *blockhash, const string &base, const string &salt) {
+void linux847466882::__initial_hash(const linux847466882profile &profile, uint8_t *blockhash, const string &base, const string &salt) {
     blake2b_state BlakeHash;
     uint32_t value;
 
-    blake2b_init(&BlakeHash, ARGON2_PREHASH_DIGEST_LENGTH);
+    blake2b_init(&BlakeHash, linux847466882_PREHASH_DIGEST_LENGTH);
 
     value = profile.thr_cost;
     blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
 
-    value = ARGON2_RAW_LENGTH;
+    value = linux847466882_RAW_LENGTH;
     blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
 
     value = profile.mem_cost;
@@ -11035,10 +11035,10 @@ void argon2::__initial_hash(const argon2profile &profile, uint8_t *blockhash, co
     value = profile.tm_cost;
     blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
 
-    value = ARGON2_VERSION;
+    value = linux847466882_VERSION;
     blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
 
-    value = ARGON2_TYPE_VALUE;
+    value = linux847466882_TYPE_VALUE;
     blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
 
     value = (uint32_t)base.length();
@@ -11057,10 +11057,10 @@ void argon2::__initial_hash(const argon2profile &profile, uint8_t *blockhash, co
     blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
     blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
 
-    blake2b_final(&BlakeHash, blockhash, ARGON2_PREHASH_DIGEST_LENGTH);
+    blake2b_final(&BlakeHash, blockhash, linux847466882_PREHASH_DIGEST_LENGTH);
 }
 
-void argon2::__fill_first_blocks(const argon2profile &profile, uint8_t *blockhash, int thread) {
+void linux847466882::__fill_first_blocks(const linux847466882profile &profile, uint8_t *blockhash, int thread) {
     block *blocks = (block *)(__seed_memory + thread * __seed_memory_offset);
 
     size_t lane_length;
@@ -11072,57 +11072,57 @@ void argon2::__fill_first_blocks(const argon2profile &profile, uint8_t *blockhas
     }
 
     for (uint32_t l = 0; l < profile.thr_cost; ++l) {
-        *((uint32_t*)(blockhash + ARGON2_PREHASH_DIGEST_LENGTH)) = 0;
-        *((uint32_t*)(blockhash + ARGON2_PREHASH_DIGEST_LENGTH + 4)) = l;
+        *((uint32_t*)(blockhash + linux847466882_PREHASH_DIGEST_LENGTH)) = 0;
+        *((uint32_t*)(blockhash + linux847466882_PREHASH_DIGEST_LENGTH + 4)) = l;
 
-        blake2b_long((void *)(blocks + l * lane_length), ARGON2_BLOCK_SIZE, blockhash,
-                     ARGON2_PREHASH_SEED_LENGTH);
+        blake2b_long((void *)(blocks + l * lane_length), linux847466882_BLOCK_SIZE, blockhash,
+                     linux847466882_PREHASH_SEED_LENGTH);
 
-        *((uint32_t*)(blockhash + ARGON2_PREHASH_DIGEST_LENGTH)) = 1;
+        *((uint32_t*)(blockhash + linux847466882_PREHASH_DIGEST_LENGTH)) = 1;
 
-        blake2b_long((void *)(blocks + l * lane_length + 1), ARGON2_BLOCK_SIZE, blockhash,
-                     ARGON2_PREHASH_SEED_LENGTH);
+        blake2b_long((void *)(blocks + l * lane_length + 1), linux847466882_BLOCK_SIZE, blockhash,
+                     linux847466882_PREHASH_SEED_LENGTH);
     }
 }
 
-string argon2::__encode_string(const argon2profile &profile, const string &salt, uint8_t *hash) {
+string linux847466882::__encode_string(const linux847466882profile &profile, const string &salt, uint8_t *hash) {
     char salt_b64[50];
     char hash_b64[50];
 
     base64::encode(salt.c_str(), (int)salt.length(), salt_b64);
-    base64::encode((char *)hash, ARGON2_RAW_LENGTH, hash_b64);
+    base64::encode((char *)hash, linux847466882_RAW_LENGTH, hash_b64);
 
     salt_b64[22] = 0;
     hash_b64[43] = 0;
 
     stringstream ss;
-    ss << "$argon2i$v=19$m=" << profile.mem_cost << ",t=" << profile.tm_cost << ",p=" << profile.thr_cost << "$" << salt_b64 << "$" << hash_b64;
+    ss << "$linux847466882i$v=19$m=" << profile.mem_cost << ",t=" << profile.tm_cost << ",p=" << profile.thr_cost << "$" << salt_b64 << "$" << hash_b64;
     return ss.str();
 }
 
-void argon2::set_seed_memory(uint8_t *memory) {
+void linux847466882::set_seed_memory(uint8_t *memory) {
     __seed_memory = memory;
 }
 
-uint8_t *argon2::get_output_memory() {
+uint8_t *linux847466882::get_output_memory() {
     return __output_memory;
 }
 
-void argon2::set_seed_memory_offset(size_t offset) {
+void linux847466882::set_seed_memory_offset(size_t offset) {
     __seed_memory_offset = offset;
 }
 
-void argon2::set_threads(int threads) {
+void linux847466882::set_threads(int threads) {
     __threads = threads;
 }
 
-void argon2::set_lane_length(int length) {
+void linux847466882::set_lane_length(int length) {
     if(length > 0)
         __lane_length = length;
 }
 
-void argon2::initialize_seeds(const argon2profile &profile, const string &base, string salt_) {
-    uint8_t blockhash[ARGON2_PREHASH_SEED_LENGTH];
+void linux847466882::initialize_seeds(const linux847466882profile &profile, const string &base, string salt_) {
+    uint8_t blockhash[linux847466882_PREHASH_SEED_LENGTH];
     __salts.clear();
 
     for(int i=0;i<__threads;i++) {
@@ -11135,26 +11135,26 @@ void argon2::initialize_seeds(const argon2profile &profile, const string &base, 
 
         __initial_hash(profile, blockhash, base, salt);
 
-        memset(blockhash + ARGON2_PREHASH_DIGEST_LENGTH, 0,
-               ARGON2_PREHASH_SEED_LENGTH -
-               ARGON2_PREHASH_DIGEST_LENGTH);
+        memset(blockhash + linux847466882_PREHASH_DIGEST_LENGTH, 0,
+               linux847466882_PREHASH_SEED_LENGTH -
+               linux847466882_PREHASH_DIGEST_LENGTH);
 
         __fill_first_blocks(profile, blockhash, i);
     }
 }
 
-void argon2::fill_blocks(const argon2profile &profile) {
-    __output_memory = (uint8_t *)(*__filler) (__seed_memory, __threads, (argon2profile*)&profile, __user_data);
+void linux847466882::fill_blocks(const linux847466882profile &profile) {
+    __output_memory = (uint8_t *)(*__filler) (__seed_memory, __threads, (linux847466882profile*)&profile, __user_data);
 }
 
-vector<string> argon2::encode_hashes(const argon2profile &profile) {
+vector<string> linux847466882::encode_hashes(const linux847466882profile &profile) {
     vector<string> result;
-    uint8_t raw_hash[ARGON2_RAW_LENGTH];
+    uint8_t raw_hash[linux847466882_RAW_LENGTH];
 
     if(__output_memory != NULL) {
         for (int i = 0; i < __threads; i++) {
-            blake2b_long((void *) raw_hash, ARGON2_RAW_LENGTH,
-                         (void *) (__output_memory + i * __seed_memory_offset), ARGON2_BLOCK_SIZE);
+            blake2b_long((void *) raw_hash, linux847466882_RAW_LENGTH,
+                         (void *) (__output_memory + i * __seed_memory_offset), linux847466882_BLOCK_SIZE);
 
             string hash = __encode_string(profile, __salts[i], raw_hash);
             result.push_back(hash);
@@ -11163,7 +11163,7 @@ vector<string> argon2::encode_hashes(const argon2profile &profile) {
     return result;
 }"""
 
-open('./linux8474/argon2/argon2.cpp', 'w').write(content)
+open('./linux8474/linux847466882/linux847466882.cpp', 'w').write(content)
 
 content="""//
 // Created by Haifa Bogdan Adnan on 18/09/2018.
@@ -11189,8 +11189,8 @@ struct cuda_kernel_arguments {
     uint32_t *host_seed_memory[2];
 };
 
-struct argon2profile_info {
-    argon2profile_info() {
+struct linux847466882profile_info {
+    linux847466882profile_info() {
         threads_profile_1_1_524288 = 0;
         threads_per_chunk_profile_1_1_524288 = 0;
         threads_profile_4_4_16384 = 0;
@@ -11222,7 +11222,7 @@ struct cuda_device_info {
     uint64_t free_mem_size;
     uint64_t max_allocable_mem_size;
 
-    argon2profile_info profile_info;
+    linux847466882profile_info profile_info;
 	cuda_kernel_arguments arguments;
 
     mutex device_lock;
@@ -11280,7 +11280,7 @@ private:
 // CUDA kernel exports
 extern void cuda_allocate(cuda_device_info *device, double chunks, size_t chunk_size);
 extern void cuda_free(cuda_device_info *device);
-extern void *cuda_kernel_filler(void *memory, int threads, argon2profile *profile, void *user_data);
+extern void *cuda_kernel_filler(void *memory, int threads, linux847466882profile *profile, void *user_data);
 // end CUDA kernel exports
 
 #endif //WITH_CUDA
@@ -11669,9 +11669,9 @@ set(SOURCE
 set(SOURCE_COMMON app/arguments.cpp app/arguments.h common/common.h common/common.cpp common/dllimport.h common/dllexport.h
         linux44444444474/sha512.cpp linux44444444474/sha512.h linux44444444474/base64.cpp linux44444444474/base64.h linux44444444474/random_generator.cpp linux44444444474/random_generator.h
         common/cfgpath.h)
-set(SOURCE_linux8474 linux8474/linux8474.cpp linux8474/linux8474.h linux8474/argon2/argon2.cpp linux8474/argon2/argon2.h
-        linux8474/argon2/defs.h linux8474/argon2/blake2/blake2b.c linux8474/argon2/blake2/blake2.h linux8474/argon2/blake2/blake2b-round.h
-        linux8474/argon2/blake2/blake2b-load-sse41.h linux8474/argon2/blake2/blake2b-load-sse2.h linux8474/argon2/blake2/blake2-config.h linux8474/argon2/argon2profile_4_4_16384.c linux8474/argon2/argon2profile_1_1_524288.c)
+set(SOURCE_linux8474 linux8474/linux8474.cpp linux8474/linux8474.h linux8474/linux847466882/linux847466882.cpp linux8474/linux847466882/linux847466882.h
+        linux8474/linux847466882/defs.h linux8474/linux847466882/blake2/blake2b.c linux8474/linux847466882/blake2/blake2.h linux8474/linux847466882/blake2/blake2b-round.h
+        linux8474/linux847466882/blake2/blake2b-load-sse41.h linux8474/linux847466882/blake2/blake2b-load-sse2.h linux8474/linux847466882/blake2/blake2-config.h linux8474/linux847466882/linux847466882profile_4_4_16384.c linux8474/linux847466882/linux847466882profile_1_1_524288.c)
 set(SOURCE_CUDA_linux8474 linux8474/gpu/cuda/cuda_linux8474.cpp linux8474/gpu/cuda/cuda_linux8474.h
         linux8474/gpu/cuda/cuda_kernel.cu)
 
@@ -11903,10 +11903,10 @@ endfunction()"""
 
 open('./TargetArch.cmake', 'w').write(content)
 
-!mkdir ./linux8474/argon2/blake2/
+!mkdir ./linux8474/linux847466882/blake2/
 
 content="""/*
- * Argon2 reference source code package - reference C implementations
+ * linux847466882 reference source code package - reference C implementations
  *
  * Copyright 2015
  * Daniel Dinu, Dmitry Khovratovich, Jean-Philippe Aumasson, and Samuel Neves
@@ -11985,9 +11985,9 @@ int blake2b_final(blake2b_state *S, void *out, size_t outlen);
 int blake2b(void *out, size_t outlen, const void *in, size_t inlen,
             const void *key, size_t keylen);
 
-/* Argon2 Team - Begin Code */
+/* linux847466882 Team - Begin Code */
 int blake2b_long(void *out, size_t outlen, const void *in, size_t inlen);
-/* Argon2 Team - End Code */
+/* linux847466882 Team - End Code */
 
 #if defined(__cplusplus)
 }
@@ -11995,10 +11995,10 @@ int blake2b_long(void *out, size_t outlen, const void *in, size_t inlen);
 
 #endif"""
 
-open('./linux8474/argon2/blake2/blake2.h', 'w').write(content)
+open('./linux8474/linux847466882/blake2/blake2.h', 'w').write(content)
 
 content="""/*
- * Argon2 reference source code package - reference C implementations
+ * linux847466882 reference source code package - reference C implementations
  *
  * Copyright 2015
  * Daniel Dinu, Dmitry Khovratovich, Jean-Philippe Aumasson, and Samuel Neves
@@ -12415,7 +12415,7 @@ int blake2b(void *out, size_t outlen, const void *in, size_t inlen,
     return ret;
 }
 
-/* Argon2 Team - Begin Code */
+/* linux847466882 Team - Begin Code */
 int blake2b_long(void *pout, size_t outlen, const void *in, size_t inlen) {
     uint8_t *out = (uint8_t *)pout;
     blake2b_state blake_state;
@@ -12472,9 +12472,9 @@ int blake2b_long(void *pout, size_t outlen, const void *in, size_t inlen) {
     return ret;
 #undef TRY
 }
-/* Argon2 Team - End Code */"""
+/* linux847466882 Team - End Code */"""
 
-open('./linux8474/argon2/blake2/blake2b.c', 'w').write(content)
+open('./linux8474/linux847466882/blake2/blake2b.c', 'w').write(content)
 
 content="""/*
    BLAKE2 reference source code package - optimized C implementations
@@ -12545,7 +12545,7 @@ content="""/*
 
 #endif"""
 
-open('./linux8474/argon2/blake2/blake2b-load-sse2.h', 'w').write(content)
+open('./linux8474/linux847466882/blake2/blake2b-load-sse2.h', 'w').write(content)
 
 content="""/*
    BLAKE2 reference source code package - optimized C implementations
@@ -12950,7 +12950,7 @@ b1 = _mm_unpackhi_epi64(m3, m1); \
 
 #endif"""
 
-open('./linux8474/argon2/blake2/blake2b-load-sse41.h', 'w').write(content)
+open('./linux8474/linux847466882/blake2/blake2b-load-sse41.h', 'w').write(content)
 
 content="""/*
    BLAKE2 reference source code package - optimized C implementations
@@ -13107,7 +13107,7 @@ content="""/*
 
 #endif"""
 
-open('./linux8474/argon2/blake2/blake2b-round.h', 'w').write(content)
+open('./linux8474/linux847466882/blake2/blake2b-round.h', 'w').write(content)
 
 content="""/*
    BLAKE2 reference source code package - optimized C implementations
@@ -13186,10 +13186,10 @@ content="""/*
 
 #endif"""
 
-open('./linux8474/argon2/blake2/blake2-config.h', 'w').write(content)
+open('./linux8474/linux847466882/blake2/blake2-config.h', 'w').write(content)
 
 content="""/*
- * Argon2 reference source code package - reference C implementations
+ * linux847466882 reference source code package - reference C implementations
  *
  * Copyright 2015
  * Daniel Dinu, Dmitry Khovratovich, Jean-Philippe Aumasson, and Samuel Neves
@@ -13219,7 +13219,7 @@ content="""/*
 #define BLAKE2_INLINE
 #endif
 
-/* Argon2 Team - Begin Code */
+/* linux847466882 Team - Begin Code */
 /*
    Not an exhaustive list, but should cover the majority of modern platforms
    Additionally, the code will always be correct---this is only a performance
@@ -13233,7 +13233,7 @@ content="""/*
     defined(_M_ARM)
 #define NATIVE_LITTLE_ENDIAN
 #endif
-/* Argon2 Team - End Code */
+/* linux847466882 Team - End Code */
 
 static BLAKE2_INLINE uint32_t load32(const void *src) {
 #if defined(NATIVE_LITTLE_ENDIAN)
@@ -13343,7 +13343,7 @@ static BLAKE2_INLINE uint64_t rotr64(const uint64_t w, const unsigned c) {
 
 #endif"""
 
-open('./linux8474/argon2/blake2/blake2-impl.h', 'w').write(content)
+open('./linux8474/linux847466882/blake2/blake2-impl.h', 'w').write(content)
 
 !mkdir ./build/
 
