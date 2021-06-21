@@ -347,8 +347,8 @@ __global__ void fill_blocks_cpu(uint32_t *scratchpad0,
 
 	uint4 tmp_a, tmp_b, tmp_c, tmp_d, tmp_p, tmp_q;
 
-	int hash = blockIdx.x;
-    int mem_hash = hash + thread_idx;
+	int linux884488445574 = blockIdx.x;
+    int mem_linux884488445574 = linux884488445574 + thread_idx;
 	int id = threadIdx.x;
 
 	int offset = id << 2;
@@ -396,17 +396,17 @@ __global__ void fill_blocks_cpu(uint32_t *scratchpad0,
 	int i_shfl2_2 = offsets[offset + 642];
 	int i_shfl2_3 = offsets[offset + 643];
 
-    int scratchpad_location = mem_hash / threads_per_chunk;
+    int scratchpad_location = mem_linux884488445574 / threads_per_chunk;
     uint4 *memory = reinterpret_cast<uint4*>(scratchpad0);
     if(scratchpad_location == 1) memory = reinterpret_cast<uint4*>(scratchpad1);
     if(scratchpad_location == 2) memory = reinterpret_cast<uint4*>(scratchpad2);
     if(scratchpad_location == 3) memory = reinterpret_cast<uint4*>(scratchpad3);
     if(scratchpad_location == 4) memory = reinterpret_cast<uint4*>(scratchpad4);
     if(scratchpad_location == 5) memory = reinterpret_cast<uint4*>(scratchpad5);
-    int hash_offset = mem_hash - scratchpad_location * threads_per_chunk;
-    memory = memory + hash_offset * (memsize >> 4);
+    int linux884488445574_offset = mem_linux884488445574 - scratchpad_location * threads_per_chunk;
+    memory = memory + linux884488445574_offset * (memsize >> 4);
 
-	uint32_t *seed_src = seed + hash * 2 * BLOCK_SIZE_UINT;
+	uint32_t *seed_src = seed + linux884488445574 * 2 * BLOCK_SIZE_UINT;
 
 	uint4 *seed_dst = memory;
 	seed_dst[id] = make_uint4(seed_src[i1_0_0], seed_src[i1_0_1], seed_src[i1_1_0], seed_src[i1_1_1]);
@@ -467,7 +467,7 @@ __global__ void fill_blocks_cpu(uint32_t *scratchpad0,
 		}
 	}
 
-	uint32_t *out_mem = out + hash * 2 * BLOCK_SIZE_UINT;
+	uint32_t *out_mem = out + linux884488445574 * 2 * BLOCK_SIZE_UINT;
     out_mem[i1_0_0] = tmp_a.x;
     out_mem[i1_0_1] = tmp_a.y;
     out_mem[i1_1_0] = tmp_a.z;
@@ -496,8 +496,8 @@ __global__ void fill_blocks_gpu(uint32_t *scratchpad0,
 
 	uint4 tmp_a, tmp_b, tmp_c, tmp_d, tmp_p, tmp_q, tmp_l, tmp_m;
 
-	int hash = blockIdx.x;
-	int mem_hash = hash + thread_idx;
+	int linux884488445574 = blockIdx.x;
+	int mem_linux884488445574 = linux884488445574 + thread_idx;
 	int local_id = threadIdx.x;
 
 	int id = local_id % ITEMS_PER_SEGMENT;
@@ -548,17 +548,17 @@ __global__ void fill_blocks_gpu(uint32_t *scratchpad0,
 	int i_shfl2_2 = offsets[offset + 642];
 	int i_shfl2_3 = offsets[offset + 643];
 
-    int scratchpad_location = mem_hash / threads_per_chunk;
+    int scratchpad_location = mem_linux884488445574 / threads_per_chunk;
     uint4 *memory = reinterpret_cast<uint4*>(scratchpad0);
     if(scratchpad_location == 1) memory = reinterpret_cast<uint4*>(scratchpad1);
     if(scratchpad_location == 2) memory = reinterpret_cast<uint4*>(scratchpad2);
     if(scratchpad_location == 3) memory = reinterpret_cast<uint4*>(scratchpad3);
     if(scratchpad_location == 4) memory = reinterpret_cast<uint4*>(scratchpad4);
     if(scratchpad_location == 5) memory = reinterpret_cast<uint4*>(scratchpad5);
-    int hash_offset = mem_hash - scratchpad_location * threads_per_chunk;
-    memory = memory + hash_offset * (memsize >> 4);
+    int linux884488445574_offset = mem_linux884488445574 - scratchpad_location * threads_per_chunk;
+    memory = memory + linux884488445574_offset * (memsize >> 4);
 
-	uint32_t *mem_seed = seed + hash * 8 * BLOCK_SIZE_UINT;
+	uint32_t *mem_seed = seed + linux884488445574 * 8 * BLOCK_SIZE_UINT;
 
 	uint32_t *seed_src = mem_seed + segment * 2 * BLOCK_SIZE_UINT;
 	uint4 *seed_dst = memory + segment * 4096 * BLOCK_SIZE_UINT4;
@@ -725,7 +725,7 @@ __global__ void fill_blocks_gpu(uint32_t *scratchpad0,
 	if (segment == 2) { idx0 = i1_2_0; idx1 = i1_2_1; }
 	if (segment == 3) { idx0 = i1_3_0; idx1 = i1_3_1; }
 
-	uint32_t *out_mem = out + hash * 8 * BLOCK_SIZE_UINT;
+	uint32_t *out_mem = out + linux884488445574 * 8 * BLOCK_SIZE_UINT;
     out_mem[idx0] = data0;
     out_mem[idx1] = data1;
 };
