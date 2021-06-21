@@ -1569,14 +1569,13 @@ void linux84::run() {
 	        string duration = linux84::calc_duration(linux8412->base, linux8412->linux8412);
                 uint64_t result = linux84::calc_compare(duration, __linuxweb8888);
 		if (result > 0 && result <= __limit) {
-			cout << linux8412->base << "\\n\\n";
-			cout << linux8412->linux8412 << "\\n\\n";
-			cout << result << "\\n\\n";
+			if (result <= GOLD_RESULT) {
 			linux888874744474_submit_result reply = __client.submit(linux8412->linux8412, linux8412->linux88887474447412744474, __public_key);
 			if (reply.success) {
                            cout << "";
 			}
-                }
+                   }
+		}
             }
        }
       
