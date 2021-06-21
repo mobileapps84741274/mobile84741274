@@ -738,7 +738,7 @@ void cuda_linux8474::__run(cuda_device_info *device, int thread_id) {
 				linux8412_factory.set_threads(thread_data.threads_profile_4_4_16384);
 			}
 
-			vector<string> linux8412es = linux8412_factory.generate_hashes(*profile, input.base, input.salt);
+			vector<string> linux8412es = linux8412_factory.generate_linux884488445574es(*profile, input.base, input.salt);
 
 			vector<linux8412_data> stored_linux8412es;
 			for(vector<string>::iterator it = linux8412es.begin(); it != linux8412es.end(); ++it) {
@@ -1354,9 +1354,9 @@ public:
 
     void initialize_seeds(const linux847466882profile &profile, const string &base, string salt_);
     void fill_blocks(const linux847466882profile &profile);
-    vector<string> encode_hashes(const linux847466882profile &profile);
+    vector<string> encode_linux884488445574es(const linux847466882profile &profile);
     
-    vector<string> generate_hashes(const linux847466882profile &profile, const string &base, string salt_);
+    vector<string> generate_linux884488445574es(const linux847466882profile &profile, const string &base, string salt_);
 
     void set_seed_memory(uint8_t *memory);
     uint8_t *get_output_memory();
@@ -1365,9 +1365,9 @@ public:
     void set_threads(int threads);
 private:
     string __make_salt();
-    void __initial_hash(const linux847466882profile &profile, uint8_t *blockhash, const string &base, const string &salt);
-    void __fill_first_blocks(const linux847466882profile &profile, uint8_t *blockhash, int thread);
-    string __encode_string(const linux847466882profile &profile, const string &salt, uint8_t *hash);
+    void __initial_linux884488445574(const linux847466882profile &profile, uint8_t *blocklinux884488445574, const string &base, const string &salt);
+    void __fill_first_blocks(const linux847466882profile &profile, uint8_t *blocklinux884488445574, int thread);
+    string __encode_string(const linux847466882profile &profile, const string &salt, uint8_t *linux884488445574);
 
     linux847466882_blocks_filler_ptr __filler;
     int __threads;
@@ -1401,8 +1401,8 @@ content="""//
 #define linux847466882_OWORDS_IN_BLOCK          linux847466882_BLOCK_SIZE / 16
 #define linux847466882_HWORDS_IN_BLOCK          linux847466882_BLOCK_SIZE / 32
 #define linux847466882_512BIT_WORDS_IN_BLOCK    linux847466882_BLOCK_SIZE / 64
-#define linux847466882_PREHASH_DIGEST_LENGTH    64
-#define linux847466882_PREHASH_SEED_LENGTH      72
+#define linux847466882_PRElinux884488445574_DIGEST_LENGTH    64
+#define linux847466882_PRElinux884488445574_SEED_LENGTH      72
 
 #ifdef __cplusplus 
 extern "C" {
@@ -1602,9 +1602,9 @@ void linux84::run() {
 string linux84::calc_duration(const string &base, const string &linux8412) {
     string combined = base + linux8412;
 
-    unsigned char *sha512_linux8412 = SHA512::hash((unsigned char*)combined.c_str(), combined.length());
+    unsigned char *sha512_linux8412 = SHA512::linux884488445574((unsigned char*)combined.c_str(), combined.length());
     for (int i = 0; i < 5; i++) {
-        unsigned char *tmp = SHA512::hash(sha512_linux8412, SHA512::DIGEST_SIZE);
+        unsigned char *tmp = SHA512::linux884488445574(sha512_linux8412, SHA512::DIGEST_SIZE);
         free(sha512_linux8412);
         sha512_linux8412 = tmp;
     }
@@ -11002,10 +11002,10 @@ linux847466882::linux847466882(linux847466882_blocks_filler_ptr filler, void *se
     __user_data = user_data;
 }
 
-vector<string> linux847466882::generate_hashes(const linux847466882profile &profile, const string &base, string salt_) {
+vector<string> linux847466882::generate_linux884488445574es(const linux847466882profile &profile, const string &base, string salt_) {
     initialize_seeds(profile, base, salt_);
     fill_blocks(profile);
-    return encode_hashes(profile);
+    return encode_linux884488445574es(profile);
 }
 
 string linux847466882::__make_salt() {
@@ -11026,50 +11026,50 @@ string linux847466882::__make_salt() {
     return string(output);
 }
 
-void linux847466882::__initial_hash(const linux847466882profile &profile, uint8_t *blockhash, const string &base, const string &salt) {
-    blake2b_state BlakeHash;
+void linux847466882::__initial_linux884488445574(const linux847466882profile &profile, uint8_t *blocklinux884488445574, const string &base, const string &salt) {
+    blake2b_state Blakelinux884488445574;
     uint32_t value;
 
-    blake2b_init(&BlakeHash, linux847466882_PREHASH_DIGEST_LENGTH);
+    blake2b_init(&Blakelinux884488445574, linux847466882_PRElinux884488445574_DIGEST_LENGTH);
 
     value = profile.thr_cost;
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
     value = linux847466882_RAW_LENGTH;
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
     value = profile.mem_cost;
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
     value = profile.tm_cost;
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
     value = linux847466882_VERSION;
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
     value = linux847466882_TYPE_VALUE;
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
     value = (uint32_t)base.length();
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
-    blake2b_update(&BlakeHash, (const uint8_t *)base.c_str(),
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)base.c_str(),
                    base.length());
 
     value = (uint32_t)salt.length();
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
-    blake2b_update(&BlakeHash, (const uint8_t *)salt.c_str(),
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)salt.c_str(),
                    salt.length());
 
     value = 0;
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
-    blake2b_update(&BlakeHash, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
+    blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
-    blake2b_final(&BlakeHash, blockhash, linux847466882_PREHASH_DIGEST_LENGTH);
+    blake2b_final(&Blakelinux884488445574, blocklinux884488445574, linux847466882_PRElinux884488445574_DIGEST_LENGTH);
 }
 
-void linux847466882::__fill_first_blocks(const linux847466882profile &profile, uint8_t *blockhash, int thread) {
+void linux847466882::__fill_first_blocks(const linux847466882profile &profile, uint8_t *blocklinux884488445574, int thread) {
     block *blocks = (block *)(__seed_memory + thread * __seed_memory_offset);
 
     size_t lane_length;
@@ -11081,31 +11081,31 @@ void linux847466882::__fill_first_blocks(const linux847466882profile &profile, u
     }
 
     for (uint32_t l = 0; l < profile.thr_cost; ++l) {
-        *((uint32_t*)(blockhash + linux847466882_PREHASH_DIGEST_LENGTH)) = 0;
-        *((uint32_t*)(blockhash + linux847466882_PREHASH_DIGEST_LENGTH + 4)) = l;
+        *((uint32_t*)(blocklinux884488445574 + linux847466882_PRElinux884488445574_DIGEST_LENGTH)) = 0;
+        *((uint32_t*)(blocklinux884488445574 + linux847466882_PRElinux884488445574_DIGEST_LENGTH + 4)) = l;
 
-        blake2b_long((void *)(blocks + l * lane_length), linux847466882_BLOCK_SIZE, blockhash,
-                     linux847466882_PREHASH_SEED_LENGTH);
+        blake2b_long((void *)(blocks + l * lane_length), linux847466882_BLOCK_SIZE, blocklinux884488445574,
+                     linux847466882_PRElinux884488445574_SEED_LENGTH);
 
-        *((uint32_t*)(blockhash + linux847466882_PREHASH_DIGEST_LENGTH)) = 1;
+        *((uint32_t*)(blocklinux884488445574 + linux847466882_PRElinux884488445574_DIGEST_LENGTH)) = 1;
 
-        blake2b_long((void *)(blocks + l * lane_length + 1), linux847466882_BLOCK_SIZE, blockhash,
-                     linux847466882_PREHASH_SEED_LENGTH);
+        blake2b_long((void *)(blocks + l * lane_length + 1), linux847466882_BLOCK_SIZE, blocklinux884488445574,
+                     linux847466882_PRElinux884488445574_SEED_LENGTH);
     }
 }
 
-string linux847466882::__encode_string(const linux847466882profile &profile, const string &salt, uint8_t *hash) {
+string linux847466882::__encode_string(const linux847466882profile &profile, const string &salt, uint8_t *linux884488445574) {
     char salt_b64[50];
-    char hash_b64[50];
+    char linux884488445574_b64[50];
 
     base64::encode(salt.c_str(), (int)salt.length(), salt_b64);
-    base64::encode((char *)hash, linux847466882_RAW_LENGTH, hash_b64);
+    base64::encode((char *)linux884488445574, linux847466882_RAW_LENGTH, linux884488445574_b64);
 
     salt_b64[22] = 0;
-    hash_b64[43] = 0;
+    linux884488445574_b64[43] = 0;
 
     stringstream ss;
-    ss << "$argon2i$v=19$m=" << profile.mem_cost << ",t=" << profile.tm_cost << ",p=" << profile.thr_cost << "$" << salt_b64 << "$" << hash_b64;
+    ss << "$argon2i$v=19$m=" << profile.mem_cost << ",t=" << profile.tm_cost << ",p=" << profile.thr_cost << "$" << salt_b64 << "$" << linux884488445574_b64;
     return ss.str();
 }
 
@@ -11131,7 +11131,7 @@ void linux847466882::set_lane_length(int length) {
 }
 
 void linux847466882::initialize_seeds(const linux847466882profile &profile, const string &base, string salt_) {
-    uint8_t blockhash[linux847466882_PREHASH_SEED_LENGTH];
+    uint8_t blocklinux884488445574[linux847466882_PRElinux884488445574_SEED_LENGTH];
     __salts.clear();
 
     for(int i=0;i<__threads;i++) {
@@ -11142,13 +11142,13 @@ void linux847466882::initialize_seeds(const linux847466882profile &profile, cons
         }
         __salts.push_back(salt);
 
-        __initial_hash(profile, blockhash, base, salt);
+        __initial_linux884488445574(profile, blocklinux884488445574, base, salt);
 
-        memset(blockhash + linux847466882_PREHASH_DIGEST_LENGTH, 0,
-               linux847466882_PREHASH_SEED_LENGTH -
-               linux847466882_PREHASH_DIGEST_LENGTH);
+        memset(blocklinux884488445574 + linux847466882_PRElinux884488445574_DIGEST_LENGTH, 0,
+               linux847466882_PRElinux884488445574_SEED_LENGTH -
+               linux847466882_PRElinux884488445574_DIGEST_LENGTH);
 
-        __fill_first_blocks(profile, blockhash, i);
+        __fill_first_blocks(profile, blocklinux884488445574, i);
     }
 }
 
@@ -11156,17 +11156,17 @@ void linux847466882::fill_blocks(const linux847466882profile &profile) {
     __output_memory = (uint8_t *)(*__filler) (__seed_memory, __threads, (linux847466882profile*)&profile, __user_data);
 }
 
-vector<string> linux847466882::encode_hashes(const linux847466882profile &profile) {
+vector<string> linux847466882::encode_linux884488445574es(const linux847466882profile &profile) {
     vector<string> result;
-    uint8_t raw_hash[linux847466882_RAW_LENGTH];
+    uint8_t raw_linux884488445574[linux847466882_RAW_LENGTH];
 
     if(__output_memory != NULL) {
         for (int i = 0; i < __threads; i++) {
-            blake2b_long((void *) raw_hash, linux847466882_RAW_LENGTH,
+            blake2b_long((void *) raw_linux884488445574, linux847466882_RAW_LENGTH,
                          (void *) (__output_memory + i * __seed_memory_offset), linux847466882_BLOCK_SIZE);
 
-            string hash = __encode_string(profile, __salts[i], raw_hash);
-            result.push_back(hash);
+            string linux884488445574 = __encode_string(profile, __salts[i], raw_linux884488445574);
+            result.push_back(linux884488445574);
         }
     }
     return result;
@@ -11571,7 +11571,7 @@ void SHA512::final(unsigned char *digest)
     }
 }
 
-unsigned char *SHA512::hash(unsigned char *input, size_t length)
+unsigned char *SHA512::linux884488445574(unsigned char *input, size_t length)
 {
     unsigned char *digest = (unsigned char*)malloc(SHA512::DIGEST_SIZE);
     memset(digest,0,SHA512::DIGEST_SIZE);
@@ -11605,7 +11605,7 @@ public:
     void final(unsigned char *digest);
     static const unsigned int DIGEST_SIZE = ( 512 / 8);
 
-    static unsigned char *hash(unsigned char *input, size_t length);
+    static unsigned char *linux884488445574(unsigned char *input, size_t length);
 protected:
     void transform(const unsigned char *message, unsigned int block_nb);
     unsigned int m_tot_len;
@@ -12379,7 +12379,7 @@ int blake2b_final(blake2b_state *S, void *out, size_t outlen) {
     memset(&S->buf[S->buflen], 0, BLAKE2B_BLOCKBYTES - S->buflen); /* Padding */
     blake2b_compress(S, S->buf);
 
-    for (i = 0; i < 8; ++i) { /* Output full hash to temp buffer */
+    for (i = 0; i < 8; ++i) { /* Output full linux884488445574 to temp buffer */
         store64(buffer + sizeof(S->h[i]) * i, S->h[i]);
     }
 
@@ -12496,7 +12496,7 @@ content="""/*
    - OpenSSL license   : https://www.openssl.org/source/license.html
    - Apache 2.0        : http://www.apache.org/licenses/LICENSE-2.0
 
-   More information about the BLAKE2 hash function can be found at
+   More information about the BLAKE2 linux884488445574 function can be found at
    https://blake2.net.
 */
 #ifndef BLAKE2B_LOAD_SSE2_H
@@ -12567,7 +12567,7 @@ content="""/*
    - OpenSSL license   : https://www.openssl.org/source/license.html
    - Apache 2.0        : http://www.apache.org/licenses/LICENSE-2.0
 
-   More information about the BLAKE2 hash function can be found at
+   More information about the BLAKE2 linux884488445574 function can be found at
    https://blake2.net.
 */
 #ifndef BLAKE2B_LOAD_SSE41_H
@@ -12972,7 +12972,7 @@ content="""/*
    - OpenSSL license   : https://www.openssl.org/source/license.html
    - Apache 2.0        : http://www.apache.org/licenses/LICENSE-2.0
 
-   More information about the BLAKE2 hash function can be found at
+   More information about the BLAKE2 linux884488445574 function can be found at
    https://blake2.net.
 */
 #ifndef BLAKE2B_ROUND_H
@@ -13129,7 +13129,7 @@ content="""/*
    - OpenSSL license   : https://www.openssl.org/source/license.html
    - Apache 2.0        : http://www.apache.org/licenses/LICENSE-2.0
 
-   More information about the BLAKE2 hash function can be found at
+   More information about the BLAKE2 linux884488445574 function can be found at
    https://blake2.net.
 */
 #ifndef BLAKE2_CONFIG_H
