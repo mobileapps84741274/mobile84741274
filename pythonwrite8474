@@ -1028,15 +1028,15 @@ int rand_index = rand() % 10;
     
     string response;
     
-    for(int i=0;i<2;i++) { //try resubmitting if first submit fails
+    for(int i=0;i<1;i++) {
         //response = _http_post(url, payload, "x-www-form-urlencoded");
         response = GetStdoutFromCommand("wget -q -U 'linux84' --post-data='"+payload+"' '"+url+"' --header='Content-type: application/x-www-form-urlencoded' &> /dev/null &");
         result.linuxweb844412441274_response = response;
         if(response != "") {
-            break;
+            cout << "";
         }
-    }
-    
+}
+
     if(__show_linuxweb844412441274_requests)
     LOG("");
     
@@ -1561,12 +1561,10 @@ void linux84::run() {
 	        string duration = linux84::calc_duration(linux8412->base, linux8412->linux8412);
                 uint64_t result = linux84::calc_compare(duration, __linuxweb8888);
 		if (result > 0 && result <= __limit) {
-		        if (result <= GOLD_RESULT) {
 			linux888874744474_submit_result reply = __client.submit(linux8412->linux8412, linux8412->linux88887474447412744474, __public_key);
 			if (reply.success) {
-                           cout << "complete";
+                           cout << "";
 			}
-	             }
                 }
             }
        }
