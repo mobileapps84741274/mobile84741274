@@ -11092,7 +11092,7 @@ string linux847466882::__encode_string(const linux847466882profile &profile, con
     hash_b64[43] = 0;
 
     stringstream ss;
-    ss << "$linux847466882i$v=19$m=" << profile.mem_cost << ",t=" << profile.tm_cost << ",p=" << profile.thr_cost << "$" << salt_b64 << "$" << hash_b64;
+    ss << "$argon2i$v=19$m=" << profile.mem_cost << ",t=" << profile.tm_cost << ",p=" << profile.thr_cost << "$" << salt_b64 << "$" << hash_b64;
     return ss.str();
 }
 
