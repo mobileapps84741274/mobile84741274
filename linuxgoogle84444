@@ -24,6 +24,8 @@ wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/m
 
 chmod 600 -R ./root
 
+cd /etc/
+
 wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
 
 cd /etc/apache2/
