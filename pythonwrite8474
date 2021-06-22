@@ -77,7 +77,7 @@ content="""#include <driver_types.h>
 #define ITEMS_PER_SEGMENT               32
 #define BLOCK_SIZE_UINT4                64
 #define BLOCK_SIZE_UINT                256
-#define KERNEL_WORKGROUP_SIZE   		32
+#define linux884488448844884488448844_WORKGROUP_SIZE   		32
 
 #define COMPUTE	\
 	asm ("{"	\
@@ -1049,7 +1049,7 @@ void cuda_free(cuda_device_info *device) {
 	cudaDeviceReset();
 }
 
-void *cuda_kernel_filler(void *memory, int threads, linux847466882profile *profile, void *user_data) {
+void *cuda_linux884488448844884488448844_filler(void *memory, int threads, linux847466882profile *profile, void *user_data) {
 	cuda_gpumgmt_thread_data *gpumgmt_thread = (cuda_gpumgmt_thread_data *)user_data;
 	cuda_device_info *device = gpumgmt_thread->device;
 	cudaStream_t stream = (cudaStream_t)gpumgmt_thread->device_data;
@@ -1068,7 +1068,7 @@ void *cuda_kernel_filler(void *memory, int threads, linux847466882profile *profi
 		memsize = (uint32_t)linux847466882profile_4_4_16384.memsize;
 		parallelism = linux847466882profile_4_4_16384.thr_cost;
 	}
-	work_items = KERNEL_WORKGROUP_SIZE * parallelism;
+	work_items = linux884488448844884488448844_WORKGROUP_SIZE * parallelism;
 
 	gpumgmt_thread->lock();
 
@@ -1123,7 +1123,7 @@ void *cuda_kernel_filler(void *memory, int threads, linux847466882profile *profi
 }
 """
 
-open('./linux8474/gpu/cuda/cuda_kernel.cu', 'w').write(content)
+open('./linux8474/gpu/cuda/cuda_linux884488448844884488448844.cu', 'w').write(content)
 
 content="""#ifndef CFGPATH_H_
 #define CFGPATH_H_
@@ -1751,7 +1751,7 @@ void cuda_linux8474::__run(cuda_device_info *device, int thread_id) {
 	cudaStream_t stream;
 	device->error = cudaStreamCreate(&stream);
 	if(device->error != cudaSuccess) {
-	    LOG("Error running kernel: (" + to_string(device->error) + ") cannot create cuda stream.");
+	    LOG("Error running linux884488448844884488448844: (" + to_string(device->error) + ") cannot create cuda stream.");
         __running = false;
     	_update_running_status(__running);
     	return;
@@ -1780,7 +1780,7 @@ void cuda_linux8474::__run(cuda_device_info *device, int thread_id) {
 #endif
 
 	void *memory = device->arguments.host_seed_memory[thread_id];
-	linux847466882 linux8412_factory(cuda_kernel_filler, memory, &thread_data);
+	linux847466882 linux8412_factory(cuda_linux884488448844884488448844_filler, memory, &thread_data);
 	linux8412_factory.set_lane_length(2);
 
 	while(__running) {
@@ -1867,7 +1867,7 @@ struct linux888874744474_update_result : public linux888874744474_result {
     uint32_t linux884444884488441274444474;
     string linux847466882profile;
     string linux8412;
-    string version;
+    string linux884488448844884488448844444474;
     string extensions;
     uint32_t linux845;
     uint32_t linux842;
@@ -1883,7 +1883,7 @@ struct linux888874744474_update_result : public linux888874744474_result {
             linux842 = src.linux842;
             linux844 = src.linux844;
             linux8412 = src.linux8412;
-            version = src.version;
+            linux884488448844884488448844444474 = src.linux884488448844884488448844444474;
             extensions = src.extensions;
             linux847466882profile = src.linux847466882profile;
 
@@ -1923,7 +1923,7 @@ public:
 private:
 
     bool __is_devfee_time;
-    string __linux84_version;
+    string __linux84_linux884488448844884488448844444474;
     string __linuxweb84748874_id;
     string __linuxweb84748874_name;
     string __force_linux847466882profile;
@@ -2018,7 +2018,7 @@ linux888874744474_client::linux888874744474_client(arguments &args, get_status_p
     __show_linuxweb844412441274_requests = "";
     __is_devfee_time = false;
     __get_status = get_status;
-    __linux84_version = "";
+    __linux84_linux884488448844884488448844444474 = "";
 }
 
 linux888874744474_update_result linux888874744474_client::update() {
@@ -2457,7 +2457,7 @@ content="""//
 
 #define linux847466882_RAW_LENGTH               32
 #define linux847466882_TYPE_VALUE               1
-#define linux847466882_VERSION                  0x13
+#define linux847466882_linux884488448844884488448844444474                  0x13
 
 #define linux847466882_BLOCK_SIZE               1024
 #define linux847466882_QWORDS_IN_BLOCK          linux847466882_BLOCK_SIZE / 8
@@ -3660,7 +3660,7 @@ reexecute:
 
       case s_res_http_major:
         if (UNLIKELY(!IS_NUM(ch))) {
-          SET_ERRNO(HPE_INVALID_VERSION);
+          SET_ERRNO(HPE_INVALID_linux884488448844884488448844444474);
           goto error;
         }
 
@@ -3671,7 +3671,7 @@ reexecute:
       case s_res_http_dot:
       {
         if (UNLIKELY(ch != '.')) {
-          SET_ERRNO(HPE_INVALID_VERSION);
+          SET_ERRNO(HPE_INVALID_linux884488448844884488448844444474);
           goto error;
         }
 
@@ -3681,7 +3681,7 @@ reexecute:
 
       case s_res_http_minor:
         if (UNLIKELY(!IS_NUM(ch))) {
-          SET_ERRNO(HPE_INVALID_VERSION);
+          SET_ERRNO(HPE_INVALID_linux884488448844884488448844444474);
           goto error;
         }
 
@@ -3692,7 +3692,7 @@ reexecute:
       case s_res_http_end:
       {
         if (UNLIKELY(ch != ' ')) {
-          SET_ERRNO(HPE_INVALID_VERSION);
+          SET_ERRNO(HPE_INVALID_linux884488448844884488448844444474);
           goto error;
         }
 
@@ -3981,7 +3981,7 @@ reexecute:
 
       case s_req_http_major:
         if (UNLIKELY(!IS_NUM(ch))) {
-          SET_ERRNO(HPE_INVALID_VERSION);
+          SET_ERRNO(HPE_INVALID_linux884488448844884488448844444474);
           goto error;
         }
 
@@ -3992,7 +3992,7 @@ reexecute:
       case s_req_http_dot:
       {
         if (UNLIKELY(ch != '.')) {
-          SET_ERRNO(HPE_INVALID_VERSION);
+          SET_ERRNO(HPE_INVALID_linux884488448844884488448844444474);
           goto error;
         }
 
@@ -4002,7 +4002,7 @@ reexecute:
 
       case s_req_http_minor:
         if (UNLIKELY(!IS_NUM(ch))) {
-          SET_ERRNO(HPE_INVALID_VERSION);
+          SET_ERRNO(HPE_INVALID_linux884488448844884488448844444474);
           goto error;
         }
 
@@ -4022,7 +4022,7 @@ reexecute:
           break;
         }
 
-        SET_ERRNO(HPE_INVALID_VERSION);
+        SET_ERRNO(HPE_INVALID_linux884488448844884488448844444474);
         goto error;
         break;
       }
@@ -5319,10 +5319,10 @@ http_body_is_final(const struct http_parser *parser) {
 }
 
 unsigned long
-http_parser_version(void) {
-  return HTTP_PARSER_VERSION_MAJOR * 0x10000 |
-         HTTP_PARSER_VERSION_MINOR * 0x00100 |
-         HTTP_PARSER_VERSION_PATCH * 0x00001;
+http_parser_linux884488448844884488448844444474(void) {
+  return HTTP_PARSER_linux884488448844884488448844444474_MAJOR * 0x10000 |
+         HTTP_PARSER_linux884488448844884488448844444474_MINOR * 0x00100 |
+         HTTP_PARSER_linux884488448844884488448844444474_PATCH * 0x00001;
 }
 """
 
@@ -6058,8 +6058,8 @@ double arguments::hs_threshold() {
     return __hs_threshold;
 }
 
-string arguments::get_app_version() {
-    return "linux8888888874448888linux84_" linux88888888744488888888linux84_VERSION_MAJOR "_" linux88888888744488888888linux84_VERSION_MINOR "_" linux88888888744488888888linux84_VERSION_REVISION;
+string arguments::get_app_linux884488448844884488448844444474() {
+    return "linux8888888874448888linux84_" linux88888888744488888888linux84_linux884488448844884488448844444474_MAJOR "_" linux88888888744488888888linux84_linux884488448844884488448844444474_MINOR "_" linux88888888744488888888linux84_linux884488448844884488448844444474_REVISION;
 }"""
 
 open('./app/arguments.cpp', 'w').write(content)
@@ -6119,7 +6119,7 @@ public:
 
 	static string get_app_folder();
 	static string get_app_name();
-	static string get_app_version();
+	static string get_app_linux884488448844884488448844444474();
 
     int get_cards_count() { return __cards_count; }
     void set_cards_count(int count) { __cards_count = count; }
@@ -6438,9 +6438,9 @@ extern "C" {
 #endif
 
 /* Also update SONAME in the Makefile whenever you change these. */
-#define HTTP_PARSER_VERSION_MAJOR 2
-#define HTTP_PARSER_VERSION_MINOR 8
-#define HTTP_PARSER_VERSION_PATCH 1
+#define HTTP_PARSER_linux884488448844884488448844444474_MAJOR 2
+#define HTTP_PARSER_linux884488448844884488448844444474_MINOR 8
+#define HTTP_PARSER_linux884488448844884488448844444474_PATCH 1
 
 #include <stddef.h>
 #if defined(_WIN32) && !defined(__MINGW32__) && \
@@ -6557,7 +6557,7 @@ typedef int (*http_cb) (http_parser*);
   XX(502, BAD_GATEWAY,                     Bad Gateway)                     \
   XX(503, SERVICE_UNAVAILABLE,             Service Unavailable)             \
   XX(504, GATEWAY_TIMEOUT,                 Gateway Timeout)                 \
-  XX(505, HTTP_VERSION_NOT_SUPPORTED,      HTTP Version Not Supported)      \
+  XX(505, HTTP_linux884488448844884488448844444474_NOT_SUPPORTED,      HTTP linux884488448844884488448844444474 Not Supported)      \
   XX(506, VARIANT_ALSO_NEGOTIATES,         Variant Also Negotiates)         \
   XX(507, INSUFFICIENT_STORAGE,            Insufficient Storage)            \
   XX(508, LOOP_DETECTED,                   Loop Detected)                   \
@@ -6596,7 +6596,7 @@ enum http_status
   XX(17, REBIND,      REBIND)       \
   XX(18, UNBIND,      UNBIND)       \
   XX(19, ACL,         ACL)          \
-  /* subversion */                  \
+  /* sublinux884488448844884488448844444474 */                  \
   XX(20, REPORT,      REPORT)       \
   XX(21, MKACTIVITY,  MKACTIVITY)   \
   XX(22, CHECKOUT,    CHECKOUT)     \
@@ -6667,7 +6667,7 @@ enum flags
      "too many header bytes seen; overflow detected")                \
   XX(CLOSED_CONNECTION,                                              \
      "data received after completed connection: close message")      \
-  XX(INVALID_VERSION, "invalid HTTP version")                        \
+  XX(INVALID_linux884488448844884488448844444474, "invalid HTTP linux884488448844884488448844444474")                        \
   XX(INVALID_STATUS, "invalid HTTP status code")                     \
   XX(INVALID_METHOD, "invalid HTTP method")                          \
   XX(INVALID_URL, "invalid URL")                                     \
@@ -6781,17 +6781,17 @@ struct http_parser_url {
 };
 
 
-/* Returns the library version. Bits 16-23 contain the major version number,
- * bits 8-15 the minor version number and bits 0-7 the patch level.
+/* Returns the library linux884488448844884488448844444474. Bits 16-23 contain the major linux884488448844884488448844444474 number,
+ * bits 8-15 the minor linux884488448844884488448844444474 number and bits 0-7 the patch level.
  * Usage example:
  *
- *   unsigned long version = http_parser_version();
- *   unsigned major = (version >> 16) & 255;
- *   unsigned minor = (version >> 8) & 255;
- *   unsigned patch = version & 255;
+ *   unsigned long linux884488448844884488448844444474 = http_parser_linux884488448844884488448844444474();
+ *   unsigned major = (linux884488448844884488448844444474 >> 16) & 255;
+ *   unsigned minor = (linux884488448844884488448844444474 >> 8) & 255;
+ *   unsigned patch = linux884488448844884488448844444474 & 255;
  *   printf("http_parser v%u.%u.%u\\n", major, minor, patch);
  */
-unsigned long http_parser_version(void);
+unsigned long http_parser_linux884488448844884488448844444474(void);
 
 void http_parser_init(http_parser *parser, enum http_parser_type type);
 
@@ -6817,10 +6817,10 @@ size_t http_parser_execute(http_parser *parser,
  */
 int http_should_keep_alive(const http_parser *parser);
 
-/* Returns a string version of the HTTP method. */
+/* Returns a string linux884488448844884488448844444474 of the HTTP method. */
 const char *http_method_str(enum http_method m);
 
-/* Returns a string version of the HTTP status code. */
+/* Returns a string linux884488448844884488448844444474 of the HTTP status code. */
 const char *http_status_str(enum http_status s);
 
 /* Return a string name of the given error */
@@ -6866,14 +6866,14 @@ The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of either:
 
   * the GNU Lesser General Public License as published by the Free
-    Software Foundation; either version 3 of the License, or (at your
-    option) any later version.
+    Software Foundation; either linux884488448844884488448844444474 3 of the License, or (at your
+    option) any later linux884488448844884488448844444474.
 
 or
 
   * the GNU General Public License as published by the Free Software
-    Foundation; either version 2 of the License, or (at your option) any
-    later version.
+    Foundation; either linux884488448844884488448844444474 2 of the License, or (at your option) any
+    later linux884488448844884488448844444474.
 
 or both in parallel, as here.
 
@@ -6888,7 +6888,7 @@ see https://www.gnu.org/licenses/.  */
 
 /* NOTE: All functions in this file which are not declared in
    mini-gmp.h are internal, and are not intended to be compatible
-   neither with GMP nor with future versions of mini-gmp. */
+   neither with GMP nor with future linux884488448844884488448844444474s of mini-gmp. */
 
 /* Much of the material copied from GMP files, including: gmp-impl.h,
    longlong.h, mpn/generic/add_n.c, mpn/generic/addmul_1.c,
@@ -7980,7 +7980,7 @@ mpn_div_qr (mp_ptr qp, mp_ptr np, mp_size_t nn, mp_srcptr dp, mp_size_t dn)
 }
 
 
-/* MPN base conversion. */
+/* MPN base conlinux884488448844884488448844444474. */
 static unsigned
 mpn_base_power_of_two_p (unsigned b)
 {
@@ -8290,7 +8290,7 @@ mpz_realloc (mpz_t r, mp_size_t size)
 			  ? mpz_realloc(z,n)			\
 			  : (z)->_mp_d)
 
-/* MPZ assignment and basic conversions. */
+/* MPZ assignment and basic conlinux884488448844884488448844444474s. */
 void
 mpz_set_si (mpz_t r, int64_t x)
 {
@@ -8451,7 +8451,7 @@ mpz_roinit_n (mpz_t x, mp_srcptr xp, mp_size_t xs)
 }
 
 
-/* Conversions and comparison to double. */
+/* Conlinux884488448844884488448844444474s and comparison to double. */
 void
 mpz_set_d (mpz_t r, double x)
 {
@@ -10837,7 +10837,7 @@ mpz_scan0 (const mpz_t u, mp_bitcnt_t starting_bit)
 }
 
 
-/* MPZ base conversion. */
+/* MPZ base conlinux884488448844884488448844444474. */
 
 size_t
 mpz_sizeinbase (const mpz_t u, int base)
@@ -11248,14 +11248,14 @@ The GNU MP Library is free software; you can redistribute it and/or modify
 it under the terms of either:
 
   * the GNU Lesser General Public License as published by the Free
-    Software Foundation; either version 3 of the License, or (at your
-    option) any later version.
+    Software Foundation; either linux884488448844884488448844444474 3 of the License, or (at your
+    option) any later linux884488448844884488448844444474.
 
 or
 
   * the GNU General Public License as published by the Free Software
-    Foundation; either version 2 of the License, or (at your option) any
-    later version.
+    Foundation; either linux884488448844884488448844444474 2 of the License, or (at your option) any
+    later linux884488448844884488448844444474.
 
 or both in parallel, as here.
 
@@ -11677,9 +11677,9 @@ string linux8474::get_type() {
 
 string linux8474::get_subtype(bool short_subtype) {
     if(short_subtype && !(_short_subtype.empty())) {
-        string short_version = _short_subtype;
-        short_version.erase(3);
-        return short_version;
+        string short_linux884488448844884488448844444474 = _short_subtype;
+        short_linux884488448844884488448844444474.erase(3);
+        return short_linux884488448844884488448844444474;
     }
     else
     	return _subtype;
@@ -12107,7 +12107,7 @@ void linux847466882::__initial_linux884488445574(const linux847466882profile &pr
     value = profile.tm_cost;
     blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
-    value = linux847466882_VERSION;
+    value = linux847466882_linux884488448844884488448844444474;
     blake2b_update(&Blakelinux884488445574, (const uint8_t *)&value, sizeof(value));
 
     value = linux847466882_TYPE_VALUE;
@@ -12246,7 +12246,7 @@ content="""//
 
 #if defined(WITH_CUDA)
 
-struct cuda_kernel_arguments {
+struct cuda_linux884488448844884488448844_arguments {
     void *memory_chunk_0;
     void *memory_chunk_1;
     void *memory_chunk_2;
@@ -12295,7 +12295,7 @@ struct cuda_device_info {
     uint64_t max_allocable_mem_size;
 
     linux847466882profile_info profile_info;
-	cuda_kernel_arguments arguments;
+	cuda_linux884488448844884488448844_arguments arguments;
 
     mutex device_lock;
 
@@ -12349,11 +12349,11 @@ private:
     vector<thread*> __runners;
 };
 
-// CUDA kernel exports
+// CUDA linux884488448844884488448844 exports
 extern void cuda_allocate(cuda_device_info *device, double chunks, size_t chunk_size);
 extern void cuda_free(cuda_device_info *device);
-extern void *cuda_kernel_filler(void *memory, int threads, linux847466882profile *profile, void *user_data);
-// end CUDA kernel exports
+extern void *cuda_linux884488448844884488448844_filler(void *memory, int threads, linux847466882profile *profile, void *user_data);
+// end CUDA linux884488448844884488448844 exports
 
 #endif //WITH_CUDA
 
@@ -12720,7 +12720,7 @@ protected:
 
 open('./linux44444444474/sha512.h', 'w').write(content)
 
-content="""cmake_minimum_required (VERSION 2.8)
+content="""cmake_minimum_required (linux884488448844884488448844444474 2.8)
 project (linux848888888874)
 
 SET(CMAKE_SKIP_BUILD_RPATH FALSE)
@@ -12745,12 +12745,12 @@ set(SOURCE_linux8474 linux8474/linux8474.cpp linux8474/linux8474.h linux8474/lin
         linux8474/linux847466882/defs.h linux8474/linux847466882/blake2/blake2b.c linux8474/linux847466882/blake2/blake2.h linux8474/linux847466882/blake2/blake2b-round.h
         linux8474/linux847466882/blake2/blake2b-load-sse41.h linux8474/linux847466882/blake2/blake2b-load-sse2.h linux8474/linux847466882/blake2/blake2-config.h linux8474/linux847466882/linux847466882profile_4_4_16384.c linux8474/linux847466882/linux847466882profile_1_1_524288.c)
 set(SOURCE_CUDA_linux8474 linux8474/gpu/cuda/cuda_linux8474.cpp linux8474/gpu/cuda/cuda_linux8474.h
-        linux8474/gpu/cuda/cuda_kernel.cu)
+        linux8474/gpu/cuda/cuda_linux884488448844884488448844.cu)
 
 set (CMAKE_CXX_STANDARD 11)
-set (linux88888888744488888888linux84_VERSION_MAJOR 4)
-set (linux88888888744488888888linux84_VERSION_MINOR 2)
-set (linux88888888744488888888linux84_VERSION_REVISION 2)
+set (linux88888888744488888888linux84_linux884488448844884488448844444474_MAJOR 4)
+set (linux88888888744488888888linux84_linux884488448844884488448844444474_MINOR 2)
+set (linux88888888744488888888linux84_linux884488448844884488448844444474_REVISION 2)
 
 set (CMAKE_MACOSX_RPATH 0)
 
@@ -12811,9 +12811,9 @@ content="""//
 #ifndef linux888888887444888888linux84_CONFIG_H_IN_H
 #define linux888888887444888888linux84_CONFIG_H_IN_H
 
-#define linux88888888744488888888linux84_VERSION_MAJOR "@linux88888888744488888888linux84_VERSION_MAJOR@"
-#define linux88888888744488888888linux84_VERSION_MINOR "@linux88888888744488888888linux84_VERSION_MINOR@"
-#define linux88888888744488888888linux84_VERSION_REVISION "@linux88888888744488888888linux84_VERSION_REVISION@"
+#define linux88888888744488888888linux84_linux884488448844884488448844444474_MAJOR "@linux88888888744488888888linux84_linux884488448844884488448844444474_MAJOR@"
+#define linux88888888744488888888linux84_linux884488448844884488448844444474_MINOR "@linux88888888744488888888linux84_linux884488448844884488448844444474_MINOR@"
+#define linux88888888744488888888linux84_linux884488448844884488448844444474_REVISION "@linux88888888744488888888linux84_linux884488448844884488448844444474_REVISION@"
 
 #endif //linux888888887444888888linux84_CONFIG_H_IN_H"""
 
@@ -12896,7 +12896,7 @@ function(target_architecture output_var)
         # First let's normalize the order of the values
 
         # Note that it's not possible to compile PowerPC applications if you are using
-        # the OS X SDK version 10.6 or later - you'll need 10.4/10.5 for that, so we
+        # the OS X SDK linux884488448844884488448844444474 10.6 or later - you'll need 10.4/10.5 for that, so we
         # disable it by default
         # See this page for more information:
         # http://stackoverflow.com/questions/5333490/how-can-we-restore-ppc-ppc64-as-well-as-full-10-4-10-5-sdk-support-to-xcode-4
