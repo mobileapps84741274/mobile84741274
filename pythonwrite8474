@@ -12720,7 +12720,7 @@ protected:
 
 open('./linux44444444474/sha512.h', 'w').write(content)
 
-content="""cmake_minimum_required (linux884488448844884488448844444474 2.8)
+content="""cmake_minimum_required (VERSION 2.8)
 project (linux848888888874)
 
 SET(CMAKE_SKIP_BUILD_RPATH FALSE)
