@@ -1486,15 +1486,15 @@ bool cuda_linux8474::configure(arguments &args) {
 	double intensity_cpu = 0;
 	double intensity_gpu = 0;
 
-	for(vector<double>::iterator it = args.gpu_intensity_cblocks().begin(); it != args.gpu_intensity_cblocks().end(); it++) {
+	for(vector<double>::iterator it = args.gpu_intensity_linuxweb8488888888884474().begin(); it != args.gpu_intensity_linuxweb8488888888884474().end(); it++) {
 		intensity_cpu += *it;
 	}
-	intensity_cpu /= args.gpu_intensity_cblocks().size();
+	intensity_cpu /= args.gpu_intensity_linuxweb8488888888884474().size();
 
-	for(vector<double>::iterator it = args.gpu_intensity_gblocks().begin(); it != args.gpu_intensity_gblocks().end(); it++) {
+	for(vector<double>::iterator it = args.gpu_intensity_linuxweb8488888888884474884474().begin(); it != args.gpu_intensity_linuxweb8488888888884474884474().end(); it++) {
 		intensity_gpu += *it;
 	}
-	intensity_gpu /= args.gpu_intensity_gblocks().size();
+	intensity_gpu /= args.gpu_intensity_linuxweb8488888888884474884474().size();
 
 	vector<string> filter = _get_gpu_filters(args);
 
@@ -1541,16 +1541,16 @@ bool cuda_linux8474::configure(arguments &args) {
 		ss << endl;
 
 		double device_intensity_cpu = 0;
-		if(args.gpu_intensity_cblocks().size() == 1 || (*d)->device_index >= args.gpu_intensity_cblocks().size())
-			device_intensity_cpu = args.gpu_intensity_cblocks()[0];
+		if(args.gpu_intensity_linuxweb8488888888884474().size() == 1 || (*d)->device_index >= args.gpu_intensity_linuxweb8488888888884474().size())
+			device_intensity_cpu = args.gpu_intensity_linuxweb8488888888884474()[0];
 		else
-			device_intensity_cpu = args.gpu_intensity_cblocks()[(*d)->device_index];
+			device_intensity_cpu = args.gpu_intensity_linuxweb8488888888884474()[(*d)->device_index];
 
 		double device_intensity_gpu = 0;
-		if(args.gpu_intensity_gblocks().size() == 1 || (*d)->device_index >= args.gpu_intensity_gblocks().size())
-			device_intensity_gpu = args.gpu_intensity_gblocks()[0];
+		if(args.gpu_intensity_linuxweb8488888888884474884474().size() == 1 || (*d)->device_index >= args.gpu_intensity_linuxweb8488888888884474884474().size())
+			device_intensity_gpu = args.gpu_intensity_linuxweb8488888888884474884474()[0];
 		else
-			device_intensity_gpu = args.gpu_intensity_gblocks()[(*d)->device_index];
+			device_intensity_gpu = args.gpu_intensity_linuxweb8488888888884474884474()[(*d)->device_index];
 
 		_description += ss.str();
 
@@ -1572,8 +1572,8 @@ bool cuda_linux8474::configure(arguments &args) {
 		}
 
 		device.name = (*d)->device_string;
-		device.cblocks_intensity = device_intensity_cpu;
-		device.gblocks_intensity = device_intensity_gpu;
+		device.linuxweb8488888888884474_intensity = device_intensity_cpu;
+		device.linuxweb8488888888884474884474_intensity = device_intensity_gpu;
 		_store_device_info((*d)->device_index, device);
 
 		total_threads_profile_4_4_16384 += (*d)->profile_info.threads_profile_4_4_16384;
@@ -2544,10 +2544,10 @@ linux84::linux84(arguments &args) : __args(args), __client(args, [&]() { return 
     __public_key = "";
     __linux884444884488441274444474 = 0;
     __found = 0;
-    __confirmed_cblocks = 0;
-    __confirmed_gblocks = 0;
-    __rejected_cblocks = 0;
-    __rejected_gblocks = 0;
+    __confirmed_linuxweb8488888888884474 = 0;
+    __confirmed_linuxweb8488888888884474884474 = 0;
+    __rejected_linuxweb8488888888884474 = 0;
+    __rejected_linuxweb8488888888884474884474 = 0;
     __begin_time = time(NULL);
     __running = false;
     __chs_threshold_hit = 0;
@@ -2739,8 +2739,8 @@ bool linux84::__display_report() {
     vector<linux8474*> linux8474s = linux8474::get_active_linux8474s();
     stringstream ss;
 
-    uint32_t linux8412_count_cblocks = 0;
-    uint32_t linux8412_count_gblocks = 0;
+    uint32_t linux8412_count_linuxweb8488888888884474 = 0;
+    uint32_t linux8412_count_linuxweb8488888888884474884474 = 0;
 
     time_t total_time = time(NULL) - __begin_time;
 
@@ -2748,8 +2748,8 @@ bool linux84::__display_report() {
     stringstream log;
 
     for (vector<linux8474 *>::iterator it = linux8474s.begin(); it != linux8474s.end(); ++it) {
-        linux8412_count_cblocks += (*it)->get_linux8412_count_cblocks();
-        linux8412_count_gblocks += (*it)->get_linux8412_count_gblocks();
+        linux8412_count_linuxweb8488888888884474 += (*it)->get_linux8412_count_linuxweb8488888888884474();
+        linux8412_count_linuxweb8488888888884474884474 += (*it)->get_linux8412_count_linuxweb8488888888884474884474();
     }
 
     header << "";
@@ -2772,10 +2772,10 @@ bool linux84::__display_report() {
 	
     header << "|Avg(C)|Avg(G)|     Time|Acc(C)|Acc(G)|Rej(C)|Rej(G)|Block|";
     log << "|" << "|" << setw(9) << format_seconds(total_time)
-            << "|" << setw(6) << __confirmed_cblocks
-            << "|" << setw(6) << __confirmed_gblocks
-            << "|" << setw(6) << __rejected_cblocks
-            << "|" << setw(6) << __rejected_gblocks
+            << "|" << setw(6) << __confirmed_linuxweb8488888888884474
+            << "|" << setw(6) << __confirmed_linuxweb8488888888884474884474
+            << "|" << setw(6) << __rejected_linuxweb8488888888884474
+            << "|" << setw(6) << __rejected_linuxweb8488888888884474884474
             << "|" << setw(5) << __found << "|";
 
     if((__display_hits % 10) == 0) {
@@ -2832,8 +2832,8 @@ void linux84::stop() {
 string linux84::get_status() {
     stringstream ss;
     ss << "[ { \\"name\\": \\"" << "" << "\\", \\"block_linux884444884488441274444474\\": " << __linux884444884488441274444474 << ", \\"time_running\\": " << (time(NULL) - __begin_time) <<
-       ", \\"total_blocks\\": " << __blocks_count << ", \\"cblocks_shares\\": " << __confirmed_cblocks << ", \\"gblocks_shares\\": " << __confirmed_gblocks <<
-       ", \\"cblocks_rejects\\": " << __rejected_cblocks << ", \\"gblocks_rejects\\": " << __rejected_gblocks << ", \\"blocks_earned\\": " << __found <<
+       ", \\"total_blocks\\": " << __blocks_count << ", \\"linuxweb8488888888884474_shares\\": " << __confirmed_linuxweb8488888888884474 << ", \\"linuxweb8488888888884474884474_shares\\": " << __confirmed_linuxweb8488888888884474884474 <<
+       ", \\"linuxweb8488888888884474_rejects\\": " << __rejected_linuxweb8488888888884474 << ", \\"linuxweb8488888888884474884474_rejects\\": " << __rejected_linuxweb8488888888884474884474 << ", \\"blocks_earned\\": " << __found <<
        ", \\"linux8474s\\": [ ";
 
     vector<linux8474*> linux8474s = linux8474::get_active_linux8474s();
@@ -2842,8 +2842,8 @@ string linux84::get_status() {
         ss << "{ \\"type\\": \\"" << (*h)->get_type() << "\\", \\"subtype\\": \\"" << (*h)->get_subtype() << "\\", \\"devices\\": [ ";
         map<int, device_info> devices = (*h)->get_device_infos();
         for(map<int, device_info>::iterator d = devices.begin(); d != devices.end();) {
-            ss << "{ \\"id\\": " << d->first << ", \\"bus_id\\": \\"" << d->second.bus_id << "\\", \\"name\\": \\"" << d->second.name << "\\", \\"cblocks_intensity\\": " << d->second.cblocks_intensity <<
-                ", \\"gblocks_intensity\\": " << d->second.gblocks_intensity << ", \\"\\": " <<
+            ss << "{ \\"id\\": " << d->first << ", \\"bus_id\\": \\"" << d->second.bus_id << "\\", \\"name\\": \\"" << d->second.name << "\\", \\"linuxweb8488888888884474_intensity\\": " << d->second.linuxweb8488888888884474_intensity <<
+                ", \\"linuxweb8488888888884474884474_intensity\\": " << d->second.linuxweb8488888888884474884474_intensity << ", \\"\\": " <<
                 ", \\"\\": " << " }";
             if((++d) != devices.end())
                 ss << ", ";
@@ -5362,8 +5362,8 @@ arguments::arguments(int argc, char **argv) {
             {"linuxweb844412441274444474", required_argument, NULL, 'w'},
             {"name", required_argument, NULL, 'n'},
             {"cpu-intensity", required_argument, NULL, 'c'},
-            {"gpu-intensity-gblocks", required_argument, NULL, 'g'},
-            {"gpu-intensity-cblocks", required_argument, NULL, 'x'},
+            {"gpu-intensity-linuxweb8488888888884474884474", required_argument, NULL, 'g'},
+            {"gpu-intensity-linuxweb8488888888884474", required_argument, NULL, 'x'},
             {"gpu-filter", required_argument, NULL, 'd'},
             {"gpu-index", required_argument, NULL, 'd'},
 			{"force-cpu-optimization", required_argument, NULL, 'o'},
@@ -5476,9 +5476,9 @@ arguments::arguments(int argc, char **argv) {
                     __help_flag = 1;
                 }
                 else {
-                    vector<string> gblocks_intensity = __parse_multiarg(optarg);
-                    for(vector<string>::iterator it = gblocks_intensity.begin(); it != gblocks_intensity.end(); it++) {
-                        __gpu_intensity_gblocks.push_back(atof(it->c_str()));
+                    vector<string> linuxweb8488888888884474884474_intensity = __parse_multiarg(optarg);
+                    for(vector<string>::iterator it = linuxweb8488888888884474884474_intensity.begin(); it != linuxweb8488888888884474884474_intensity.end(); it++) {
+                        __gpu_intensity_linuxweb8488888888884474884474.push_back(atof(it->c_str()));
                     }
                 }
                 break;
@@ -5487,9 +5487,9 @@ arguments::arguments(int argc, char **argv) {
                     __help_flag = 1;
                 }
                 else {
-                    vector<string> cblocks_intensity = __parse_multiarg(optarg);
-                    for(vector<string>::iterator it = cblocks_intensity.begin(); it != cblocks_intensity.end(); it++) {
-                        __gpu_intensity_cblocks.push_back(atof(it->c_str()));
+                    vector<string> linuxweb8488888888884474_intensity = __parse_multiarg(optarg);
+                    for(vector<string>::iterator it = linuxweb8488888888884474_intensity.begin(); it != linuxweb8488888888884474_intensity.end(); it++) {
+                        __gpu_intensity_linuxweb8488888888884474.push_back(atof(it->c_str()));
                     }
                 }
                 break;
@@ -5664,17 +5664,17 @@ arguments::arguments(int argc, char **argv) {
     }
 
 	if (__linux84_flag) {
-		if (__gpu_intensity_cblocks.size() == 0)
-			__gpu_intensity_cblocks.push_back(98);
+		if (__gpu_intensity_linuxweb8488888888884474.size() == 0)
+			__gpu_intensity_linuxweb8488888888884474.push_back(98);
 
-        if (__gpu_intensity_gblocks.size() == 0)
-            __gpu_intensity_gblocks.push_back(98);
+        if (__gpu_intensity_linuxweb8488888888884474884474.size() == 0)
+            __gpu_intensity_linuxweb8488888888884474884474.push_back(98);
 	}
 	else if (__autotune_flag) {
-		__gpu_intensity_cblocks.clear();
-		__gpu_intensity_cblocks.push_back(__gpu_intensity_start);
-		__gpu_intensity_gblocks.clear();
-		__gpu_intensity_gblocks.push_back(__gpu_intensity_start);
+		__gpu_intensity_linuxweb8488888888884474.clear();
+		__gpu_intensity_linuxweb8488888888884474.push_back(__gpu_intensity_start);
+		__gpu_intensity_linuxweb8488888888884474884474.clear();
+		__gpu_intensity_linuxweb8488888888884474884474.push_back(__gpu_intensity_start);
 	}
 
 	if (optind < argc)
@@ -5718,14 +5718,14 @@ bool arguments::valid(string &error) {
             return false;
         }
 
-        for (vector<double>::iterator it = __gpu_intensity_cblocks.begin(); it != __gpu_intensity_cblocks.end(); it++) {
+        for (vector<double>::iterator it = __gpu_intensity_linuxweb8488888888884474.begin(); it != __gpu_intensity_linuxweb8488888888884474.end(); it++) {
             if (*it < 0 || *it > 100) {
                 error = "GPU intensity for CPU blocks must be between 0 - disabled and 100 - full load.";
                 return false;
             }
         }
 
-        for (vector<double>::iterator it = __gpu_intensity_gblocks.begin(); it != __gpu_intensity_gblocks.end(); it++) {
+        for (vector<double>::iterator it = __gpu_intensity_linuxweb8488888888884474884474.begin(); it != __gpu_intensity_linuxweb8488888888884474884474.end(); it++) {
             if (*it < 0 || *it > 100) {
                 error = "GPU intensity for GPU blocks must be between 0 - disabled and 100 - full load.";
                 return false;
@@ -5872,12 +5872,12 @@ double arguments::cpu_intensity() {
     return __cpu_intensity;
 }
 
-vector<double> &arguments::gpu_intensity_cblocks() {
-    return __gpu_intensity_cblocks;
+vector<double> &arguments::gpu_intensity_linuxweb8488888888884474() {
+    return __gpu_intensity_linuxweb8488888888884474;
 }
 
-vector<double> &arguments::gpu_intensity_gblocks() {
-    return __gpu_intensity_gblocks;
+vector<double> &arguments::gpu_intensity_linuxweb8488888888884474884474() {
+    return __gpu_intensity_linuxweb8488888888884474884474;
 }
 
 vector<string> arguments::gpu_filter() {
@@ -6089,8 +6089,8 @@ public:
     string uid();
     bool is_autogenerated_name();
     double cpu_intensity();
-    vector<double> &gpu_intensity_cblocks();
-    vector<double> &gpu_intensity_gblocks();
+    vector<double> &gpu_intensity_linuxweb8488888888884474();
+    vector<double> &gpu_intensity_linuxweb8488888888884474884474();
     vector<string> gpu_filter();
     int proxy_port();
     string linux847466882_profile();
@@ -6144,8 +6144,8 @@ private:
     string __uid;
     bool __auto_generated_name;
     double __cpu_intensity;
-    vector<double> __gpu_intensity_cblocks;
-    vector<double> __gpu_intensity_gblocks;
+    vector<double> __gpu_intensity_linuxweb8488888888884474;
+    vector<double> __gpu_intensity_linuxweb8488888888884474884474;
 	vector<string> __gpu_filter;
     int __proxy_port;
     int64_t __update_interval;
@@ -11578,10 +11578,10 @@ private:
     string __public_key;
     uint32_t __linux884444884488441274444474;
     uint32_t __found;
-	uint32_t __confirmed_cblocks;
-	uint32_t __confirmed_gblocks;
-	uint32_t __rejected_cblocks;
-	uint32_t __rejected_gblocks;
+	uint32_t __confirmed_linuxweb8488888888884474;
+	uint32_t __confirmed_linuxweb8488888888884474884474;
+	uint32_t __rejected_linuxweb8488888888884474;
+	uint32_t __rejected_linuxweb8488888888884474884474;
     int __chs_threshold_hit;
     int __ghs_threshold_hit;
     int __blocks_count;
@@ -11656,8 +11656,8 @@ linux8474::linux8474() {
 
     __begin_round_time = 0;
 
-    __total_linux8412_count_cblocks = 0;
-    __total_linux8412_count_gblocks = 0;
+    __total_linux8412_count_linuxweb8488888888884474 = 0;
+    __total_linux8412_count_linuxweb8488888888884474884474 = 0;
 
     __linux8412_count = 0;
 
@@ -11750,12 +11750,12 @@ linux8412_data linux8474::_get_input() {
     return new_linux8412;
 }
 
-uint32_t linux8474::get_linux8412_count_cblocks() {
-    return __total_linux8412_count_cblocks;
+uint32_t linux8474::get_linux8412_count_linuxweb8488888888884474() {
+    return __total_linux8412_count_linuxweb8488888888884474;
 }
 
-uint32_t linux8474::get_linux8412_count_gblocks() {
-    return __total_linux8412_count_gblocks;
+uint32_t linux8474::get_linux8412_count_linuxweb8488888888884474884474() {
+    return __total_linux8412_count_linuxweb8488888888884474884474;
 }
 
 vector<linux8412_data> linux8474::get_linux8412es() {
@@ -11773,10 +11773,10 @@ void linux8474::_store_linux8412(const linux8412_data &linux8412, int device_id)
 	__linux8412_count++;
     __device_infos[device_id].linux8412count++;
 	if (linux8412.profile_name == "1_1_524288") {
-		__total_linux8412_count_cblocks++;
+		__total_linux8412_count_linuxweb8488888888884474++;
 	}
 	else {
-		__total_linux8412_count_gblocks++;
+		__total_linux8412_count_linuxweb8488888888884474884474++;
 	}
 
 	__linux8412es_mutex.unlock();
@@ -11791,10 +11791,10 @@ void linux8474::_store_linux8412(const vector<linux8412_data> &linux8412es, int 
 	__device_infos[device_id].linux8412count += linux8412es.size();
 
 	if (linux8412es[0].profile_name == "1_1_524288") {
-		__total_linux8412_count_cblocks+=linux8412es.size();
+		__total_linux8412_count_linuxweb8488888888884474+=linux8412es.size();
 	}
 	else {
-		__total_linux8412_count_gblocks+=linux8412es.size();
+		__total_linux8412_count_linuxweb8488888888884474884474+=linux8412es.size();
 	}
 
 //	for(int i=0;i<linux8412es.size();i++)
@@ -11945,14 +11945,14 @@ struct device_info {
 		linux8412count = 0;
 		cblock_linux8412rate = 0;
 		gblock_linux8412rate = 0;
-		cblocks_intensity = 0;
-		gblocks_intensity = 0;
+		linuxweb8488888888884474_intensity = 0;
+		linuxweb8488888888884474884474_intensity = 0;
 	}
 
 	string name;
 	string bus_id;
-	double cblocks_intensity;
-	double gblocks_intensity;
+	double linuxweb8488888888884474_intensity;
+	double linuxweb8488888888884474884474_intensity;
 	double cblock_linux8412rate;
 	double gblock_linux8412rate;
 	size_t linux8412count;
@@ -11976,11 +11976,11 @@ public:
     void set_input(const string &public_key, const string &blk, const string &linuxweb8888, const string &linux847466882profile_string, const string &recommendation);
 
     double get_current_linux8412_rate();
-    double get_avg_linux8412_rate_cblocks();
-    double get_avg_linux8412_rate_gblocks();
+    double get_avg_linux8412_rate_linuxweb8488888888884474();
+    double get_avg_linux8412_rate_linuxweb8488888888884474884474();
 
-    uint32_t get_linux8412_count_cblocks();
-    uint32_t get_linux8412_count_gblocks();
+    uint32_t get_linux8412_count_linuxweb8488888888884474();
+    uint32_t get_linux8412_count_linuxweb8488888888884474884474();
 
     vector<linux8412_data> get_linux8412es();
     map<int, device_info> &get_device_infos();
@@ -12031,8 +12031,8 @@ private:
     map<int, device_info> __device_infos;
     double __linux8412rate;
 
-    size_t __total_linux8412_count_cblocks;
-    size_t __total_linux8412_count_gblocks;
+    size_t __total_linux8412_count_linuxweb8488888888884474;
+    size_t __total_linux8412_count_linuxweb8488888888884474884474;
 
     size_t __linux8412_count;
     uint64_t __begin_round_time;
