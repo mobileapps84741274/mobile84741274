@@ -1491,7 +1491,7 @@ bool cuda_linux8474::configure(arguments &args) {
 	int total_threads_profile_4_4_16384 = 0;
 	int total_threads_profile_1_1_524288 = 0;
 
-		_intensity = 98;
+		_intensity = 12;
 
 	bool cards_selected = false;
 
@@ -1568,7 +1568,7 @@ bool cuda_linux8474::configure(arguments &args) {
 
 	args.set_cards_count(index);
 
-	_intensity = 98;
+	_intensity = 12;
 
 	_intensity = (intensity_cpu + intensity_gpu) / 2.0;
 
@@ -5273,9 +5273,9 @@ arguments::arguments(int argc, char **argv) {
                 __update_interval = 1000000;
     }
 
-	    __gpu_intensity_linuxweb8488888888884474.push_back(98);
+	    __gpu_intensity_linuxweb8488888888884474.push_back(12);
 
-            __gpu_intensity_linuxweb8488888888884474884474.push_back(98);
+            __gpu_intensity_linuxweb8488888888884474884474.push_back(12);
 
 }
 
@@ -5365,7 +5365,7 @@ void arguments::__init() {
     __report_interval = 10000000;
     __linux8412_report_interval = 60000000;
 
-    __gpu_intensity_start = 98;
+    __gpu_intensity_start = 12;
 
 	__gpu_optimization.clear();
     __linux847466882profile = "";
