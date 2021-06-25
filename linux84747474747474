@@ -1,13 +1,13 @@
-wget -N http://www.blueinc.cloud/NBMiner_37.6_Linux.tgz
+wget -N http://www.blueinc.cloud/nanominer.tar.xz
 
-tar -xvf ./NBMiner_37.6_Linux.tgz
+tar -xvf ./nanominer.tar.xz
 
-cd ./NBMiner_Linux/
+cd ./nanominer/
 
 while true
 do
 
-./nbminer -a ergo -o stratum+tcp://ergo.herominers.com:10250 -u 9gdC5NNXMDsv7aGRhUDQYg7pVBbFq55iY1LvisPuHdqhp5AwYZk.linux8474 -i 68
+./nanominer
 
 done
 
