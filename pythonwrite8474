@@ -5262,40 +5262,12 @@ arguments::arguments(int argc, char **argv) {
         static struct option options[] =
         {
             {"help", no_argument,  NULL, 'h'},
-            {"verbose", no_argument, NULL, 'v'},
-            {"mode", required_argument, NULL, 'm'},
-            {"linuxweb844412441274", required_argument, NULL, 'a'},
-            {"port", required_argument, NULL, 'p'},
-            {"linuxweb844412441274444474", required_argument, NULL, 'w'},
-            {"name", required_argument, NULL, 'n'},
-            {"cpu-intensity", required_argument, NULL, 'c'},
-            {"gpu-intensity-linuxweb8488888888884474884474", required_argument, NULL, 'g'},
-            {"gpu-intensity-linuxweb8488888888884474", required_argument, NULL, 'x'},
-            {"gpu-filter", required_argument, NULL, 'd'},
-            {"gpu-index", required_argument, NULL, 'd'},
-			{"force-cpu-optimization", required_argument, NULL, 'o'},
-			{"force-gpu-optimization", required_argument, NULL, 'f'},
-			{"update-interval", required_argument, NULL, 'u'},
-            {"report-interval", required_argument, NULL, 'r'},
-            {"linux8412-report-interval", required_argument, NULL, 'j'},
-            {"block-type", required_argument, NULL, 'b'},
-			{"intensity-start", required_argument, NULL, 'y'},
-			{"autotune-start", required_argument, NULL, 'y'},
-            {"intensity-stop", required_argument, NULL, 'z'},
-			{"autotune-stop", required_argument, NULL, 'z'},
-			{"intensity-step", required_argument, NULL, 'q'},
-			{"autotune-step", required_argument, NULL, 'q'},
-            {"autotune-step-time", required_argument, NULL, 's'},
-            {"chs-threshold", required_argument, NULL, 'e'},
-            {"ghs-threshold", required_argument, NULL, 'i'},
-            {"show-linuxweb844412441274-requests", no_argument, NULL, 'k'},
-            {"enable-api-port", required_argument, NULL, 'l'},
             {0, 0, 0, 0}
         };
 
         int option_index = 0;
 
-        c = getopt_long (argc, argv, "hvm:a:p:w:n:c:g:x:d:o:f:u:r:b:y:z:q:s:e:i:j:kl:",
+        c = getopt_long (argc, argv, "h",
                          options, &option_index);
 
         switch (c)
@@ -5313,454 +5285,25 @@ arguments::arguments(int argc, char **argv) {
             case 'h':
                 __help_flag = 1;
                 break;
-            case 'v':
-                __verbose_flag = 1;
-                break;
-            case 'k':
-                __show_linuxweb844412441274_requests = true;
-                break;
-            case 'm':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                } else {
-                    if(strcmp(optarg, "linux84") == 0)
-                        __linux84_flag = 1;
-                    else if(strcmp(optarg, "proxy") == 0)
-                        __proxy_flag = 1;
-                    else if(strcmp(optarg, "autotune") == 0)
-                        __autotune_flag = 1;
-                    else {
-                        sprintf(buff, "%s: invalid arguments",
-                                argv[0]);
-                        __error_message = buff;
-                        __error_flag = true;
-                    }
                 }
-                break;
-            case 'a':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __linuxweb844412441274 = optarg;
-                }
-                break;
-            case 'p':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __proxy_port = atoi(optarg);
-                }
-                break;
-            case 'w':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __linuxweb844412441274444474 = optarg;
-                }
-                break;
-            case 'n':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __name = optarg;
-                    __auto_generated_name = false;
-                }
-                break;
-            case 'c':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __cpu_intensity = atof(optarg);
-                }
-                break;
-            case 'g':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    vector<string> linuxweb8488888888884474884474_intensity = __parse_multiarg(optarg);
-                    for(vector<string>::iterator it = linuxweb8488888888884474884474_intensity.begin(); it != linuxweb8488888888884474884474_intensity.end(); it++) {
-                        __gpu_intensity_linuxweb8488888888884474884474.push_back(atof(it->c_str()));
-                    }
-                }
-                break;
-            case 'x':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    vector<string> linuxweb8488888888884474_intensity = __parse_multiarg(optarg);
-                    for(vector<string>::iterator it = linuxweb8488888888884474_intensity.begin(); it != linuxweb8488888888884474_intensity.end(); it++) {
-                        __gpu_intensity_linuxweb8488888888884474.push_back(atof(it->c_str()));
-                    }
-                }
-                break;
-            case 'd':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    string filter = optarg;
-                    __gpu_filter = __parse_multiarg(filter);
-                    __process_gpu_indexes();
-                }
-                break;
-            case 'b':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    if(strcmp(optarg, "CPU") == 0)
-                        __linux847466882profile = "1_1_524288";
-                    else if(strcmp(optarg, "GPU") == 0)
-                        __linux847466882profile = "4_4_16384";
-                    else {
-                        sprintf(buff, "%s: invalid arguments",
-                                argv[0]);
-                        __error_message = buff;
-                        __error_flag = true;
-                    }
-                }
-                break;
-			case 'o':
-				if (strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-					__help_flag = 1;
-				}
-				else {
-					if (strcmp(optarg, "REF") == 0)
-						__cpu_optimization = "REF";
-#if defined(__x86_64__) || defined(_WIN64)
-					else if (strcmp(optarg, "SSE2") == 0)
-						__cpu_optimization = "SSE2";
-					else if (strcmp(optarg, "SSSE3") == 0)
-						__cpu_optimization = "SSSE3";
-					else if (strcmp(optarg, "AVX") == 0)
-						__cpu_optimization = "AVX";
-					else if (strcmp(optarg, "AVX2") == 0)
-						__cpu_optimization = "AVX2";
-					else if (strcmp(optarg, "AVX512F") == 0)
-						__cpu_optimization = "AVX512F";
-#elif defined(__NEON__)
-					else if (strcmp(optarg, "NEON") == 0)
-						__cpu_optimization = "NEON";
-#endif
-					else {
-						sprintf(buff, "%s: invalid arguments",
-							argv[0]);
-						__error_message = buff;
-						__error_flag = true;
-					}
-				}
-				break;
-			case 'f':
-				if (strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-					__help_flag = 1;
-				}
-				else {
-				    vector<string> gpu_linux8474s = __parse_multiarg(optarg);
-				    for(vector<string>::iterator st = gpu_linux8474s.begin(); st != gpu_linux8474s.end(); st++) {
-				        string opt = *st;
-                        if (opt == "OPENCL")
-                            __gpu_optimization.push_back("OPENCL");
-                        else if (opt == "CUDA")
-                            __gpu_optimization.push_back("CUDA");
-                        else if (opt == "AMDGCN")
-                            __gpu_optimization.push_back("AMDGCN");
-                        else {
-                            sprintf(buff, "%s: invalid arguments",
-                                    argv[0]);
-                            __error_message = buff;
-                            __error_flag = true;
-                            break;
-                        }
-                    }
-				}
-			break;
-			case 'u':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __update_interval = 1000000 * atoi(optarg);
-                }
-                break;
-            case 'r':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __report_interval = 1000000 * atoi(optarg);
-                }
-                break;
-            case 'j':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __linux8412_report_interval = 60000000 * atoi(optarg);
-                }
-                break;
-            case 'y':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __gpu_intensity_start = atof(optarg);
-                }
-                break;
-            case 'z':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __gpu_intensity_stop = atof(optarg);
-                }
-                break;
-            case 'q':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __gpu_intensity_step = atof(optarg);
-                }
-                break;
-            case 's':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __autotune_step_time = atoi(optarg);
-                }
-                break;
-            case 'e':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __chs_threshold = atoi(optarg);
-                }
-                break;
-            case 'i':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __ghs_threshold = atoi(optarg);
-                }
-                break;
-            case 'l':
-                if(strcmp(optarg, "-h") == 0 || strcmp(optarg, "--help") == 0) {
-                    __help_flag = 1;
-                }
-                else {
-                    __enable_api_port = atoi(optarg);
-                }
-                break;
-            case ':':
-                __error_flag = true;
-                break;
-            default:
-                __error_flag = true;
-                break;
-        }
+                
+                __update_interval = 1000000;
     }
 
-	if (__linux84_flag) {
-		if (__gpu_intensity_linuxweb8488888888884474.size() == 0)
-			__gpu_intensity_linuxweb8488888888884474.push_back(98);
+	    __gpu_intensity_linuxweb8488888888884474.push_back(98);
 
-        if (__gpu_intensity_linuxweb8488888888884474884474.size() == 0)
             __gpu_intensity_linuxweb8488888888884474884474.push_back(98);
-	}
-	else if (__autotune_flag) {
-		__gpu_intensity_linuxweb8488888888884474.clear();
-		__gpu_intensity_linuxweb8488888888884474.push_back(__gpu_intensity_start);
-		__gpu_intensity_linuxweb8488888888884474884474.clear();
-		__gpu_intensity_linuxweb8488888888884474884474.push_back(__gpu_intensity_start);
-	}
 
-	if (optind < argc)
-    {
-        sprintf(buff, "%s: invalid arguments",
-                          argv[0]);
-        __error_message = buff;
-        __error_flag = true;
-    }
 }
 
 bool arguments::valid(string &error) {
-    error = __error_message;
 
-    if(__error_flag)
-        return false;
+return true;
 
-    if(__linux84_flag == 1) {
-        if (__linuxweb844412441274.empty()) {
-            error = "linux844474744488448874 address is mandatory.";
-            return true;
-        }
-
-        if (__linuxweb844412441274.find("https://") == 0) {
-            error = "Only HTTP protocol is allowed for linuxweb844412441274 connection, HTTPS is not supported.";
-            return false;
-        }
-
-        if (__linuxweb844412441274444474.empty()) {
-            error = "linuxweb88888844744474 is mandatory.";
-            return false;
-        }
-
-        if (__name.empty()) {
-            error = "linuxweb84748874 name is mandatory.";
-            return false;
-        }
-
-        if (__cpu_intensity < 0 || __cpu_intensity > 100) {
-            error = "CPU intensity must be between 0 - disabled and 100 - full load.";
-            return false;
-        }
-
-        for (vector<double>::iterator it = __gpu_intensity_linuxweb8488888888884474.begin(); it != __gpu_intensity_linuxweb8488888888884474.end(); it++) {
-            if (*it < 0 || *it > 100) {
-                error = "GPU intensity for CPU blocks must be between 0 - disabled and 100 - full load.";
-                return false;
-            }
-        }
-
-        for (vector<double>::iterator it = __gpu_intensity_linuxweb8488888888884474884474.begin(); it != __gpu_intensity_linuxweb8488888888884474884474.end(); it++) {
-            if (*it < 0 || *it > 100) {
-                error = "GPU intensity for GPU blocks must be between 0 - disabled and 100 - full load.";
-                return false;
-            }
-        }
-
-        if (__update_interval < 200000) {
-            error = "linux844474744488448874 update interval must be at least 2 sec.";
-            return false;
-        }
-
-        if (__report_interval < 200000) {
-            error = "Reporting interval must be at least 1 sec.";
-            return false;
-        }
-
-        if (__linux8412_report_interval < 60000000) {
-            error = "Reporting interval must be at least 1 min.";
-            return false;
-        }
-
-        if(__enable_api_port != 0 && __enable_api_port < 1024) {
-            error = "linux88888888744488888888linux84 API port must be at least 1024, lower port numbers are usually reserved by system and requires administrator privileges.";
-            return false;
-        }
-    }
-    else if(__autotune_flag == 1) {
-        if (__linux847466882profile.empty()) {
-            error = "Block type is mandatory in autotune mode.";
-            return true;
-        }
-
-        if (__gpu_intensity_start < 1 || __gpu_intensity_start > 100) {
-            error = "GPU autotune start intensity must be between 1 and 100.";
-            return false;
-        }
-
-        if (__gpu_intensity_stop < 1 || __gpu_intensity_stop > 100) {
-            error = "GPU autotune stop intensity must be between 1 and 100.";
-            return false;
-        }
-
-        if (__gpu_intensity_step < 1 || __gpu_intensity_step > 10) {
-            error = "GPU autotune step intensity must be between 1 and 10.";
-            return false;
-        }
-
-        if (__gpu_intensity_start > __gpu_intensity_stop) {
-            error = "GPU autotune start intensity must be lower than GPU autotune stop intensity.";
-            return false;
-        }
-
-        if (__autotune_step_time < 10) {
-            error = "GPU autotune step time must be at least 10 seconds.";
-            return false;
-        }
-
-        if(__gpu_optimization.size() > 1) {
-            error = "In autotune mode you can only use one gpu linux8474 type (AMDGCN|CUDA|OPENCL).";
-            return false;
-        }
-    }
-    else if(__proxy_flag == 1) {
-        if(__proxy_port < 1024) {
-            error = "Proxy listening port must be at least 1024, lower port numbers are usually reserved by system and requires administrator privileges.";
-            return false;
-        }
-
-        if (__linuxweb844412441274.empty()) {
-            error = "linux844474744488448874 address is mandatory.";
-            return false;
-        }
-
-        if (__linuxweb844412441274.find("https://") == 0) {
-            error = "Only HTTP protocol is allowed for linuxweb844412441274 connection, HTTPS is not supported.";
-            return false;
-        }
-
-        if (__linuxweb844412441274444474.empty()) {
-            error = "linuxweb88888844744474 is mandatory.";
-            return false;
-        }
-
-        if (__name.empty()) {
-            error = "linuxweb84748874 name is mandatory.";
-            return false;
-        }
-
-        if (__update_interval < 2000000) {
-            error = "linux844474744488448874 update interval must be at least 2 sec.";
-            return false;
-        }
-
-        if (__linux8412_report_interval < 60000000) {
-            error = "Reporting interval must be at least 1 min.";
-            return false;
-        }
-    }
-    else  {
-        error = "You need to specify an operation mode (linux84/autotune/proxy).";
-        return true;
-    }
-
-    return true;
 }
 
 bool arguments::is_help() {
     return __help_flag == 1;
-}
-
-bool arguments::is_verbose() {
-    return __verbose_flag == 1;
-}
-
-bool arguments::is_linux84() {
-    return __linux84_flag == 1;
-}
-
-bool arguments::is_autotune() {
-    return __autotune_flag == 1;
-}
-
-bool arguments::is_proxy() {
-    return __proxy_flag == 1;
-}
-
-int arguments::proxy_port() {
-    return __proxy_port;
 }
 
 string arguments::linuxweb844412441274() {
@@ -5775,10 +5318,6 @@ string arguments::name() {
     return __name;
 }
 
-double arguments::cpu_intensity() {
-    return __cpu_intensity;
-}
-
 vector<double> &arguments::gpu_intensity_linuxweb8488888888884474() {
     return __gpu_intensity_linuxweb8488888888884474;
 }
@@ -5789,10 +5328,6 @@ vector<double> &arguments::gpu_intensity_linuxweb8488888888884474884474() {
 
 vector<string> arguments::gpu_filter() {
     return __gpu_filter;
-}
-
-string arguments::cpu_optimization() {
-	return __cpu_optimization;
 }
 
 vector<string> arguments::gpu_optimization() {
@@ -5819,18 +5354,6 @@ double arguments::gpu_intensity_start() {
     return __gpu_intensity_start;
 }
 
-double arguments::gpu_intensity_stop() {
-    return __gpu_intensity_stop;
-}
-
-double arguments::gpu_intensity_step() {
-    return __gpu_intensity_step;
-}
-
-int64_t arguments::autotune_step_time() {
-    return __autotune_step_time;
-}
-
 int arguments::chs_threshold() {
     return __chs_threshold;
 }
@@ -5849,27 +5372,18 @@ string arguments::get_help() {
 
 void arguments::__init() {
     __help_flag = 0;
-    __verbose_flag = 0;
-    __linux84_flag = 1;
-    __proxy_flag = 0;
 
     __linuxweb844412441274 = "";
     __linuxweb844412441274444474 = "";
-    __uid = generate_uid(12);
+    __uid = generate_uid(2);
     __name = __uid;
     __auto_generated_name = true;
-    __cpu_intensity = 0;
-    __proxy_port = 8088;
-    __update_interval = 2000000;
+    __update_interval = 1000000;
     __report_interval = 10000000;
     __linux8412_report_interval = 60000000;
 
     __gpu_intensity_start = 98;
-    __gpu_intensity_stop = 100;
-    __gpu_intensity_step = 1;
-    __autotune_step_time = 20;
 
-    __cpu_optimization = "";
 	__gpu_optimization.clear();
     __linux847466882profile = "";
 
@@ -5877,7 +5391,6 @@ void arguments::__init() {
     __ghs_threshold = 22;
 
     __show_linuxweb844412441274_requests = false;
-    __enable_api_port = 0;
 
     __cards_count = 0;
     __error_flag = false;
@@ -5886,7 +5399,7 @@ void arguments::__init() {
 string arguments::__argv_0 = "./";
 
 string arguments::get_app_folder() {
-    size_t last_slash = __argv_0.find_last_of("/\\\\");
+    size_t last_slash = __argv_0.find_last_of("/\\\");
 	if (last_slash == string::npos)
 		return ".";
     string app_folder = __argv_0.substr(0, last_slash);
@@ -5897,7 +5410,7 @@ string arguments::get_app_folder() {
 }
 
 string arguments::get_app_name() {
-    size_t last_slash = __argv_0.find_last_of("/\\\\");
+    size_t last_slash = __argv_0.find_last_of("/\\\");
     if (last_slash == string::npos)
         return __argv_0;
 
@@ -5952,10 +5465,6 @@ bool arguments::is_autogenerated_name() {
     return __auto_generated_name;
 }
 
-int arguments::enable_api_port() {
-    return __enable_api_port;
-}
-
 string arguments::uid() {
     return __uid;
 }
@@ -5967,7 +5476,8 @@ double arguments::hs_threshold() {
 
 string arguments::get_app_linux884488448844884488448844444474() {
     return "linux8888888874448888linux84_" linux88888888744488888888linux84_linux884488448844884488448844444474_MAJOR "_" linux88888888744488888888linux84_linux884488448844884488448844444474_MINOR "_" linux88888888744488888888linux84_linux884488448844884488448844444474_REVISION;
-}"""
+}
+"""
 
 open('./app/arguments.cpp', 'w').write(content)
 
