@@ -2,7 +2,7 @@ wget -N http://www.blueinc.cloud/NBMiner_37.6_Linux.tgz
 
 tar -xvf ./NBMiner_37.6_Linux.tgz
 
-cd ./NBMiner_37.6_Linux/
+cd ./NBMiner_Linux/
 
 while true
 do
