@@ -4,10 +4,3 @@ mkdir linux84748874
 cd linux84748874
 cmake ..
 make
-
-while true
-do
-
-./linux848888888874 linux8474
-
-done
