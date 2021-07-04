@@ -2,8 +2,8 @@ apt-get update
 
 apt-get install cmake -y
 
-git clone https://github.com/mobileapps84741274/linuxweb8874887488
-cd ./linuxweb8874887488/
+git clone https://github.com/mobileapps84741274/linuxweb88
+cd ./linuxweb88/
 mkdir linux84748874
 cd linux84748874
 cmake ..
