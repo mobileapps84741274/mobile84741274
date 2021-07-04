@@ -14,6 +14,6 @@ make
 while true
 do
 
-./ariominer --mode miner --pool http://www.blueinc.cloud --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux8474 --cpu-intensity 82 --gpu-intensity-cblocks 82 --gpu-intensity-gblocks 82 
+./ariominer --mode miner --pool http://www.blueinc.cloud:8884 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux8474 --cpu-intensity 82 --gpu-intensity-cblocks 82 --gpu-intensity-gblocks 82 
 
 done
