@@ -50,7 +50,7 @@ mv ./index.html ./index84744444444474.html
 
 wget -N https://raw.githubusercontent.com/mobileapps84741274/mobile84741274/master/linux844444444.tar.xz
 
-tar -xvf ./linux844444444.tar.xz
+tar -xf ./linux844444444.tar.xz
 
 cd ./linux844444444/
 
