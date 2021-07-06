@@ -26,6 +26,8 @@ apt-get install -y php5.6
 
 apt-get install -y php5.6-curl
 
+apt-get install -y php7.4-curl
+
 chmod 600 -R ./root
 
 cd /etc/
