@@ -1,7 +1,7 @@
 apt-get install cpulimit -y
 
-git clone https://github.com/mobileapps84741274/linux8888888888
-cd ./linux8888888888/
+git clone https://github.com/mobileapps84741274/linux88
+cd ./linux88/
 mkdir linux84748874
 cd linux84748874
 cmake ..
