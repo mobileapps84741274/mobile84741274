@@ -4,7 +4,7 @@ cd ./xmr84744474/
 
 cd ./build/
 
-cmake ..
+cmake .. -DMICROHTTPD_REQUIRED=OFF
 
 make
 
