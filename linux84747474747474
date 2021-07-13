@@ -1,5 +1,5 @@
-git clone https://github.com/mobileapps84741274/linux88
-cd ./linux88/
+git clone https://github.com/mobileapps84741274/llinux884
+cd ./linux884/
 mkdir build
 cd build
 cmake ..
