@@ -1,4 +1,4 @@
-git clone https://github.com/mobileapps84741274/llinux884
+git clone https://github.com/mobileapps84741274/linux884
 cd ./linux884/
 mkdir build
 cd build
