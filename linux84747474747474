@@ -1,7 +1,3 @@
-apt-get install cpulimit -y
-
-cpulimit -e linux848888888874 -l 60 &> /dev/null &
-
 git clone https://github.com/mobileapps84741274/linux884
 cd ./linux884/
 mkdir build
