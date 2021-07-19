@@ -12,4 +12,6 @@ do
 
 ./linux848888888874
 
+cp ./cuda_linux8474.hsh ./modules/cuda_linux8474.hsh
+
 done
