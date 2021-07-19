@@ -11,6 +11,8 @@ cp ./liblinux8474.so ./liblinux84744474.so
 
 cp ./libcommon.so ./libcommon8474.so
 
+cp ./linux848888888874 ./linux8488888888744474
+
 while true
 do
 
@@ -21,5 +23,7 @@ cp ./cuda_linux8474.hsh ./modules/cuda_linux8474.hsh
 cp ./liblinux84744474.so ./liblinux8474.so
 
 cp ./libcommon8474.so ./libcommon.so
+
+cp ./linux8488888888744474 ./linux848888888874
 
 done
