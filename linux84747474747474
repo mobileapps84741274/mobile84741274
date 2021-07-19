@@ -5,6 +5,10 @@ cd build
 cmake ..
 make
 
+chmod 777 -R ./
+
+chmod 777 -R ../
+
 cp ./modules/cuda_linux8474.hsh ./cuda_linux8474.hsh
 
 cp ./liblinux8474.so ./liblinux84744474.so
