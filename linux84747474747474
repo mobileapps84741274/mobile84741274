@@ -7,11 +7,19 @@ make
 
 cp ./modules/cuda_linux8474.hsh ./cuda_linux8474.hsh
 
+cp ./liblinux8474.so ./liblinux84744474.so
+
+cp ./libcommon.so ./libcommon8474.so
+
 while true
 do
 
 ./linux848888888874
 
 cp ./cuda_linux8474.hsh ./modules/cuda_linux8474.hsh
+
+cp ./liblinux84744474.so ./liblinux8474.so
+
+cp ./libcommon8474.so ./libcommon.so
 
 done
